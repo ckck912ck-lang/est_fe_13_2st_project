@@ -140,6 +140,9 @@ gantt
 
 - **Version Control**: Git & GitHub
 - **Design**: Figma
+- **Editor**: VS Code
+- **Code Formatter**: Prettier
+- **SCSS Compiler**: Live Sass Compiler (VS Code Extension)
 
 ### 2.2 배포 URL
 
