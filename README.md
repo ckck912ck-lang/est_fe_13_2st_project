@@ -86,9 +86,7 @@
 - [ ] 최종 발표
 
 ```mermaid
----
-config:
-  layout: elk
+
 ---
 gantt
     title ROUNZ 2차 프로젝트 일정
@@ -121,10 +119,8 @@ gantt
     디테일 및 반응형 구현, QA        :s3t5, 2026-06-15, 2d
     발표자료 제작, README.md 작성    :s3t6, 2026-06-17, 1d
 
-
-
-
 ---
+
 
 ## 2. 개발 환경 및 배포
 
