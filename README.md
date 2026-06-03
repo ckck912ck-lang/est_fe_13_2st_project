@@ -1,4 +1,4 @@
-<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/e2f32145-9247-4077-8852-05a710beabb6" /># 오르미 안경점 : ROUNZ (2차 프로젝트)
+# 오르미 안경점 : ROUNZ (2차 프로젝트)
 
 - 과정명: 프론트엔드 13기 개발자 양성(Figma)
 - 기간: 2026/04/07 ~ 2026/08/21
