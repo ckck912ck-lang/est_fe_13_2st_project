@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "여름 선글라스 기획전",
+      "description": "인기 선글라스 최대 30% 할인",
+      "thumbnail": "./assets/images/banner/event01.jpg",
+      "startDate": "2026-06-01",
+      "endDate": "2026-06-30",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "title": "리뷰 작성 이벤트",
+      "description": "리뷰 작성 시 적립금 1,000원 지급",
+      "thumbnail": "./assets/images/banner/event02.jpg",
+      "startDate": "2026-05-20",
+      "endDate": "2026-06-15",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "title": "신규 회원 웰컴 쿠폰",
+      "description": "회원가입 즉시 10% 할인 쿠폰 지급",
+      "thumbnail": "./assets/images/banner/event03.jpg",
+      "startDate": "2026-05-01",
+      "endDate": "2026-12-31",
+      "isActive": true
+    }
+  ]
+}
