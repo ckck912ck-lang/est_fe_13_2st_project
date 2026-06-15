@@ -130,12 +130,6 @@
   background: transparent;
 }
 
-.product-list-body {
-  .site-footer__section--service {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   .product-list-section {
     padding: 36px 0 64px;
@@ -274,55 +268,4 @@
     font-size: 0.875rem;
   }
 
-  .product-list-body {
-    .site-footer {
-      &__inner {
-        display: grid;
-        max-width: 1140px;
-        padding: 52px 0 80px;
-        grid-template-columns: 1.3fr 0.8fr 0.9fr 0.9fr;
-        gap: 72px;
-      }
-
-      &__brand {
-        gap: 24px;
-
-        strong {
-          font-size: 2rem;
-        }
-
-        p {
-          font-size: 0.9375rem;
-        }
-      }
-
-      &__section {
-        gap: 18px;
-
-        &--service {
-          display: flex;
-        }
-
-        h2 {
-          font-size: 1rem;
-          color: rgba($color-white, 0.48);
-        }
-      }
-
-      &__links {
-        display: grid;
-        gap: 12px;
-
-        a {
-          font-size: 0.9375rem;
-        }
-
-        &--support {
-          a::after {
-            display: none;
-          }
-        }
-      }
-    }
-  }
 }
