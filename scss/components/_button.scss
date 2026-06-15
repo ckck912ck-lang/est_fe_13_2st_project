@@ -91,7 +91,15 @@
     width: 20px;
     height: 18px;
     background: currentColor;
-    clip-path: polygon(50% 0, 100% 42%, 82% 42%, 82% 100%, 18% 100%, 18% 42%, 0 42%);
+    clip-path: polygon(
+      50% 0,
+      100% 42%,
+      82% 42%,
+      82% 100%,
+      18% 100%,
+      18% 42%,
+      0 42%
+    );
   }
 }
 

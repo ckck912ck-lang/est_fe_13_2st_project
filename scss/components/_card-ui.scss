@@ -3,6 +3,54 @@
 .product-card {
   min-width: 0;
 
+  &--listed {
+    display: block;
+
+    .product-card__image {
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba($color-white, 0.1), rgba($color-black, 0.08)),
+        #f2eeee;
+
+      &::after {
+        inset: 36% 12% 38%;
+        border-width: 4px;
+        border-top-width: 3px;
+        transform: rotate(-18deg);
+      }
+    }
+
+    .badge {
+      top: 8px;
+      left: 8px;
+      min-height: 22px;
+      border-radius: 999px;
+      color: $color-black;
+      font-size: 0.625rem;
+      background: #d7bd82;
+    }
+
+    .badge + .badge {
+      top: 34px;
+    }
+
+    .badge--new {
+      color: $color-white;
+      background: $color-black;
+    }
+
+    .product-card__body {
+      padding-top: 12px;
+    }
+
+    h2 {
+      margin-top: 4px;
+      font-size: 0.8125rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+  }
+
   &__image {
     position: relative;
     display: block;
@@ -10,7 +58,11 @@
     overflow: hidden;
     border-radius: 8px;
     background:
-      linear-gradient(135deg, rgba($color-black, 0.08), rgba($color-white, 0.25)),
+      linear-gradient(
+        135deg,
+        rgba($color-black, 0.08),
+        rgba($color-white, 0.25)
+      ),
       $color-warm;
 
     &::after {
@@ -24,14 +76,55 @@
 
     &--soft {
       background:
-        linear-gradient(135deg, rgba($color-accent, 0.16), rgba($color-white, 0.2)),
+        linear-gradient(
+          135deg,
+          rgba($color-accent, 0.16),
+          rgba($color-white, 0.2)
+        ),
         $color-sage;
     }
 
     &--clean {
       background:
-        linear-gradient(135deg, rgba($color-black, 0.04), rgba($color-accent, 0.1)),
+        linear-gradient(
+          135deg,
+          rgba($color-black, 0.04),
+          rgba($color-accent, 0.1)
+        ),
         $color-rose;
+    }
+
+    &--clear {
+      background:
+        linear-gradient(145deg, rgba($color-black, 0.08), rgba($color-white, 0.3)),
+        #f4f4f2;
+
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+
+    &--side {
+      background:
+        linear-gradient(135deg, rgba($color-black, 0.04), rgba($color-white, 0.26)),
+        #f7f6f2;
+
+      &::after {
+        inset: 48% 10% 28%;
+        transform: rotate(-24deg);
+      }
+    }
+
+    &--bold {
+      background:
+        linear-gradient(135deg, rgba($color-black, 0.08), rgba($color-white, 0.22)),
+        #eeeeec;
+
+      &::after {
+        inset: 34% 8% 40%;
+        border-color: rgba($color-black, 0.82);
+        transform: rotate(0deg);
+      }
     }
   }
 
@@ -74,6 +167,45 @@
     span {
       color: #e03a3a;
       font-size: 0.8125rem;
+    }
+  }
+
+  &__sale {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    min-height: 22px;
+    align-items: center;
+    padding-inline: 8px;
+    border-radius: 999px;
+    color: $color-white;
+    font-size: 0.625rem;
+    font-weight: 900;
+    background: #ff3045;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-card {
+    &--listed {
+      .product-card__body {
+        padding: 18px 6px 0;
+      }
+
+      .product-card__brand {
+        font-size: 0.875rem;
+        letter-spacing: 0.08em;
+      }
+
+      h2 {
+        font-size: 1.125rem;
+      }
+
+      .product-card__rating,
+      .product-card__price {
+        font-size: 1rem;
+      }
     }
   }
 }
