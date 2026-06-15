@@ -2,6 +2,7 @@
 
 .site-footer {
   color: $color-white;
+  line-height: 1.5;
   background: #242424;
 
   &__inner {
@@ -18,6 +19,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    grid-area: brand;
 
     strong {
       font-family: Georgia, "Times New Roman", serif;
@@ -28,16 +30,17 @@
     }
 
     p {
-      max-width: 560px;
+      width: min(100%, 560px);
       color: rgba($color-white, 0.68);
       font-size: 1rem;
       font-weight: 500;
-      line-height: 1.45;
+      line-height: 24px;
     }
   }
 
   &__social {
     display: flex;
+    grid-area: social;
     gap: 24px;
   }
 
@@ -93,10 +96,23 @@
     flex-direction: column;
     gap: 22px;
 
+    &--service {
+      display: none;
+      grid-area: service;
+    }
+
+    &--store {
+      grid-area: store;
+    }
+
+    &--support {
+      grid-area: support;
+    }
+
     h2 {
       font-size: 1.25rem;
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 24px;
     }
   }
 
@@ -107,12 +123,13 @@
 
     a {
       display: inline-flex;
+      min-height: 24px;
       align-items: center;
       gap: 12px;
       color: rgba($color-white, 0.68);
       font-size: 0.9375rem;
       font-weight: 500;
-      line-height: 1.3;
+      line-height: 24px;
     }
 
     .site-footer__icon {
@@ -120,6 +137,7 @@
       width: 18px;
       height: 18px;
       flex: 0 0 auto;
+      align-self: center;
       color: $color-white;
 
       &--pin {
@@ -146,12 +164,59 @@
           background: #242424;
         }
       }
-    }
 
-    .site-footer__label {
-      color: $color-white;
-      font-size: 0.875rem;
-      line-height: 1;
+      &--phone {
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+        }
+
+        &::before {
+          inset: 2px 5px 3px 4px;
+          border: 3px solid currentColor;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          border-radius: 3px 0 0 5px;
+          transform: rotate(-35deg);
+        }
+
+        &::after {
+          right: 4px;
+          bottom: 2px;
+          width: 6px;
+          height: 5px;
+          border-radius: 1px;
+          background: currentColor;
+          box-shadow: -9px -10px 0 currentColor;
+        }
+      }
+
+      &--mail {
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+        }
+
+        &::before {
+          inset: 3px 1px;
+          border: 2px solid currentColor;
+          border-radius: 2px;
+        }
+
+        &::after {
+          top: 5px;
+          left: 3px;
+          width: 12px;
+          height: 8px;
+          border-right: 2px solid currentColor;
+          border-bottom: 2px solid currentColor;
+          transform: rotate(45deg) skew(-10deg, -10deg);
+        }
+      }
     }
 
     &--support {
@@ -203,13 +268,70 @@
 @media (min-width: 1280px) {
   .site-footer {
     &__inner {
-      max-width: 1280px;
-      padding-block: 64px;
+      display: grid;
+      max-width: 1140px;
+      padding-block: 64px 84px;
+      grid-template-columns: 1.3fr 0.8fr 0.9fr 0.9fr;
+      grid-template-areas:
+        "brand service store support"
+        "social service store support";
+      gap: 72px;
     }
 
     &__brand {
+      gap: 24px;
+
+      strong {
+        font-size: 2rem;
+      }
+
       p {
-        max-width: 620px;
+        width: 300px;
+        max-width: 100%;
+        font-size: 0.9375rem;
+        line-height: 24px;
+      }
+    }
+
+    &__social {
+      align-self: end;
+    }
+
+    &__section {
+      gap: 18px;
+
+      &--service {
+        display: flex;
+      }
+
+      h2 {
+        color: rgba($color-white, 0.48);
+        font-size: 1rem;
+        line-height: 24px;
+      }
+    }
+
+    &__links {
+      display: grid;
+      grid-auto-rows: minmax(24px, auto);
+      align-content: start;
+      gap: 12px;
+
+      a {
+        min-height: 24px;
+        font-size: 0.9375rem;
+        line-height: 24px;
+      }
+
+      &--support {
+        a {
+          display: inline-flex;
+
+          &:not(:last-child)::after {
+            content: none;
+            display: none;
+          }
+        }
       }
     }
   }

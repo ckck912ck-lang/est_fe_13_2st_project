@@ -4,9 +4,515 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>BERLIN 3 | ROUNZ</title>
   </head>
-  <body>
+  <body class="product-detail-body">
+    <a class="skip-link" href="#main">본문 바로가기</a>
+
+    <header class="site-header" data-component="header">
+      <div class="site-header__inner">
+        <button
+          type="button"
+          class="icon-button hamburger-button"
+          aria-controls="hamburger-nav"
+          aria-expanded="false"
+          aria-label="전체 메뉴 열기"
+          data-action="open-menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <h1 class="site-header__logo">
+          <a href="index.html" aria-label="ROUNZ 홈">ROUNZ</a>
+        </h1>
+
+        <div class="site-header__actions">
+          <button
+            type="button"
+            class="icon-button"
+            aria-controls="search-modal"
+            aria-label="검색 열기"
+            data-action="open-search"
+          >
+            <span class="icon-symbol icon-search" aria-hidden="true"></span>
+          </button>
+          <a class="icon-button" href="cart.html" aria-label="장바구니">
+            <span class="icon-symbol icon-cart" aria-hidden="true"></span>
+            <span class="cart-badge" aria-label="장바구니 상품 수">2</span>
+          </a>
+          <a class="site-header__login" href="login.html">로그인</a>
+        </div>
+
+        <nav class="site-header__nav" aria-label="주요 메뉴">
+          <a href="product-list.html">전체 상품</a>
+          <a href="product-list.html?category=glasses">안경</a>
+          <a href="product-list.html?category=sunglasses">선글라스</a>
+          <a href="#partner-store">파트너 안경원</a>
+        </nav>
+      </div>
+    </header>
+
+    <aside
+      class="hamburger-nav"
+      id="hamburger-nav"
+      aria-label="전체 메뉴"
+      data-component="hamburger-nav"
+      hidden
+    >
+      <div class="hamburger-nav__head">
+        <strong>ROUNZ</strong>
+        <button
+          type="button"
+          class="icon-button"
+          aria-label="전체 메뉴 닫기"
+          data-action="close-menu"
+        >
+          ×
+        </button>
+      </div>
+      <nav class="hamburger-nav__quick" aria-label="빠른 메뉴">
+        <a href="index.html">홈</a>
+        <a href="product-list.html">상품</a>
+        <a href="cart.html">장바구니</a>
+        <a href="login.html">로그인</a>
+      </nav>
+      <nav class="hamburger-nav__section" aria-label="카테고리">
+        <h2>카테고리</h2>
+        <a href="product-list.html">전체 상품</a>
+        <a href="product-list.html?category=glasses">안경</a>
+        <a href="product-list.html?category=sunglasses">선글라스</a>
+        <a href="product-list.html?category=clip-on">클립온</a>
+        <a href="product-list.html?category=smart">스마트 안경</a>
+      </nav>
+    </aside>
+
+    <main id="main" class="main product-detail-page">
+      <section class="product-detail-section" aria-labelledby="product-title">
+        <div class="inner product-detail-inner">
+          <a class="product-detail-back" href="product-list.html">뒤로</a>
+
+          <div class="product-detail-layout">
+            <section class="product-gallery" aria-label="상품 이미지" data-render="product-gallery">
+              <div
+                class="product-gallery__main"
+                role="img"
+                aria-label="얇은 라운드 메탈 안경 BERLIN 3"
+              >
+                <button
+                  type="button"
+                  class="product-gallery__arrow product-gallery__arrow--prev"
+                  aria-label="이전 이미지"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  class="product-gallery__arrow product-gallery__arrow--next"
+                  aria-label="다음 이미지"
+                >
+                  ›
+                </button>
+                <div class="product-gallery__dots" aria-hidden="true">
+                  <span class="is-active"></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="product-gallery__thumbs" aria-label="상품 썸네일">
+                <button type="button" class="is-active" aria-label="첫 번째 상품 이미지">
+                  <span class="product-thumb product-thumb--angle" aria-hidden="true"></span>
+                </button>
+                <button type="button" aria-label="두 번째 상품 이미지">
+                  <span class="product-thumb product-thumb--clear" aria-hidden="true"></span>
+                </button>
+                <button type="button" aria-label="세 번째 상품 이미지">
+                  <span class="product-thumb product-thumb--bold" aria-hidden="true"></span>
+                </button>
+              </div>
+            </section>
+
+            <section
+              class="product-summary"
+              aria-label="상품 구매 정보"
+              data-render="product-summary"
+            >
+              <div class="product-summary__head">
+                <p class="product-summary__brand">
+                  <a href="product-list.html?brand=mykita">MYKITA</a>
+                </p>
+                <button type="button" class="product-share-button" aria-label="상품 공유">
+                  <span aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <h1 id="product-title">BERLIN 3</h1>
+              <p class="product-summary__rating">
+                <span aria-hidden="true">★★★★★</span>
+                <strong>4.8</strong>
+                <a href="#product-reviews">(4)</a>
+              </p>
+              <p class="product-summary__price">
+                <strong>420,000원</strong>
+                <del>248,000원</del>
+                <span>-20%</span>
+              </p>
+
+              <dl class="product-spec-grid">
+                <div>
+                  <dt>프레임</dt>
+                  <dd>캣아이</dd>
+                </div>
+                <div>
+                  <dt>소재</dt>
+                  <dd>스테인리스</dd>
+                </div>
+                <div>
+                  <dt>사이즈</dt>
+                  <dd>M</dd>
+                </div>
+                <div>
+                  <dt>성별</dt>
+                  <dd>여성</dd>
+                </div>
+              </dl>
+
+              <div class="product-option-group" aria-labelledby="face-shape-label">
+                <p id="face-shape-label">추천 얼굴형</p>
+                <div class="product-chip-list">
+                  <span>둥근형</span>
+                  <span>타원형</span>
+                </div>
+              </div>
+
+              <fieldset class="product-option-group product-color-option">
+                <legend>색상 선택 - 실버</legend>
+                <div class="product-chip-list">
+                  <label>
+                    <input type="radio" name="product-color" value="black" checked />
+                    <span>블랙</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="product-color" value="gold" />
+                    <span>골드</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="product-color" value="silver" />
+                    <span>실버</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="product-quantity" aria-label="수량 선택">
+                <button type="button" aria-label="수량 감소" data-quantity-action="decrease">
+                  −
+                </button>
+                <span aria-live="polite">1</span>
+                <button type="button" aria-label="수량 증가" data-quantity-action="increase">
+                  +
+                </button>
+              </div>
+
+              <p class="product-summary__desc">
+                마이키타의 독보적인 스테인리스 스틸 프레임 기술로 제작. 힌지 없이 유연하게 움직이는
+                독자적인 플렉스 힌지 시스템이 특징입니다.
+              </p>
+
+              <div class="product-purchase-actions">
+                <button type="button" class="btn btn--dark" data-action="add-cart">
+                  장바구니 담기
+                </button>
+                <button type="button" class="btn btn--outline" data-action="buy-now">
+                  바로 구매
+                </button>
+                <button type="button" class="product-like-button" aria-label="관심 상품 추가">
+                  ♡
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="product-info-section"
+        aria-label="상품 상세 정보"
+        data-render="product-detail-content"
+      >
+        <div class="inner product-detail-content-inner">
+          <div class="product-detail-tabs">
+            <div class="tab-list" role="tablist" aria-label="상품 정보 탭">
+              <button
+                type="button"
+                class="tab-button"
+                id="detail-tab"
+                role="tab"
+                aria-selected="true"
+                aria-controls="detail-panel"
+              >
+                상세정보
+              </button>
+              <button
+                type="button"
+                class="tab-button"
+                id="review-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="review-panel"
+              >
+                리뷰
+              </button>
+              <button
+                type="button"
+                class="tab-button"
+                id="qna-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="qna-panel"
+              >
+                문의
+              </button>
+            </div>
+
+            <div class="tab-panel" id="detail-panel" role="tabpanel" aria-labelledby="detail-tab">
+              <p>
+                슬림한 티타늄 프레임에 클래식 웰링턴 실루엣을 더한 베스트셀러입니다. 얼굴에 닿는
+                부분마다 섬세하게 가공된 노즈패드가 장시간 착용에도 편안함을 유지합니다.
+              </p>
+            </div>
+            <div
+              class="tab-panel"
+              id="review-panel"
+              role="tabpanel"
+              aria-labelledby="review-tab"
+              hidden
+            ></div>
+            <div
+              class="tab-panel"
+              id="qna-panel"
+              role="tabpanel"
+              aria-labelledby="qna-tab"
+              hidden
+            ></div>
+          </div>
+
+          <section class="review-section" id="product-reviews" aria-labelledby="review-title">
+            <div class="review-section__head">
+              <h2 id="review-title">구매 후기 <span>(4)</span></h2>
+              <button type="button" class="review-write-button">후기 작성</button>
+            </div>
+
+            <div class="review-list" data-render="product-review-list">
+              <article class="review-item">
+                <div class="review-item__meta">
+                  <strong>김*연 <span>구매확인</span></strong>
+                  <time datetime="2026-01-15">2026.01.15</time>
+                </div>
+                <p class="review-item__stars" aria-label="별점 5점">★★★★★</p>
+                <p>
+                  가벼워서 하루종일 써도 불편하지 않아요. 티타늄 소재라 그런지 정말 가볍고 코 위에
+                  자국도 덜 남아요.
+                </p>
+              </article>
+              <article class="review-item">
+                <div class="review-item__meta">
+                  <strong>이*준 <span>구매확인</span></strong>
+                  <time datetime="2026-01-10">2026.01.10</time>
+                </div>
+                <p class="review-item__stars" aria-label="별점 5점">★★★★★</p>
+                <p>
+                  디자인이 예상보다 훨씬 깔끔하고 고급스럽습니다. 색상은 실제로 보면 더 멋있어요.
+                </p>
+              </article>
+              <article class="review-item">
+                <div class="review-item__meta">
+                  <strong>박*희 <span>구매확인</span></strong>
+                  <time datetime="2025-12-28">2025.12.28</time>
+                </div>
+                <p class="review-item__stars" aria-label="별점 5점">★★★★★</p>
+                <p>
+                  AI 가상피팅으로 미리 착용해보고 구매했는데 실제로 받아보니 딱 제가 생각한
+                  스타일이었어요.
+                </p>
+              </article>
+              <article class="review-item">
+                <div class="review-item__meta">
+                  <strong>최*수 <span>구매확인</span></strong>
+                  <time datetime="2025-12-20">2025.12.20</time>
+                </div>
+                <p class="review-item__stars" aria-label="별점 5점">★★★★★</p>
+                <p>
+                  파트너 안경원에서 렌즈까지 맞춰서 쓰고 있는데 너무 만족스러워요. 배송도 빠르고
+                  포장도 고급스러웠습니다.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="product-qna-section" aria-labelledby="qna-title">
+            <h2 id="qna-title" class="sr-only">상품 문의</h2>
+            <div data-render="product-qna-list"></div>
+          </section>
+
+          <section class="related-products" aria-labelledby="related-title">
+            <h2 id="related-title">비슷한 상품</h2>
+            <div class="related-products__grid">
+              <article class="product-card product-card--listed product-card--compact">
+                <a
+                  href="product-detail.html"
+                  class="product-card__image"
+                  aria-label="CARIN STELLA 03 상품 상세"
+                >
+                  <span class="badge badge--new">NEW</span>
+                  <span class="badge">BEST</span>
+                  <span class="product-card__sale">20%</span>
+                </a>
+                <div class="product-card__body">
+                  <p class="product-card__brand">CARIN</p>
+                  <h2><a href="product-detail.html">STELLA 03</a></h2>
+                  <p class="product-card__rating"><span aria-hidden="true">★</span> 4.9 (519)</p>
+                  <p class="product-card__price">248,000원</p>
+                </div>
+              </article>
+              <article class="product-card product-card--listed product-card--compact">
+                <a
+                  href="product-detail.html"
+                  class="product-card__image product-card__image--clear"
+                  aria-label="MYKITA IKONIK 상품 상세"
+                ></a>
+                <div class="product-card__body">
+                  <p class="product-card__brand">MYKITA</p>
+                  <h2><a href="product-detail.html">IKONIK</a></h2>
+                  <p class="product-card__rating"><span aria-hidden="true">★</span> 4.5 (78)</p>
+                  <p class="product-card__price">460,000원</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-component="footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <strong>ROUNZ</strong>
+          <p>AI 기반 가상피팅과 얼굴형 분석으로 나에게 꼭 맞는 안경을 찾아드립니다.</p>
+        </div>
+
+        <div class="site-footer__social" aria-label="소셜 채널">
+          <a
+            class="site-footer__social-link site-footer__social-link--instagram"
+            href="#"
+            aria-label="ROUNZ 인스타그램"
+          ></a>
+          <a
+            class="site-footer__social-link site-footer__social-link--youtube"
+            href="#"
+            aria-label="ROUNZ 유튜브"
+          ></a>
+        </div>
+
+        <section
+          class="site-footer__section site-footer__section--service"
+          aria-labelledby="footer-service-title"
+        >
+          <h2 id="footer-service-title">서비스</h2>
+          <div class="site-footer__links">
+            <a href="index.html#ai-recommend">AI 얼굴형 분석</a>
+            <a href="#">가상 피팅</a>
+            <a href="product-list.html">안경 추천</a>
+            <a href="#partner-store">파트너 안경원</a>
+          </div>
+        </section>
+
+        <section
+          class="site-footer__section site-footer__section--store"
+          aria-labelledby="footer-store-title"
+          id="partner-store"
+        >
+          <h2 id="footer-store-title">매장 안내</h2>
+          <div class="site-footer__links site-footer__links--store">
+            <a href="#partner-store"
+              ><span class="site-footer__icon site-footer__icon--pin" aria-hidden="true"></span
+              >플래그십 스토어</a
+            >
+            <a href="#partner-store"
+              ><span class="site-footer__icon site-footer__icon--pin" aria-hidden="true"></span
+              >파트너 안경원 찾기</a
+            >
+            <a href="tel:15880000"
+              ><span class="site-footer__icon site-footer__icon--phone" aria-hidden="true"></span
+              >1588-0000</a
+            >
+            <a href="mailto:help@rounz.com"
+              ><span class="site-footer__icon site-footer__icon--mail" aria-hidden="true"></span
+              >help@rounz.com</a
+            >
+          </div>
+        </section>
+
+        <section
+          class="site-footer__section site-footer__section--support"
+          aria-labelledby="footer-support-title"
+        >
+          <h2 id="footer-support-title">고객 지원</h2>
+          <div class="site-footer__links site-footer__links--support">
+            <a href="#">공지사항</a>
+            <a href="#">자주 묻는 질문</a>
+            <a href="#">교환/반품 안내</a>
+            <a href="#">이벤트</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="하단 내비게이션" data-component="bottom-nav">
+      <a href="index.html">
+        <span class="icon-symbol icon-home" aria-hidden="true"></span>
+        홈
+      </a>
+      <a href="product-list.html">
+        <span class="icon-symbol icon-grid" aria-hidden="true"></span>
+        상품
+      </a>
+      <a href="#search-modal" data-action="open-search">
+        <span class="icon-symbol icon-search" aria-hidden="true"></span>
+        검색
+      </a>
+      <a href="cart.html" aria-current="page">
+        <span class="icon-symbol icon-cart" aria-hidden="true"></span>
+        <span class="cart-badge" aria-label="장바구니 상품 수">2</span>
+        장바구니
+      </a>
+      <a href="login.html">
+        <span class="icon-symbol icon-user" aria-hidden="true"></span>
+        내정보
+      </a>
+    </nav>
+
+    <a class="fixed-chat-button" href="#search-modal" aria-label="AI 상담 시작">
+      <span class="sr-only">AI 상담</span>
+    </a>
+
+    <dialog class="modal" id="search-modal" aria-labelledby="search-modal-title">
+      <form method="dialog" class="modal__content">
+        <div class="modal__head">
+          <h2 id="search-modal-title">검색</h2>
+          <button type="submit" class="icon-button" aria-label="검색 닫기">×</button>
+        </div>
+        <label class="form-field">
+          <span>검색어</span>
+          <input type="search" name="keyword" placeholder="브랜드 또는 상품명을 입력하세요" />
+        </label>
+      </form>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
     <script type="module" src="js/pages/productDetail.js"></script>
   </body>
 </html>
