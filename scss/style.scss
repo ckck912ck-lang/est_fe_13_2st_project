@@ -1,24 +1,34 @@
+// base
 @use "./base/normalize";
 @use "./base/reset";
 @use "./base/variables";
 @use "./base/typography";
 @use "./base/mixins";
 
+// layout
 @use "./layout/common";
 @use "./layout/header";
 @use "./layout/footer";
-@use "./layout/navigation";
+@use "./layout/hamburger-nav";
+@use "./layout/bottom-nav";
 
+// components
+@use "./components/accordion";
+@use "./components/badge";
 @use "./components/button";
-@use "./components/card";
 @use "./components/carousel";
+@use "./components/card-ui";
 @use "./components/form";
 @use "./components/modal";
+@use "./components/fixed-button";
+@use "./components/skeleton";
 @use "./components/tabs";
+@use "./components/toast";
 
-@use "./pages/index";
-@use "./pages/product-list";
-@use "./pages/product-detail";
+// pages
 @use "./pages/cart";
+@use "./pages/index";
 @use "./pages/login";
+@use "./pages/product-detail";
+@use "./pages/product-list";
 @use "./pages/signup";

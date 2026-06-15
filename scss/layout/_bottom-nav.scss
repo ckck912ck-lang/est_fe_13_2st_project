@@ -1,0 +1,68 @@
+@use "../base/variables" as *;
+
+.bottom-nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 120;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: $bottom-nav-height;
+  border-top: 1px solid $color-line;
+  color: #7f7f78;
+  background: $color-white;
+  box-shadow: 0 -4px 18px rgba($color-black, 0.08);
+
+  a,
+  button {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    padding: 7px 2px 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: inherit;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.1;
+    background: transparent;
+  }
+
+  a[aria-current="page"] {
+    color: #777871;
+  }
+
+  .icon-symbol {
+    width: 28px;
+    height: 28px;
+  }
+
+  .icon-cart {
+    width: 29px;
+    height: 24px;
+    margin-bottom: 4px;
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    min-width: 22px;
+    height: 22px;
+    padding-inline: 6px;
+    color: $color-black;
+    font-size: 0.75rem;
+    font-weight: 800;
+    background: #d4b987;
+    transform: translateX(8px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .bottom-nav {
+    display: none;
+  }
+}

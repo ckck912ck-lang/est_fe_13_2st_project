@@ -1,0 +1,24 @@
+@use "../base/variables" as *;
+
+.modal {
+  width: min(420px, calc(100vw - 32px));
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba($color-black, 0.24);
+}
+
+.modal::backdrop {
+  background: rgba($color-black, 0.48);
+}
+
+.modal__content {
+  padding: 20px;
+}
+
+.modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
