@@ -7,14 +7,20 @@
 @use "./layout/common";
 @use "./layout/header";
 @use "./layout/footer";
-@use "./layout/navigation";
+@use "./layout/hamburger-nav";
+@use "./layout/bottom-nav";
 
+@use "./components/accordion";
+@use "./components/badge";
 @use "./components/button";
-@use "./components/card";
 @use "./components/carousel";
+@use "./components/card-ui";
 @use "./components/form";
 @use "./components/modal";
+@use "./components/fixed-button";
+@use "./components/skeleton";
 @use "./components/tabs";
+@use "./components/toast";
 
 @use "./pages/index";
 @use "./pages/product-list";

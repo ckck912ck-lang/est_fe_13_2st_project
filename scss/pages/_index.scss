@@ -364,22 +364,59 @@
 
   .face-ai-section {
     &__inner {
-      grid-template-columns: 1072px 336px;
+      grid-template-columns: minmax(0, 1fr) 360px;
       gap: 32px;
+      align-items: end;
+    }
+  }
+
+  .face-recommend {
+    display: flex;
+    order: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .section-heading {
+      margin-bottom: 24px;
+
+      h2 {
+        font-size: clamp(2.5rem, 2rem + 1.8vw, 3.75rem);
+      }
     }
   }
 
   .face-type-list {
-    gap: 12px 26px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px 24px;
   }
 
   .face-type-card {
-    min-height: 80px;
+    min-height: 84px;
     padding-inline: 20px;
   }
 
   .ai-analyze-card {
-    min-height: 312px;
+    order: 2;
+    min-height: 184px;
+    align-content: center;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
+
+    h2,
+    p:not(.section-kicker) {
+      grid-column: 1;
+    }
+
+    .section-kicker {
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      grid-column: 2;
+      grid-row: 2 / span 2;
+      align-self: center;
+      margin-top: 0;
+    }
   }
 
   .section-controls {
