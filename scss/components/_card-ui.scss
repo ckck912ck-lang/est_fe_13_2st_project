@@ -10,7 +10,11 @@
     overflow: hidden;
     border-radius: 8px;
     background:
-      linear-gradient(135deg, rgba($color-black, 0.08), rgba($color-white, 0.25)),
+      linear-gradient(
+        135deg,
+        rgba($color-black, 0.08),
+        rgba($color-white, 0.25)
+      ),
       $color-warm;
 
     &::after {
@@ -24,13 +28,21 @@
 
     &--soft {
       background:
-        linear-gradient(135deg, rgba($color-accent, 0.16), rgba($color-white, 0.2)),
+        linear-gradient(
+          135deg,
+          rgba($color-accent, 0.16),
+          rgba($color-white, 0.2)
+        ),
         $color-sage;
     }
 
     &--clean {
       background:
-        linear-gradient(135deg, rgba($color-black, 0.04), rgba($color-accent, 0.1)),
+        linear-gradient(
+          135deg,
+          rgba($color-black, 0.04),
+          rgba($color-accent, 0.1)
+        ),
         $color-rose;
     }
   }

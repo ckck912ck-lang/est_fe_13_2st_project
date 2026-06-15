@@ -1,3 +1,0 @@
-// renderProducts
-
-// fetchProducts
