@@ -1,0 +1,9 @@
+// 빈 카드 ui
+
+// shimmer 애니메이션
+.skeleton {
+  min-height: 120px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f1f1f3, #fafafa, #f1f1f3);
+  background-size: 200% 100%;
+}

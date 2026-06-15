@@ -1,0 +1,98 @@
+@use "../base/variables" as *;
+
+.product-card {
+  min-width: 0;
+
+  &__image {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background:
+      linear-gradient(135deg, rgba($color-black, 0.08), rgba($color-white, 0.25)),
+      $color-warm;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 32% 14% 36%;
+      border: 7px solid rgba($color-black, 0.62);
+      border-top-width: 5px;
+      border-radius: 999px;
+    }
+
+    &--soft {
+      background:
+        linear-gradient(135deg, rgba($color-accent, 0.16), rgba($color-white, 0.2)),
+        $color-sage;
+    }
+
+    &--clean {
+      background:
+        linear-gradient(135deg, rgba($color-black, 0.04), rgba($color-accent, 0.1)),
+        $color-rose;
+    }
+  }
+
+  &__body {
+    padding: 8px 4px 0;
+  }
+
+  &__brand {
+    color: $color-muted;
+    font-size: 0.6875rem;
+    font-weight: 800;
+  }
+
+  h3 {
+    margin-top: 2px;
+    font-size: 0.875rem;
+    line-height: 1.35;
+  }
+
+  &__rating {
+    margin-top: 4px;
+    color: $color-muted;
+    font-size: 0.8125rem;
+  }
+
+  &__price {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    margin-top: 4px;
+    font-size: 0.875rem;
+    font-weight: 800;
+
+    del {
+      color: #a0a0a8;
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
+
+    span {
+      color: #e03a3a;
+      font-size: 0.8125rem;
+    }
+  }
+}
+
+.face-type-card,
+.brand-grid a,
+.curation-card,
+.ai-analyze-card,
+.app-cta,
+.partner-cta {
+  border-radius: 8px;
+}
+
+.brand-grid {
+  a {
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+  }
+}
