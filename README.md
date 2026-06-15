@@ -3,12 +3,46 @@
 - 과정명: 프론트엔드 13기 개발자 양성(Figma)
 - 기간: 2026/04/07 ~ 2026/08/21
 - 2차 프로젝트: 2026/05/29 ~ 2026/06/18
+- ROUNZ 사이트 리뉴얼을 주제로 한 HTML/CSS/JavaScript 기반 반응형 웹 프로젝트입니다.
 
-## 🔗 빠른 링크
+## 0. 작업 전 확인
 
-- ⚙️ 개발 컨벤션(노션) : [5팀 개발 컨벤션](https://app.notion.com/p/oreumi/5-36febaa8982b8066875ec4d2162785e0?source=copy_link)
-- 📑 기획서(피그마 슬라이드):
-- 🎨 디자인 원본(피그마):
+### 🔗 빠른 링크
+
+작업자는 아래 문서를 먼저 확인합니다.
+
+1. [개발 컨벤션](./docs/convention.md)
+2. [AI 작업 하네스](./docs/ai-harness.md)
+3. [작업 요청 템플릿](./docs/task-template.md)
+4. [QA 체크리스트](./docs/qa-checklist.md)
+5. [5팀 개발 컨벤션](https://app.notion.com/p/oreumi/5-36febaa8982b8066875ec4d2162785e0?source=copy_link)
+6. [기획서(피그마 슬라이드)](https://www.figma.com/slides/FhyEJe6nHTMdpvdEKmmlVE)
+7. [디자인 원본(피그마)](https://www.figma.com/design/0ZgyWF5d6fhEFIU3MJ2ife/rounz-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4-%EB%B6%84%EC%84%9D-%EB%B0%8F-%EB%94%94%EC%9E%90%EC%9D%B8?node-id=283-2&t=GBQ8OeKSfN4QywKd-1)
+
+### 핵심 규칙
+
+- `main` 브랜치와 `deploy` 브랜치에 직접 push하지 않습니다.
+- 작업은 `feat/`, `fix/`, `refactor/`, `chore/` 브랜치에서 진행합니다.
+- HTML에는 `css/style.css` 하나만 연결합니다.
+- `css/style.css`와 `css/style.css.map`은 직접 수정하지 않습니다.
+- 스타일 수정은 `scss/` 하위 파일에서 진행합니다.
+- 공통 기능을 수정하기 전에는 담당자 또는 팀원에게 공유합니다.
+
+## 기본 작업 흐름
+
+```txt
+개별 브랜치 생성 → 작업 → 자체 QA → PR 생성 → 코드 리뷰 → main 병합 → 안정화 후 deploy 반영
+```
+
+## 주요 문서 역할
+
+| 파일                               | 역할                                               |
+| ---------------------------------- | -------------------------------------------------- |
+| `docs/convention.md`               | 사람이 읽는 개발 컨벤션, 파일 구조, 작성 규칙      |
+| `docs/ai-harness.md`               | AI 작업 시 수정 범위와 금지 규칙을 제한하는 하네스 |
+| `docs/task-template.md`            | AI 또는 팀원에게 작업을 요청할 때 쓰는 양식        |
+| `docs/qa-checklist.md`             | 구현 완료 후 확인해야 할 검수 기준                 |
+| `.github/pull_request_template.md` | PR 작성 시 컨벤션 준수 여부 확인                   |
 
 ## 1. 프로젝트 개요
 
@@ -86,9 +120,6 @@
 - [ ] 발표 준비
 - [ ] 최종 발표
 
-
-
-
 ```mermaid
 gantt
     title ROUNZ 2차 프로젝트 일정
@@ -121,7 +152,6 @@ gantt
     디테일 및 반응형 구현, QA        :s3t5, 2026-06-15, 2d
     발표자료 제작, README.md 작성    :s3t6, 2026-06-17, 1d
 ```
-
 
 ## 2. 개발 환경 및 배포
 
@@ -270,4 +300,7 @@ est_fe_13_2st_project/
 
 [![기획서 미리보기](스크린샷)](링크 "피그마 슬라이드로 이동")
 [![디자인 미리보기](스크린샷)](링크 "피그마 디자인으로 이동")
+
+```
+
 ```
