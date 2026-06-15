@@ -1,0 +1,171 @@
+@use "../base/variables" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding-inline: 22px;
+  border-radius: 6px;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-1px);
+  }
+}
+
+.btn--primary {
+  color: $color-white;
+  background: $color-accent;
+}
+
+.btn--dark {
+  color: $color-white;
+  background: $color-black;
+}
+
+.btn--outline {
+  border: 1px solid rgba($color-black, 0.16);
+  color: $color-text;
+  background: $color-white;
+}
+
+.icon-button {
+  position: relative;
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 6px;
+  color: $color-text;
+  background: transparent;
+}
+
+.icon-symbol {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  color: currentColor;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+}
+
+.icon-search {
+  &::before {
+    top: 1px;
+    left: 1px;
+    width: 15px;
+    height: 15px;
+    border: 3px solid currentColor;
+    border-radius: 50%;
+  }
+
+  &::after {
+    right: 1px;
+    bottom: 2px;
+    width: 10px;
+    height: 3px;
+    border-radius: 999px;
+    background: currentColor;
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+}
+
+.icon-home {
+  &::before {
+    top: 1px;
+    left: 1px;
+    width: 20px;
+    height: 18px;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 42%, 82% 42%, 82% 100%, 18% 100%, 18% 42%, 0 42%);
+  }
+}
+
+.icon-grid {
+  &::before {
+    inset: 1px;
+    border: 3px solid currentColor;
+    border-radius: 3px;
+    background:
+      linear-gradient(currentColor 0 0) 50% 0 / 3px 100% no-repeat,
+      linear-gradient(currentColor 0 0) 0 50% / 100% 3px no-repeat;
+  }
+}
+
+.icon-user {
+  &::before {
+    top: 1px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border: 3px solid currentColor;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::after {
+    right: 2px;
+    bottom: 1px;
+    left: 2px;
+    height: 9px;
+    border: 3px solid currentColor;
+    border-bottom: 0;
+    border-radius: 999px 999px 0 0;
+  }
+}
+
+.icon-cart {
+  border: 3px solid currentColor;
+  border-top: 0;
+  border-radius: 3px 3px 5px 5px;
+  transform: translateY(4px);
+
+  &::before {
+    top: -8px;
+    left: 50%;
+    width: 12px;
+    height: 9px;
+    border: 3px solid currentColor;
+    border-bottom: 0;
+    border-radius: 999px 999px 0 0;
+    transform: translateX(-50%);
+  }
+}
+
+.hamburger-button {
+  gap: 5px;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+}
+
+.site-header {
+  .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .icon-search {
+    width: 24px;
+    height: 24px;
+  }
+}

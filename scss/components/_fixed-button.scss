@@ -1,0 +1,59 @@
+@use "../base/variables" as *;
+
+.fixed-chat-button {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + #{$bottom-nav-height});
+  z-index: 130;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 50%;
+  color: $color-white;
+  background: $color-black;
+  box-shadow: 0 14px 34px rgba($color-black, 0.24);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+
+  &::before {
+    width: 28px;
+    height: 22px;
+    border: 3px solid currentColor;
+    border-radius: 999px;
+  }
+
+  &::after {
+    right: 15px;
+    bottom: 16px;
+    width: 9px;
+    height: 9px;
+    border-right: 3px solid currentColor;
+    border-bottom: 3px solid currentColor;
+    transform: rotate(28deg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .fixed-chat-button {
+    right: 84px;
+    bottom: 72px;
+    width: 64px;
+    height: 64px;
+
+    &::before {
+      width: 32px;
+      height: 25px;
+    }
+
+    &::after {
+      right: 17px;
+      bottom: 18px;
+    }
+  }
+}

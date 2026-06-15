@@ -1,3 +1,22 @@
 // 폼 스타일
 
 // 입력 양식 경고 피드백
+@use "../base/variables" as *;
+
+.form-field {
+  display: grid;
+  gap: 8px;
+  color: $color-muted;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.form-field input {
+  width: 100%;
+  min-height: 46px;
+  padding-inline: 14px;
+  border: 1px solid $color-line;
+  border-radius: 6px;
+  color: $color-text;
+  background: $color-white;
+}

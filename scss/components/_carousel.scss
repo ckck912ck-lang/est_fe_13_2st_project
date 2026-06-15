@@ -1,9 +1,53 @@
-// 스와이퍼 스타일
+@use "../base/variables" as *;
 
-// 히어로 슬라이더
+.product-slider {
+  display: grid;
+  grid-auto-columns: minmax(160px, calc((100% - 8px) / 2));
+  grid-auto-flow: column;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
 
-// 상품 슬라이더
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-// 상품 상세 페이지 메인 이미지 슬라이더
+  > * {
+    scroll-snap-align: start;
+  }
+}
 
-// 상품 상세 페이지 썸네일 슬라이더
+.carousel-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.carousel-pagination button {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba($color-white, 0.7);
+}
+
+.carousel-pagination .is-active {
+  width: 36px;
+  background: $color-white;
+}
+
+@media (min-width: 768px) {
+  .product-slider {
+    grid-auto-columns: 240px;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-slider {
+    grid-auto-columns: 260px;
+    gap: 28px;
+  }
+}

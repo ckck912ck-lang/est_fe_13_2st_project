@@ -1,0 +1,25 @@
+@use "../base/variables" as *;
+
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + 67px);
+  z-index: 220;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: 12px 14px;
+  border-radius: 6px;
+  color: $color-white;
+  background: rgba($color-black, 0.92);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toast.is-active {
+  opacity: 1;
+}
+
+@media (min-width: 1280px) {
+  .toast {
+    bottom: 24px;
+  }
+}

@@ -1,5 +1,100 @@
-// 헤더1
+@use "../base/variables" as *;
 
-// 헤더2
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: $header-mobile;
+  border-bottom: 1px solid $color-line;
+  background: $color-white;
+}
 
-// 헤더3
+.site-header__inner {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: $inner-pc;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.site-header__logo {
+  justify-self: center;
+  font-size: 1.5rem;
+  letter-spacing: 0;
+}
+
+.site-header__nav,
+.site-header__login {
+  display: none;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.cart-badge {
+  display: inline-grid;
+  min-width: 16px;
+  height: 16px;
+  padding-inline: 4px;
+  place-items: center;
+  border-radius: 999px;
+  color: $color-white;
+  font-size: 0.6875rem;
+  line-height: 1;
+  background: $color-black;
+}
+
+.site-header__actions .cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+}
+
+@media (min-width: 1280px) {
+  .site-header {
+    height: $header-pc;
+  }
+
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+    padding-inline: 32px;
+  }
+
+  .hamburger-button {
+    display: none;
+  }
+
+  .site-header__logo {
+    justify-self: start;
+    font-size: 1.875rem;
+  }
+
+  .site-header__nav {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: 40px;
+    color: $color-muted;
+    font-weight: 700;
+  }
+
+  .site-header__nav a:hover,
+  .site-header__nav a:focus-visible {
+    color: $color-text;
+  }
+
+  .site-header__login {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding-inline: 14px;
+    color: $color-muted;
+    font-weight: 700;
+  }
+}
