@@ -1,8 +1,11 @@
+import { renderHeader } from "../modules/renderHeader.js";
 import { initSearch } from "../modules/search.js";
 
+// 메인 페이지 기능
+renderHeader("C");
 initSearch();
 
-// 메인 페이지 기능
+// 공통 헤더, A타입
 
 // 히어로 : 슬라이드
 

@@ -534,10 +534,22 @@
   }
 
   &__stars {
-    color: #c7a96e;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    color: $brand-primary;
     font-size: 0.875rem;
-    letter-spacing: 1px;
+    letter-spacing: 0;
   }
+}
+.star-icon {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.star-icon--empty {
+  color: $neutral-border;
 }
 
 .product-qna-section {

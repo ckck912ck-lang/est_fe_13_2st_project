@@ -1,7 +1,3 @@
-import { fetchData } from "/js/utils/fetchData.js";
-
-const data = await fetchData("/data/products.json");
-
 // 상품 데이터 1개를 매개변수로 받아 상품 카드 HTML 생성
 // 베스트/뉴/할인율 라벨을 조건에 따라 표시
 // 상품 상세 링크는 product-detail.html?id=${product.id} 형태로 연결
@@ -43,7 +39,7 @@ export function renderProductCard(product) {
                   </h3>
                 </div>
 
-                <p class="product-rating" aria-label="평점 ${product.rating !== 0 ? product.rating.toFixed(1) : "--"}점, 리뷰 ${product.reviewCount}개">
+                <p class="product-rating" aria-label="평점 ${product.rating && product.rating !== 0 ? product.rating.toFixed(1) : "--"}점, 리뷰 ${product.reviewCount}개">
                   <span aria-hidden="true" class="rating-star material-icons">star</span>
                   <span>${product.rating}</span>
                   <span>(${product.reviewCount})</span>
