@@ -4,9 +4,194 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>ROUNZ | 회원가입</title>
   </head>
-  <body>
-    <script type="module" src="js/pages/signup.js"></script>
+  <body data-signup-step="basic">
+    <a class="skip-link" href="#main">본문 바로가기</a>
+
+    <header class="signup-header">
+      <div class="signup-header__inner">
+        <a class="signup-header__back" href="login.html" aria-label="로그인 페이지로 돌아가기"></a>
+        <h1 class="signup-header__logo">
+          <a href="index.html">ROUNZ</a>
+        </h1>
+        <nav class="signup-header__actions" aria-label="빠른 메뉴">
+          <a class="signup-header__icon signup-header__icon--search" href="product-list.html" aria-label="검색"></a>
+          <a class="signup-header__icon signup-header__icon--bag" href="cart.html" aria-label="장바구니"></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="signup-page">
+      <section class="signup-flow" aria-labelledby="signup-title">
+        <header class="signup-flow__head">
+          <p class="signup-flow__eyebrow">JOIN ROUNZ</p>
+          <h2 id="signup-title" class="signup-flow__title">회원가입</h2>
+          <p class="signup-flow__description">
+            AI 가상 피팅과 얼굴형 추천을 더 편하게 이용해보세요.
+          </p>
+        </header>
+
+        <ol class="signup-steps" aria-label="회원가입 단계">
+          <li class="signup-steps__item signup-steps__item--basic">
+            <span>1</span>
+            기본 정보
+          </li>
+          <li class="signup-steps__item signup-steps__item--terms">
+            <span>2</span>
+            약관 동의
+          </li>
+        </ol>
+
+        <form class="signup-form" action="#" method="post">
+          <fieldset class="signup-form__step signup-form__step--basic">
+            <legend class="signup-form__legend">기본 정보 입력</legend>
+
+            <label class="signup-field" for="signup-email">
+              <span class="signup-field__label">이메일</span>
+              <input
+                id="signup-email"
+                name="email"
+                type="email"
+                placeholder="hello@example.com"
+                autocomplete="email"
+                required
+              />
+            </label>
+
+            <label class="signup-field" for="signup-password">
+              <span class="signup-field__label">비밀번호</span>
+              <input
+                id="signup-password"
+                name="password"
+                type="password"
+                placeholder="영문, 숫자 포함 8자 이상"
+                autocomplete="new-password"
+                required
+              />
+            </label>
+
+            <label class="signup-field" for="signup-password-confirm">
+              <span class="signup-field__label">비밀번호 확인</span>
+              <input
+                id="signup-password-confirm"
+                name="password-confirm"
+                type="password"
+                placeholder="비밀번호를 다시 입력하세요"
+                autocomplete="new-password"
+                required
+              />
+            </label>
+
+            <label class="signup-field" for="signup-name">
+              <span class="signup-field__label">이름</span>
+              <input
+                id="signup-name"
+                name="name"
+                type="text"
+                placeholder="홍길동"
+                autocomplete="name"
+                required
+              />
+            </label>
+
+            <label class="signup-field" for="signup-phone">
+              <span class="signup-field__label">휴대폰 번호</span>
+              <input
+                id="signup-phone"
+                name="phone"
+                type="tel"
+                placeholder="010-0000-0000"
+                autocomplete="tel"
+                required
+              />
+            </label>
+
+            <div class="signup-form__actions">
+              <a class="signup-button signup-button--primary" href="#terms-step">
+                다음 단계
+              </a>
+              <a class="signup-button signup-button--ghost" href="login.html">
+                이미 계정이 있어요
+              </a>
+            </div>
+          </fieldset>
+
+          <fieldset class="signup-form__step signup-form__step--terms" id="terms-step">
+            <legend class="signup-form__legend">약관 동의</legend>
+
+            <label class="signup-check signup-check--all">
+              <input type="checkbox" name="terms-all" />
+              <span class="signup-check__box" aria-hidden="true"></span>
+              <span class="signup-check__text">
+                <strong>전체 동의</strong>
+                <small>필수 및 선택 약관에 모두 동의합니다.</small>
+              </span>
+            </label>
+
+            <div class="signup-terms" aria-label="약관 동의 항목">
+              <label class="signup-check">
+                <input type="checkbox" name="terms-service" required />
+                <span class="signup-check__box" aria-hidden="true"></span>
+                <span class="signup-check__text">
+                  <strong>이용약관 동의</strong>
+                  <small>필수</small>
+                </span>
+                <a href="#" aria-label="이용약관 자세히 보기">보기</a>
+              </label>
+
+              <label class="signup-check">
+                <input type="checkbox" name="terms-privacy" required />
+                <span class="signup-check__box" aria-hidden="true"></span>
+                <span class="signup-check__text">
+                  <strong>개인정보 수집 및 이용 동의</strong>
+                  <small>필수</small>
+                </span>
+                <a href="#" aria-label="개인정보 수집 및 이용 약관 자세히 보기">보기</a>
+              </label>
+
+              <label class="signup-check">
+                <input type="checkbox" name="terms-age" required />
+                <span class="signup-check__box" aria-hidden="true"></span>
+                <span class="signup-check__text">
+                  <strong>만 14세 이상입니다</strong>
+                  <small>필수</small>
+                </span>
+              </label>
+
+              <label class="signup-check">
+                <input type="checkbox" name="terms-marketing" />
+                <span class="signup-check__box" aria-hidden="true"></span>
+                <span class="signup-check__text">
+                  <strong>마케팅 정보 수신 동의</strong>
+                  <small>선택</small>
+                </span>
+              </label>
+            </div>
+
+            <div class="signup-form__actions">
+              <button class="signup-button signup-button--primary" type="submit">
+                가입 완료
+              </button>
+              <a class="signup-button signup-button--ghost" href="signup.html">
+                이전 단계
+              </a>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer class="signup-footer">
+      <div class="signup-footer__inner">
+        <strong>ROUNZ</strong>
+        <p>AI 기반 가상피팅과 얼굴형 분석으로 나에게 꼭 맞는 안경을 찾아드립니다.</p>
+        <nav class="signup-footer__links" aria-label="회원가입 지원 메뉴">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">고객센터</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
