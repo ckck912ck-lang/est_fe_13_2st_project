@@ -632,33 +632,6 @@ body[data-cart-state="filled"] {
   }
 }
 
-.cart-bottom-nav {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 20;
-  display: grid;
-  min-height: 64px;
-  align-items: center;
-  grid-template-columns: repeat(5, 1fr);
-  border-top: 1px solid var(--cart-color-line);
-  background: var(--cart-color-surface);
-
-  a {
-    display: grid;
-    min-height: 64px;
-    place-items: center;
-    color: var(--cart-color-muted);
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-
-  [aria-current="page"] {
-    color: var(--cart-color-text);
-  }
-}
-
 @media (min-width: 768px) {
   .cart-header {
     &__inner {
