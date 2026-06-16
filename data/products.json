@@ -22,7 +22,7 @@
       "stock": 80,
       "likeCount": 3,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024881",
       "for-face-shape": {
         "1st": "square",
@@ -55,7 +55,7 @@
       "stock": 0,
       "likeCount": 5,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024880",
       "for-face-shape": {
         "1st": "round",
@@ -88,7 +88,7 @@
       "stock": 59,
       "likeCount": 2,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024879",
       "for-face-shape": {
         "1st": "oval",
@@ -120,7 +120,7 @@
       "stock": 17,
       "likeCount": 5,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024905",
       "for-face-shape": {
         "1st": "oval",
@@ -152,7 +152,7 @@
       "stock": 51,
       "likeCount": 5,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024906",
       "for-face-shape": {
         "1st": "oval",
@@ -184,7 +184,7 @@
       "stock": 43,
       "likeCount": 3,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024907",
       "for-face-shape": {
         "1st": "oval",
@@ -217,7 +217,7 @@
       "stock": 64,
       "likeCount": 57,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005667",
       "for-face-shape": {
         "1st": "oval",
@@ -250,7 +250,7 @@
       "stock": 22,
       "likeCount": 4,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005668",
       "for-face-shape": {
         "1st": "oval",
@@ -283,7 +283,7 @@
       "stock": 41,
       "likeCount": 3,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3020245",
       "for-face-shape": {
         "1st": "oval",
@@ -316,7 +316,7 @@
       "stock": 35,
       "likeCount": 12,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005669",
       "for-face-shape": {
         "1st": "oval",
@@ -349,7 +349,7 @@
       "stock": 45,
       "likeCount": 10,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007597",
       "for-face-shape": {
         "1st": "oval",
@@ -382,7 +382,7 @@
       "stock": 72,
       "likeCount": 150,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024566",
       "for-face-shape": {
         "1st": "oval",
@@ -415,7 +415,7 @@
       "stock": 61,
       "likeCount": 52,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024568",
       "for-face-shape": {
         "1st": "oval",
@@ -448,7 +448,7 @@
       "stock": 19,
       "likeCount": 10,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007599",
       "for-face-shape": {
         "1st": "oval",
@@ -481,7 +481,7 @@
       "stock": 56,
       "likeCount": 22,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024561",
       "for-face-shape": {
         "1st": "oval",
@@ -514,7 +514,7 @@
       "stock": 49,
       "likeCount": 45,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010432",
       "for-face-shape": {
         "1st": "oval",
@@ -547,7 +547,7 @@
       "stock": 0,
       "likeCount": 31,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010433",
       "for-face-shape": {
         "1st": "oval",
@@ -580,7 +580,7 @@
       "stock": 50,
       "likeCount": 53,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3017140",
       "for-face-shape": {
         "1st": "oval",
@@ -613,7 +613,7 @@
       "stock": 0,
       "likeCount": 963,
       "reviewCount": 20,
-      "rating": 4.85,
+      "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006650",
       "for-face-shape": {
         "1st": "oval",
@@ -646,7 +646,7 @@
       "stock": 0,
       "likeCount": 125,
       "reviewCount": 2,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3017239",
       "for-face-shape": {
         "1st": "oval",
@@ -679,7 +679,7 @@
       "stock": 0,
       "likeCount": 3578,
       "reviewCount": 30,
-      "rating": 4.75,
+      "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006741",
       "for-face-shape": {
         "1st": "oval",
@@ -712,7 +712,7 @@
       "stock": 0,
       "likeCount": 8041,
       "reviewCount": 91,
-      "rating": 4.75,
+      "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006732",
       "for-face-shape": {
         "1st": "oval",
@@ -745,7 +745,7 @@
       "stock": 0,
       "likeCount": 1925,
       "reviewCount": 16,
-      "rating": 4.85,
+      "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008154",
       "for-face-shape": {
         "1st": "oval",
@@ -778,7 +778,7 @@
       "stock": 6,
       "likeCount": 344,
       "reviewCount": 6,
-      "rating": 4.85,
+      "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007726",
       "for-face-shape": {
         "1st": "square",
@@ -811,7 +811,7 @@
       "stock": 42,
       "likeCount": 1723,
       "reviewCount": 12,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008225",
       "for-face-shape": {
         "1st": "oval",
@@ -844,7 +844,7 @@
       "stock": 57,
       "likeCount": 110,
       "reviewCount": 3,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3016451",
       "for-face-shape": {
         "1st": "oval",
@@ -877,7 +877,7 @@
       "stock": 100,
       "likeCount": 77,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007973",
       "for-face-shape": {
         "1st": "oval",
@@ -910,7 +910,7 @@
       "stock": 1,
       "likeCount": 501,
       "reviewCount": 5,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005906",
       "for-face-shape": {
         "1st": "oval",
@@ -943,7 +943,7 @@
       "stock": 0,
       "likeCount": 171,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009109",
       "for-face-shape": {
         "1st": "oval",
@@ -976,7 +976,7 @@
       "stock": 70,
       "likeCount": 127,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3016588",
       "for-face-shape": {
         "1st": "oval",
@@ -1009,7 +1009,7 @@
       "stock": 53,
       "likeCount": 176,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005908",
       "for-face-shape": {
         "1st": "oval",
@@ -1042,7 +1042,7 @@
       "stock": 13,
       "likeCount": 22,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3020253",
       "for-face-shape": {
         "1st": "oval",
@@ -1075,7 +1075,7 @@
       "stock": 61,
       "likeCount": 5,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024945",
       "for-face-shape": {
         "1st": "oval",
@@ -1108,7 +1108,7 @@
       "stock": 12,
       "likeCount": 44,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009511",
       "for-face-shape": {
         "1st": "oval",
@@ -1141,7 +1141,7 @@
       "stock": 2,
       "likeCount": 32,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011299",
       "for-face-shape": {
         "1st": "oval",
@@ -1174,7 +1174,7 @@
       "stock": 78,
       "likeCount": 44,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3014415",
       "for-face-shape": {
         "1st": "oval",
@@ -1207,7 +1207,7 @@
       "stock": 47,
       "likeCount": 32,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010440",
       "for-face-shape": {
         "1st": "oval",
@@ -1240,7 +1240,7 @@
       "stock": 41,
       "likeCount": 10,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007603",
       "for-face-shape": {
         "1st": "oval",
@@ -1273,7 +1273,7 @@
       "stock": 11,
       "likeCount": 752,
       "reviewCount": 5,
-      "rating": 4.85,
+      "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009710",
       "for-face-shape": {
         "1st": "oval",
@@ -1306,7 +1306,7 @@
       "stock": 61,
       "likeCount": 500,
       "reviewCount": 2,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012065",
       "for-face-shape": {
         "1st": "oval",
@@ -1339,7 +1339,7 @@
       "stock": 46,
       "likeCount": 146,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009138",
       "for-face-shape": {
         "1st": "oval",
@@ -1372,7 +1372,7 @@
       "stock": 41,
       "likeCount": 175,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009139",
       "for-face-shape": {
         "1st": "oval",
@@ -1405,7 +1405,7 @@
       "stock": 19,
       "likeCount": 1967,
       "reviewCount": 8,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=180135",
       "for-face-shape": {
         "1st": "oval",
@@ -1438,7 +1438,7 @@
       "stock": 50,
       "likeCount": 57,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3013490",
       "for-face-shape": {
         "1st": "oval",
@@ -1471,7 +1471,7 @@
       "stock": 70,
       "likeCount": 595,
       "reviewCount": 4,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006353",
       "for-face-shape": {
         "1st": "oval",
@@ -1504,7 +1504,7 @@
       "stock": 63,
       "likeCount": 22442,
       "reviewCount": 49,
-      "rating": 4.95,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011099",
       "for-face-shape": {
         "1st": "oval",
@@ -1537,7 +1537,7 @@
       "stock": 55,
       "likeCount": 171,
       "reviewCount": 2,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012890",
       "for-face-shape": {
         "1st": "oval",
@@ -1570,7 +1570,7 @@
       "stock": 67,
       "likeCount": 101,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012866",
       "for-face-shape": {
         "1st": "oval",
@@ -1603,7 +1603,7 @@
       "stock": 56,
       "likeCount": 51,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012872",
       "for-face-shape": {
         "1st": "oval",
@@ -1636,7 +1636,7 @@
       "stock": 48,
       "likeCount": 43,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012918",
       "for-face-shape": {
         "1st": "oval",
@@ -1669,7 +1669,7 @@
       "stock": 0,
       "likeCount": 419,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003578",
       "for-face-shape": {
         "1st": "oval",
@@ -1702,7 +1702,7 @@
       "stock": 54,
       "likeCount": 2047,
       "reviewCount": 9,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=179230",
       "for-face-shape": {
         "1st": "oval",
@@ -1735,7 +1735,7 @@
       "stock": 58,
       "likeCount": 774,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=2566892",
       "for-face-shape": {
         "1st": "oval",
@@ -1768,7 +1768,7 @@
       "stock": 0,
       "likeCount": 143,
       "reviewCount": 5,
-      "rating": 4.45,
+      "rating": 4.5,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003575",
       "for-face-shape": {
         "1st": "oval",
@@ -1801,7 +1801,7 @@
       "stock": 61,
       "likeCount": 80,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003738",
       "for-face-shape": {
         "1st": "oval",
@@ -1834,7 +1834,7 @@
       "stock": 81,
       "likeCount": 409,
       "reviewCount": 2,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003745",
       "for-face-shape": {
         "1st": "oval",
@@ -1867,7 +1867,7 @@
       "stock": 0,
       "likeCount": 85,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003725",
       "for-face-shape": {
         "1st": "oval",
@@ -1900,7 +1900,7 @@
       "stock": 0,
       "likeCount": 55,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003723",
       "for-face-shape": {
         "1st": "oval",
@@ -1933,7 +1933,7 @@
       "stock": 12,
       "likeCount": 748,
       "reviewCount": 6,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004640",
       "for-face-shape": {
         "1st": "oval",
@@ -1966,7 +1966,7 @@
       "stock": 42,
       "likeCount": 457,
       "reviewCount": 3,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004642",
       "for-face-shape": {
         "1st": "oval",
@@ -1999,7 +1999,7 @@
       "stock": 44,
       "likeCount": 610,
       "reviewCount": 3,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004641",
       "for-face-shape": {
         "1st": "oval",
@@ -2032,7 +2032,7 @@
       "stock": 24,
       "likeCount": 425,
       "reviewCount": 6,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004644",
       "for-face-shape": {
         "1st": "oval",
@@ -2065,7 +2065,7 @@
       "stock": 52,
       "likeCount": 369,
       "reviewCount": 10,
-      "rating": 4.95,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007736",
       "for-face-shape": {
         "1st": "square",
@@ -2098,7 +2098,7 @@
       "stock": 0,
       "likeCount": 169,
       "reviewCount": 6,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007725",
       "for-face-shape": {
         "1st": "square",
@@ -2131,7 +2131,7 @@
       "stock": 82,
       "likeCount": 171,
       "reviewCount": 2,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007737",
       "for-face-shape": {
         "1st": "square",
@@ -2164,7 +2164,7 @@
       "stock": 59,
       "likeCount": 293,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3018867",
       "for-face-shape": {
         "1st": "square",
@@ -2197,7 +2197,7 @@
       "stock": 64,
       "likeCount": 292,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3018869",
       "for-face-shape": {
         "1st": "square",
@@ -2229,7 +2229,7 @@
       "stock": 89,
       "likeCount": 163,
       "reviewCount": 2,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011367",
       "for-face-shape": {
         "1st": "oval",
@@ -2261,7 +2261,7 @@
       "stock": 21,
       "likeCount": 88,
       "reviewCount": 2,
-      "rating": 4.55,
+      "rating": 4.5,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011373",
       "for-face-shape": {
         "1st": "oval",
@@ -2294,7 +2294,7 @@
       "stock": 90,
       "likeCount": 1292,
       "reviewCount": 4,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008598",
       "for-face-shape": {
         "1st": "oval",
@@ -2327,7 +2327,7 @@
       "stock": 66,
       "likeCount": 204,
       "reviewCount": 9,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008610",
       "for-face-shape": {
         "1st": "oval",
@@ -2360,7 +2360,7 @@
       "stock": 57,
       "likeCount": 348,
       "reviewCount": 3,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008588",
       "for-face-shape": {
         "1st": "square",
@@ -2393,7 +2393,7 @@
       "stock": 23,
       "likeCount": 264,
       "reviewCount": 4,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008584",
       "for-face-shape": {
         "1st": "oval",
@@ -2426,7 +2426,7 @@
       "stock": 95,
       "likeCount": 50,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011376",
       "for-face-shape": {
         "1st": "oval",
@@ -2459,7 +2459,7 @@
       "stock": 93,
       "likeCount": 121,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011375",
       "for-face-shape": {
         "1st": "oval",
@@ -2492,7 +2492,7 @@
       "stock": 0,
       "likeCount": 131,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010919",
       "for-face-shape": {
         "1st": "oval",
@@ -2525,7 +2525,7 @@
       "stock": 82,
       "likeCount": 22,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024878",
       "for-face-shape": {
         "1st": "oval",
@@ -2558,7 +2558,7 @@
       "stock": 3,
       "likeCount": 72,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011387",
       "for-face-shape": {
         "1st": "oval",
@@ -2591,7 +2591,7 @@
       "stock": 63,
       "likeCount": 8,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024875",
       "for-face-shape": {
         "1st": "oval",
@@ -2624,7 +2624,7 @@
       "stock": 92,
       "likeCount": 17,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3023318",
       "for-face-shape": {
         "1st": "round",
@@ -2657,7 +2657,7 @@
       "stock": 75,
       "likeCount": 263,
       "reviewCount": 9,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005613",
       "for-face-shape": {
         "1st": "oval",
@@ -2690,7 +2690,7 @@
       "stock": 91,
       "likeCount": 80,
       "reviewCount": 4,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005421",
       "for-face-shape": {
         "1st": "oval",
@@ -2723,7 +2723,7 @@
       "stock": 16,
       "likeCount": 31,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005584",
       "for-face-shape": {
         "1st": "oval",
@@ -2756,7 +2756,7 @@
       "stock": 25,
       "likeCount": 5,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3025476",
       "for-face-shape": {
         "1st": "oval",
@@ -2789,7 +2789,7 @@
       "stock": 0,
       "likeCount": 3,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3025176",
       "for-face-shape": {
         "1st": "oval",
@@ -2822,7 +2822,7 @@
       "stock": 70,
       "likeCount": 3,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3025141",
       "for-face-shape": {
         "1st": "oval",
@@ -2855,7 +2855,7 @@
       "stock": 29,
       "likeCount": 35,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005640",
       "for-face-shape": {
         "1st": "oval",
@@ -2888,7 +2888,7 @@
       "stock": 41,
       "likeCount": 5,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005641",
       "for-face-shape": {
         "1st": "oval",
@@ -2921,7 +2921,7 @@
       "stock": 65,
       "likeCount": 60,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005642",
       "for-face-shape": {
         "1st": "oval",
@@ -2954,7 +2954,7 @@
       "stock": 88,
       "likeCount": 6,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005728",
       "for-face-shape": {
         "1st": "oval",
@@ -2987,7 +2987,7 @@
       "stock": 55,
       "likeCount": 1,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005729",
       "for-face-shape": {
         "1st": "oval",
@@ -3020,7 +3020,7 @@
       "stock": 29,
       "likeCount": 6,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010244",
       "for-face-shape": {
         "1st": "oval",
@@ -3053,7 +3053,7 @@
       "stock": 6,
       "likeCount": 5,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024584",
       "for-face-shape": {
         "1st": "oval",
@@ -3086,7 +3086,7 @@
       "stock": 86,
       "likeCount": 1,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024579",
       "for-face-shape": {
         "1st": "oval",
@@ -3119,7 +3119,7 @@
       "stock": 18,
       "likeCount": 3,
       "reviewCount": 0,
-      "rating": 0,
+      "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024580",
       "for-face-shape": {
         "1st": "oval",
@@ -3152,7 +3152,7 @@
       "stock": 14,
       "likeCount": 45,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3002940",
       "for-face-shape": {
         "1st": "oval",
@@ -3185,7 +3185,7 @@
       "stock": 9,
       "likeCount": 68,
       "reviewCount": 2,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004107",
       "for-face-shape": {
         "1st": "oval",
@@ -3218,7 +3218,7 @@
       "stock": 74,
       "likeCount": 28,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005545",
       "for-face-shape": {
         "1st": "oval",
@@ -3251,7 +3251,7 @@
       "stock": 65,
       "likeCount": 659,
       "reviewCount": 30,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3016693",
       "for-face-shape": {
         "1st": "oval",
@@ -3284,7 +3284,7 @@
       "stock": 68,
       "likeCount": 233,
       "reviewCount": 1,
-      "rating": 55,
+      "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3019193",
       "for-face-shape": {
         "1st": "oval",
