@@ -40,7 +40,7 @@
           </button>
           <a class="icon-button" href="cart.html" aria-label="장바구니">
             <span class="icon-symbol icon-cart" aria-hidden="true"></span>
-            <span class="cart-badge" aria-label="장바구니 상품 수">0</span>
+            <span class="cart-badge" data-render="cart-count">0</span>
           </a>
           <a class="site-header__login" href="login.html">로그인</a>
         </div>
@@ -52,6 +52,52 @@
         </nav>
       </div>
     </header>
+
+    <aside
+      class="hamburger-nav"
+      id="hamburger-nav"
+      aria-label="전체 메뉴"
+      data-component="hamburger-nav"
+      hidden
+    >
+      <div class="hamburger-nav__head">
+        <strong>ROUNZ</strong>
+        <button
+          type="button"
+          class="icon-button"
+          aria-label="전체 메뉴 닫기"
+          data-action="close-menu"
+        >
+          ×
+        </button>
+      </div>
+      <nav class="hamburger-nav__quick" aria-label="빠른 메뉴">
+        <a href="index.html">홈</a>
+        <a href="product-list.html" aria-current="page">상품</a>
+        <a href="cart.html">장바구니</a>
+        <a href="login.html">로그인</a>
+      </nav>
+      <nav class="hamburger-nav__section" aria-label="카테고리">
+        <h2>카테고리</h2>
+        <a href="product-list.html">전체 상품</a>
+        <a href="product-list.html?category=glasses">안경</a>
+        <a href="product-list.html?category=sunglasses">선글라스</a>
+        <a href="product-list.html?category=clip-on">클립온</a>
+        <a href="product-list.html?category=smart">스마트 안경</a>
+      </nav>
+      <nav class="hamburger-nav__section" aria-label="브랜드">
+        <h2>브랜드</h2>
+        <a href="product-list.html?brand=carin">CARIN</a>
+        <a href="product-list.html?brand=gentle-monster">GENTLE MONSTER</a>
+        <a href="product-list.html?brand=lindberg">LINDBERG</a>
+        <a href="product-list.html?brand=ray-ban">RAY-BAN</a>
+        <a href="product-list.html?brand=moscot">MOSCOT</a>
+      </nav>
+      <div class="hamburger-nav__service">
+        <a href="#partner-store">파트너 안경원 찾기</a>
+        <a href="tel:15880000">고객센터 1588-0000</a>
+      </div>
+    </aside>
 
     <main id="main" class="cart-page">
       <section class="cart-page__state cart-page__state--empty" aria-labelledby="cart-empty-title">
@@ -149,29 +195,43 @@
         <div class="cart-page__layout">
           <section class="cart-items" aria-labelledby="cart-filled-title">
             <div class="cart-section-heading">
-              <h2 id="cart-filled-title">장바구니 <span>1</span></h2>
+              <h2 id="cart-filled-title">장바구니 <span class="cart-count-text" data-render="cart-count">1</span></h2>
+              <p data-render="cart-total-count">총 1개의 상품</p>
             </div>
 
-            <article class="cart-item">
-              <a
-                class="cart-item__media"
-                href="product-detail.html"
-                aria-label="CARIN OSLO 01 상품 상세 보기"
-              ></a>
-              <div class="cart-item__content">
-                <p class="cart-item__brand">CARIN</p>
-                <h3 class="cart-item__name">
-                  <a href="product-detail.html">OSLO 01</a>
-                </h3>
-                <p class="cart-item__option">색상: Black / 수량: 1개</p>
-                <p class="cart-item__price">198,000원</p>
-                <div class="cart-item__actions" aria-label="상품 수량">
-                  <button type="button" aria-label="수량 감소">−</button>
-                  <span>1</span>
-                  <button type="button" aria-label="수량 증가">+</button>
+            <div class="cart-select-bar">
+              <label>
+                <input type="checkbox" data-action="select-all" />
+                <span>전체선택 <em data-render="cart-selected-count">(0/0)</em></span>
+              </label>
+              <button type="button" data-action="remove-selected">선택삭제</button>
+            </div>
+
+            <div class="cart-items__list" data-render="cart-items">
+            <!--
+              장바구니 상품 목록 템플릿
+              <article class="cart-item">
+                <a
+                  class="cart-item__media"
+                  href="product-detail.html"
+                  aria-label="CARIN OSLO 01 상품 상세 보기"
+                ></a>
+                <div class="cart-item__content">
+                  <p class="cart-item__brand">CARIN</p>
+                  <h3 class="cart-item__name">
+                    <a href="product-detail.html">OSLO 01</a>
+                  </h3>
+                  <p class="cart-item__option">색상: Black / 수량: 1개</p>
+                  <p class="cart-item__price">198,000원</p>
+                  <div class="cart-item__actions" aria-label="상품 수량">
+                    <button type="button" aria-label="수량 감소">−</button>
+                    <span>1</span>
+                    <button type="button" aria-label="수량 증가">+</button>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            -->
+            </div>
           </section>
 
           <aside class="cart-summary" aria-labelledby="cart-summary-title">
@@ -179,15 +239,15 @@
             <dl class="cart-summary__list">
               <div>
                 <dt>상품 금액</dt>
-                <dd>198,000원</dd>
+                <dd data-render="cart-subtotal">198,000원</dd>
               </div>
               <div>
                 <dt>배송비</dt>
-                <dd>무료</dd>
+                <dd data-render="cart-shipping">무료</dd>
               </div>
               <div class="cart-summary__total">
                 <dt>총 결제 금액</dt>
-                <dd>198,000원</dd>
+                <dd data-render="cart-total">198,000원</dd>
               </div>
               <div>
                 <dt>배송 예정</dt>
@@ -285,7 +345,7 @@
       aria-label="하단 네비게이션"
       data-component="bottom-nav"
     >
-      <a href="index.html" aria-current="page">
+      <a href="index.html">
         <span class="icon-symbol icon-home" aria-hidden="true"></span>
         홈
       </a>
@@ -297,11 +357,11 @@
         <span class="icon-symbol icon-search" aria-hidden="true"></span>
         검색
       </a>
-      <a href="cart.html">
+      <a href="cart.html" aria-current="page">
         <span class="icon-symbol icon-cart" aria-hidden="true"></span>
         <span
           class="cart-badge"
-          aria-label="장바구니에 추가된 상품 수"
+          aria-label="장바구니에 추가된 상품 수" data-render="cart-count"
           >2</span
         >
         장바구니
@@ -311,5 +371,9 @@
         내정보
       </a>
     </nav>
+
+    <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
+
+    <script type="module" src="./js/pages/cart.js"></script>
   </body>
 </html>
