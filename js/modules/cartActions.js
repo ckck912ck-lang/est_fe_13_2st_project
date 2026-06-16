@@ -109,9 +109,9 @@ function createCartItemTemplate(cartProduct) {
         <p class="cart-item__price">${formattedPrice}</p>
         <div class="cart-item__bottom">
           <div class="cart-item__actions" aria-label="상품 수량">
-            <button type="button" data-action="cart-decrease" data-product-id="${productId}" aria-label="수량 감소">−</button>
+            <button type="button" data-action="cart-decrease" aria-label="수량 감소">−</button>
             <span>${quantity}</span>
-            <button type="button" data-action="cart-increase" data-product-id="${productId}" aria-label="수량 증가">+</button>
+            <button type="button" data-action="cart-increase" aria-label="수량 증가">+</button>
           </div>
         </div>
       </div>
@@ -119,7 +119,6 @@ function createCartItemTemplate(cartProduct) {
         type="button"
         class="cart-item__remove"
         data-action="cart-remove"
-        data-product-id="${productId}"
         aria-label="${title} 삭제"
       >
         <span>삭제</span>
@@ -129,25 +128,187 @@ function createCartItemTemplate(cartProduct) {
 }
 
 // 요약 금액 렌더링
-function renderCartSummary(cartProducts) {}
+function renderCartSummary(cartProducts) {
+  const subtotalElement = document.querySelector('[data-render="cart-subtotal"]');
+  const shippingElement = document.querySelector('[data-render="cart-shipping"]');
+  const totalElement = document.querySelector('[data-render="cart-total"]');
+
+  const subtotal = cartProducts.reduce((total, product) => {
+    if (!product.selected) {
+      return total;
+    }
+
+    return total + product.price * product.quantity;
+  }, 0);
+
+  const shippingFee = 0;
+  const total = subtotal + shippingFee;
+
+  if (subtotalElement) {
+    subtotalElement.textContent = formatPrice(subtotal);
+  }
+
+  if (shippingElement) {
+    shippingElement.textContent = shippingFee === 0 ? "무료" : formatPrice(shippingFee);
+  }
+
+  if (totalElement) {
+    totalElement.textContent = formatPrice(total);
+  }
+}
 
 // 카운트 렌더링
-function renderCartCounts(cartProducts) {}
+function renderCartCounts(cartProducts) {
+  const totalCountElement = document.querySelector('[data-render="cart-total-count"]');
+  const selectedCountElement = document.querySelector('[data-render="cart-selected-count"]');
+  const selectAllElement = document.querySelector('[data-action="cart-select-all"]');
+
+  const totalCount = cartProducts.length;
+  const selectedCount = cartProducts.filter(product => product.selected).length;
+
+  if (totalCountElement) {
+    totalCountElement.textContent = `총 ${totalCount}개의 상품`;
+  }
+
+  if (selectedCountElement) {
+    selectedCountElement.textContent = `(${selectedCount}/${totalCount})`;
+  }
+
+  if (selectAllElement) {
+    selectAllElement.checked = totalCount > 0 && selectedCount === totalCount;
+  }
+}
 
 // 이벤트 연결
-function bindCartEvents(products) {}
+function bindCartEvents(products) {
+  const cartItemsContainer = document.querySelector('[data-render="cart-items"]');
+  const selectAllElement = document.querySelector('[data-action="cart-select-all"]');
+  const removeSelectedButton = document.querySelector('[data-action="cart-remove-selected"]');
+
+  if (cartItemsContainer) {
+    cartItemsContainer.addEventListener("click", event => {
+      handleCartItemClick(event, products);
+    });
+
+    cartItemsContainer.addEventListener("change", event => {
+      handleCartItemChange(event, products);
+    });
+  }
+
+  if (selectAllElement) {
+    selectAllElement.addEventListener("change", event => {
+      updateAllCartItemsSelected(event.target.checked);
+      renderCartPage(products);
+    });
+  }
+
+  if (removeSelectedButton) {
+    removeSelectedButton.addEventListener("click", () => {
+      handleRemoveSelected(products);
+    });
+  }
+}
 
 // 상품 액션 처리
-function handleCartItemClick(event, products) {}
+function handleCartItemClick(event, products) {
+  const actionElement = event.target.closest("[data-action]");
+
+  if (!actionElement) {
+    return;
+  }
+
+  const cartItemElement = actionElement.closest("[data-product-id]");
+
+  if (!cartItemElement) {
+    return;
+  }
+
+  const productId = cartItemElement.dataset.productId;
+  const cartItems = getCartItems();
+  const cartItem = cartItems.find(item => item.productId === productId);
+
+  if (!cartItem) {
+    return;
+  }
+
+  const action = actionElement.dataset.action;
+
+  if (action === "cart-increase") {
+    updateCartItemQuantity(productId, cartItem.quantity + 1);
+    renderCartPage(products);
+    return;
+  }
+
+  if (action === "cart-decrease") {
+    const nextQuantity = Math.max(1, cartItem.quantity - 1);
+    updateCartItemQuantity(productId, nextQuantity);
+    renderCartPage(products);
+    return;
+  }
+
+  if (action === "cart-remove") {
+    removeCartItem(productId);
+    showToast("상품이 장바구니에서 삭제되었습니다.");
+    renderCartPage(products);
+  }
+}
 
 // 선택 상태 처리
-function handleCartItemChange(event, products) {}
+function handleCartItemChange(event, products) {
+  const actionElement = event.target.closest("[data-action]");
+
+  if (!actionElement) {
+    return;
+  }
+
+  if (actionElement.dataset.action !== "cart-select-item") {
+    return;
+  }
+
+  const cartItemElement = actionElement.closest("[data-product-id]");
+
+  if (!cartItemElement) {
+    return;
+  }
+
+  const productId = cartItemElement.dataset.productId;
+
+  updateCartItemSelected(productId, actionElement.checked);
+  renderCartPage(products);
+}
 
 // 선택 삭제 처리
-function handleRemoveSelected(products) {}
+function handleRemoveSelected(products) {
+  const cartItems = getCartItems();
+  const hasSelectedItem = cartItems.some(item => item.selected);
+
+  if (!hasSelectedItem) {
+    showToast("선택된 상품이 없습니다.");
+    return;
+  }
+
+  removeSelectedCartItems();
+  showToast("선택한 상품이 삭제되었습니다.");
+  renderCartPage(products);
+}
 
 // 상태 전환
-function updateCartState(cartProducts) {}
+function updateCartState(cartProducts) {
+  const emptyStateElement = document.querySelector(".cart-page__state--empty");
+  const filledStateElement = document.querySelector(".cart-page__state--filled");
+
+  const isEmpty = cartProducts.length === 0;
+
+  document.body.dataset.cartState = isEmpty ? "empty" : "filled";
+
+  if (emptyStateElement) {
+    emptyStateElement.hidden = !isEmpty;
+  }
+
+  if (filledStateElement) {
+    filledStateElement.hidden = isEmpty;
+  }
+}
 
 // 가격 포맷
 function formatPrice(price) {
