@@ -4,9 +4,133 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>ROUNZ | 로그인</title>
   </head>
   <body>
-    <script type="module" src="js/pages/login.js"></script>
+    <a class="skip-link" href="#main">본문 바로가기</a>
+
+    <header class="login-header">
+      <div class="login-header__inner">
+        <a class="login-header__menu" href="index.html" aria-label="홈으로 이동"></a>
+        <h1 class="login-header__logo">
+          <a href="index.html">ROUNZ</a>
+        </h1>
+        <nav class="login-header__actions" aria-label="빠른 메뉴">
+          <a
+            class="login-header__icon login-header__icon--search"
+            href="product-list.html"
+            aria-label="검색"
+          ></a>
+          <a
+            class="login-header__icon login-header__icon--bag"
+            href="cart.html"
+            aria-label="장바구니"
+          >
+            <span class="login-header__badge">1</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="login-page">
+      <a class="login-page__back" href="index.html" aria-label="이전 페이지로 돌아가기"></a>
+
+      <section class="login-panel" aria-labelledby="login-title">
+        <header class="login-panel__brand">
+          <p class="login-panel__eyebrow">WELCOME BACK</p>
+          <h2 id="login-title">ROUNZ</h2>
+          <p>나에게 맞는 안경을 찾아드립니다</p>
+        </header>
+
+        <section class="login-social" aria-labelledby="social-login-title">
+          <h3 id="social-login-title" class="sr-only">소셜 로그인</h3>
+          <a class="login-social__button login-social__button--kakao" href="#">
+            <span aria-hidden="true">●</span>
+            카카오로 로그인
+          </a>
+          <a class="login-social__button login-social__button--naver" href="#">
+            <span aria-hidden="true">N</span>
+            네이버로 로그인
+          </a>
+          <a class="login-social__button login-social__button--apple" href="#">
+            <span aria-hidden="true">●</span>
+            Apple로 로그인
+          </a>
+          <a class="login-social__button login-social__button--google" href="#">
+            <span aria-hidden="true">G</span>
+            Google로 로그인
+          </a>
+        </section>
+
+        <div class="login-divider" aria-hidden="true">
+          <span>또는</span>
+        </div>
+
+        <form class="login-form" action="#" method="post">
+          <label class="login-field" for="login-email">
+            <span class="login-field__label">이메일</span>
+            <input
+              id="login-email"
+              name="email"
+              type="email"
+              placeholder="hello@example.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label class="login-field" for="login-password">
+            <span class="login-field__label">비밀번호</span>
+            <span class="login-field__control">
+              <input
+                id="login-password"
+                name="password"
+                type="password"
+                placeholder="********"
+                autocomplete="current-password"
+                required
+              />
+              <span class="login-field__icon" aria-hidden="true"></span>
+            </span>
+          </label>
+
+          <a class="login-form__help" href="#">비밀번호 찾기</a>
+
+          <div class="login-form__actions">
+            <button class="login-button login-button--primary" type="submit">로그인</button>
+            <a class="login-button login-button--secondary" href="product-list.html">
+              게스트로 쇼핑하기
+            </a>
+          </div>
+        </form>
+
+        <p class="login-panel__signup">
+          아직 회원이 아니신가요?
+          <a href="signup.html">회원가입</a>
+        </p>
+      </section>
+    </main>
+
+    <a class="login-floating" href="#" aria-label="AI 상담 시작"></a>
+
+    <nav class="login-bottom-nav" aria-label="하단 내비게이션">
+      <a href="index.html">홈</a>
+      <a href="product-list.html">상품</a>
+      <a href="product-list.html">검색</a>
+      <a href="cart.html">장바구니</a>
+      <a href="login.html" aria-current="page">마이</a>
+    </nav>
+
+    <footer class="login-footer">
+      <div class="login-footer__inner">
+        <strong>ROUNZ</strong>
+        <p>AI 기반 가상피팅과 얼굴형 분석으로 나에게 꼭 맞는 안경을 찾아드립니다.</p>
+        <nav class="login-footer__links" aria-label="로그인 지원 메뉴">
+          <a href="#">고객센터</a>
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
