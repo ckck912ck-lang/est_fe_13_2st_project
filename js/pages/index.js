@@ -1,4 +1,9 @@
+import { renderHeader } from "../modules/renderHeader.js";
+
 // 메인 페이지 기능
+renderHeader("C");
+
+// 공통 헤더, A타입
 
 // 히어로 : 슬라이드
 
