@@ -1,3 +1,5 @@
+// renderHeader : 배정호 작업
+
 const header = document.querySelector("header");
 
 // 헤더 1 : 메인, 회원가입 입력폼/약관동의, 장바구니 페이지

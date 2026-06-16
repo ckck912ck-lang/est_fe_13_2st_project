@@ -1,3 +1,5 @@
+// renderProducts : 배정호 작업
+
 import { renderProductCard } from "/js/modules/renderProductCard.js";
 
 // renderProductCard.js를 import해 상품 카드 HTML 생성
