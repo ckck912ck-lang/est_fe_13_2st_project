@@ -81,6 +81,7 @@ function createCartItemTemplate(cartProduct) {
   const colorText = Array.isArray(colors) && colors.length > 0
     ? colors.join(", ")
     : "기본";
+  const formattedPrice = formatPrice(price * quantity);
 
   return `
     <article class="cart-item" data-product-id="${productId}">
@@ -105,13 +106,24 @@ function createCartItemTemplate(cartProduct) {
           <a href="${detailUrl}">${title}</a>
         </h3>
         <p class="cart-item__option">색상: ${colorText} / 수량: ${quantity}개</p>
-        <p class="cart-item__price">${formatPrice(price * quantity)}원</p>
-        <div class="cart-item__actions" aria-label="상품 수량">
-          <button type="button" aria-label="수량 감소">−</button>
-          <span>${quantity}</span>
-          <button type="button" aria-label="수량 증가">+</button>
+        <p class="cart-item__price">${formattedPrice}</p>
+        <div class="cart-item__bottom">
+          <div class="cart-item__actions" aria-label="상품 수량">
+            <button type="button" data-action="cart-decrease" data-product-id="${productId}" aria-label="수량 감소">−</button>
+            <span>${quantity}</span>
+            <button type="button" data-action="cart-increase" data-product-id="${productId}" aria-label="수량 증가">+</button>
+          </div>
         </div>
       </div>
+      <button
+        type="button"
+        class="cart-item__remove"
+        data-action="cart-remove"
+        data-product-id="${productId}"
+        aria-label="${title} 삭제"
+      >
+        <span>삭제</span>
+      </button>
     </article>
   `
 }
