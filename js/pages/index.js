@@ -1,3 +1,7 @@
+import { initSearch } from "../modules/search.js";
+
+initSearch();
+
 // 메인 페이지 기능
 
 // 히어로 : 슬라이드

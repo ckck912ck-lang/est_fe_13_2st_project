@@ -594,19 +594,65 @@
     <a class="fixed-chat-button" href="#search-modal" aria-label="AI 상담 시작">
       <span class="sr-only">AI 상담</span>
     </a>
-    <dialog class="modal" id="search-modal" aria-labelledby="search-modal-title">
-      <form method="dialog" class="modal__content">
-        <div class="modal__head">
-          <h2 id="search-modal-title">검색</h2>
-          <button type="submit" class="icon-button" aria-label="검색 닫기">
-            <span class="material-icons" aria-hidden="true">contact_support</span>
-          </button>
+    <dialog class="modal search-modal" id="search-modal" aria-label="검색">
+      <form class="search-modal__form" role="search" aria-label="상품 검색">
+        <div class="inner">
+          <div class="search-modal__form-row">
+            <span class="material-icons search-modal__form__icon" aria-hidden="true">search</span>
+            <input
+              class="search-modal__form__input"
+              type="search"
+              name="keyword"
+              placeholder="브랜드, 상품명 검색..."
+              autocomplete="off"
+              aria-label="검색어 입력"
+            />
+            <button
+              type="button"
+              class="icon-button search-modal__form__close"
+              aria-label="검색 닫기"
+              data-action="close-search"
+            >
+              <span class="material-icons" aria-hidden="true">close</span>
+            </button>
+          </div>
         </div>
-        <label class="form-field">
-          <span>검색어</span>
-          <input type="search" name="keyword" placeholder="브랜드 또는 상품명을 입력하세요" />
-        </label>
       </form>
+
+      <section class="popular-keywords" aria-labelledby="popular-keywords-title">
+        <div class="inner">
+        <h2 id="popular-keywords-title" class="popular-keywords__title">인기 검색어</h2>
+        <ul class="popular-keywords__list" aria-label="인기 검색어 목록">
+          <li>
+            <button type="button" class="keyword-pill" data-keyword="CARIN">CARIN</button>
+          </li>
+          <li>
+            <button type="button" class="keyword-pill" data-keyword="GENTLE MONSTER">
+              GENTLE MONSTER
+            </button>
+          </li>
+          <li>
+            <button type="button" class="keyword-pill" data-keyword="라운드">라운드</button>
+          </li>
+          <li>
+            <button type="button" class="keyword-pill" data-keyword="티타늄">티타늄</button>
+          </li>
+          <li>
+            <button type="button" class="keyword-pill" data-keyword="웰링턴">웰링턴</button>
+          </li>
+          <li>
+            <button type="button" class="keyword-pill" data-keyword="가벼운 안경">
+              가벼운 안경
+            </button>
+          </li>
+          <li>
+            <button type="button" class="keyword-pill" data-keyword="얼굴형 추천">
+              얼굴형 추천
+            </button>
+          </li>
+        </ul>
+        </div>
+      </section>
     </dialog>
 
     <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
