@@ -1206,6 +1206,99 @@ body {
   margin-bottom: 16px;
 }
 
+.search-modal {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100dvh;
+  border-radius: 0;
+  background: rgb(249, 248, 246);
+}
+.search-modal .inner {
+  padding-inline: 16px;
+}
+@media (min-width: 768px) {
+  .search-modal .inner {
+    max-width: 480px;
+  }
+}
+@media (min-width: 1280px) {
+  .search-modal .inner {
+    max-width: 672px;
+  }
+}
+
+.search-modal__form {
+  background: rgb(249, 248, 246);
+}
+.search-modal__form-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 48px 0 12px;
+  border-bottom: 2px solid rgb(14, 14, 12);
+}
+.search-modal__form__icon {
+  flex-shrink: 0;
+  color: rgb(136, 136, 128);
+}
+.search-modal__form__close {
+  color: rgb(136, 136, 128);
+}
+.search-modal__form__close:hover {
+  color: rgb(14, 14, 12);
+}
+.search-modal__form__input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: transparent;
+  color: rgb(14, 14, 12);
+}
+.search-modal__form__input::-moz-placeholder {
+  color: rgb(136, 136, 128);
+}
+.search-modal__form__input::placeholder {
+  color: rgb(136, 136, 128);
+}
+.search-modal__form__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.popular-keywords {
+  padding-top: 32px;
+}
+.popular-keywords__title {
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(136, 136, 128);
+}
+.popular-keywords__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.keyword-pill {
+  padding: 8px 16px;
+  border: 1px solid rgb(232, 230, 225);
+  border-radius: 999px;
+  font-size: 14px;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgb(136, 136, 128);
+  background: rgb(249, 248, 246);
+  cursor: pointer;
+}
+.keyword-pill:hover {
+  color: rgb(14, 14, 12);
+}
+
 .fixed-chat-button {
   position: fixed;
   right: 20px;
