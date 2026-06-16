@@ -1,100 +1,205 @@
 @use "../base/variables" as *;
 
-.site-header {
+// 헤더 공통
+.header {
   position: sticky;
   top: 0;
   z-index: 100;
-  height: $header-mobile;
-  border-bottom: 1px solid $color-line;
-  background: $color-white;
-}
-
-.site-header__inner {
-  display: grid;
-  grid-template-columns: 44px 1fr auto;
-  align-items: center;
   width: 100%;
-  height: 100%;
-  max-width: $inner-pc;
-  margin-inline: auto;
-  padding-inline: 16px;
-}
-
-.site-header__logo {
-  justify-self: center;
-  font-size: 1.5rem;
-  letter-spacing: 0;
-}
-
-.site-header__nav,
-.site-header__login {
-  display: none;
-}
-
-.site-header__actions {
+  background: $neutral-main-bg;
+  box-shadow: $header-shadow-pc;
   display: flex;
-  align-items: center;
-  gap: 2px;
+  justify-content: center;
+  padding: 0 16px;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      padding: 2px 0;
+
+      > div {
+        display: flex;
+        flex: 1;
+        align-content: center;
+      }
+
+      .header-left {
+        justify-content: start;
+        align-items: center;
+
+        .header-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: transparent;
+        }
+
+        .hamburger-btn-open {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: transparent;
+          padding: 4px;
+        }
+
+        .material-icons {
+          font-size: 24px;
+          color: $neutral-text-sub;
+        }
+      }
+
+      .header-center {
+        justify-content: center;
+        align-content: center;
+
+        .logo {
+          padding: 20px 0;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .header-right {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 16px 0;
+
+        .site-header-btns {
+          display: flex;
+          gap: 4px;
+
+          .header-btn {
+            position: relative;
+            background: transparent;
+            display: flex;
+            padding: 4px;
+
+            .material-icons {
+              font-size: 24px;
+              color: $neutral-text-sub;
+            }
+          }
+          .cart-badge {
+            font-size: 12px;
+            font-weight: 700;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            display: block;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 999px;
+            top: 0%;
+            right: 0%;
+            color: $color-white;
+            background: $brand-primary;
+          }
+        }
+      }
+    }
+  }
 }
 
-.cart-badge {
-  display: inline-grid;
-  min-width: 16px;
-  height: 16px;
-  padding-inline: 4px;
-  place-items: center;
-  border-radius: 999px;
-  color: $color-white;
-  font-size: 0.6875rem;
-  line-height: 1;
-  background: $color-black;
+// 헤더 A타입
+
+// 헤더 B타입
+.container.header-B,
+.container.header-C {
+  .header-center {
+    .logo img {
+      display: none;
+    }
+  }
 }
 
-.site-header__actions .cart-badge {
-  position: absolute;
-  top: 4px;
-  right: 2px;
+// 헤더 C타입
+
+@media (min-width: 768px) {
+  .container.header-B,
+  .container.header-C {
+    .header-center {
+      .logo img {
+        display: block;
+      }
+    }
+  }
 }
 
 @media (min-width: 1280px) {
-  .site-header {
-    height: $header-pc;
-  }
+  .header {
+    padding: 0;
 
-  .site-header__inner {
-    grid-template-columns: auto 1fr auto;
-    padding-inline: 32px;
-  }
+    .container {
+      width: 1440px;
 
-  .hamburger-button {
-    display: none;
-  }
+      .header-top {
+        padding: 16px 0;
 
-  .site-header__logo {
-    justify-self: start;
-    font-size: 1.875rem;
-  }
+        > div {
+        }
 
-  .site-header__nav {
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    gap: 40px;
-    color: $color-muted;
-    font-weight: 700;
-  }
+        .header-left {
+          .hamburger-btn-open {
+            padding: 12px;
 
-  .site-header__nav a:hover,
-  .site-header__nav a:focus-visible {
-    color: $color-text;
-  }
+            .material-icons {
+              font-size: 32px;
+              color: $neutral-title-black;
+            }
+          }
+        }
 
-  .site-header__login {
-    display: inline-flex;
-    align-items: center;
-    height: 40px;
-    padding-inline: 14px;
-    color: $color-muted;
-    font-weight: 700;
+        .header-center {
+          .logo {
+            cursor: pointer;
+            padding: 12px 0;
+            height: 100%;
+          }
+        }
+
+        .header-right {
+          .site-header-btns {
+            .header-btn {
+              .material-icons {
+                font-size: 32px;
+                color: $neutral-title-black;
+              }
+            }
+            .cart-badge {
+              font-size: 16px;
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+              top: 0%;
+              right: 0%;
+            }
+          }
+        }
+      }
+
+      .header-nav {
+        display: flex;
+        align-items: center;
+
+        a {
+          padding: 16px 12px;
+          font-size: 18px;
+        }
+
+        a.active {
+          font-size: 20px;
+          font-weight: 700;
+          border-bottom: 4px solid;
+        }
+      }
+    }
   }
 }
