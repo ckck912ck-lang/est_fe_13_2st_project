@@ -4,9 +4,178 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>ROUNZ | 장바구니</title>
   </head>
-  <body>
-    <script type="module" src="js/pages/cart.js"></script>
+  <body data-cart-state="empty">
+    <a class="skip-link" href="#main">본문 바로가기</a>
+
+    <header class="cart-header">
+      <div class="cart-header__inner">
+        <a class="cart-header__menu" href="product-list.html" aria-label="상품 목록으로 이동">
+          <span aria-hidden="true"></span>
+        </a>
+        <h1 class="cart-header__logo">
+          <a href="index.html">ROUNZ</a>
+        </h1>
+        <nav class="cart-header__actions" aria-label="장바구니 빠른 메뉴">
+          <a class="cart-header__icon cart-header__icon--search" href="product-list.html" aria-label="검색"></a>
+          <a class="cart-header__icon cart-header__icon--bag" href="cart.html" aria-label="장바구니" aria-current="page">
+            <span class="cart-header__badge">1</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="cart-page">
+      <section class="cart-page__state cart-page__state--empty" aria-labelledby="cart-empty-title">
+        <div class="cart-empty">
+          <div class="cart-empty__icon" aria-hidden="true"></div>
+          <h2 id="cart-empty-title" class="cart-empty__title">장바구니가 비었습니다</h2>
+          <p class="cart-empty__description">마음에 드는 상품을 담아보세요</p>
+          <a class="cart-button cart-button--primary" href="product-list.html">
+            쇼핑 시작하기
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <section class="cart-recommend" aria-labelledby="cart-empty-recommend-title">
+          <div class="cart-section-heading">
+            <h2 id="cart-empty-recommend-title">추천 상품</h2>
+            <a href="product-list.html?sort=best">전체보기</a>
+          </div>
+          <div class="cart-recommend__list">
+            <article class="cart-product-card">
+              <a class="cart-product-card__media" href="product-detail.html" aria-label="CARIN OSLO 01 상품 상세 보기">
+                <span class="cart-product-card__badge">BEST</span>
+                <span class="cart-product-card__badge cart-product-card__badge--dark">NEW</span>
+                <span class="cart-product-card__sale">20%</span>
+              </a>
+              <div class="cart-product-card__body">
+                <p class="cart-product-card__brand">CARIN</p>
+                <h3 class="cart-product-card__name">
+                  <a href="product-detail.html">OSLO 01</a>
+                </h3>
+                <p class="cart-product-card__rating">
+                  <span aria-hidden="true">★</span>
+                  4.8 (342)
+                </p>
+                <p class="cart-product-card__price">
+                  198,000원
+                  <del>248,000</del>
+                  <span>-20%</span>
+                </p>
+              </div>
+            </article>
+
+            <article class="cart-product-card">
+              <a class="cart-product-card__media cart-product-card__media--soft" href="product-detail.html" aria-label="GENTLE MONSTER MAGO SPACE 상품 상세 보기">
+                <span class="cart-product-card__badge cart-product-card__badge--dark">NEW</span>
+                <span class="cart-product-card__badge">BEST</span>
+              </a>
+              <div class="cart-product-card__body">
+                <p class="cart-product-card__brand">GENTLE MONSTER</p>
+                <h3 class="cart-product-card__name">
+                  <a href="product-detail.html">MAGO SPACE</a>
+                </h3>
+                <p class="cart-product-card__rating">
+                  <span aria-hidden="true">★</span>
+                  4.9 (512)
+                </p>
+                <p class="cart-product-card__price">345,000원</p>
+              </div>
+            </article>
+
+            <article class="cart-product-card">
+              <a class="cart-product-card__media cart-product-card__media--clear" href="product-detail.html" aria-label="LINDBERG CLOUD C1 상품 상세 보기"></a>
+              <div class="cart-product-card__body">
+                <p class="cart-product-card__brand">LINDBERG</p>
+                <h3 class="cart-product-card__name">
+                  <a href="product-detail.html">CLOUD C1</a>
+                </h3>
+                <p class="cart-product-card__rating">
+                  <span aria-hidden="true">★</span>
+                  4.7 (186)
+                </p>
+                <p class="cart-product-card__price">580,000원</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="cart-page__state cart-page__state--filled" aria-labelledby="cart-filled-title">
+        <div class="cart-page__layout">
+          <section class="cart-items" aria-labelledby="cart-filled-title">
+            <div class="cart-section-heading">
+              <h2 id="cart-filled-title">장바구니 <span>1</span></h2>
+            </div>
+
+            <article class="cart-item">
+              <a class="cart-item__media" href="product-detail.html" aria-label="CARIN OSLO 01 상품 상세 보기"></a>
+              <div class="cart-item__content">
+                <p class="cart-item__brand">CARIN</p>
+                <h3 class="cart-item__name">
+                  <a href="product-detail.html">OSLO 01</a>
+                </h3>
+                <p class="cart-item__option">색상: Black / 수량: 1개</p>
+                <p class="cart-item__price">198,000원</p>
+                <div class="cart-item__actions" aria-label="상품 수량">
+                  <button type="button" aria-label="수량 감소">−</button>
+                  <span>1</span>
+                  <button type="button" aria-label="수량 증가">+</button>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <aside class="cart-summary" aria-labelledby="cart-summary-title">
+            <h2 id="cart-summary-title" class="cart-summary__title">주문 요약</h2>
+            <dl class="cart-summary__list">
+              <div>
+                <dt>상품 금액</dt>
+                <dd>198,000원</dd>
+              </div>
+              <div>
+                <dt>배송비</dt>
+                <dd>무료</dd>
+              </div>
+              <div class="cart-summary__total">
+                <dt>총 결제 금액</dt>
+                <dd>198,000원</dd>
+              </div>
+              <div>
+                <dt>배송 예정</dt>
+                <dd>결제 후 2-3일 이내 출고</dd>
+              </div>
+            </dl>
+            <div class="cart-summary__actions">
+              <a class="cart-button cart-button--primary" href="#">주문하기</a>
+              <a class="cart-button cart-button--secondary" href="product-list.html">계속 쇼핑하기</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="cart-footer">
+      <div class="cart-footer__inner">
+        <strong class="cart-footer__logo">ROUNZ</strong>
+        <p>AI 기반 가상피팅과 얼굴형 분석으로 나에게 꼭 맞는 안경을 찾아드립니다.</p>
+        <nav class="cart-footer__links" aria-label="고객 지원">
+          <a href="#">공지사항</a>
+          <a href="#">자주 묻는 질문</a>
+          <a href="#">교환/반품 안내</a>
+          <a href="#">개인정보처리방침</a>
+        </nav>
+      </div>
+    </footer>
+
+    <nav class="cart-bottom-nav" aria-label="하단 내비게이션">
+      <a href="index.html">홈</a>
+      <a href="product-list.html">상품</a>
+      <a href="product-list.html">검색</a>
+      <a href="cart.html" aria-current="page">장바구니</a>
+      <a href="login.html">내정보</a>
+    </nav>
   </body>
 </html>
