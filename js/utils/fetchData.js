@@ -1,3 +1,4 @@
+// fetchData : 배정호 작업
 // json 파일의 경로를 받아서 데이터를 가져온 후 반환하는 함수
 export async function fetchData(jsonPath) {
   try {
