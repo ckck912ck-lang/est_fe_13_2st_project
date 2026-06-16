@@ -171,8 +171,10 @@
         </p>
       </section>
     </main>
-
-    <a class="login-floating" href="#" aria-label="AI 상담 시작"></a>
+    <!-- 수정: index.html 공통 구조로 변경 -->
+    <a class="fixed-chat-button" href="#search-modal" aria-label="AI 상담 시작">
+      <span class="sr-only">AI 상담</span>
+    </a>
 
     <!-- 수정: index.html 공통 bottom-nav 구조로 변경 -->
     <nav class="bottom-nav" aria-label="하단 내비게이션" data-component="bottom-nav">
@@ -238,5 +240,23 @@
         </section>
       </div>
     </footer>
+    <!-- 수정: index.html 공통 구조로 변경 -->
+    <dialog class="modal" id="search-modal" aria-labelledby="search-modal-title">
+      <form method="dialog" class="modal__content">
+        <div class="modal__head">
+          <h2 id="search-modal-title">검색</h2>
+          <button type="submit" class="icon-button" aria-label="검색 닫기">×</button>
+        </div>
+
+        <label class="form-field">
+          <span>검색어</span>
+          <input type="search" name="keyword" placeholder="브랜드 또는 상품명을 입력하세요" />
+        </label>
+      </form>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
+
+    <script type="module" src="js/pages/login.js"></script>
   </body>
 </html>
