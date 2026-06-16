@@ -39,7 +39,7 @@ export function renderProductCard(product) {
                   </h3>
                 </div>
 
-                <p class="product-rating" aria-label="평점 ${product.rating !== 0 ? product.rating.toFixed(1) : "--"}점, 리뷰 ${product.reviewCount}개">
+                <p class="product-rating" aria-label="평점 ${product.rating && product.rating !== 0 ? product.rating.toFixed(1) : "--"}점, 리뷰 ${product.reviewCount}개">
                   <span aria-hidden="true" class="rating-star material-icons">star</span>
                   <span>${product.rating}</span>
                   <span>(${product.reviewCount})</span>
