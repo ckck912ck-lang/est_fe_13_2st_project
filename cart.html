@@ -9,28 +9,46 @@
   <body data-cart-state="empty">
     <a class="skip-link" href="#main">본문 바로가기</a>
 
-    <header class="cart-header">
-      <div class="cart-header__inner">
-        <a class="cart-header__menu" href="product-list.html" aria-label="상품 목록으로 이동">
+    <header class="site-header" data-component="header">
+      <div class="site-header__inner">
+        <button
+          type="button"
+          class="icon-button hamburger-button"
+          aria-controls="hamburger-nav"
+          aria-expanded="false"
+          aria-label="전체 메뉴 열기"
+          data-action="open-menu"
+        >
           <span aria-hidden="true"></span>
-        </a>
-        <h1 class="cart-header__logo">
-          <a href="index.html">ROUNZ</a>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <h1 class="site-header__logo">
+          <a href="index.html" aria-label="ROUNZ 홈">ROUNZ</a>
         </h1>
-        <nav class="cart-header__actions" aria-label="장바구니 빠른 메뉴">
-          <a
-            class="cart-header__icon cart-header__icon--search"
-            href="product-list.html"
-            aria-label="검색"
-          ></a>
-          <a
-            class="cart-header__icon cart-header__icon--bag"
-            href="cart.html"
-            aria-label="장바구니"
-            aria-current="page"
+
+        <div class="site-header__actions">
+          <button
+            type="button"
+            class="icon-button"
+            aria-controls="search-modal"
+            aria-label="검색 열기"
+            data-action="open-search"
           >
-            <span class="cart-header__badge">1</span>
+            <span class="icon-symbol icon-search" aria-hidden="true"></span>
+          </button>
+          <a class="icon-button" href="cart.html" aria-label="장바구니">
+            <span class="icon-symbol icon-cart" aria-hidden="true"></span>
+            <span class="cart-badge" aria-label="장바구니 상품 수">0</span>
           </a>
+          <a class="site-header__login" href="login.html">로그인</a>
+        </div>
+        <nav class="site-header__nav" aria-label="주요 메뉴">
+          <a href="product-list.html">전체 상품</a>
+          <a href="product-list.html?category=glasses">안경</a>
+          <a href="product-list.html?category=sunglasses">선글라스</a>
+          <a href="#partner-store">파트너 안경원</a>
         </nav>
       </div>
     </header>
