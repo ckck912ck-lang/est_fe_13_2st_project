@@ -4,3 +4,29 @@
 // 각 후기의 rating 값은 renderStars(rating)에 전달해 별점 HTML 생성
 // 후기의 작성자, 작성일, 내용 값을 사용해 후기 카드 HTML 생성
 // 생성한 후기 카드를 frag에 모은 뒤 container에 HTML로 생성
+import { renderStars } from "./renderstars.js";
+
+export function renderTestimonials(reviews, container, maxCount = reviews.length) {
+  if (!container || !Array.isArray(reviews)) return;
+
+  const selectedReviews = reviews.slice(0, maxCount);
+
+  container.innerHTML = selectedReviews
+    .map((review) => {
+      return `
+        <article class="review-item">
+          <div class="review-item__meta">
+            <strong>${review.author} <span>구매확인</span></strong>
+            <time datetime="${review.date}">${review.date.replaceAll("-", ".")}</time>
+          </div>
+
+          <p class="review-item__stars" aria-label="별점 ${review.rating}점">
+            ${renderStars(review.rating)}
+          </p>
+
+          <p>${review.content}</p>
+        </article>
+      `;
+    })
+    .join("");
+}
