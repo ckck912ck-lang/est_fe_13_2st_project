@@ -12,16 +12,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(
-        circle at 72% 22%,
-        rgba($color-white, 0.28),
-        transparent 22%
-      ),
-      linear-gradient(
-        135deg,
-        rgba($color-black, 0.18),
-        rgba($color-black, 0.72)
-      ),
+      radial-gradient(circle at 72% 22%, rgba($color-white, 0.28), transparent 22%),
+      linear-gradient(135deg, rgba($color-black, 0.18), rgba($color-black, 0.72)),
       linear-gradient(120deg, #c7d7e7 0%, #e7ded4 44%, #22242a 100%);
 
     &::after {
