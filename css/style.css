@@ -1297,6 +1297,7 @@ body {
 }
 .keyword-pill:hover {
   color: rgb(14, 14, 12);
+  border-color: rgb(14, 14, 12);
 }
 
 .fixed-chat-button {
@@ -1735,6 +1736,7 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 
 .cart-item {
+  position: relative;
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr);
   gap: var(--cart-space-4);
@@ -1766,6 +1768,31 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 .cart-item__media::after {
   left: 49%;
+}
+.cart-item__remove {
+  position: absolute;
+  top: var(--cart-space-5);
+  right: var(--cart-space-5);
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  color: var(--cart-color-muted);
+}
+.cart-item__remove span {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.cart-item__remove::before {
+  content: "";
+  width: 14px;
+  height: 16px;
+  background: currentColor;
+  clip-path: polygon(25% 18%, 75% 18%, 75% 0, 25% 0, 25% 18%, 5% 18%, 5% 30%, 95% 30%, 95% 18%, 75% 18%, 75% 100%, 25% 100%, 25% 18%);
 }
 .cart-item__brand, .cart-item__option {
   color: var(--cart-color-muted);
