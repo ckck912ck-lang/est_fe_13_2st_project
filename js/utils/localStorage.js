@@ -47,6 +47,7 @@ export function setCartItems(cartItems) {
 }
 
 // 장바구니에 상품을 추가하는 함수
+//addCartItem(상품 id, 수량, 선택 색상)
 export function addCartItem(productId, quantity = 1, selectedColor) {
   const id = normalizeProductId(productId);
   const color = normalizeSelectedColor(selectedColor);
@@ -83,6 +84,7 @@ export function addCartItem(productId, quantity = 1, selectedColor) {
 }
 
 // 장바구니에 있는 상품의 수량을 업데이트하는 함수
+//updateCartItemQuantity(상품 id, 상품 수량, 선택 색상)
 export function updateCartItemQuantity(productId, quantity, selectedColor) {
   const id = normalizeProductId(productId);
   const color = normalizeSelectedColor(selectedColor);
