@@ -26,7 +26,7 @@ function getHeaderTypeA() {
           </div>
           <div class="header-right">
             <div class="site-header-btns">
-              <button type="header-btn search" class="header-btn" aria-label="검색 열기">
+              <button type="button" class="header-btn search" aria-label="검색 열기">
                 <span class="material-icons">search</span>
               </button>
               <a class="header-btn cart" href="cart.html" aria-label="장바구니">
@@ -61,7 +61,7 @@ function getHeaderTypeB() {
           </div>
           <div class="header-right">
             <div class="site-header-btns">
-              <button type="header-btn search" class="header-btn" aria-label="검색 열기">
+              <button type="button" class="header-btn search" aria-label="검색 열기">
                 <span class="material-icons">search</span>
               </button>
               <a class="header-btn cart" href="cart.html" aria-label="장바구니">
@@ -95,10 +95,10 @@ function getHeaderTypeC() {
           </div>
           <div class="header-right">
             <div class="site-header-btns">
-              <button type="header-btn home" class="header-btn" aria-label="처음으로 돌아가기">
+              <button type="button" class="header-btn home" aria-label="처음으로 돌아가기">
                 <span class="material-icons">home</span>
               </button>
-              <button type="header-btn search" class="header-btn" aria-label="검색 열기">
+              <button type="button" class="header-btn search" aria-label="검색 열기">
                 <span class="material-icons">search</span>
               </button>
               <a class="header-btn cart" href="cart.html" aria-label="장바구니">
@@ -137,7 +137,7 @@ function getHeaderPC() {
           </div>
           <div class="header-right">
             <div class="site-header-btns">
-              <button type="header-btn search" class="header-btn" aria-label="검색 열기">
+              <button type="button" class="header-btn search" aria-label="검색 열기">
                 <span class="material-icons">search</span>
               </button>
               <a class="header-btn cart" href="cart.html" aria-label="장바구니">
