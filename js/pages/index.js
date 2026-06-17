@@ -34,12 +34,29 @@ async function renderBestProducts() {
     .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
     .join("");
 
-  initProductSlider(".best-product-swiper");
+  initProductSlider(".best-product-swiper", ".best-prev-btn", ".best-next-btn");
 }
 
 renderBestProducts();
 
 // 신상품 : 전체 상품 필터해서 신상품 중 4개만 출력
+async function renderNewProducts() {
+  const data = await fetchData("./data/products.json");
+  if (!data) return;
+
+  const newProducts = data.products.filter((product) => product.isNew).slice(0, 4);
+
+  const wrapper = document.querySelector('[data-render="new-products"]');
+  if (!wrapper) return;
+
+  wrapper.innerHTML = newProducts
+    .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
+    .join("");
+
+  initProductSlider(".new-product-swiper", ".new-prev-btn", ".new-next-btn");
+}
+
+renderNewProducts();
 
 // 인기 브랜드 : 필터된 상품목록으로 이동
 
