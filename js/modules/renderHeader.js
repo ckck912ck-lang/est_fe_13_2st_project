@@ -51,7 +51,7 @@ function getHeaderTypeB() {
             <button class="header-btn">
               <span class="material-icons">chevron_left</span>
             </button>
-            <h2 class="category">안경테</h2>
+            <h2 class="category">상품</h2>
           </div>
           <div class="header-center">
             <h1 class="logo">

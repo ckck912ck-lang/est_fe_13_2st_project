@@ -1,6 +1,7 @@
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
 import { initSearch } from "../modules/search.js";
+import { fetchData } from "../utils/fetchData.js";
 
 // 메인 페이지 기능
 renderHeader("");
@@ -26,3 +27,59 @@ initSearch();
 // 안경원 찾기 : (후순위 추가기능) API활용
 
 // 공지사항 : 탭, notics.json, events.json 파일 데이터 렌더링
+initNoticeTab();
+
+async function initNoticeTab() {
+  // 공지사항/이벤트 패널 요소와 탭 버튼 가져오기
+  const noticePanel = document.querySelector('[data-render="notice"]');
+  const eventPanel = document.querySelector('[data-render="events"]');
+  const tabButtons = document.querySelectorAll('.notice-section [role="tab"]');
+
+  // notice.json, events.json 동시에 불러오기
+  const [noticeData, eventData] = await Promise.all([
+    fetchData("./data/notice.json"),
+    fetchData("./data/events.json"),
+  ]);
+
+  // 공지사항 목록 렌더링 (isImportant 여부에 따라 "중요" / "공지" 뱃지 구분)
+  if (noticePanel && noticeData) {
+    noticePanel.innerHTML = noticeData.notices
+      .map(
+        (item) => `
+      <article class="notice-item">
+        <span class="badge badge--line">${item.isImportant ? "중요" : "공지"}</span>
+        <a href="#">${item.title}</a>
+        <time datetime="${item.createdAt}">${item.createdAt.replace(/-/g, ".")}</time>
+      </article>`
+      )
+      .join("");
+  }
+
+  // 이벤트 목록 렌더링 (종료일 표시)
+  if (eventPanel && eventData) {
+    eventPanel.innerHTML = eventData.events
+      .map(
+        (item) => `
+      <article class="notice-item">
+        <span class="badge badge--line badge--line-long">이벤트</span>
+        <a href="#">${item.title}</a>
+        <time datetime="${item.endDate}">${item.endDate.replace(/-/g, ".")}</time>
+      </article>`
+      )
+      .join("");
+  }
+
+  // 탭 버튼 클릭 시 aria-selected 토글 + 패널 hidden 속성으로 전환
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("aria-controls");
+
+      tabButtons.forEach((btn) => btn.setAttribute("aria-selected", "false"));
+      button.setAttribute("aria-selected", "true");
+
+      [noticePanel, eventPanel].forEach((panel) => {
+        panel.hidden = panel.id !== targetId;
+      });
+    });
+  });
+}
