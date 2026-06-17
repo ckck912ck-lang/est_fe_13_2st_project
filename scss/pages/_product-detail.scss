@@ -26,19 +26,19 @@
 }
 
 .product-gallery-main-swiper {
-  position: relative; // <수정>
-  width: 100%; // <수정>
-  aspect-ratio: 1 / 1.02; // <수정>
-  overflow: hidden; // <수정>
-  background: #f4efeb; // <수정>
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.02;
+  overflow: hidden;
+  background: #f4efeb;
 }
 
 .product-gallery-main {
-  position: relative; // <수정>
-  display: grid; // <수정>
-  width: 100%; // <수정>
-  height: 100%; // <수정>
-  place-items: center; // <수정>
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
   background:
     radial-gradient(circle at 34% 36%, rgba($color-white, 0.72) 0 11%, transparent 12%),
     linear-gradient(142deg, rgba($color-black, 0.04), rgba($color-black, 0.15)), #f4efeb;
@@ -66,51 +66,51 @@
 
 .product-gallery-main-angle {
   &::before {
-    transform: rotate(-18deg); // <수정>
+    transform: rotate(-18deg);
   }
 
   &::after {
-    transform: translate(28%, -560%) rotate(-18deg); // <수정>
+    transform: translate(28%, -560%) rotate(-18deg);
   }
 }
 
 .product-gallery-main-clear {
   background:
     radial-gradient(circle at 42% 34%, rgba($color-white, 0.75) 0 10%, transparent 11%),
-    linear-gradient(142deg, rgba($color-black, 0.03), rgba($color-black, 0.09)), #f5f5f4; // <수정>
+    linear-gradient(142deg, rgba($color-black, 0.03), rgba($color-black, 0.09)), #f5f5f4;
 
   &::before {
-    border-color: rgba($color-black, 0.52); // <수정>
-    transform: rotate(0deg); // <수정>
+    border-color: rgba($color-black, 0.52);
+    transform: rotate(0deg);
   }
 
   &::after {
-    background: rgba($color-black, 0.46); // <수정>
-    transform: translate(28%, -560%) rotate(0deg); // <수정>
+    background: rgba($color-black, 0.46);
+    transform: translate(28%, -560%) rotate(0deg);
   }
 }
 
 .product-gallery-main-bold {
   background:
     radial-gradient(circle at 38% 38%, rgba($color-white, 0.6) 0 10%, transparent 11%),
-    linear-gradient(142deg, rgba($color-black, 0.08), rgba($color-black, 0.18)), #eeeeec; // <수정>
+    linear-gradient(142deg, rgba($color-black, 0.08), rgba($color-black, 0.18)), #eeeeec;
 
   &::before {
-    border-width: 8px; // <수정>
-    border-top-width: 6px; // <수정>
-    border-color: rgba($color-black, 0.86); // <수정>
-    transform: rotate(0deg); // <수정>
+    border-width: 8px;
+    border-top-width: 6px;
+    border-color: rgba($color-black, 0.86);
+    transform: rotate(0deg);
   }
 
   &::after {
-    height: 3px; // <수정>
-    background: rgba($color-black, 0.78); // <수정>
-    transform: translate(28%, -560%) rotate(0deg); // <수정>
+    height: 3px;
+    background: rgba($color-black, 0.78);
+    transform: translate(28%, -560%) rotate(0deg);
   }
 }
 
 .product-gallery-arrow {
-  position: absolute; // <수정>
+  position: absolute;
   top: 50%;
   z-index: 2;
   display: grid;
@@ -126,54 +126,71 @@
 }
 
 .product-gallery-arrow-prev {
-  left: 18px; // <수정>
+  left: 18px;
 }
 
 .product-gallery-arrow-next {
-  right: 18px; // <수정>
+  right: 18px;
 }
 
 .product-gallery-dots {
-  position: absolute; // <수정>
+  position: absolute;
   bottom: 24px;
   left: 50%;
-  z-index: 2; // <수정>
+  z-index: 2;
   display: flex;
   gap: 5px;
   transform: translateX(-50%);
 
   .swiper-pagination-bullet {
-    width: 7px; // <수정>
-    height: 7px; // <수정>
+    width: 7px;
+    height: 7px;
     border-radius: 999px;
     background: rgba($color-black, 0.28);
-    opacity: 1; // <수정>
+    opacity: 1;
   }
 
   .swiper-pagination-bullet-active {
-    width: 21px; // <수정>
-    background: $color-black; // <수정>
+    width: 21px;
+    background: $color-black;
   }
 }
 
 .product-gallery-thumb-swiper {
-  padding: 12px 16px 14px; // <수정>
-  background: $color-white; // <수정>
+  position: relative;
+  padding: 12px 16px 24px;
+  overflow: hidden;
+  background: $color-white;
 }
 
 .product-gallery-thumb {
-  position: relative; // <수정>
-  width: 62px; // <수정>
-  height: 62px; // <수정>
-  padding: 0; // <수정>
-  overflow: hidden; // <수정>
-  border: 1px solid transparent; // <수정>
-  border-radius: 10px; // <수정>
-  background: #f4f2ef; // <수정>
+  position: relative;
+  width: 62px;
+  height: 62px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #f4f2ef;
+}
+.product-gallery-thumb-scrollbar {
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  left: 16px;
+  height: 4px;
+  border-radius: 999px;
+  background: #f1f0ec;
+
+  .swiper-scrollbar-drag {
+    height: 100%;
+    border-radius: 999px;
+    background: #8f8c85;
+  }
 }
 
 .product-gallery-thumb.swiper-slide-thumb-active {
-  border-color: $color-black; // <수정>
+  border-color: $color-black;
 }
 
 .product-thumb {
@@ -226,13 +243,30 @@
   }
 
   .product-summary-brand {
-    color: #8a8881;
-    font-size: 0.8125rem;
+    color: $neutral-text-sub;
+    font-size: $mobile-small;
     font-weight: 700;
     letter-spacing: 0.08em;
 
-    a::after {
-      content: " ->";
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      color: inherit;
+    }
+
+    .material-icons {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      margin-top: 1px;
+      font-family: "Material Icons";
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: 0;
     }
   }
 
@@ -247,13 +281,14 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #b99251;
-    font-size: 0.9375rem;
+    color: $brand-primary;
+    font-size: $mobile-caption;
     font-weight: 700;
 
     strong,
     a {
-      color: #8d8b86;
+      color: $neutral-text-sub;
+      font-size: $mobile-caption;
       font-weight: 700;
     }
   }
@@ -344,36 +379,37 @@
   div {
     min-height: 60px;
     padding: 12px 16px;
-    border-radius: 8px;
+    border-radius: 12px;
     background: #f5f4f1;
   }
 
   dt {
-    color: #9d9a93;
-    font-size: 0.75rem;
+    color: $neutral-text-sub;
+    font-size: $mobile-small;
     font-weight: 700;
   }
 
   dd {
     margin: 2px 0 0;
-    font-size: 0.9375rem;
+    color: $neutral-text-main;
+    font-size: $mobile-caption;
     font-weight: 800;
   }
 }
 
 .product-option-group {
   display: grid;
-  gap: 8px;
+  gap: 0px;
 
   p,
   legend {
+    margin: 0 0 12px;
     padding: 0;
-    color: #9d9a93;
-    font-size: 0.8125rem;
+    color: $neutral-text-sub;
+    font-size: $mobile-small;
     font-weight: 700;
   }
 }
-
 .product-chip-list {
   display: flex;
   flex-wrap: wrap;
@@ -385,10 +421,17 @@
     align-items: center;
     padding-inline: 14px;
     border-radius: 999px;
-    color: #b99b62;
-    font-size: 0.8125rem;
+    font-size: $mobile-small;
     font-weight: 800;
-    background: #f4ead9;
+  }
+}
+
+.product-option-group:not(.product-color-option) {
+  .product-chip-list {
+    span {
+      color: $brand-primary;
+      background: $neutral-primary-a4;
+    }
   }
 }
 
@@ -414,6 +457,7 @@
       min-width: 55px;
       justify-content: center;
       border: 1px solid #e2e0dc;
+      border-radius: 12px;
       color: #8b8881;
       background: $color-white;
     }
@@ -449,8 +493,15 @@
   gap: 8px;
 
   .btn {
-    min-height: 48px;
-    border-radius: 12px;
+    min-height: 64px;
+    gap: 12px;
+    border-radius: 16px;
+    font-size: $mobile-caption;
+    font-weight: 800;
+  }
+  .material-icons {
+    font-size: 22px;
+    line-height: 1;
   }
 
   .btn-outline {
@@ -501,36 +552,49 @@
 }
 
 .review-section {
-  padding-top: 10px;
+  padding-top: 32px;
 
   .review-section-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 24px;
 
     h2 {
-      font-size: 1.625rem;
+      color: $neutral-text-main;
+      font-size: $mobile-h3;
+      font-weight: 800;
       line-height: 1.2;
 
       span {
-        color: #8f8c85;
-        font-size: 1.125rem;
+        margin-left: 4px;
+        color: $neutral-text-sub;
+        font-size: $mobile-h5;
+        font-weight: 700;
       }
     }
   }
 }
 
 .review-write-button {
-  min-height: 38px;
-  padding-inline: 14px;
-  border: 1px solid #ece9e3;
+  display: inline-flex;
+  min-width: 92px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 16px;
+  border: 1px solid $neutral-border;
   border-radius: 999px;
-  color: #9b978e;
-  font-size: 0.8125rem;
-  font-weight: 800;
-  background: $color-white;
+  color: $neutral-text-sub;
+  font-size: $mobile-small;
+  font-weight: 700;
+  background: $neutral-white;
+
+  &:hover {
+    border-color: $neutral-text-main;
+    color: $neutral-text-main;
+  }
 }
 
 .review-list {
@@ -539,12 +603,12 @@
 
 .review-item {
   display: grid;
-  gap: 7px;
-  padding-block: 20px;
-  border-bottom: 1px solid #e9e7e1;
-  color: #8f8b83;
-  font-size: 0.9375rem;
-  line-height: 1.55;
+  gap: 8px;
+  padding-block: 24px;
+  border-bottom: 1px solid $neutral-border;
+  color: $neutral-text-sub;
+  font-size: $mobile-caption;
+  line-height: 1.7;
 
   .review-item-meta {
     display: flex;
@@ -553,19 +617,28 @@
     gap: 16px;
 
     strong {
-      color: $color-black;
-      font-size: 0.9375rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: $neutral-text-main;
+      font-size: $mobile-label;
+      font-weight: 800;
 
       span {
-        margin-left: 8px;
-        color: #23bd6d;
-        font-size: 0.75rem;
+        margin-left: 0;
+        padding: 3px 7px;
+        border-radius: 999px;
+        color: $brand-accent-green;
+        font-size: $mobile-small;
+        font-weight: 800;
+        line-height: 1;
+        background: $accent-light-green;
       }
     }
 
     time {
-      color: #aaa7a0;
-      font-size: 0.75rem;
+      color: $neutral-text-sub;
+      font-size: $mobile-small;
       white-space: nowrap;
     }
   }
@@ -573,15 +646,15 @@
   .review-item-stars {
     display: flex;
     align-items: center;
-    gap: 1px;
+    gap: 2px;
     color: $brand-primary;
-    font-size: 0.875rem;
-    letter-spacing: 0;
+    font-size: $mobile-caption;
+    letter-spacing: 1px;
   }
 }
 .star-icon {
   color: inherit;
-  font-size: 1rem;
+  font-size: $mobile-caption;
   line-height: 1;
 }
 
@@ -634,10 +707,14 @@
     }
 
     .product-gallery-thumb-swiper {
-      padding-inline: 0;
+      padding: 16px 0 24px;
 
       &::after {
         display: none;
+      }
+      .product-gallery-thumb-scrollbar {
+        right: 0;
+        left: 0;
       }
     }
   }
@@ -734,8 +811,13 @@
 
   .product-purchase-actions {
     grid-template-columns: 1fr;
-    max-width: 430px;
+    max-width: 100%;
 
+    .btn {
+      min-height: 72px;
+      border-radius: 16px;
+      font-size: $pc-body-m;
+    }
     .btn-outline,
     .product-like-button {
       display: none;
@@ -762,32 +844,39 @@
 
   .review-section {
     max-width: 880px;
+    padding-top: 32px;
 
     .review-section-head {
-      margin-bottom: 16px;
+      margin-bottom: 24px;
 
       h2 {
-        font-size: 1.5rem;
+        font-size: $pc-h5;
+        font-weight: 800;
       }
     }
   }
 
   .review-write-button {
-    min-height: 32px;
+    min-width: 104px;
+    min-height: 38px;
     padding-inline: 18px;
-    font-size: 0.75rem;
+    font-size: $pc-caption;
   }
 
   .review-item {
     grid-template-columns: minmax(0, 1fr) auto;
-    padding-block: 18px;
-    font-size: 0.875rem;
+    gap: 10px;
+    padding-block: 32px;
+    font-size: $pc-caption;
+    line-height: 1.75;
 
     .review-item-meta {
       display: contents;
 
       strong {
         grid-column: 1;
+        font-size: $pc-caption;
+        font-weight: 800;
       }
 
       time {
@@ -795,6 +884,7 @@
         grid-row: 1 / span 3;
         align-self: center;
         font-size: 0.8125rem;
+        color: $neutral-text-sub;
       }
     }
 
