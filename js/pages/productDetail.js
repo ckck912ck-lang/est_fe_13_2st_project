@@ -1,6 +1,7 @@
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
+import { fetchData } from "../utils/fetchData.js";
 import { addCartItem } from "../utils/localStorage.js";
 import { renderCartBadge } from "../modules/renderCartBadge.js";
 import { showToast } from "../modules/toast.js";
@@ -43,15 +44,157 @@ const reviews = [
       "파트너 안경원에서 렌즈까지 맞춰서 쓰고 있는데 너무 만족스러워요. 배송도 빠르고 포장도 고급스러웠습니다.",
   },
 ];
-
 const reviewList = document.querySelector('[data-render="product-review-list"]');
 const productTabs = document.querySelector(".product-detail-tabs");
 const productSummary = document.querySelector('[data-render="product-summary"]');
+const productBrandLink = document.querySelector(".product-summary-brand a");
+const productTitle = document.querySelector("#product-title");
+const productPrice = document.querySelector(".product-summary-price");
+const productColorOption = document.querySelector(".product-color-option");
+const productGalleryMainWrapper = document.querySelector(
+  ".product-gallery-main-swiper .swiper-wrapper"
+);
+const productGalleryThumbWrapper = document.querySelector(
+  ".product-gallery-thumb-swiper .swiper-wrapper"
+);
+function getProductImages(product) {
+  if (Array.isArray(product.images) && product.images.length > 0) {
+    return product.images;
+  }
+
+  if (product.thumbnail) {
+    return [product.thumbnail];
+  }
+
+  return [];
+}
+
+function renderProductGallery(product) {
+  if (!productGalleryMainWrapper || !productGalleryThumbWrapper) {
+    return;
+  }
+
+  const productImages = getProductImages(product);
+
+  if (productImages.length === 0) {
+    return;
+  }
+
+  productGalleryMainWrapper.innerHTML = productImages
+    .map((image, index) => {
+      return `
+        <div class="swiper-slide product-gallery-main">
+          <img
+            src="${image}"
+            alt="${product.brand} ${product.title} ${index + 1}번째 이미지"
+          />
+        </div>
+      `;
+    })
+    .join("");
+
+  productGalleryThumbWrapper.innerHTML = productImages
+    .map((image, index) => {
+      return `
+        <button
+          class="swiper-slide product-gallery-thumb"
+          type="button"
+          aria-label="${index + 1}번째 상품 이미지"
+        >
+          <img
+            src="${image}"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+      `;
+    })
+    .join("");
+}
+
 const addCartButton = document.querySelector('[data-action="add-cart"]');
 const quantityBox = document.querySelector(".product-quantity");
 const quantityText = quantityBox?.querySelector("span");
 
 let productQuantity = 1;
+
+function getProductIdFromUrl() {
+  const searchParams = new URLSearchParams(window.location.search);
+  return searchParams.get("id");
+}
+
+function formatPrice(price) {
+  return `${price.toLocaleString("ko-KR")}원`;
+}
+
+function createBrandUrl(brand) {
+  return `product-list.html?brand=${encodeURIComponent(brand)}`;
+}
+
+function renderProductSummary(product) {
+  if (!productSummary) {
+    return;
+  }
+
+  productSummary.dataset.productId = String(product.id);
+
+  if (productBrandLink) {
+    productBrandLink.href = createBrandUrl(product.brand);
+    productBrandLink.innerHTML = `
+      ${product.brand}
+      <span class="material-icons" aria-hidden="true">keyboard_arrow_right</span>
+    `;
+  }
+
+  if (productTitle) {
+    productTitle.textContent = product.title;
+  }
+
+  if (productPrice) {
+    productPrice.innerHTML = `
+      <strong>${formatPrice(product.price)}</strong>
+      ${
+        product.originalPrice && product.originalPrice > product.price
+          ? `<del>${formatPrice(product.originalPrice)}</del>`
+          : ""
+      }
+      ${product.discountRate ? `<span>-${product.discountRate}%</span>` : ""}
+    `;
+  }
+
+  if (productColorOption) {
+    renderProductColors(product.colors);
+  }
+}
+
+function renderProductColors(colors) {
+  if (!productColorOption) {
+    return;
+  }
+
+  const colorList = Array.isArray(colors) && colors.length > 0 ? colors : ["기본"];
+
+  productColorOption.innerHTML = `
+    <legend>색상 선택</legend>
+    <div class="product-chip-list">
+      ${colorList
+        .map((color, index) => {
+          return `
+            <label>
+              <input
+                type="radio"
+                name="product-color"
+                value="${color}"
+                ${index === 0 ? "checked" : ""}
+              />
+              <span>${color}</span>
+            </label>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
 
 function updateQuantity(nextQuantity) {
   productQuantity = Math.max(1, nextQuantity);
@@ -92,14 +235,19 @@ function initAddCartButton() {
 
   addCartButton.addEventListener("click", () => {
     const productId = productSummary.dataset.productId;
+    const checkedColorInput = document.querySelector('input[name="product-color"]:checked');
+    const selectedColor = checkedColorInput?.value;
 
     if (!productId) {
       console.error("상품 ID가 없습니다.");
       showToast("상품 정보를 찾을 수 없습니다.");
       return;
     }
-    const checkedColorInput = document.querySelector('input[name="product-color"]:checked');
-    const selectedColor = checkedColorInput?.value;
+
+    if (!selectedColor) {
+      showToast("색상을 선택해주세요.");
+      return;
+    }
 
     addCartItem(productId, productQuantity, selectedColor);
     renderCartBadge();
@@ -107,9 +255,30 @@ function initAddCartButton() {
   });
 }
 
-initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
+async function initProductDetail() {
+  try {
+    const data = await fetchData("./data/products.json");
+    const products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : [];
+
+    const productId = getProductIdFromUrl();
+    const product = products.find((product) => String(product.id) === productId) || products[0];
+
+    if (!product) {
+      showToast("상품 정보를 찾을 수 없습니다.");
+      return;
+    }
+
+    renderProductSummary(product);
+    renderProductGallery(product);
+    initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
+  } catch (error) {
+    console.error("상품 상세 정보를 불러오지 못했습니다.", error);
+    showToast("상품 정보를 불러오지 못했습니다.");
+  }
+}
 
 renderCartBadge();
+initProductDetail();
 initProductQuantity();
 initAddCartButton();
 
