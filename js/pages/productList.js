@@ -6,12 +6,14 @@ import { renderProducts } from "/js/modules/renderProducts.js";
 import { renderHeader } from "/js/modules/renderHeader.js";
 import { renderFooter } from "/js/modules/renderFooter.js";
 import { sortProducts } from "/js/modules/sort.js";
+import { getPagedProducts, renderPagination } from "/js/modules/pagination.js";
 // 변수 목록
 const data = await fetchData("/data/products.json");
 const products = data.products;
-const filteredData = data.products.slice(0, 12);
+// const filteredData = data.products.slice(0, 12);
 const container = document.querySelector(".product-list .product-list-grid");
 const productCount = document.querySelector("[data-render='product-count']");
+const pagination = document.querySelector("[data-render='pagination']");
 const countPerPage = 12;
 
 const sortArea = document.querySelector(".sort-area");
@@ -35,11 +37,18 @@ function renderProductCount(products) {
     <span class="product-count-pc">총 ${products.length}개 상품</span>
   `;
 }
+function renderProductList() {
+  const sortedProducts = sortProducts(currentProducts, currentSortType);
+  const pagedProducts = getPagedProducts(sortedProducts, currentPage, countPerPage);
+
+  renderProducts(pagedProducts, container);
+  renderPagination(sortedProducts.length, currentPage, countPerPage, pagination);
+}
 // 메인 페이지 기능
 
-// 상품 목록 기능
+// 상품 목록 기능 : 조승아 작성
 renderProductCount(currentProducts);
-renderProducts(currentProducts.slice(0, countPerPage), container);
+renderProductList();
 if (sortArea) {
   sortArea.addEventListener("click", (event) => {
     const sortButton = event.target.closest(".sort-button");
@@ -48,16 +57,45 @@ if (sortArea) {
 
     currentSortType = sortButton.dataset.sort || "basic";
 
-    const sortedProducts = sortProducts(currentProducts, currentSortType);
-    const pagedProducts = sortedProducts.slice(0, countPerPage);
-
-    renderProducts(pagedProducts, container);
+    currentPage = 1;
+    renderProductList();
 
     sortArea.querySelectorAll(".sort-button").forEach((button) => {
       button.classList.remove("is-active");
     });
 
     sortButton.classList.add("is-active");
+  });
+}
+if (pagination) {
+  pagination.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const pageButton = event.target.closest("[data-page]");
+
+    if (!pageButton) return;
+
+    const sortedProducts = sortProducts(currentProducts, currentSortType);
+    const totalPage = Math.ceil(sortedProducts.length / countPerPage);
+    const pageValue = pageButton.dataset.page;
+
+    if (pageValue === "prev") {
+      currentPage -= 1;
+    } else if (pageValue === "next") {
+      currentPage += 1;
+    } else {
+      currentPage = Number(pageValue);
+    }
+
+    if (currentPage < 1) {
+      currentPage = 1;
+    }
+
+    if (currentPage > totalPage) {
+      currentPage = totalPage;
+    }
+
+    renderProductList();
   });
 }
 // 헤더 렌더링
