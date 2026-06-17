@@ -4,6 +4,7 @@ import { initSearch } from "../modules/search.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { initProductSlider } from "../modules/carousel.js";
+import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 
 // 메인 페이지 기능
 renderHeader("");
@@ -32,6 +33,9 @@ async function renderAiProducts() {
     .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
     .join("");
 
+  // AI 추천 상품 이미지 지연 로딩 적용
+  initLazyLoadImages(wrapper);
+
   initProductSlider(".ai-product-swiper", ".ai-prev-btn", ".ai-next-btn");
 }
 
@@ -53,6 +57,9 @@ async function renderBestProducts() {
     .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
     .join("");
 
+  // 베스트 상품 이미지 지연 로딩 적용
+  initLazyLoadImages(wrapper);
+
   initProductSlider(".best-product-swiper", ".best-prev-btn", ".best-next-btn");
 }
 
@@ -71,6 +78,9 @@ async function renderNewProducts() {
   wrapper.innerHTML = newProducts
     .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
     .join("");
+
+  // 신상품 이미지 지연 로딩 적용
+  initLazyLoadImages(wrapper);
 
   initProductSlider(".new-product-swiper", ".new-prev-btn", ".new-next-btn");
 }
