@@ -19,17 +19,17 @@
   }
 }
 
-.btn--primary {
+.btn-primary {
   color: $color-white;
   background: $color-accent;
 }
 
-.btn--dark {
+.btn-dark {
   color: $color-white;
   background: $color-black;
 }
 
-.btn--outline {
+.btn-outline {
   border: 1px solid rgba($color-black, 0.16);
   color: $color-text;
   background: $color-white;

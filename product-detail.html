@@ -163,17 +163,22 @@
                     <span class="product-thumb product-thumb-bold" aria-hidden="true"></span>
                   </button>
                 </div>
+                <div class="product-gallery-thumb-scrollbar" aria-hidden="true"></div>
               </div>
             </section>
 
             <section
               class="product-summary"
               data-render="product-summary"
+              data-product-id="26"
               aria-label="상품 구매 정보"
             >
               <div class="product-summary-head">
                 <p class="product-summary-brand">
-                  <a href="product-list.html?brand=mykita">MYKITA</a>
+                  <a href="product-list.html?brand=mykita"
+                    >MYKITA
+                    <span class="material-icons" aria-hidden="true">keyboard_arrow_right</span>
+                  </a>
                 </p>
                 <button type="button" class="product-share-button" aria-label="상품 공유">
                   <span aria-hidden="true"></span>
@@ -191,7 +196,18 @@
                 <del>248,000원</del>
                 <span>-20%</span>
               </p>
-
+              <div class="product-purchase-actions">
+                <button type="button" class="btn btn-dark" data-action="add-cart">
+                  <span class="material-icons" aria-hidden="true">local_mall</span>
+                  장바구니 담기
+                </button>
+                <button type="button" class="btn btn-outline" data-action="buy-now">
+                  바로 구매
+                </button>
+                <button type="button" class="product-like-button" aria-label="관심 상품 추가">
+                  ♡
+                </button>
+              </div>
               <dl class="product-spec-grid">
                 <div>
                   <dt>프레임</dt>
@@ -247,22 +263,10 @@
                 </button>
               </div>
 
-              <p class="product-summary-desc">
+              <!-- <p class="product-summary-desc">
                 마이키타의 독보적인 스테인리스 스틸 프레임 기술로 제작. 힌지 없이 유연하게 움직이는
                 독자적인 플렉스 힌지 시스템이 특징입니다.
-              </p>
-
-              <div class="product-purchase-actions">
-                <button type="button" class="btn btn-dark" data-action="add-cart">
-                  장바구니 담기
-                </button>
-                <button type="button" class="btn btn-outline" data-action="buy-now">
-                  바로 구매
-                </button>
-                <button type="button" class="product-like-button" aria-label="관심 상품 추가">
-                  ♡
-                </button>
-              </div>
+              </p> -->
             </section>
           </div>
         </div>
@@ -524,7 +528,7 @@
       </a>
       <a href="cart.html">
         <span class="material-icons" aria-hidden="true">local_mall</span>
-        <span class="cart-badge" aria-label="장바구니 상품 수">2</span>
+        <span class="cart-badge" aria-label="장바구니 상품 수" data-render="cart-count">0</span>
         장바구니
       </a>
       <a href="login.html">
