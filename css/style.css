@@ -759,10 +759,22 @@ body {
 
 .badge--line {
   position: static;
-  min-height: 24px;
-  border: 1px solid #e5e5e5;
-  color: #111111;
-  background: #ffffff;
+  width: 37px;
+  height: 22px;
+  justify-content: center;
+  font-weight: 400;
+  color: rgb(136, 136, 128);
+  background: rgb(243, 242, 238);
+  border-radius: 999px;
+}
+
+.badge--line-long {
+  width: 44px;
+  height: 22px;
+  padding-inline: 8px 0;
+  justify-content: flex-start;
+  background: rgba(196, 169, 125, 0.15);
+  color: rgb(196, 169, 125);
 }
 
 .btn {
@@ -1361,57 +1373,57 @@ body {
 .tab-menu {
   display: flex;
   overflow: hidden;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px 8px 0 0;
-  background: #ffffff;
+  border: 1px solid rgb(232, 230, 225);
+  border-radius: 16px 16px 0 0;
+  background: rgb(255, 255, 255);
 }
 .tab-menu button {
   min-height: 45px;
   flex: 1 1 0;
-  border-right: 1px solid #e5e5e5;
-  color: #6b6b6b;
-  background: #ffffff;
-  font-weight: 800;
+  color: rgb(136, 136, 128);
+  background: rgb(255, 255, 255);
+  font-weight: 500;
 }
 .tab-menu button:last-child {
   border-right: 0;
 }
 .tab-menu button[aria-selected=true] {
-  color: #111111;
-  box-shadow: inset 0 -2px 0 #111111;
+  color: rgb(14, 14, 12);
+  border-bottom: 2px solid rgb(14, 14, 12);
 }
 
 .notice-list,
 .event-list {
   overflow: hidden;
-  border: 1px solid #e5e5e5;
+  border: 1px solid rgb(232, 230, 225);
   border-top: 0;
-  border-radius: 0 0 8px 8px;
-  background: #ffffff;
+  border-radius: 0 0 16px 16px;
+  background: rgb(255, 255, 255);
 }
 
 .notice-item {
   display: grid;
   min-height: 48px;
-  padding: 12px;
-  grid-template-columns: auto minmax(0, 1fr);
+  padding: 12px 16px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 6px 12px;
-  border-top: 1px solid #e5e5e5;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  border-top: 1px solid rgb(232, 230, 225);
 }
 .notice-item:first-child {
   border-top: 0;
 }
 .notice-item a {
   overflow: hidden;
-  font-weight: 700;
+  font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .notice-item time {
-  grid-column: 2;
-  color: #6b6b6b;
-  font-size: 0.8125rem;
+  color: rgb(136, 136, 128);
+  font-size: 12px;
+  font-weight: 400;
 }
 
 @media (min-width: 768px) {

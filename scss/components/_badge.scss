@@ -21,8 +21,21 @@
 
 .badge--line {
   position: static;
-  min-height: 24px;
-  border: 1px solid $color-line;
-  color: $color-text;
-  background: $color-white;
+  width: 37px;
+  height: 22px;
+  justify-content: center;
+  font-weight: 400;
+  color: $neutral-text-sub;
+  background: $neutral-input-bg;
+  border-radius: 999px;
+}
+
+// 3글자 뱃지 (이벤트) - 모든 브레이크포인트 동일
+.badge--line-long {
+  width: 44px;
+  height: 22px;
+  padding-inline: 8px 0;
+  justify-content: flex-start;
+  background: $neutral-primary-a4;
+  color: $brand-primary;
 }
