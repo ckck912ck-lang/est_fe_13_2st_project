@@ -7,3 +7,44 @@
 
 // 가져온 페이지 번호를 productList.js의 페이지 변경 함수에 전달
 // 실제 상품 배열 자르기와 상품 카드 렌더링은 productList.js에서 처리
+export function getPagedProducts(products, currentPage, countPerPage) {
+  const startIndex = (currentPage - 1) * countPerPage;
+  const endIndex = startIndex + countPerPage;
+
+  return products.slice(startIndex, endIndex);
+}
+
+export function renderPagination(totalCount, currentPage, countPerPage, container) {
+  if (!container) return;
+
+  const totalPage = Math.ceil(totalCount / countPerPage);
+
+  if (totalPage <= 1) {
+    container.innerHTML = "";
+    return;
+  }
+
+  let html = "";
+
+  html += `
+    <a href="#" aria-label="이전 페이지" data-page="prev">‹</a>
+  `;
+
+  for (let page = 1; page <= totalPage; page++) {
+    html += `
+      <a
+        href="#"
+        data-page="${page}"
+        ${page === currentPage ? 'aria-current="page"' : ""}
+      >
+        ${page}
+      </a>
+    `;
+  }
+
+  html += `
+    <a href="#" aria-label="다음 페이지" data-page="next">›</a>
+  `;
+
+  container.innerHTML = html;
+}
