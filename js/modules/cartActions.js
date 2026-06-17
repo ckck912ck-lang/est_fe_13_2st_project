@@ -105,14 +105,15 @@ function createCartItemTemplate(cartProduct) {
         <h3 class="cart-item__name">
           <a href="${detailUrl}">${title}</a>
         </h3>
-        <p class="cart-item__option">색상: ${colorText} / 수량: ${quantity}개</p>
-        <p class="cart-item__price">${formattedPrice}</p>
+        <p class="cart-item__option">${colorText}</p>
+        
         <div class="cart-item__bottom">
           <div class="cart-item__actions" aria-label="상품 수량">
             <button type="button" data-action="cart-decrease" aria-label="수량 감소">−</button>
             <span>${quantity}</span>
             <button type="button" data-action="cart-increase" aria-label="수량 증가">+</button>
           </div>
+          <p class="cart-item__price">${formattedPrice}</p>
         </div>
       </div>
       <button
