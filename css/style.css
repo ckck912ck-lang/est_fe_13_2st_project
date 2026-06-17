@@ -136,10 +136,12 @@ p {
 
 .section-heading {
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .section-heading h2 {
   font-size: 24px;
+  color: rgb(14, 14, 12);
+  font-weight: 600;
 }
 
 .section-heading--inline {
@@ -150,10 +152,9 @@ p {
 }
 
 .section-kicker {
-  margin-bottom: 4px;
-  color: #111111;
-  font-size: 0.75rem;
-  font-weight: 800;
+  color: rgb(196, 169, 125);
+  font-size: 12px;
+  font-weight: 400;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -2177,6 +2178,38 @@ body[data-cart-state=filled] .cart-page__state--empty {
   left: 8px;
 }
 .index-page .new-product-swiper .new-next-btn {
+  right: 8px;
+}
+.index-page .ai-product-swiper {
+  overflow: hidden;
+}
+.index-page .ai-product-swiper .ai-prev-btn,
+.index-page .ai-product-swiper .ai-next-btn {
+  position: absolute;
+  top: 116px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  color: rgb(68, 68, 68);
+}
+.index-page .ai-product-swiper .ai-prev-btn .material-icons,
+.index-page .ai-product-swiper .ai-next-btn .material-icons {
+  font-size: 20px;
+}
+.index-page .ai-product-swiper .ai-prev-btn.swiper-button-disabled,
+.index-page .ai-product-swiper .ai-next-btn.swiper-button-disabled {
+  opacity: 1;
+}
+.index-page .ai-product-swiper .ai-prev-btn {
+  left: 8px;
+}
+.index-page .ai-product-swiper .ai-next-btn {
   right: 8px;
 }
 .index-page .brand-grid {
