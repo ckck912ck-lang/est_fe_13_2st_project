@@ -449,8 +449,15 @@
   gap: 8px;
 
   .btn {
-    min-height: 48px;
-    border-radius: 12px;
+    min-height: 64px;
+    gap: 12px;
+    border-radius: 16px;
+    font-size: $mobile-body;
+    font-weight: 800;
+  }
+  .material-icons {
+    font-size: 22px;
+    line-height: 1;
   }
 
   .btn-outline {
@@ -501,36 +508,49 @@
 }
 
 .review-section {
-  padding-top: 10px;
+  padding-top: 32px;
 
   .review-section-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 24px;
 
     h2 {
-      font-size: 1.625rem;
+      color: $neutral-text-main;
+      font-size: $mobile-h5;
+      font-weight: 800;
       line-height: 1.2;
 
       span {
-        color: #8f8c85;
-        font-size: 1.125rem;
+        margin-left: 4px;
+        color: $neutral-text-sub;
+        font-size: $mobile-caption;
+        font-weight: 700;
       }
     }
   }
 }
 
 .review-write-button {
-  min-height: 38px;
-  padding-inline: 14px;
-  border: 1px solid #ece9e3;
+  display: inline-flex;
+  min-width: 92px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 16px;
+  border: 1px solid $neutral-border;
   border-radius: 999px;
-  color: #9b978e;
-  font-size: 0.8125rem;
-  font-weight: 800;
-  background: $color-white;
+  color: $neutral-text-sub;
+  font-size: $mobile-small;
+  font-weight: 700;
+  background: $neutral-white;
+
+  &:hover {
+    border-color: $neutral-text-main;
+    color: $neutral-text-main;
+  }
 }
 
 .review-list {
@@ -539,12 +559,12 @@
 
 .review-item {
   display: grid;
-  gap: 7px;
-  padding-block: 20px;
-  border-bottom: 1px solid #e9e7e1;
-  color: #8f8b83;
-  font-size: 0.9375rem;
-  line-height: 1.55;
+  gap: 8px;
+  padding-block: 24px;
+  border-bottom: 1px solid $neutral-border;
+  color: $neutral-text-sub;
+  font-size: $mobile-caption;
+  line-height: 1.7;
 
   .review-item-meta {
     display: flex;
@@ -553,19 +573,28 @@
     gap: 16px;
 
     strong {
-      color: $color-black;
-      font-size: 0.9375rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: $neutral-text-main;
+      font-size: $mobile-caption;
+      font-weight: 800;
 
       span {
-        margin-left: 8px;
-        color: #23bd6d;
-        font-size: 0.75rem;
+        margin-left: 0;
+        padding: 3px 7px;
+        border-radius: 999px;
+        color: $brand-accent-green;
+        font-size: $mobile-letter;
+        font-weight: 800;
+        line-height: 1;
+        background: $accent-light-green;
       }
     }
 
     time {
-      color: #aaa7a0;
-      font-size: 0.75rem;
+      color: $neutral-text-sub;
+      font-size: $mobile-small;
       white-space: nowrap;
     }
   }
@@ -573,15 +602,15 @@
   .review-item-stars {
     display: flex;
     align-items: center;
-    gap: 1px;
+    gap: 2px;
     color: $brand-primary;
-    font-size: 0.875rem;
-    letter-spacing: 0;
+    font-size: $mobile-caption;
+    letter-spacing: 1px;
   }
 }
 .star-icon {
   color: inherit;
-  font-size: 1rem;
+  font-size: $mobile-caption;
   line-height: 1;
 }
 
@@ -734,8 +763,13 @@
 
   .product-purchase-actions {
     grid-template-columns: 1fr;
-    max-width: 430px;
+    max-width: 100%;
 
+    .btn {
+      min-height: 72px; // <추가>
+      border-radius: 16px; // <추가>
+      font-size: $pc-body; // <추가>
+    }
     .btn-outline,
     .product-like-button {
       display: none;
@@ -762,32 +796,39 @@
 
   .review-section {
     max-width: 880px;
+    padding-top: 32px;
 
     .review-section-head {
-      margin-bottom: 16px;
+      margin-bottom: 24px;
 
       h2 {
-        font-size: 1.5rem;
+        font-size: $pc-h5;
+        font-weight: 800;
       }
     }
   }
 
   .review-write-button {
-    min-height: 32px;
+    min-width: 104px;
+    min-height: 38px;
     padding-inline: 18px;
-    font-size: 0.75rem;
+    font-size: $pc-caption;
   }
 
   .review-item {
     grid-template-columns: minmax(0, 1fr) auto;
-    padding-block: 18px;
-    font-size: 0.875rem;
+    gap: 10px;
+    padding-block: 32px;
+    font-size: $pc-caption;
+    line-height: 1.75;
 
     .review-item-meta {
       display: contents;
 
       strong {
         grid-column: 1;
+        font-size: $pc-caption;
+        font-weight: 800;
       }
 
       time {
@@ -795,6 +836,7 @@
         grid-row: 1 / span 3;
         align-self: center;
         font-size: 0.8125rem;
+        color: $neutral-text-sub;
       }
     }
 
