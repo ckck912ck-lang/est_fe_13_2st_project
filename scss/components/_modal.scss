@@ -22,3 +22,108 @@
   justify-content: space-between;
   margin-bottom: 16px;
 }
+
+// 검색 모달 — 전체 너비 top-sheet, 내용물(.inner)만 너비 제한
+.search-modal {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100dvh; // 뷰포트 전체 높이 채워서 아래 페이지 가림
+  border-radius: 0;
+  background: $neutral-main-bg;
+
+  // .inner 기본값(960px/1440px)을 검색 모달 스펙 너비로 오버라이드, 패딩 16px 고정
+  .inner {
+    padding-inline: 16px;
+
+    @media (min-width: 768px) {
+      max-width: 480px;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 672px;
+    }
+  }
+}
+
+.search-modal__form {
+  background: $neutral-main-bg;
+
+  // .inner 안 행 — flex 레이아웃과 border-bottom을 여기에 달아서
+  // .inner의 padding-inline(16px)만큼 border가 자동으로 양쪽 마진을 가짐
+  &-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 48px 0 12px;
+    border-bottom: 2px solid $neutral-text-main;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: $neutral-text-sub;
+  }
+
+  &__close {
+    color: $neutral-text-sub;
+
+    &:hover {
+      color: $neutral-text-main;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-size: $mobile-body;
+    font-family: $font-family-base;
+    background: transparent;
+    color: $neutral-text-main;
+
+    &::placeholder {
+      color: $neutral-text-sub;
+    }
+
+    // 기본 제공되는 ✕ 버튼 숨김 (자체 닫기 버튼 사용)
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+}
+
+.popular-keywords {
+  padding-top: 32px;
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: $mobile-caption;
+    font-weight: 400;
+    color: $neutral-text-sub;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.keyword-pill {
+  padding: 8px 16px;
+  border: 1px solid $neutral-border;
+  border-radius: 999px;
+  font-size: $mobile-caption;
+  font-family: $font-family-base;
+  color: $neutral-text-sub;
+  background: $neutral-main-bg;
+  cursor: pointer;
+
+  &:hover {
+    color: $neutral-text-main;
+    border-color: $neutral-text-main;
+  }
+}

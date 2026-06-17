@@ -96,6 +96,7 @@ $tablet-h2: 40px;
 $tablet-h3: 32px;
 $tablet-h4: 28px;
 $tablet-h5: 24px;
+$tablet-body-l: 20px;
 $tablet-label: 16px;
 $tablet-body: 16px;
 $tablet-caption: 14px;
@@ -103,13 +104,16 @@ $pc-h2: 48px;
 $pc-h3: 40px;
 $pc-h4: 32px;
 $pc-h5: 24px;
+$pc-h6: 20px;
 $pc-label: 16px;
 $pc-body-l: 18px;
 $pc-body-m: 16px;
 $pc-caption: 14px;
 
 /* Effect styles */
-$header-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-$bottom-nav-shadow: 0px -1px 6px rgba(0, 0, 0, 0.15);
+$header-shadow-pc: 0px 2px 6px rgba(0, 0, 0, 0.15);
+$header-shadow-mobile: 0px 1px 6px rgba(0, 0, 0, 0.1);
+$bottom-nav-shadow-pc: 0px -2px 6px rgba(0, 0, 0, 0.2);
+$bottom-nav-shadow-mobile: 0px -1px 6px rgba(0, 0, 0, 0.15);
 
 /* PRETENDARD */

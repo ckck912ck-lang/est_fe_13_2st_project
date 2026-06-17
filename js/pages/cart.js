@@ -1,6 +1,9 @@
 // 장바구니 기능
 import { fetchData } from "../utils/fetchData.js";
 import { initCartPage } from "../modules/cartActions.js";
+import { renderHeader } from "../modules/renderHeader.js";
+import { renderFooter } from "../modules/renderFooter.js";
+import { initSearch } from "../modules/search.js";
 import { renderCartBadge } from "../modules/renderCartBadge.js";
 import { showToast } from "../modules/toast.js";
 
@@ -22,4 +25,7 @@ async function initCart() {
   }
 }
 
+renderHeader("");
 initCart();
+renderFooter();
+initSearch();

@@ -247,11 +247,12 @@
             <div class="tab-list" role="tablist" aria-label="상품 정보 탭">
               <button
                 type="button"
-                class="tab-button"
+                class="tab-button active"
                 id="detail-tab"
                 role="tab"
                 aria-selected="true"
                 aria-controls="detail-panel"
+                data-tab="detail"
               >
                 상세정보
               </button>
@@ -262,6 +263,7 @@
                 role="tab"
                 aria-selected="false"
                 aria-controls="review-panel"
+                data-tab="review"
               >
                 리뷰
               </button>
@@ -272,12 +274,19 @@
                 role="tab"
                 aria-selected="false"
                 aria-controls="qna-panel"
+                data-tab="qna"
               >
                 문의
               </button>
             </div>
 
-            <div class="tab-panel" id="detail-panel" role="tabpanel" aria-labelledby="detail-tab">
+            <div
+              class="tab-panel"
+              id="detail-panel"
+              role="tabpanel"
+              aria-labelledby="detail-tab"
+              data-tab="detail"
+            >
               <p>
                 슬림한 티타늄 프레임에 클래식 웰링턴 실루엣을 더한 베스트셀러입니다. 얼굴에 닿는
                 부분마다 섬세하게 가공된 노즈패드가 장시간 착용에도 편안함을 유지합니다.
@@ -288,6 +297,7 @@
               id="review-panel"
               role="tabpanel"
               aria-labelledby="review-tab"
+              data-tab="review"
               hidden
             ></div>
             <div
@@ -295,6 +305,7 @@
               id="qna-panel"
               role="tabpanel"
               aria-labelledby="qna-tab"
+              data-tab="qna"
               hidden
             ></div>
           </div>
