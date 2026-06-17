@@ -15,12 +15,12 @@ export function renderTestimonials(reviews, container, maxCount = reviews.length
     .map((review) => {
       return `
         <article class="review-item">
-          <div class="review-item__meta">
+          <div class="review-item-meta">
             <strong>${review.author} <span>구매확인</span></strong>
             <time datetime="${review.date}">${review.date.replaceAll("-", ".")}</time>
           </div>
 
-          <p class="review-item__stars" aria-label="별점 ${review.rating}점">
+          <p class="review-item-stars" aria-label="별점 ${review.rating}점">
             ${renderStars(review.rating)}
           </p>
 

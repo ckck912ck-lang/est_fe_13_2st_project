@@ -23,163 +23,157 @@
 
 .product-gallery {
   min-width: 0;
+}
 
-  &__main {
-    position: relative;
-    display: grid;
-    width: 100%;
-    aspect-ratio: 1 / 1.02;
-    overflow: hidden;
-    place-items: center;
-    background:
-      radial-gradient(circle at 34% 36%, rgba($color-white, 0.72) 0 11%, transparent 12%),
-      linear-gradient(142deg, rgba($color-black, 0.04), rgba($color-black, 0.15)), #f4efeb;
+.product-gallery-main-swiper {
+  position: relative; // <수정>
+  width: 100%; // <수정>
+  aspect-ratio: 1 / 1.02; // <수정>
+  overflow: hidden; // <수정>
+  background: #f4efeb; // <수정>
+}
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 76%;
-      height: 30%;
-      border: 6px solid rgba($color-black, 0.72);
-      border-top-width: 4px;
-      border-radius: 999px;
-      transform: rotate(-18deg);
-    }
+.product-gallery-main {
+  position: relative; // <수정>
+  display: grid; // <수정>
+  width: 100%; // <수정>
+  height: 100%; // <수정>
+  place-items: center; // <수정>
+  background:
+    radial-gradient(circle at 34% 36%, rgba($color-white, 0.72) 0 11%, transparent 12%),
+    linear-gradient(142deg, rgba($color-black, 0.04), rgba($color-black, 0.15)), #f4efeb;
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 44%;
-      height: 2px;
-      background: rgba($color-black, 0.62);
-      transform: translate(28%, -560%) rotate(-18deg);
-    }
-    &--angle {
-      &::before {
-        transform: rotate(-18deg);
-      }
-
-      &::after {
-        transform: translate(28%, -560%) rotate(-18deg);
-      }
-    }
-
-    &--clear {
-      background:
-        radial-gradient(circle at 42% 34%, rgba($color-white, 0.75) 0 10%, transparent 11%),
-        linear-gradient(142deg, rgba($color-black, 0.03), rgba($color-black, 0.09)), #f5f5f4;
-
-      &::before {
-        border-color: rgba($color-black, 0.52);
-        transform: rotate(0deg);
-      }
-
-      &::after {
-        background: rgba($color-black, 0.46);
-        transform: translate(28%, -560%) rotate(0deg);
-      }
-    }
-
-    &--bold {
-      background:
-        radial-gradient(circle at 38% 38%, rgba($color-white, 0.6) 0 10%, transparent 11%),
-        linear-gradient(142deg, rgba($color-black, 0.08), rgba($color-black, 0.18)), #eeeeec;
-
-      &::before {
-        border-width: 8px;
-        border-top-width: 6px;
-        border-color: rgba($color-black, 0.86);
-        transform: rotate(0deg);
-      }
-
-      &::after {
-        height: 3px;
-        background: rgba($color-black, 0.78);
-        transform: translate(28%, -560%) rotate(0deg);
-      }
-    }
-  }
-
-  &__arrow {
+  &::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    z-index: 2;
-    display: grid;
-    width: 34px;
-    height: 34px;
-    place-items: center;
-    border-radius: 50%;
-    color: #8b8b84;
-    font-size: 1.75rem;
-    line-height: 1;
-    background: rgba($color-white, 0.78);
-    transform: translateY(-50%);
-
-    &--prev {
-      left: 18px;
-    }
-
-    &--next {
-      right: 18px;
-    }
+    width: 76%;
+    height: 30%;
+    border: 6px solid rgba($color-black, 0.72);
+    border-top-width: 4px;
+    border-radius: 999px;
+    transform: rotate(-18deg);
   }
 
-  &__dots {
+  &::after {
+    content: "";
     position: absolute;
-    bottom: 24px;
-    left: 50%;
-    display: flex;
-    gap: 5px;
-    transform: translateX(-50%);
+    width: 44%;
+    height: 2px;
+    background: rgba($color-black, 0.62);
+    transform: translate(28%, -560%) rotate(-18deg);
+  }
+}
 
-    span {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: rgba($color-black, 0.28);
-
-      &.is-active {
-        width: 21px;
-        background: $color-black;
-      }
-    }
+.product-gallery-main-angle {
+  &::before {
+    transform: rotate(-18deg); // <수정>
   }
 
-  &__thumbs {
-    display: flex;
-    padding: 12px 16px 14px;
-    gap: 10px;
-    overflow-x: auto;
-    background: $color-white;
-
-    &::after {
-      content: "";
-      position: absolute;
-      right: 18px;
-      left: 18px;
-      height: 5px;
-      margin-top: 72px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #93938e 0 58%, #ecebe8 58% 100%);
-      pointer-events: none;
-    }
-
-    button {
-      position: relative;
-      width: 62px;
-      height: 62px;
-      flex: 0 0 auto;
-      padding: 0;
-      overflow: hidden;
-      border: 1px solid transparent;
-      border-radius: 10px;
-      background: #f4f2ef;
-
-      &.is-active {
-        border-color: $color-black;
-      }
-    }
+  &::after {
+    transform: translate(28%, -560%) rotate(-18deg); // <수정>
   }
+}
+
+.product-gallery-main-clear {
+  background:
+    radial-gradient(circle at 42% 34%, rgba($color-white, 0.75) 0 10%, transparent 11%),
+    linear-gradient(142deg, rgba($color-black, 0.03), rgba($color-black, 0.09)), #f5f5f4; // <수정>
+
+  &::before {
+    border-color: rgba($color-black, 0.52); // <수정>
+    transform: rotate(0deg); // <수정>
+  }
+
+  &::after {
+    background: rgba($color-black, 0.46); // <수정>
+    transform: translate(28%, -560%) rotate(0deg); // <수정>
+  }
+}
+
+.product-gallery-main-bold {
+  background:
+    radial-gradient(circle at 38% 38%, rgba($color-white, 0.6) 0 10%, transparent 11%),
+    linear-gradient(142deg, rgba($color-black, 0.08), rgba($color-black, 0.18)), #eeeeec; // <수정>
+
+  &::before {
+    border-width: 8px; // <수정>
+    border-top-width: 6px; // <수정>
+    border-color: rgba($color-black, 0.86); // <수정>
+    transform: rotate(0deg); // <수정>
+  }
+
+  &::after {
+    height: 3px; // <수정>
+    background: rgba($color-black, 0.78); // <수정>
+    transform: translate(28%, -560%) rotate(0deg); // <수정>
+  }
+}
+
+.product-gallery-arrow {
+  position: absolute; // <수정>
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  color: #8b8b84;
+  font-size: 1.75rem;
+  line-height: 1;
+  background: rgba($color-white, 0.78);
+  transform: translateY(-50%);
+}
+
+.product-gallery-arrow-prev {
+  left: 18px; // <수정>
+}
+
+.product-gallery-arrow-next {
+  right: 18px; // <수정>
+}
+
+.product-gallery-dots {
+  position: absolute; // <수정>
+  bottom: 24px;
+  left: 50%;
+  z-index: 2; // <수정>
+  display: flex;
+  gap: 5px;
+  transform: translateX(-50%);
+
+  .swiper-pagination-bullet {
+    width: 7px; // <수정>
+    height: 7px; // <수정>
+    border-radius: 999px;
+    background: rgba($color-black, 0.28);
+    opacity: 1; // <수정>
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 21px; // <수정>
+    background: $color-black; // <수정>
+  }
+}
+
+.product-gallery-thumb-swiper {
+  padding: 12px 16px 14px; // <수정>
+  background: $color-white; // <수정>
+}
+
+.product-gallery-thumb {
+  position: relative; // <수정>
+  width: 62px; // <수정>
+  height: 62px; // <수정>
+  padding: 0; // <수정>
+  overflow: hidden; // <수정>
+  border: 1px solid transparent; // <수정>
+  border-radius: 10px; // <수정>
+  background: #f4f2ef; // <수정>
+}
+
+.product-gallery-thumb.swiper-slide-thumb-active {
+  border-color: $color-black; // <수정>
 }
 
 .product-thumb {
@@ -198,22 +192,21 @@
     border-radius: 999px;
     transform: rotate(-18deg);
   }
+}
+.product-thumb-clear {
+  background: #f5f5f4;
 
-  &--clear {
-    background: #f5f5f4;
-
-    &::before {
-      transform: rotate(0deg);
-    }
+  &::before {
+    transform: rotate(0deg);
   }
+}
 
-  &--bold {
-    background: #eeeeec;
+.product-thumb-bold {
+  background: #eeeeec;
 
-    &::before {
-      border-color: rgba($color-black, 0.86);
-      transform: rotate(0deg);
-    }
+  &::before {
+    border-color: rgba($color-black, 0.86);
+    transform: rotate(0deg);
   }
 }
 
@@ -225,14 +218,14 @@
   gap: 18px;
   background: $color-white;
 
-  &__head {
+  .product-summary-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
   }
 
-  &__brand {
+  .product-summary-brand {
     color: #8a8881;
     font-size: 0.8125rem;
     font-weight: 700;
@@ -250,7 +243,7 @@
     letter-spacing: 0;
   }
 
-  &__rating {
+  .product-summary-rating {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -265,7 +258,7 @@
     }
   }
 
-  &__price {
+  .product-summary-price {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -287,7 +280,7 @@
     }
   }
 
-  &__desc {
+  .product-summary-desc {
     color: #96938c;
     font-size: 0.9375rem;
     line-height: 1.65;
@@ -460,7 +453,7 @@
     border-radius: 12px;
   }
 
-  .btn--outline {
+  .btn-outline {
     display: none;
   }
 }
@@ -510,7 +503,7 @@
 .review-section {
   padding-top: 10px;
 
-  &__head {
+  .review-section-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -553,7 +546,7 @@
   font-size: 0.9375rem;
   line-height: 1.55;
 
-  &__meta {
+  .review-item-meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -577,7 +570,7 @@
     }
   }
 
-  &__stars {
+  .review-item-stars {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -592,7 +585,7 @@
   line-height: 1;
 }
 
-.star-icon--empty {
+.star-icon-empty {
   color: $neutral-border;
 }
 
@@ -609,15 +602,15 @@
     line-height: 1.2;
   }
 
-  &__grid {
+  .related-products-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 }
 
-.product-card--compact {
-  .product-card__image {
+.product-card-compact {
+  .product-card-image {
     border-radius: 10px;
   }
 }
@@ -636,11 +629,11 @@
   }
 
   .product-gallery {
-    &__main {
+    .product-gallery-main {
       border-radius: 20px;
     }
 
-    &__thumbs {
+    .product-gallery-thumb-swiper {
       padding-inline: 0;
 
       &::after {
@@ -686,12 +679,12 @@
   }
 
   .product-gallery {
-    &__main {
+    .product-gallery-main {
       aspect-ratio: 1 / 1;
       border-radius: 18px;
     }
 
-    &__thumbs {
+    .product-gallery-thumb-swiper {
       padding-top: 16px;
       gap: 12px;
 
@@ -713,7 +706,7 @@
       font-weight: 600;
     }
 
-    &__price {
+    .product-summary-price {
       strong {
         font-size: 1.875rem;
       }
@@ -724,7 +717,7 @@
       }
     }
 
-    &__desc {
+    .product-summary-desc {
       max-width: 430px;
       font-size: 0.9375rem;
     }
@@ -743,7 +736,7 @@
     grid-template-columns: 1fr;
     max-width: 430px;
 
-    .btn--outline,
+    .btn-outline,
     .product-like-button {
       display: none;
     }
@@ -770,7 +763,7 @@
   .review-section {
     max-width: 880px;
 
-    &__head {
+    .review-section-head {
       margin-bottom: 16px;
 
       h2 {
@@ -790,7 +783,7 @@
     padding-block: 18px;
     font-size: 0.875rem;
 
-    &__meta {
+    .review-item-meta {
       display: contents;
 
       strong {
@@ -805,8 +798,8 @@
       }
     }
 
-    &__stars,
-    > p:not(.review-item__stars) {
+    .review-item-stars,
+    > p:not(.review-item-stars) {
       grid-column: 1;
     }
   }
@@ -819,17 +812,17 @@
       font-size: 1.5rem;
     }
 
-    &__grid {
+    .related-products-grid {
       gap: 24px;
     }
   }
 
-  .product-card--compact {
-    .product-card__body {
+  .product-card-compact {
+    .product-card-body {
       padding-top: 12px;
     }
 
-    .product-card__brand {
+    .product-card-brand {
       font-size: 0.8125rem;
     }
 
@@ -837,8 +830,8 @@
       font-size: 1rem;
     }
 
-    .product-card__rating,
-    .product-card__price {
+    .product-card-rating,
+    .product-card-price {
       font-size: 0.875rem;
     }
   }
