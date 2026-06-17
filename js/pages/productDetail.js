@@ -261,7 +261,13 @@ async function initProductDetail() {
     const products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : [];
 
     const productId = getProductIdFromUrl();
-    const product = products.find((product) => String(product.id) === productId) || products[0];
+
+    if (!productId) {
+      showToast("상품 ID가 없습니다.");
+      return;
+    }
+
+    const product = products.find((product) => String(product.id) === productId);
 
     if (!product) {
       showToast("상품 정보를 찾을 수 없습니다.");
