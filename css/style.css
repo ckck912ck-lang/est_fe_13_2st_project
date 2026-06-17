@@ -1407,6 +1407,9 @@ footer .footer-bottom .footer-copyright {
 .notice-item:first-child {
   border-top: 0;
 }
+.notice-item:hover {
+  background: rgb(240, 238, 233);
+}
 .notice-item a {
   overflow: hidden;
   font-weight: 400;

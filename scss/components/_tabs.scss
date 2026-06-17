@@ -47,6 +47,10 @@
     border-top: 0;
   }
 
+  &:hover {
+    background: $neutral-hover-bg;
+  }
+
   a {
     overflow: hidden;
     font-weight: 400;
