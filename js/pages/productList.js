@@ -1,4 +1,9 @@
 // 상품목록 : 배정호 작성
+// 이 파일은 상품 목록 페이지의 조립 역할을 담당함
+// 데이터 가져오기, 현재 상품 배열/정렬/페이지 상태 관리, 이벤트 연결을 처리함
+// 정렬 계산은 sort.js에서 처리함
+// 페이지네이션 계산/렌더링은 pagination.js에서 처리함
+// 상품 카드 렌더링은 renderProducts.js에서 처리함
 
 // 들여오기 목록
 import { fetchData } from "/js/utils/fetchData.js";
@@ -6,11 +11,16 @@ import { renderProducts } from "/js/modules/renderProducts.js";
 import { renderHeader } from "/js/modules/renderHeader.js";
 import { renderFooter } from "/js/modules/renderFooter.js";
 import { sortProducts } from "/js/modules/sort.js";
-import { getPagedProducts, renderPagination } from "/js/modules/pagination.js";
+import {
+  getPagedProducts,
+  renderPagination,
+  getNextPage,
+  getTotalPage,
+} from "/js/modules/pagination.js";
+
 // 변수 목록
 const data = await fetchData("/data/products.json");
 const products = data.products;
-// const filteredData = data.products.slice(0, 12);
 const container = document.querySelector(".product-list .product-list-grid");
 const productCount = document.querySelector("[data-render='product-count']");
 const pagination = document.querySelector("[data-render='pagination']");
@@ -20,14 +30,7 @@ const sortArea = document.querySelector(".sort-area");
 
 let currentProducts = [...products];
 let currentSortType = "basic";
-
 let currentPage = 1;
-let paginationCount = 0;
-
-let selectedCategories = [];
-let selectedBrands = [];
-let selectedPrice = "";
-let eyeWearShape = "";
 
 // 상품 개수 렌더링
 // 매개변수:
@@ -36,7 +39,6 @@ let eyeWearShape = "";
 // - 없음
 // 동작:
 // - products.length를 사용해 상품 개수를 화면에 출력함
-
 function renderProductCount(products) {
   if (!productCount) return;
 
@@ -45,16 +47,16 @@ function renderProductCount(products) {
     <span class="product-count-pc">총 ${products.length}개 상품</span>
   `;
 }
-// 상품 목록 렌더링 함수
+// 상품 목록 렌더링 흐름 조립
 // 매개변수:
 // - 없음
 // 반환값:
 // - 없음
 // 동작:
-// - currentProducts를 현재 정렬 기준으로 정렬함
-// - currentPage 기준으로 한 페이지에 보여줄 상품만 잘라냄
-// - 잘라낸 상품 목록을 렌더링함
-// - 현재 상품 개수와 페이지 정보를 기준으로 페이지네이션을 렌더링함
+// - sort.js의 sortProducts()를 호출해 현재 정렬 기준으로 상품 배열을 정렬함
+// - pagination.js의 getPagedProducts()를 호출해 현재 페이지에 보여줄 상품만 가져옴
+// - renderProducts()를 호출해 상품 카드를 렌더링함
+// - pagination.js의 renderPagination()을 호출해 페이지네이션 버튼을 렌더링함
 function renderProductList() {
   const sortedProducts = sortProducts(currentProducts, currentSortType);
   const pagedProducts = getPagedProducts(sortedProducts, currentPage, countPerPage);
@@ -64,15 +66,18 @@ function renderProductList() {
 }
 // 메인 페이지 기능
 
-// 상품 목록 기능 : 조승아 작성
+// 상품 목록 기능
 // 상품 목록 초기 렌더링
 // 페이지가 처음 열렸을 때 상품 개수와 첫 페이지 상품 목록을 출력함
 renderProductCount(currentProducts);
 renderProductList();
 
 // 정렬 버튼 클릭 이벤트
-// 클릭한 버튼의 data-sort 값을 기준으로 정렬 방식을 변경함
-// 정렬이 바뀌면 currentPage를 1로 초기화하고 상품 목록을 다시 렌더링함
+// 역할:
+// - 클릭한 정렬 버튼의 data-sort 값을 읽음
+// - currentSortType 상태를 변경함
+// - 정렬 기준이 바뀌면 currentPage를 1로 초기화함
+// - renderProductList()를 다시 호출해 정렬/페이지네이션 결과를 화면에 반영함
 if (sortArea) {
   sortArea.addEventListener("click", (event) => {
     const sortButton = event.target.closest(".sort-button");
@@ -93,8 +98,10 @@ if (sortArea) {
 }
 
 // 페이지네이션 클릭 이벤트
-// 페이지 번호, 이전 버튼, 다음 버튼 클릭 시 currentPage를 변경함
-// 변경된 currentPage 기준으로 상품 목록을 다시 렌더링함
+// 역할:
+// - 클릭한 페이지 값을 읽음
+// - pagination.js의 getTotalPage(), getNextPage()를 사용해 이동할 페이지를 계산함
+// - currentPage 상태를 갱신한 뒤 상품 목록을 다시 렌더링함
 if (pagination) {
   pagination.addEventListener("click", (event) => {
     event.preventDefault();
@@ -104,24 +111,10 @@ if (pagination) {
     if (!pageButton) return;
 
     const sortedProducts = sortProducts(currentProducts, currentSortType);
-    const totalPage = Math.ceil(sortedProducts.length / countPerPage);
+    const totalPage = getTotalPage(sortedProducts.length, countPerPage);
     const pageValue = pageButton.dataset.page;
 
-    if (pageValue === "prev") {
-      currentPage -= 1;
-    } else if (pageValue === "next") {
-      currentPage += 1;
-    } else {
-      currentPage = Number(pageValue);
-    }
-
-    if (currentPage < 1) {
-      currentPage = 1;
-    }
-
-    if (currentPage > totalPage) {
-      currentPage = totalPage;
-    }
+    currentPage = getNextPage(pageValue, currentPage, totalPage);
 
     renderProductList();
   });
