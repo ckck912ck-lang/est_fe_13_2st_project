@@ -7,6 +7,17 @@
 
 // 가져온 페이지 번호를 productList.js의 페이지 변경 함수에 전달
 // 실제 상품 배열 자르기와 상품 카드 렌더링은 productList.js에서 처리
+
+// 현재 페이지에 보여줄 상품 배열 가져오기
+// 매개변수:
+// - products: 페이지네이션을 적용할 상품 배열
+// - currentPage: 현재 페이지 번호
+// - countPerPage: 한 페이지에 보여줄 상품 개수
+// 반환값:
+// - 현재 페이지에 해당하는 상품만 잘라낸 새 배열
+// 동작:
+// - currentPage와 countPerPage를 기준으로 시작/끝 인덱스를 계산함
+// - products 배열에서 해당 범위만 slice로 잘라 반환함
 export function getPagedProducts(products, currentPage, countPerPage) {
   const startIndex = (currentPage - 1) * countPerPage;
   const endIndex = startIndex + countPerPage;
@@ -14,6 +25,19 @@ export function getPagedProducts(products, currentPage, countPerPage) {
   return products.slice(startIndex, endIndex);
 }
 
+// 페이지네이션 버튼 렌더링
+// 매개변수:
+// - totalCount: 전체 상품 개수
+// - currentPage: 현재 페이지 번호
+// - countPerPage: 한 페이지에 보여줄 상품 개수
+// - container: 페이지네이션 버튼 HTML을 넣을 DOM 요소
+// 반환값:
+// - 없음
+// 동작:
+// - 전체 상품 개수와 한 페이지당 상품 개수로 전체 페이지 수를 계산함
+// - 페이지가 1개 이하이면 페이지네이션 영역을 비움
+// - 이전 버튼, 페이지 번호 버튼, 다음 버튼을 생성해 container에 출력함
+// - 현재 페이지에는 aria-current="page"를 적용함
 export function renderPagination(totalCount, currentPage, countPerPage, container) {
   if (!container) return;
 

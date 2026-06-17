@@ -29,6 +29,14 @@ let selectedBrands = [];
 let selectedPrice = "";
 let eyeWearShape = "";
 
+// 상품 개수 렌더링
+// 매개변수:
+// - products: 개수를 표시할 기준 상품 배열
+// 반환값:
+// - 없음
+// 동작:
+// - products.length를 사용해 상품 개수를 화면에 출력함
+
 function renderProductCount(products) {
   if (!productCount) return;
 
@@ -37,6 +45,16 @@ function renderProductCount(products) {
     <span class="product-count-pc">총 ${products.length}개 상품</span>
   `;
 }
+// 상품 목록 렌더링 함수
+// 매개변수:
+// - 없음
+// 반환값:
+// - 없음
+// 동작:
+// - currentProducts를 현재 정렬 기준으로 정렬함
+// - currentPage 기준으로 한 페이지에 보여줄 상품만 잘라냄
+// - 잘라낸 상품 목록을 렌더링함
+// - 현재 상품 개수와 페이지 정보를 기준으로 페이지네이션을 렌더링함
 function renderProductList() {
   const sortedProducts = sortProducts(currentProducts, currentSortType);
   const pagedProducts = getPagedProducts(sortedProducts, currentPage, countPerPage);
@@ -47,8 +65,14 @@ function renderProductList() {
 // 메인 페이지 기능
 
 // 상품 목록 기능 : 조승아 작성
+// 상품 목록 초기 렌더링
+// 페이지가 처음 열렸을 때 상품 개수와 첫 페이지 상품 목록을 출력함
 renderProductCount(currentProducts);
 renderProductList();
+
+// 정렬 버튼 클릭 이벤트
+// 클릭한 버튼의 data-sort 값을 기준으로 정렬 방식을 변경함
+// 정렬이 바뀌면 currentPage를 1로 초기화하고 상품 목록을 다시 렌더링함
 if (sortArea) {
   sortArea.addEventListener("click", (event) => {
     const sortButton = event.target.closest(".sort-button");
@@ -67,6 +91,10 @@ if (sortArea) {
     sortButton.classList.add("is-active");
   });
 }
+
+// 페이지네이션 클릭 이벤트
+// 페이지 번호, 이전 버튼, 다음 버튼 클릭 시 currentPage를 변경함
+// 변경된 currentPage 기준으로 상품 목록을 다시 렌더링함
 if (pagination) {
   pagination.addEventListener("click", (event) => {
     event.preventDefault();
