@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>ROUNZ | AI 안경 추천</title>
   </head>
@@ -246,41 +247,14 @@
               >전체보기 <span class="material-icons" aria-hidden="true">east</span></a
             >
           </div>
-          <div class="product-grid product-grid--best" data-render="best-products">
-            <article class="product-card">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="RAY-BAN WAYFARER 상품 상세"
-                ><span class="badge">BEST</span></a
-              >
-              <div class="product-card__body">
-                <p class="product-card__brand">RAY-BAN</p>
-                <h3><a href="product-detail.html">WAYFARER RB2140</a></h3>
-                <p class="product-card__rating">
-                  <span class="material-icons" aria-hidden="true">star</span>
-                  4.6 (892)
-                </p>
-                <p class="product-card__price">189,000원</p>
-              </div>
-            </article>
-            <article class="product-card">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--soft"
-                aria-label="MOSCOT LEMTOSH 상품 상세"
-                ><span class="badge">BEST</span></a
-              >
-              <div class="product-card__body">
-                <p class="product-card__brand">MOSCOT</p>
-                <h3><a href="product-detail.html">LEMTOSH</a></h3>
-                <p class="product-card__rating">
-                  <span class="material-icons" aria-hidden="true">star</span>
-                  4.7 (445)
-                </p>
-                <p class="product-card__price">285,000원</p>
-              </div>
-            </article>
+          <div class="swiper best-product-swiper">
+            <div class="swiper-wrapper" data-render="best-products"></div>
+            <button type="button" class="swiper-button-prev" aria-label="이전 베스트 상품">
+              <span class="material-icons" aria-hidden="true">chevron_left</span>
+            </button>
+            <button type="button" class="swiper-button-next" aria-label="다음 베스트 상품">
+              <span class="material-icons" aria-hidden="true">chevron_right</span>
+            </button>
           </div>
         </div>
       </section>
@@ -503,41 +477,42 @@
 
       <section class="popular-keywords" aria-labelledby="popular-keywords-title">
         <div class="inner">
-        <h2 id="popular-keywords-title" class="popular-keywords__title">인기 검색어</h2>
-        <ul class="popular-keywords__list" aria-label="인기 검색어 목록">
-          <li>
-            <button type="button" class="keyword-pill" data-keyword="CARIN">CARIN</button>
-          </li>
-          <li>
-            <button type="button" class="keyword-pill" data-keyword="GENTLE MONSTER">
-              GENTLE MONSTER
-            </button>
-          </li>
-          <li>
-            <button type="button" class="keyword-pill" data-keyword="라운드">라운드</button>
-          </li>
-          <li>
-            <button type="button" class="keyword-pill" data-keyword="티타늄">티타늄</button>
-          </li>
-          <li>
-            <button type="button" class="keyword-pill" data-keyword="웰링턴">웰링턴</button>
-          </li>
-          <li>
-            <button type="button" class="keyword-pill" data-keyword="가벼운 안경">
-              가벼운 안경
-            </button>
-          </li>
-          <li>
-            <button type="button" class="keyword-pill" data-keyword="얼굴형 추천">
-              얼굴형 추천
-            </button>
-          </li>
-        </ul>
+          <h2 id="popular-keywords-title" class="popular-keywords__title">인기 검색어</h2>
+          <ul class="popular-keywords__list" aria-label="인기 검색어 목록">
+            <li>
+              <button type="button" class="keyword-pill" data-keyword="CARIN">CARIN</button>
+            </li>
+            <li>
+              <button type="button" class="keyword-pill" data-keyword="GENTLE MONSTER">
+                GENTLE MONSTER
+              </button>
+            </li>
+            <li>
+              <button type="button" class="keyword-pill" data-keyword="라운드">라운드</button>
+            </li>
+            <li>
+              <button type="button" class="keyword-pill" data-keyword="티타늄">티타늄</button>
+            </li>
+            <li>
+              <button type="button" class="keyword-pill" data-keyword="웰링턴">웰링턴</button>
+            </li>
+            <li>
+              <button type="button" class="keyword-pill" data-keyword="가벼운 안경">
+                가벼운 안경
+              </button>
+            </li>
+            <li>
+              <button type="button" class="keyword-pill" data-keyword="얼굴형 추천">
+                얼굴형 추천
+              </button>
+            </li>
+          </ul>
         </div>
       </section>
     </dialog>
 
     <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script type="module" src="js/pages/index.js"></script>
   </body>
 </html>

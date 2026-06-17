@@ -2,6 +2,8 @@ import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
 import { initSearch } from "../modules/search.js";
 import { fetchData } from "../utils/fetchData.js";
+import { renderProductCard } from "../modules/renderProductCard.js";
+import { initProductSlider } from "../modules/carousel.js";
 
 // 메인 페이지 기능
 renderHeader("");
@@ -19,6 +21,23 @@ initSearch();
 // 스타일 큐레이션 : 필터된 상품목록으로 이동
 
 // 베스트 상품 : 슬라이드, 전체 상품 필터해서 베스트 상품만 출력
+async function renderBestProducts() {
+  const data = await fetchData("./data/products.json");
+  if (!data) return;
+
+  const bestProducts = data.products.filter((product) => product.isBest);
+
+  const wrapper = document.querySelector('[data-render="best-products"]');
+  if (!wrapper) return;
+
+  wrapper.innerHTML = bestProducts
+    .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
+    .join("");
+
+  initProductSlider(".best-product-swiper");
+}
+
+renderBestProducts();
 
 // 신상품 : 전체 상품 필터해서 신상품 중 4개만 출력
 
