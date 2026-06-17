@@ -13,6 +13,7 @@ import { renderFooter } from "/js/modules/renderFooter.js";
 import { sortProducts } from "/js/modules/sort.js";
 import { getPagedProducts, renderPagination, getNextPage, getTotalPage} from "/js/modules/pagination.js";
 import { showSkeleton } from "/js/modules/renderSkeleton.js";
+import { initLazyLoadImages } from "/js/utils/lazyLoadImage.js";
 // 변수 목록
 const container = document.querySelector(".product-list .product-list-grid");
 
@@ -63,6 +64,9 @@ function renderProductList() {
 
   renderProducts(pagedProducts, container);
   renderPagination(sortedProducts.length, currentPage, countPerPage, pagination);
+
+  // 상품 카드 이미지 지연 로딩 적용
+  initLazyLoadImages(container);
 }
 // 메인 페이지 기능
 

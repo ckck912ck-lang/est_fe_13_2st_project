@@ -5,6 +5,7 @@ import { fetchData } from "../utils/fetchData.js";
 import { addCartItem } from "../utils/localStorage.js";
 import { renderCartBadge } from "../modules/renderCartBadge.js";
 import { showToast } from "../modules/toast.js";
+import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 // 상품 상세 기능
 
 // 상품 이미지 : 현재 선택한 썸네일에 맞는 큰 이미지 띄우기, 슬라이드
@@ -85,7 +86,7 @@ function renderProductGallery(product) {
       return `
         <div class="swiper-slide product-gallery-main">
           <img
-            src="${image}"
+            data-src="${image}"
             alt="${product.brand} ${product.title} ${index + 1}번째 이미지"
           />
         </div>
@@ -102,7 +103,7 @@ function renderProductGallery(product) {
           aria-label="${index + 1}번째 상품 이미지"
         >
           <img
-            src="${image}"
+            data-src="${image}"
             alt=""
             aria-hidden="true"
           />
@@ -110,6 +111,9 @@ function renderProductGallery(product) {
       `;
     })
     .join("");
+
+  // 상품 갤러리 이미지 지연 로딩 적용
+  initLazyLoadImages(productGalleryMainWrapper.closest(".product-gallery"));
 }
 
 const addCartButton = document.querySelector('[data-action="add-cart"]');
