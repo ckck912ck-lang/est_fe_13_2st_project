@@ -12,7 +12,7 @@ export function renderStars(rating) {
     } else if (roundedRating >= i - 0.5) {
       stars += `<span class="material-icons star-icon" aria-hidden="true">star_half</span>`;
     } else {
-      stars += `<span class="material-icons star-icon star-icon--empty" aria-hidden="true">star_border</span>`;
+      stars += `<span class="material-icons star-icon star-icon-empty" aria-hidden="true">star_border</span>`;
     }
   }
 
