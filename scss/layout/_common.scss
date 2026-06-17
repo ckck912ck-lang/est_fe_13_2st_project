@@ -43,6 +43,10 @@
   padding-block: 24px;
 }
 
+.section-block + .section-block {
+  padding-top: 0;
+}
+
 .section-block + .section-block::before {
   content: "";
   display: block;
@@ -54,11 +58,10 @@
 
 .section-heading {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 
   h2 {
-    font-size: 1.5rem;
-    line-height: 1.25;
+    font-size: $mobile-h4;
   }
 }
 
@@ -79,10 +82,28 @@
 }
 
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   flex: 0 0 auto;
-  color: $color-muted;
-  font-size: 0.875rem;
-  font-weight: 700;
+  color: $neutral-text-sub;
+  font-size: $mobile-small;
+  font-weight: 400;
+
+  .material-icons {
+    font-size: 14px;
+    font-weight: 400;
+    color: $neutral-text-sub;
+    padding: 2px 0;
+  }
+
+  &:hover {
+    color: $neutral-text-main;
+
+    .material-icons {
+      color: $neutral-text-main;
+    }
+  }
 }
 
 @media (min-width: 768px) {
@@ -95,8 +116,16 @@
     padding-block: 32px;
   }
 
+  .section-block + .section-block::before {
+    margin-bottom: 32px;
+  }
+
   .section-heading h2 {
-    font-size: clamp(1.625rem, 1.1rem + 1.6vw, 2.125rem);
+    font-size: $tablet-h4;
+  }
+
+  .text-link {
+    font-size: $tablet-caption;
   }
 }
 
@@ -114,9 +143,16 @@
     padding-block: 48px;
   }
 
+  .section-block + .section-block::before {
+    margin-bottom: 48px;
+  }
+
   .section-heading h2 {
-    font-size: clamp(1.875rem, 1.2rem + 2vw, 3.75rem);
-    line-height: 1.12;
+    font-size: $pc-h4;
+  }
+
+  .text-link {
+    font-size: $pc-caption;
   }
 }
 
