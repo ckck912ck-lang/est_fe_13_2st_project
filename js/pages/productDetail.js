@@ -51,6 +51,67 @@ const productBrandLink = document.querySelector(".product-summary-brand a");
 const productTitle = document.querySelector("#product-title");
 const productPrice = document.querySelector(".product-summary-price");
 const productColorOption = document.querySelector(".product-color-option");
+const productGalleryMainWrapper = document.querySelector(
+  ".product-gallery-main-swiper .swiper-wrapper"
+);
+const productGalleryThumbWrapper = document.querySelector(
+  ".product-gallery-thumb-swiper .swiper-wrapper"
+);
+function getProductImages(product) {
+  if (Array.isArray(product.images) && product.images.length > 0) {
+    return product.images;
+  }
+
+  if (product.thumbnail) {
+    return [product.thumbnail];
+  }
+
+  return [];
+}
+
+function renderProductGallery(product) {
+  if (!productGalleryMainWrapper || !productGalleryThumbWrapper) {
+    return;
+  }
+
+  const productImages = getProductImages(product);
+
+  if (productImages.length === 0) {
+    return;
+  }
+
+  productGalleryMainWrapper.innerHTML = productImages
+    .map((image, index) => {
+      return `
+        <div class="swiper-slide product-gallery-main">
+          <img
+            src="${image}"
+            alt="${product.brand} ${product.title} ${index + 1}번째 이미지"
+          />
+        </div>
+      `;
+    })
+    .join("");
+
+  productGalleryThumbWrapper.innerHTML = productImages
+    .map((image, index) => {
+      return `
+        <button
+          class="swiper-slide product-gallery-thumb"
+          type="button"
+          aria-label="${index + 1}번째 상품 이미지"
+        >
+          <img
+            src="${image}"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+      `;
+    })
+    .join("");
+}
+
 const addCartButton = document.querySelector('[data-action="add-cart"]');
 const quantityBox = document.querySelector(".product-quantity");
 const quantityText = quantityBox?.querySelector("span");
@@ -208,12 +269,13 @@ async function initProductDetail() {
     }
 
     renderProductSummary(product);
+    renderProductGallery(product);
+    initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
   } catch (error) {
     console.error("상품 상세 정보를 불러오지 못했습니다.", error);
     showToast("상품 정보를 불러오지 못했습니다.");
   }
 }
-initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
 
 renderCartBadge();
 initProductDetail();
