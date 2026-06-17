@@ -5,13 +5,18 @@ import { fetchData } from "/js/utils/fetchData.js";
 import { renderProducts } from "/js/modules/renderProducts.js";
 import { renderHeader } from "/js/modules/renderHeader.js";
 import { renderFooter } from "/js/modules/renderFooter.js";
-
+import { sortProducts } from "/js/modules/sort.js";
 // 변수 목록
 const data = await fetchData("/data/products.json");
-const product = data.products;
+const products = data.products;
 const filteredData = data.products.slice(0, 12);
 const container = document.querySelector(".product-list .product-list-grid");
 const countPerPage = 12;
+
+const sortArea = document.querySelector(".sort-area");
+
+let currentProducts = [...products];
+let currentSortType = "basic";
 
 let currentPage = 1;
 let paginationCount = 0;
@@ -24,8 +29,27 @@ let eyeWearShape = "";
 // 메인 페이지 기능
 
 // 상품 목록 기능
-renderProducts(filteredData, container);
+renderProducts(currentProducts.slice(0, countPerPage), container);
+if (sortArea) {
+  sortArea.addEventListener("click", (event) => {
+    const sortButton = event.target.closest(".sort-button");
 
+    if (!sortButton) return;
+
+    currentSortType = sortButton.dataset.sort || "basic";
+
+    const sortedProducts = sortProducts(currentProducts, currentSortType);
+    const pagedProducts = sortedProducts.slice(0, countPerPage);
+
+    renderProducts(pagedProducts, container);
+
+    sortArea.querySelectorAll(".sort-button").forEach((button) => {
+      button.classList.remove("is-active");
+    });
+
+    sortButton.classList.add("is-active");
+  });
+}
 // 헤더 렌더링
 renderHeader("B");
 
