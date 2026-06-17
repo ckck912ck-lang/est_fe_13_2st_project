@@ -1,3 +1,5 @@
+<!-- 상품목록 : 배정호 작성 -->
+
 <!doctype html>
 <html lang="ko">
   <head>
@@ -10,104 +12,18 @@
   <body class="product-list-body">
     <a class="skip-link" href="#main">본문 바로가기</a>
 
-    <header class="site-header" data-component="header">
-      <div class="site-header__inner">
-        <button
-          type="button"
-          class="icon-button hamburger-button"
-          aria-controls="hamburger-nav"
-          aria-expanded="false"
-          aria-label="전체 메뉴 열기"
-          data-action="open-menu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
+    <!-- 헤더(모듈) -->
+    <header class="header"></header>
 
-        <h1 class="site-header__logo">
-          <a href="index.html" aria-label="ROUNZ 홈">ROUNZ</a>
-        </h1>
-
-        <div class="site-header__actions">
-          <button
-            type="button"
-            class="icon-button"
-            aria-controls="search-modal"
-            aria-label="검색 열기"
-            data-action="open-search"
-          >
-            <span class="material-icons" aria-hidden="true">search</span>
-          </button>
-          <a class="icon-button" href="cart.html" aria-label="장바구니">
-            <span class="material-icons" aria-hidden="true">local_mall</span>
-            <span class="cart-badge" aria-label="장바구니 상품 수">0</span>
-          </a>
-          <a class="site-header__login" href="login.html">로그인</a>
-        </div>
-        <nav class="site-header__nav" aria-label="주요 메뉴">
-          <a href="product-list.html" aria-current="page">전체 상품</a>
-          <a href="product-list.html?category=glasses">안경</a>
-          <a href="product-list.html?category=sunglasses">선글라스</a>
-          <a href="#partner-store">파트너 안경원</a>
-        </nav>
-      </div>
-    </header>
-
-    <aside
-      class="hamburger-nav"
-      id="hamburger-nav"
-      aria-label="전체 메뉴"
-      data-component="hamburger-nav"
-      hidden
-    >
-      <div class="hamburger-nav__head">
-        <strong>ROUNZ</strong>
-        <button
-          type="button"
-          class="icon-button"
-          aria-label="전체 메뉴 닫기"
-          data-action="close-menu"
-        >
-          ×
-        </button>
-      </div>
-      <nav class="hamburger-nav__quick" aria-label="빠른 메뉴">
-        <a href="index.html">홈</a>
-        <a href="product-list.html" aria-current="page">상품</a>
-        <a href="cart.html">장바구니</a>
-        <a href="login.html">로그인</a>
-      </nav>
-      <nav class="hamburger-nav__section" aria-label="카테고리">
-        <h2>카테고리</h2>
-        <a href="product-list.html">전체 상품</a>
-        <a href="product-list.html?category=glasses">안경</a>
-        <a href="product-list.html?category=sunglasses">선글라스</a>
-        <a href="product-list.html?category=clip-on">클립온</a>
-        <a href="product-list.html?category=smart">스마트 안경</a>
-      </nav>
-      <nav class="hamburger-nav__section" aria-label="브랜드">
-        <h2>브랜드</h2>
-        <a href="product-list.html?brand=carin">CARIN</a>
-        <a href="product-list.html?brand=gentle-monster">GENTLE MONSTER</a>
-        <a href="product-list.html?brand=lindberg">LINDBERG</a>
-        <a href="product-list.html?brand=ray-ban">RAY-BAN</a>
-        <a href="product-list.html?brand=moscot">MOSCOT</a>
-      </nav>
-      <div class="hamburger-nav__service">
-        <a href="#partner-store">파트너 안경원 찾기</a>
-        <a href="tel:15880000">고객센터 1588-0000</a>
-      </div>
-    </aside>
-
+    <!-- 메인 -->
     <main id="main" class="main product-list-page">
-      <section class="product-list-section" aria-labelledby="product-list-title">
+      <section class="product-list-top-section" aria-labelledby="product-list-title">
         <div class="inner product-list-inner">
+          <!-- 현재 리스트 제목 -->
           <div class="product-list-header">
             <div>
               <h1 id="product-list-title">
-                <span class="product-list-title-mobile">전체 상품</span>
-                <span class="product-list-title-pc">신상품</span>
+                <span class="product-list-title-mobile">전체</span>
               </h1>
               <p class="product-count" data-render="product-count">
                 <span class="product-count-mobile">총 20개 상품</span>
@@ -116,370 +32,75 @@
             </div>
           </div>
 
-          <aside class="filter-panel" aria-label="상품 필터">
-            <button
-              type="button"
-              class="filter-chip filter-toggle-button"
-              aria-expanded="false"
-              aria-controls="product-filter-content"
-              data-action="toggle-filter"
-            >
-              <span aria-hidden="true">≡</span> 필터
-            </button>
-
-            <div class="filter-panel__content" id="product-filter-content">
-              <div class="filter-group" data-filter-group="category">
-                <button type="button" class="filter-chip is-active">안경</button>
-                <button type="button" class="filter-chip">선글라스</button>
-                <button type="button" class="filter-chip">클립온</button>
-                <button type="button" class="filter-chip">스마트 안경</button>
-              </div>
-              <div class="filter-group" data-filter-group="brand">
-                <button type="button" class="filter-chip">CARIN</button>
-                <button type="button" class="filter-chip">GENTLE MONSTER</button>
-                <button type="button" class="filter-chip">LINDBERG</button>
-                <button type="button" class="filter-chip">RAY-BAN</button>
-                <button type="button" class="filter-chip">MYKITA</button>
-                <button type="button" class="filter-chip">MOSCOT</button>
-              </div>
-              <div class="filter-group filter-group--compact" data-filter-group="price">
-                <button type="button" class="filter-chip">가격 낮은순</button>
-                <button type="button" class="filter-chip">가격 높은순</button>
-              </div>
-              <div class="filter-group filter-group--compact" data-filter-group="face-shape">
-                <button type="button" class="filter-chip">얼굴형 추천</button>
-              </div>
-            </div>
-          </aside>
-
-          <div class="product-list-toolbar">
-            <div class="sort-area" aria-label="상품 정렬">
-              <button type="button" class="sort-button is-active" data-sort="basic">기본순</button>
-              <button type="button" class="sort-button" data-sort="popular">별점순</button>
-              <button type="button" class="sort-button" data-sort="price-low">가격 낮은순</button>
-              <button type="button" class="sort-button" data-sort="price-high">가격 높은순</button>
-              <button type="button" class="sort-button" data-sort="name">이름순</button>
-              <select class="sort-select" data-sort="product-sort" aria-label="상품 정렬">
-                <option value="basic">기본순</option>
-                <option value="popular">별점순</option>
-                <option value="price-low">가격 낮은순</option>
-                <option value="price-high">가격 높은순</option>
-                <option value="name">이름순</option>
-              </select>
-            </div>
-
-            <div class="view-toggle" aria-label="상품 보기 방식">
-              <button type="button" class="is-active" aria-label="그리드 보기">
-                <span aria-hidden="true">▦</span>
+          <!-- 상품 필터/정렬 -->
+          <div class="filter-section">
+            <aside class="filter-panel" aria-label="상품 필터">
+              <button
+                type="button"
+                class="filter-chip filter-toggle-button"
+                aria-expanded="false"
+                aria-controls="product-filter-content"
+                data-action="toggle-filter"
+              >
+                <span aria-hidden="true" class="material-icons">filter_alt</span> 필터
               </button>
-              <button type="button" aria-label="리스트 보기">
-                <span aria-hidden="true">☰</span>
-              </button>
+
+              <div class="filter-panel-content" id="product-filter-content">
+                <div class="filter-group" data-filter-group="category">
+                  <button type="button" class="filter-chip is-active">안경</button>
+                  <button type="button" class="filter-chip">선글라스</button>
+                  <button type="button" class="filter-chip">고글</button>
+                  <button type="button" class="filter-chip">클립온</button>
+                  <button type="button" class="filter-chip">스마트 안경</button>
+                </div>
+              </div>
+            </aside>
+
+            <div class="product-list-toolbar sort">
+              <div class="sort-area" aria-label="상품 정렬">
+                <button type="button" class="sort-button is-active" data-sort="basic">
+                  기본순
+                </button>
+                <button type="button" class="sort-button" data-sort="popular">별점순</button>
+                <button type="button" class="sort-button" data-sort="like">좋아요순</button>
+                <button type="button" class="sort-button" data-sort="price-low">가격 낮은순</button>
+                <button type="button" class="sort-button" data-sort="price-high">
+                  가격 높은순
+                </button>
+                <button type="button" class="sort-button" data-sort="name">이름순</button>
+              </div>
             </div>
           </div>
-
-          <div class="product-grid product-list-grid" data-render="product-list">
-            <article class="product-card product-card--listed">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--clear"
-                aria-label="GENTLE MONSTER MAGO SPACE 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">GENTLE MONSTER</p>
-                <h2><a href="product-detail.html">MAGO SPACE</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.9 (512)</p>
-                <p class="product-card__price">345,000원</p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--side"
-                aria-label="CARIN JEJU 02 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">JEJU 02</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.8 (278)</p>
-                <p class="product-card__price">228,000원</p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--bold"
-                aria-label="CARIN BOLD 01 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">BOLD 01</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.6 (203)</p>
-                <p class="product-card__price">178,000원</p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="CARIN STELLA 03 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span>
-                <span class="badge">BEST</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">STELLA 03</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.9 (519)</p>
-                <p class="product-card__price">248,000원</p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="GENTLE MONSTER MUSEE 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">GENTLE MONSTER</p>
-                <h2><a href="product-detail.html">MUSEE</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.6 (234)</p>
-                <p class="product-card__price">315,000원</p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--bold"
-                aria-label="RAY-BAN STORIES 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">RAY-BAN</p>
-                <h2><a href="product-detail.html">RAY-BAN STORIES</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.3 (98)</p>
-                <p class="product-card__price">398,000원</p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed product-card--mobile-extra">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="CARIN OSLO 01 상품 상세"
-              >
-                <span class="badge">BEST</span>
-                <span class="badge badge--new">NEW</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">OSLO 01</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.8 (342)</p>
-                <p class="product-card__price">198,000원 <del>248,000</del> <span>-20%</span></p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed product-card--mobile-extra">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="CARIN OSLO 01 상품 상세"
-              >
-                <span class="badge">BEST</span>
-                <span class="badge badge--new">NEW</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">OSLO 01</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.8 (342)</p>
-                <p class="product-card__price">198,000원 <del>248,000</del> <span>-20%</span></p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed product-card--mobile-extra">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="CARIN OSLO 01 상품 상세"
-              >
-                <span class="badge">BEST</span>
-                <span class="badge badge--new">NEW</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">OSLO 01</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.8 (342)</p>
-                <p class="product-card__price">198,000원 <del>248,000</del> <span>-20%</span></p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed product-card--mobile-extra">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="CARIN OSLO 01 상품 상세"
-              >
-                <span class="badge">BEST</span>
-                <span class="badge badge--new">NEW</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">OSLO 01</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.8 (342)</p>
-                <p class="product-card__price">198,000원 <del>248,000</del> <span>-20%</span></p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed product-card--mobile-extra">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="CARIN OSLO 01 상품 상세"
-              >
-                <span class="badge">BEST</span>
-                <span class="badge badge--new">NEW</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">OSLO 01</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.8 (342)</p>
-                <p class="product-card__price">198,000원 <del>248,000</del> <span>-20%</span></p>
-              </div>
-            </article>
-
-            <article class="product-card product-card--listed product-card--mobile-extra">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="CARIN OSLO 01 상품 상세"
-              >
-                <span class="badge">BEST</span>
-                <span class="badge badge--new">NEW</span>
-                <span class="product-card__sale">20%</span>
-              </a>
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h2><a href="product-detail.html">OSLO 01</a></h2>
-                <p class="product-card__rating"><span aria-hidden="true">★</span> 4.8 (342)</p>
-                <p class="product-card__price">198,000원 <del>248,000</del> <span>-20%</span></p>
-              </div>
-            </article>
-          </div>
-
-          <nav class="pagination" aria-label="상품 목록 페이지네이션" data-render="pagination">
-            <a href="#" aria-label="이전 페이지">‹</a>
-            <a href="#" aria-current="page">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#" aria-label="다음 페이지">›</a>
-          </nav>
-
-          <button type="button" class="product-more-button" data-action="load-more">
-            더 보기 <span aria-hidden="true">⌄</span>
-          </button>
         </div>
+      </section>
+
+      <!-- 상품 목록 그리드 -->
+      <section class="product-list">
+        <div class="product-grid product-list-grid" data-render="product-list"></div>
+
+        <!-- 페이지네이션 -->
+        <nav class="pagination" aria-label="상품 목록 페이지네이션" data-render="pagination">
+          <a href="#" aria-label="이전 페이지">‹</a>
+          <a href="#" aria-current="page">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#" aria-label="다음 페이지">›</a>
+        </nav>
+
+        <!-- 무한스크롤 시작 버튼 -->
+        <button type="button" class="product-more-button" data-action="load-more">
+          <span>더 보기</span>
+          <span class="material-icons" aria-hidden="true">keyboard_arrow_down</span>
+        </button>
       </section>
     </main>
 
-    <footer class="site-footer" data-component="footer">
-      <div class="site-footer__inner">
-        <div class="site-footer__brand">
-          <strong>ROUNZ</strong>
-          <p>AI 기반 가상피팅과 얼굴형 분석으로 나에게 꼭 맞는 안경을 찾아드립니다.</p>
-        </div>
+    <!-- 푸터 (모듈) -->
+    <footer class="footer"></footer>
 
-        <div class="site-footer__social" aria-label="소셜 채널">
-          <a
-            class="site-footer__social-link site-footer__social-link--instagram"
-            href="#"
-            aria-label="ROUNZ 인스타그램"
-          ></a>
-          <a
-            class="site-footer__social-link site-footer__social-link--youtube"
-            href="#"
-            aria-label="ROUNZ 유튜브"
-          ></a>
-        </div>
-
-        <section
-          class="site-footer__section site-footer__section--service"
-          aria-labelledby="footer-service-title"
-        >
-          <h2 id="footer-service-title">서비스</h2>
-          <div class="site-footer__links">
-            <a href="index.html#ai-recommend">AI 얼굴형 분석</a>
-            <a href="#">가상 피팅</a>
-            <a href="product-list.html">안경 추천</a>
-            <a href="#partner-store">파트너 안경원</a>
-          </div>
-        </section>
-
-        <section
-          class="site-footer__section site-footer__section--store"
-          aria-labelledby="footer-store-title"
-          id="partner-store"
-        >
-          <h2 id="footer-store-title">매장 안내</h2>
-          <div class="site-footer__links site-footer__links--store">
-            <a href="#partner-store"
-              ><span class="site-footer__icon site-footer__icon--pin" aria-hidden="true"></span
-              >플래그십 스토어</a
-            >
-            <a href="#partner-store"
-              ><span class="site-footer__icon site-footer__icon--pin" aria-hidden="true"></span
-              >파트너 안경원 찾기</a
-            >
-            <a href="tel:15880000"
-              ><span class="site-footer__icon site-footer__icon--phone" aria-hidden="true"></span
-              >1588-0000</a
-            >
-            <a href="mailto:help@rounz.com"
-              ><span class="site-footer__icon site-footer__icon--mail" aria-hidden="true"></span
-              >help@rounz.com</a
-            >
-          </div>
-        </section>
-
-        <section
-          class="site-footer__section site-footer__section--support"
-          aria-labelledby="footer-support-title"
-        >
-          <h2 id="footer-support-title">고객 지원</h2>
-          <div class="site-footer__links site-footer__links--support">
-            <a href="#">공지사항</a>
-            <a href="#">자주 묻는 질문</a>
-            <a href="#">교환/반품 안내</a>
-            <a href="#">이벤트</a>
-            <a href="#">개인정보처리방침</a>
-            <a href="#">이용약관</a>
-          </div>
-        </section>
-      </div>
-    </footer>
-
+    <!-- 바텀내비 (모듈) -->
     <nav class="bottom-nav" aria-label="하단 내비게이션" data-component="bottom-nav">
       <a href="index.html"> <span class="material-icons" aria-hidden="true">home</span> 홈 </a>
       <a href="product-list.html" aria-current="page">
@@ -498,15 +119,18 @@
       </a>
     </nav>
 
+    <!-- 고정버튼 (모듈) -->
     <a class="fixed-chat-button" href="#search-modal" aria-label="AI 상담 시작">
       <span class="sr-only">AI 상담</span>
     </a>
 
     <dialog class="modal" id="search-modal" aria-labelledby="search-modal-title">
-      <form method="dialog" class="modal__content">
-        <div class="modal__head">
+      <form method="dialog" class="modal-content">
+        <div class="modal-head">
           <h2 id="search-modal-title">검색</h2>
-          <button type="submit" class="icon-button" aria-label="검색 닫기">×</button>
+          <button type="submit" class="icon-button material-icons" aria-label="검색 닫기">
+            close
+          </button>
         </div>
         <label class="form-field">
           <span>검색어</span>
