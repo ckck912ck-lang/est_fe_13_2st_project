@@ -46,6 +46,7 @@ function getCartProducts(products, cartItems) {
         productId: cartItem.productId,
         quantity: cartItem.quantity,
         selected: cartItem.selected,
+        selectedColor: cartItem.selectedColor,
       };
     })
     .filter(Boolean);
@@ -72,19 +73,17 @@ function createCartItemTemplate(cartProduct) {
     title,
     price,
     thumbnail,
-    colors,
     quantity,
     selected,
+    selectedColor,
   } = cartProduct;
 
   const detailUrl = `product-detail.html?id=${productId}`;
-  const colorText = Array.isArray(colors) && colors.length > 0
-    ? colors.join(", ")
-    : "기본";
+  const colorText = selectedColor;
   const formattedPrice = formatPrice(price * quantity);
 
   return `
-    <article class="cart-item" data-product-id="${productId}">
+    <article class="cart-item" data-product-id="${productId}" data-selected-color="${selectedColor}">
       <label class="cart-item__check">
         <input
           type="checkbox"
@@ -105,14 +104,15 @@ function createCartItemTemplate(cartProduct) {
         <h3 class="cart-item__name">
           <a href="${detailUrl}">${title}</a>
         </h3>
-        <p class="cart-item__option">색상: ${colorText} / 수량: ${quantity}개</p>
-        <p class="cart-item__price">${formattedPrice}</p>
+        <p class="cart-item__option">${colorText}</p>
+        
         <div class="cart-item__bottom">
           <div class="cart-item__actions" aria-label="상품 수량">
             <button type="button" data-action="cart-decrease" aria-label="수량 감소">−</button>
             <span>${quantity}</span>
             <button type="button" data-action="cart-increase" aria-label="수량 증가">+</button>
           </div>
+          <p class="cart-item__price">${formattedPrice}</p>
         </div>
       </div>
       <button
@@ -224,8 +224,16 @@ function handleCartItemClick(event, products) {
   }
 
   const productId = cartItemElement.dataset.productId;
+  const selectedColor = cartItemElement.dataset.selectedColor;
+
+  if (!productId || !selectedColor) {
+    return;
+  }
+
   const cartItems = getCartItems();
-  const cartItem = cartItems.find(item => item.productId === productId);
+  const cartItem = cartItems.find(item => {
+    return item.productId === productId && item.selectedColor === selectedColor;
+  });
 
   if (!cartItem) {
     return;
@@ -234,20 +242,20 @@ function handleCartItemClick(event, products) {
   const action = actionElement.dataset.action;
 
   if (action === "cart-increase") {
-    updateCartItemQuantity(productId, cartItem.quantity + 1);
+    updateCartItemQuantity(productId, cartItem.quantity + 1, selectedColor);
     renderCartPage(products);
     return;
   }
 
   if (action === "cart-decrease") {
     const nextQuantity = Math.max(1, cartItem.quantity - 1);
-    updateCartItemQuantity(productId, nextQuantity);
+    updateCartItemQuantity(productId, nextQuantity, selectedColor);
     renderCartPage(products);
     return;
   }
 
   if (action === "cart-remove") {
-    removeCartItem(productId);
+    removeCartItem(productId, selectedColor);
     showToast("상품이 장바구니에서 삭제되었습니다.");
     renderCartPage(products);
   }
@@ -272,8 +280,13 @@ function handleCartItemChange(event, products) {
   }
 
   const productId = cartItemElement.dataset.productId;
+  const selectedColor = cartItemElement.dataset.selectedColor;
 
-  updateCartItemSelected(productId, actionElement.checked);
+  if (!productId || !selectedColor) {
+    return;
+  }
+
+  updateCartItemSelected(productId, actionElement.checked, selectedColor);
   renderCartPage(products);
 }
 

@@ -8,6 +8,11 @@ function normalizeProductId(productId) {
   return String(productId ?? "").trim();
 }
 
+// 선택 색상 값 유효성 체크 함수
+function normalizeSelectedColor(selectedColor) {
+  return String(selectedColor ?? "").trim();
+}
+
 // 불러온 값을 숫자로 변환해주는 함수
 function normalizeQuantity(quantity) {
   const parsedQuantity = Number(quantity);
@@ -42,8 +47,9 @@ export function setCartItems(cartItems) {
 }
 
 // 장바구니에 상품을 추가하는 함수
-export function addCartItem(productId, quantity = 1) {
+export function addCartItem(productId, quantity = 1, selectedColor) {
   const id = normalizeProductId(productId);
+  const color = normalizeSelectedColor(selectedColor);
   const safeQuantity = normalizeQuantity(quantity);
 
   if (!id) {
@@ -51,8 +57,16 @@ export function addCartItem(productId, quantity = 1) {
     return;
   }
 
+  if (!color) {
+    console.error("선택된 색상이 없습니다.");
+    return;
+  }
+
   const cartItems = getCartItems();
-  const existingItem = cartItems.find(item => item.productId === id);
+
+  const existingItem = cartItems.find(item => {
+    return item.productId === id && item.selectedColor === color;
+  });
 
   if (existingItem) {
     existingItem.quantity += safeQuantity;
@@ -61,6 +75,7 @@ export function addCartItem(productId, quantity = 1) {
       productId: id,
       quantity: safeQuantity,
       selected: true,
+      selectedColor: color,
     });
   }
 
@@ -68,8 +83,9 @@ export function addCartItem(productId, quantity = 1) {
 }
 
 // 장바구니에 있는 상품의 수량을 업데이트하는 함수
-export function updateCartItemQuantity(productId, quantity) {
+export function updateCartItemQuantity(productId, quantity, selectedColor) {
   const id = normalizeProductId(productId);
+  const color = normalizeSelectedColor(selectedColor);
   const safeQuantity = normalizeQuantity(quantity);
 
   if (!id) {
@@ -77,8 +93,15 @@ export function updateCartItemQuantity(productId, quantity) {
     return;
   }
 
+  if (!color) {
+    console.error("선택된 색상이 없습니다.");
+    return;
+  }
+
   const cartItems = getCartItems();
-  const item = cartItems.find(item => item.productId === id);
+  const item = cartItems.find(item => {
+    return item.productId === id && item.selectedColor === color;
+  });
 
   if (item) {
     item.quantity = safeQuantity;
@@ -87,31 +110,47 @@ export function updateCartItemQuantity(productId, quantity) {
 }
 
 // 장바구니에서 상품을 제거하는 함수
-export function removeCartItem(productId) {
+export function removeCartItem(productId, selectedColor) {
   const id = normalizeProductId(productId);
+  const color = normalizeSelectedColor(selectedColor);
 
   if (!id) {
     console.error("상품 ID가 올바르지 않습니다.");
     return;
   }
 
+  if (!color) {
+    console.error("선택된 색상이 없습니다.");
+    return;
+  }
+
   const cartItems = getCartItems();
-  const updatedCartItems = cartItems.filter(item => item.productId !== id);
+  const updatedCartItems = cartItems.filter(item => {
+    return !(item.productId === id && item.selectedColor === color);
+  });
 
   setCartItems(updatedCartItems);
 }
 
 // 장바구니에서 상품의 선택 상태를 업데이트하는 함수
-export function updateCartItemSelected(productId, selected) {
+export function updateCartItemSelected(productId, selected, selectedColor) {
   const id = normalizeProductId(productId);
+  const color = normalizeSelectedColor(selectedColor);
 
   if (!id) {
     console.error("상품 ID가 올바르지 않습니다.");
     return;
   }
 
+  if (!color) {
+    console.error("선택된 색상이 없습니다.");
+    return;
+  }
+
   const cartItems = getCartItems();
-  const item = cartItems.find(item => item.productId === id);
+  const item = cartItems.find(item => {
+    return item.productId === id && item.selectedColor === color;
+  });
 
   if (item) {
     item.selected = Boolean(selected);
@@ -124,7 +163,7 @@ export function updateAllCartItemsSelected(selected) {
   const cartItems = getCartItems();
 
   cartItems.forEach(item => {
-    item.selected = selected;
+    item.selected = Boolean(selected);
   });
 
   setCartItems(cartItems);
