@@ -24,14 +24,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024881",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "oval",
         "4th": "rhombus",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Aviator"
+      "eyeWearShape": "Aviator"
     },
     {
       "id": 2,
@@ -57,14 +57,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024880",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "round",
         "2nd": "oval",
         "3rd": "inverted-triangle",
         "4th": "long-square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Cat-eye"
+      "eyeWearShape": "Cat-eye"
     },
     {
       "id": 3,
@@ -90,14 +90,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024879",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "long-square",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 4,
@@ -122,14 +122,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024905",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "square",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 5,
@@ -154,14 +154,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024906",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "rhombus",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 6,
@@ -186,14 +186,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024907",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "inverted-triangle",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 7,
@@ -219,14 +219,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005667",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "rhombus",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 8,
@@ -252,14 +252,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005668",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 9,
@@ -285,14 +285,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3020245",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "diamond",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 10,
@@ -318,14 +318,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005669",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "square",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 11,
@@ -351,14 +351,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007597",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "long-square",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 12,
@@ -384,14 +384,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024566",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "rhombus",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 13,
@@ -417,14 +417,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024568",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "triangular",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 14,
@@ -450,14 +450,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007599",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "triangular",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 15,
@@ -483,14 +483,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024561",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "inverted-triangle",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 16,
@@ -516,14 +516,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010432",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "square",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Rimless"
+      "eyeWearShape": "Rimless"
     },
     {
       "id": 17,
@@ -549,14 +549,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010433",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "inverted-triangle",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Rimless"
+      "eyeWearShape": "Rimless"
     },
     {
       "id": 18,
@@ -582,14 +582,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3017140",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "long-square",
         "5th": "square"
       },
-      "eye-wear-shape": "Rimless"
+      "eyeWearShape": "Rimless"
     },
     {
       "id": 19,
@@ -615,14 +615,14 @@
       "reviewCount": 20,
       "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006650",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "diamond",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 20,
@@ -648,14 +648,14 @@
       "reviewCount": 2,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3017239",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "long-square",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 21,
@@ -681,14 +681,14 @@
       "reviewCount": 30,
       "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006741",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "long-square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 22,
@@ -714,14 +714,14 @@
       "reviewCount": 91,
       "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006732",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "triangular",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 23,
@@ -747,14 +747,14 @@
       "reviewCount": 16,
       "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008154",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "inverted-triangle",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 24,
@@ -780,14 +780,14 @@
       "reviewCount": 6,
       "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007726",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "oval",
         "4th": "triangular",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Round"
+      "eyeWearShape": "Round"
     },
     {
       "id": 25,
@@ -813,14 +813,14 @@
       "reviewCount": 12,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008225",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "rhombus",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 26,
@@ -846,14 +846,14 @@
       "reviewCount": 3,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3016451",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "diamond",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 27,
@@ -879,14 +879,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007973",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "rhombus",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 28,
@@ -912,14 +912,14 @@
       "reviewCount": 5,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005906",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "triangular",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 29,
@@ -945,14 +945,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009109",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "triangular",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 30,
@@ -978,14 +978,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3016588",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 31,
@@ -1011,14 +1011,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005908",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "rhombus",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 32,
@@ -1044,14 +1044,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3020253",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "triangular",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 33,
@@ -1077,14 +1077,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024945",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "long-square",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 34,
@@ -1110,14 +1110,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009511",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 35,
@@ -1143,14 +1143,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011299",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "diamond",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 36,
@@ -1176,14 +1176,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3014415",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "diamond",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 37,
@@ -1209,14 +1209,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010440",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "rhombus",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 38,
@@ -1242,14 +1242,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007603",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "long-square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 39,
@@ -1275,14 +1275,14 @@
       "reviewCount": 5,
       "rating": 4.8,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009710",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "diamond",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 40,
@@ -1308,14 +1308,14 @@
       "reviewCount": 2,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012065",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "diamond",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 41,
@@ -1341,14 +1341,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009138",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "diamond",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 42,
@@ -1374,14 +1374,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3009139",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "square",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 43,
@@ -1407,14 +1407,14 @@
       "reviewCount": 8,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=180135",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "inverted-triangle",
         "5th": "square"
       },
-      "eye-wear-shape": "Browline"
+      "eyeWearShape": "Browline"
     },
     {
       "id": 44,
@@ -1440,14 +1440,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3013490",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "diamond",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Browline"
+      "eyeWearShape": "Browline"
     },
     {
       "id": 45,
@@ -1473,14 +1473,14 @@
       "reviewCount": 4,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3006353",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "diamond",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 46,
@@ -1506,14 +1506,14 @@
       "reviewCount": 49,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011099",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "rhombus",
         "4th": "triangular",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 47,
@@ -1539,14 +1539,14 @@
       "reviewCount": 2,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012890",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "diamond",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 48,
@@ -1572,14 +1572,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012866",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "long-square",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 49,
@@ -1605,14 +1605,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012872",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "rhombus",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 50,
@@ -1638,14 +1638,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3012918",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "rhombus",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 51,
@@ -1671,14 +1671,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003578",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "triangular",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 52,
@@ -1704,14 +1704,14 @@
       "reviewCount": 9,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=179230",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "long-square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 53,
@@ -1737,14 +1737,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=2566892",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "triangular",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 54,
@@ -1770,14 +1770,14 @@
       "reviewCount": 5,
       "rating": 4.5,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003575",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "inverted-triangle",
         "5th": "square"
       },
-      "eye-wear-shape": "Browline"
+      "eyeWearShape": "Browline"
     },
     {
       "id": 55,
@@ -1803,14 +1803,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003738",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "long-square",
         "4th": "triangular",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 56,
@@ -1836,14 +1836,14 @@
       "reviewCount": 2,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003745",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "inverted-triangle",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 57,
@@ -1869,14 +1869,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003725",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "rhombus",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 58,
@@ -1902,14 +1902,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3003723",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "inverted-triangle",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 59,
@@ -1935,14 +1935,14 @@
       "reviewCount": 6,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004640",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "triangular",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 60,
@@ -1968,14 +1968,14 @@
       "reviewCount": 3,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004642",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 61,
@@ -2001,14 +2001,14 @@
       "reviewCount": 3,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004641",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "rhombus",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 62,
@@ -2034,14 +2034,14 @@
       "reviewCount": 6,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004644",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 63,
@@ -2067,14 +2067,14 @@
       "reviewCount": 10,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007736",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "triangular",
         "4th": "rhombus",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Panto"
+      "eyeWearShape": "Panto"
     },
     {
       "id": 64,
@@ -2100,14 +2100,14 @@
       "reviewCount": 6,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007725",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "oval",
         "4th": "triangular",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Round"
+      "eyeWearShape": "Round"
     },
     {
       "id": 65,
@@ -2133,14 +2133,14 @@
       "reviewCount": 2,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3007737",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "inverted-triangle",
         "4th": "oval",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Panto"
+      "eyeWearShape": "Panto"
     },
     {
       "id": 66,
@@ -2166,14 +2166,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3018867",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "diamond",
         "4th": "oval",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Oval"
+      "eyeWearShape": "Oval"
     },
     {
       "id": 67,
@@ -2199,14 +2199,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3018869",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "round",
         "4th": "diamond",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Oval"
+      "eyeWearShape": "Oval"
     },
     {
       "id": 68,
@@ -2231,14 +2231,14 @@
       "reviewCount": 2,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011367",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "inverted-triangle",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 69,
@@ -2263,14 +2263,14 @@
       "reviewCount": 2,
       "rating": 4.5,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011373",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "diamond",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 70,
@@ -2296,14 +2296,14 @@
       "reviewCount": 4,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008598",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "rhombus",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 71,
@@ -2329,14 +2329,14 @@
       "reviewCount": 9,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008610",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "long-square",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 72,
@@ -2362,14 +2362,14 @@
       "reviewCount": 3,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008588",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "square",
         "2nd": "long-square",
         "3rd": "inverted-triangle",
         "4th": "round",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Aviator"
+      "eyeWearShape": "Aviator"
     },
     {
       "id": 73,
@@ -2395,14 +2395,14 @@
       "reviewCount": 4,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3008584",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "inverted-triangle",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 74,
@@ -2428,14 +2428,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011376",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "rhombus",
         "4th": "round",
         "5th": "square"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 75,
@@ -2461,14 +2461,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011375",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "inverted-triangle",
         "4th": "round",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 76,
@@ -2494,14 +2494,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010919",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "rhombus",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 77,
@@ -2527,14 +2527,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024878",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "inverted-triangle",
         "4th": "long-square",
         "5th": "round"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 78,
@@ -2560,14 +2560,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3011387",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "long-square",
         "4th": "round",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 79,
@@ -2593,14 +2593,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024875",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "square",
         "4th": "round",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 80,
@@ -2626,14 +2626,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3023318",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "round",
         "2nd": "oval",
         "3rd": "diamond",
         "4th": "square",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Cat-eye"
+      "eyeWearShape": "Cat-eye"
     },
     {
       "id": 81,
@@ -2659,14 +2659,14 @@
       "reviewCount": 9,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005613",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "long-square",
         "3rd": "inverted-triangle",
         "4th": "diamond",
         "5th": "square"
       },
-      "eye-wear-shape": "Goggle"
+      "eyeWearShape": "Goggle"
     },
     {
       "id": 82,
@@ -2692,14 +2692,14 @@
       "reviewCount": 4,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005421",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "long-square",
         "3rd": "diamond",
         "4th": "rhombus",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Goggle"
+      "eyeWearShape": "Goggle"
     },
     {
       "id": 83,
@@ -2725,14 +2725,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005584",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "triangular",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 84,
@@ -2758,14 +2758,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3025476",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "triangular",
         "4th": "rhombus",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 85,
@@ -2791,14 +2791,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3025176",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "square",
         "4th": "round",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 86,
@@ -2824,14 +2824,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3025141",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "inverted-triangle",
         "4th": "triangular",
         "5th": "square"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 87,
@@ -2857,14 +2857,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005640",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "square",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 88,
@@ -2890,14 +2890,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005641",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "rhombus",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 89,
@@ -2923,14 +2923,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005642",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "diamond",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 90,
@@ -2956,14 +2956,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005728",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "triangular",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 91,
@@ -2989,14 +2989,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005729",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "diamond",
         "4th": "square",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 92,
@@ -3022,14 +3022,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3010244",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "square",
         "5th": "long-square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 93,
@@ -3055,14 +3055,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024584",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "triangular",
         "4th": "rhombus",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 94,
@@ -3088,14 +3088,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024579",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "rhombus",
         "4th": "long-square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 95,
@@ -3121,14 +3121,14 @@
       "reviewCount": 0,
       "rating": 0.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3024580",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "long-square",
         "5th": "diamond"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 96,
@@ -3154,14 +3154,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3002940",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "inverted-triangle",
         "4th": "triangular",
         "5th": "square"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 97,
@@ -3187,14 +3187,14 @@
       "reviewCount": 2,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3004107",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "long-square",
         "3rd": "round",
         "4th": "diamond",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Goggle"
+      "eyeWearShape": "Goggle"
     },
     {
       "id": 98,
@@ -3220,14 +3220,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3005545",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "round",
         "3rd": "square",
         "4th": "long-square",
         "5th": "rhombus"
       },
-      "eye-wear-shape": "Others"
+      "eyeWearShape": "Others"
     },
     {
       "id": 99,
@@ -3253,14 +3253,14 @@
       "reviewCount": 30,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3016693",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "rhombus",
         "4th": "triangular",
         "5th": "inverted-triangle"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     },
     {
       "id": 100,
@@ -3286,14 +3286,14 @@
       "reviewCount": 1,
       "rating": 5.0,
       "sourceUrl": "https://rounz.com/product.php?productIndex=3019193",
-      "for-face-shape": {
+      "forFaceShape": {
         "1st": "oval",
         "2nd": "diamond",
         "3rd": "round",
         "4th": "rhombus",
         "5th": "triangular"
       },
-      "eye-wear-shape": "Mixed"
+      "eyeWearShape": "Mixed"
     }
   ]
 }

@@ -46,12 +46,47 @@
               </button>
 
               <div class="filter-panel-content" id="product-filter-content">
-                <div class="filter-group" data-filter-group="category">
-                  <button type="button" class="filter-chip is-active">안경</button>
-                  <button type="button" class="filter-chip">선글라스</button>
-                  <button type="button" class="filter-chip">고글</button>
-                  <button type="button" class="filter-chip">클립온</button>
-                  <button type="button" class="filter-chip">스마트 안경</button>
+                <div class="filter-group">
+                  <button
+                    type="button"
+                    data-filter-type="category"
+                    data-filter-value="glasses"
+                    class="filter-chip is-active"
+                  >
+                    안경
+                  </button>
+                  <button
+                    type="button"
+                    data-filter-type="category"
+                    data-filter-value="sunglasses"
+                    class="filter-chip"
+                  >
+                    선글라스
+                  </button>
+                  <button
+                    type="button"
+                    data-filter-type="category"
+                    data-filter-value="goggle"
+                    class="filter-chip"
+                  >
+                    고글
+                  </button>
+                  <button
+                    type="button"
+                    data-filter-type="category"
+                    data-filter-value="clip-on"
+                    class="filter-chip"
+                  >
+                    클립온
+                  </button>
+                  <button
+                    type="button"
+                    data-filter-type="category"
+                    data-filter-value="smart-glasses"
+                    class="filter-chip"
+                  >
+                    스마트 안경
+                  </button>
                 </div>
               </div>
             </aside>
@@ -61,8 +96,11 @@
                 <button type="button" class="sort-button is-active" data-sort="basic">
                   기본순
                 </button>
-                <button type="button" class="sort-button" data-sort="popular">별점순</button>
-                <button type="button" class="sort-button" data-sort="like">좋아요순</button>
+                <button type="button" class="sort-button" data-sort="rating-high">별점순</button>
+                <button type="button" class="sort-button" data-sort="like-high">좋아요순</button>
+                <button type="button" class="sort-button" data-sort="discount-high">
+                  할인률 높은순
+                </button>
                 <button type="button" class="sort-button" data-sort="price-low">가격 낮은순</button>
                 <button type="button" class="sort-button" data-sort="price-high">
                   가격 높은순
