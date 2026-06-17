@@ -97,14 +97,16 @@
           <div class="product-detail-layout">
             <section class="product-gallery" aria-label="상품 이미지" data-render="product-gallery">
               <div
-                class="product-gallery__main"
+                class="product-gallery__main product-gallery__main--angle"
                 role="img"
                 aria-label="얇은 라운드 메탈 안경 BERLIN 3"
+                data-product-main
               >
                 <button
                   type="button"
                   class="product-gallery__arrow product-gallery__arrow--prev"
                   aria-label="이전 이미지"
+                  data-product-prev
                 >
                   ‹
                 </button>
@@ -112,24 +114,44 @@
                   type="button"
                   class="product-gallery__arrow product-gallery__arrow--next"
                   aria-label="다음 이미지"
+                  data-product-next
                 >
                   ›
                 </button>
                 <div class="product-gallery__dots" aria-hidden="true">
-                  <span class="is-active"></span>
-                  <span></span>
-                  <span></span>
+                  <span class="is-active" data-product-dot></span>
+                  <span data-product-dot></span>
+                  <span data-product-dot></span>
                 </div>
               </div>
 
               <div class="product-gallery__thumbs" aria-label="상품 썸네일">
-                <button type="button" class="is-active" aria-label="첫 번째 상품 이미지">
+                <button
+                  type="button"
+                  class="is-active"
+                  aria-label="첫 번째 상품 이미지"
+                  aria-selected="true"
+                  data-product-thumbnail
+                  data-gallery-type="angle"
+                >
                   <span class="product-thumb product-thumb--angle" aria-hidden="true"></span>
                 </button>
-                <button type="button" aria-label="두 번째 상품 이미지">
+                <button
+                  type="button"
+                  aria-label="두 번째 상품 이미지"
+                  aria-selected="false"
+                  data-product-thumbnail
+                  data-gallery-type="clear"
+                >
                   <span class="product-thumb product-thumb--clear" aria-hidden="true"></span>
                 </button>
-                <button type="button" aria-label="세 번째 상품 이미지">
+                <button
+                  type="button"
+                  aria-label="세 번째 상품 이미지"
+                  aria-selected="false"
+                  data-product-thumbnail
+                  data-gallery-type="bold"
+                >
                   <span class="product-thumb product-thumb--bold" aria-hidden="true"></span>
                 </button>
               </div>
