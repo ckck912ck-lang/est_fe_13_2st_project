@@ -13,9 +13,9 @@
 // 상품 상세 썸네일 슬라이더 : 상품 이미지 개수만큼 썸네일 슬라이드 생성, 상품 데이터를 받아서 각 썸네일 이미지에 연결
 
 // 썸네일 슬라이더와 메인 이미지 슬라이더를 연동 - 메인 이미지 슬라이더를 현재 선택된 썸네일 번호로 이동
-export function initProductDetailCarousel() {
-  const productGalleryMain = document.querySelector(".product-gallery-main-swiper");
-  const productGalleryThumb = document.querySelector(".product-gallery-thumb-swiper");
+export function initProductDetailCarousel(mainSelector, thumbSelector) {
+  const productGalleryMain = document.querySelector(mainSelector); // <수정>
+  const productGalleryThumb = document.querySelector(thumbSelector); // <수정>
 
   if (!productGalleryMain || !productGalleryThumb || !window.Swiper) return;
 

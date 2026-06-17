@@ -44,7 +44,7 @@ const reviews = [
 const reviewList = document.querySelector('[data-render="product-review-list"]');
 const productTabs = document.querySelector(".product-detail-tabs");
 
-initProductDetailCarousel();
+initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
 
 if (reviewList) {
   renderTestimonials(reviews, reviewList, 4);
