@@ -11,6 +11,7 @@ const data = await fetchData("/data/products.json");
 const products = data.products;
 const filteredData = data.products.slice(0, 12);
 const container = document.querySelector(".product-list .product-list-grid");
+const productCount = document.querySelector("[data-render='product-count']");
 const countPerPage = 12;
 
 const sortArea = document.querySelector(".sort-area");
@@ -26,9 +27,18 @@ let selectedBrands = [];
 let selectedPrice = "";
 let eyeWearShape = "";
 
+function renderProductCount(products) {
+  if (!productCount) return;
+
+  productCount.innerHTML = `
+    <span class="product-count-mobile">총 ${products.length}개 상품</span>
+    <span class="product-count-pc">총 ${products.length}개 상품</span>
+  `;
+}
 // 메인 페이지 기능
 
 // 상품 목록 기능
+renderProductCount(currentProducts);
 renderProducts(currentProducts.slice(0, countPerPage), container);
 if (sortArea) {
   sortArea.addEventListener("click", (event) => {
