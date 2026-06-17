@@ -1,6 +1,9 @@
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
+import { addCartItem } from "../utils/localStorage.js";
+import { renderCartBadge } from "../modules/renderCartBadge.js";
+import { showToast } from "../modules/toast.js";
 // 상품 상세 기능
 
 // 상품 이미지 : 현재 선택한 썸네일에 맞는 큰 이미지 띄우기, 슬라이드
@@ -43,8 +46,72 @@ const reviews = [
 
 const reviewList = document.querySelector('[data-render="product-review-list"]');
 const productTabs = document.querySelector(".product-detail-tabs");
+const productSummary = document.querySelector('[data-render="product-summary"]');
+const addCartButton = document.querySelector('[data-action="add-cart"]');
+const quantityBox = document.querySelector(".product-quantity");
+const quantityText = quantityBox?.querySelector("span");
+
+let productQuantity = 1;
+
+function updateQuantity(nextQuantity) {
+  productQuantity = Math.max(1, nextQuantity);
+
+  if (quantityText) {
+    quantityText.textContent = productQuantity;
+  }
+}
+
+function initProductQuantity() {
+  if (!quantityBox) {
+    return;
+  }
+
+  quantityBox.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-quantity-action]");
+
+    if (!button) {
+      return;
+    }
+
+    const action = button.dataset.quantityAction;
+
+    if (action === "decrease") {
+      updateQuantity(productQuantity - 1);
+    }
+
+    if (action === "increase") {
+      updateQuantity(productQuantity + 1);
+    }
+  });
+}
+
+function initAddCartButton() {
+  if (!productSummary || !addCartButton) {
+    return;
+  }
+
+  addCartButton.addEventListener("click", () => {
+    const productId = productSummary.dataset.productId;
+
+    if (!productId) {
+      console.error("상품 ID가 없습니다.");
+      showToast("상품 정보를 찾을 수 없습니다.");
+      return;
+    }
+    const checkedColorInput = document.querySelector('input[name="product-color"]:checked');
+    const selectedColor = checkedColorInput?.value;
+
+    addCartItem(productId, productQuantity, selectedColor);
+    renderCartBadge();
+    showToast("장바구니에 상품을 담았습니다.");
+  });
+}
 
 initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
+
+renderCartBadge();
+initProductQuantity();
+initAddCartButton();
 
 if (reviewList) {
   renderTestimonials(reviews, reviewList, 4);
