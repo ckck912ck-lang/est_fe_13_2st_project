@@ -177,20 +177,21 @@
   .best-product-swiper {
     overflow: hidden;
 
-    .swiper-button-prev,
-    .swiper-button-next {
+    // Swiper 예약 클래스 충돌 방지를 위해 커스텀 클래스 사용
+    .best-prev-btn,
+    .best-next-btn {
+      position: absolute;
       top: 116px;
-      margin-top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
       width: 36px;
       height: 36px;
       border-radius: 50%;
       background: $neutral-white-a5;
       color: $neutral-title-black;
-
-      // Swiper 기본 화살표 제거
-      &::after {
-        content: none !important;
-      }
 
       .material-icons {
         font-size: 20px;
@@ -201,11 +202,48 @@
       }
     }
 
-    .swiper-button-prev {
+    .best-prev-btn {
       left: 8px;
     }
 
-    .swiper-button-next {
+    .best-next-btn {
+      right: 8px;
+    }
+  }
+
+  .new-product-swiper {
+    overflow: hidden;
+
+    // Swiper 예약 클래스 충돌 방지를 위해 커스텀 클래스 사용
+    .new-prev-btn,
+    .new-next-btn {
+      position: absolute;
+      top: 116px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: $neutral-white-a5;
+      color: $neutral-title-black;
+
+      .material-icons {
+        font-size: 20px;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 1;
+      }
+    }
+
+    .new-prev-btn {
+      left: 8px;
+    }
+
+    .new-next-btn {
       right: 8px;
     }
   }
