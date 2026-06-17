@@ -45,6 +45,7 @@ export function setCartItems(cartItems) {
 export function addCartItem(productId, quantity = 1) {
   const id = normalizeProductId(productId);
   const safeQuantity = normalizeQuantity(quantity);
+  const color = String(selectedColor || "기본").trim();
 
   if (!id) {
     console.error("상품 ID가 올바르지 않습니다.");
@@ -52,7 +53,10 @@ export function addCartItem(productId, quantity = 1) {
   }
 
   const cartItems = getCartItems();
-  const existingItem = cartItems.find(item => item.productId === id);
+
+  const existingItem = cartItems.find(item => {
+    return item.productId === id && item.selectedColor === color;
+  });
 
   if (existingItem) {
     existingItem.quantity += safeQuantity;
@@ -61,6 +65,7 @@ export function addCartItem(productId, quantity = 1) {
       productId: id,
       quantity: safeQuantity,
       selected: true,
+      selectedColor : color,
     });
   }
 

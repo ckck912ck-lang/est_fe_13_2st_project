@@ -46,6 +46,7 @@ function getCartProducts(products, cartItems) {
         productId: cartItem.productId,
         quantity: cartItem.quantity,
         selected: cartItem.selected,
+        selectedColor: cartItem.selectedColor,
       };
     })
     .filter(Boolean);
@@ -72,15 +73,13 @@ function createCartItemTemplate(cartProduct) {
     title,
     price,
     thumbnail,
-    colors,
     quantity,
     selected,
+    selectedColor,
   } = cartProduct;
 
   const detailUrl = `product-detail.html?id=${productId}`;
-  const colorText = Array.isArray(colors) && colors.length > 0
-    ? colors.join(", ")
-    : "기본";
+  const colorText = selectedColor || "기본";
   const formattedPrice = formatPrice(price * quantity);
 
   return `
