@@ -1,8 +1,6 @@
 @use "../base/variables" as *;
 
 .product-card {
-  min-width: 160px;
-  max-width: 240px;
   overflow: hidden;
   flex: 1;
 
@@ -159,13 +157,9 @@
 
 @media (min-width: 1280px) {
   .product-card {
-    min-width: 320px;
-    max-width: 480px;
     border-radius: 16px;
 
     .product-image-link {
-      min-height: 320px;
-
       .product-badge {
         padding: 4px 16px;
         font-size: 16px;

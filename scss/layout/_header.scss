@@ -1,7 +1,9 @@
+// 헤더 : 배정호 작성
+
 @use "../base/variables" as *;
 
 // 헤더 공통
-.header {
+header {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -141,10 +143,7 @@
       width: 1440px;
 
       .header-top {
-        padding: 16px 0;
-
-        > div {
-        }
+        padding: 8px 0 0;
 
         .header-left {
           .hamburger-btn-open {
@@ -160,8 +159,8 @@
         .header-center {
           .logo {
             cursor: pointer;
+            width: 150px;
             padding: 12px 0;
-            height: 100%;
           }
         }
 
