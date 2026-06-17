@@ -1,4 +1,5 @@
 import { renderTestimonials } from "../modules/testimonial.js";
+import { initTabs } from "../modules/tabs.js";
 // 상품 상세 기능
 
 // 상품 이미지 : 현재 선택한 썸네일에 맞는 큰 이미지 띄우기, 슬라이드
@@ -40,5 +41,7 @@ const reviews = [
 ];
 
 const reviewList = document.querySelector('[data-render="product-review-list"]');
+const productTabs = document.querySelector(".product-detail-tabs");
 
 renderTestimonials(reviews, reviewList, 4);
+initTabs(productTabs);

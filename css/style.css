@@ -1290,6 +1290,7 @@ footer .footer-bottom .footer-copyright {
 }
 .keyword-pill:hover {
   color: rgb(14, 14, 12);
+  border-color: rgb(14, 14, 12);
 }
 
 .fixed-chat-button {
