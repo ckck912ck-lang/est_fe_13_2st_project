@@ -11,14 +11,14 @@ import { renderProducts } from "/js/modules/renderProducts.js";
 import { renderHeader } from "/js/modules/renderHeader.js";
 import { renderFooter } from "/js/modules/renderFooter.js";
 import { sortProducts } from "/js/modules/sort.js";
-import {
-  getPagedProducts,
-  renderPagination,
-  getNextPage,
-  getTotalPage,
-} from "/js/modules/pagination.js";
-
+import { getPagedProducts, renderPagination, getNextPage, getTotalPage} from "/js/modules/pagination.js";
+import { showSkeleton } from "/js/modules/renderSkeleton.js";
 // 변수 목록
+const container = document.querySelector(".product-list .product-list-grid");
+
+// 상품 데이터 불러오기 전 스켈레톤 표시
+showSkeleton(container, 12);
+
 const data = await fetchData("/data/products.json");
 const products = data.products;
 const container = document.querySelector(".product-list .product-list-grid");

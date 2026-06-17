@@ -17,6 +17,25 @@ initSearch();
 // 얼굴형별 추천 : 슬라이드, 필터된 상품목록으로 이동
 
 // AI 추천 상품 : 슬라이드, 전체 상품 필터해서 AI 추천 상품만 출력 (현재 구현 불가 : 랜덤 상품으로 대체)
+async function renderAiProducts() {
+  const data = await fetchData("./data/products.json");
+  if (!data) return;
+
+  // 랜덤으로 상품 섞어서 8개 선택 (AI 추천 로직 대체)
+  const shuffled = [...data.products].sort(() => Math.random() - 0.5);
+  const aiProducts = shuffled.slice(0, 8);
+
+  const wrapper = document.querySelector('[data-render="recommended-products"]');
+  if (!wrapper) return;
+
+  wrapper.innerHTML = aiProducts
+    .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
+    .join("");
+
+  initProductSlider(".ai-product-swiper", ".ai-prev-btn", ".ai-next-btn");
+}
+
+renderAiProducts();
 
 // 스타일 큐레이션 : 필터된 상품목록으로 이동
 
@@ -34,12 +53,29 @@ async function renderBestProducts() {
     .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
     .join("");
 
-  initProductSlider(".best-product-swiper");
+  initProductSlider(".best-product-swiper", ".best-prev-btn", ".best-next-btn");
 }
 
 renderBestProducts();
 
 // 신상품 : 전체 상품 필터해서 신상품 중 4개만 출력
+async function renderNewProducts() {
+  const data = await fetchData("./data/products.json");
+  if (!data) return;
+
+  const newProducts = data.products.filter((product) => product.isNew).slice(0, 4);
+
+  const wrapper = document.querySelector('[data-render="new-products"]');
+  if (!wrapper) return;
+
+  wrapper.innerHTML = newProducts
+    .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
+    .join("");
+
+  initProductSlider(".new-product-swiper", ".new-prev-btn", ".new-next-btn");
+}
+
+renderNewProducts();
 
 // 인기 브랜드 : 필터된 상품목록으로 이동
 

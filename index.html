@@ -130,85 +130,15 @@
           <div class="section-heading">
             <p class="section-kicker">✦ AI PICK</p>
             <h2 id="ai-recommend-title">AI 추천 상품</h2>
-            <div class="section-controls" aria-label="AI 추천 상품 슬라이더 제어">
-              <button type="button" class="material-icons" aria-label="이전 상품">
-                chevron_left
-              </button>
-              <button type="button" class="material-icons" aria-label="다음 상품">
-                chevron_left
-              </button>
-            </div>
           </div>
-          <div class="product-slider" data-render="recommended-products">
-            <!-- 카드 시작 -->
-
-            <article class="product-card">
-              <a
-                href="product-detail.html?id=1"
-                class="product-image-link"
-                aria-label="CARIN OSLO 01 상품 상세 보기"
-              >
-                <img
-                  src="./assets/images/products/example.png"
-                  alt="CARIN OSLO 01 안경"
-                  class="product-image"
-                  loading="lazy"
-                />
-
-                <div class="badge-box">
-                  <span class="product-badge product-badge-best">BEST</span>
-                  <span class="product-badge product-badge-new">NEW</span>
-                </div>
-                <span class="product-badge product-discount">20%</span>
-
-                <button type="button" class="cart-add" aria-label="${product.title} 장바구니 담기">
-                  <span class="material-icons">local_mall</span>
-                </button>
-              </a>
-
-              <div class="product-info">
-                <div class="product-header">
-                  <p class="product-brand">CARIN</p>
-
-                  <h3 class="product-title">
-                    <a href="product-detail.html?id=1">OSLO 01</a>
-                  </h3>
-                </div>
-
-                <p class="product-rating" aria-label="평점 4.8점, 리뷰 342개">
-                  <span aria-hidden="true" class="rating-star material-icons">star</span>
-                  <span>4.8</span>
-                  <span>(342)</span>
-                </p>
-
-                <p class="product-price">
-                  <strong>198,000원</strong>
-                  <del>248,000</del>
-                  <span class="product-sale">-20%</span>
-                </p>
-              </div>
-            </article>
-
-            <!-- 카드 끝 -->
-
-            <article class="product-card">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--soft"
-                aria-label="GENTLE MONSTER MAGO SPACE 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span></a
-              >
-              <div class="product-card__body">
-                <p class="product-card__brand">GENTLE MONSTER</p>
-                <h3><a href="product-detail.html">MAGO SPACE</a></h3>
-                <p class="product-card__rating">
-                  <span class="material-icons" aria-hidden="true">star</span>
-                  4.8 (342)
-                </p>
-                <p class="product-card__price">345,000원</p>
-              </div>
-            </article>
+          <div class="swiper ai-product-swiper">
+            <div class="swiper-wrapper" data-render="recommended-products"></div>
+            <button type="button" class="ai-prev-btn" aria-label="이전 AI 추천 상품">
+              <span class="material-icons" aria-hidden="true">chevron_left</span>
+            </button>
+            <button type="button" class="ai-next-btn" aria-label="다음 AI 추천 상품">
+              <span class="material-icons" aria-hidden="true">chevron_right</span>
+            </button>
           </div>
         </div>
       </section>
@@ -249,10 +179,10 @@
           </div>
           <div class="swiper best-product-swiper">
             <div class="swiper-wrapper" data-render="best-products"></div>
-            <button type="button" class="swiper-button-prev" aria-label="이전 베스트 상품">
+            <button type="button" class="best-prev-btn" aria-label="이전 베스트 상품">
               <span class="material-icons" aria-hidden="true">chevron_left</span>
             </button>
-            <button type="button" class="swiper-button-next" aria-label="다음 베스트 상품">
+            <button type="button" class="best-next-btn" aria-label="다음 베스트 상품">
               <span class="material-icons" aria-hidden="true">chevron_right</span>
             </button>
           </div>
@@ -267,77 +197,14 @@
               >전체보기 <span class="material-icons" aria-hidden="true">east</span></a
             >
           </div>
-          <div class="product-grid" data-render="new-products">
-            <article class="product-card">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--clean"
-                aria-label="CARIN NEW 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span></a
-              >
-              <div class="product-card__body">
-                <p class="product-card__brand">CARIN</p>
-                <h3><a href="product-detail.html">MILA C1</a></h3>
-                <p class="product-card__rating">
-                  <span class="material-icons" aria-hidden="true">star</span>
-                  4.8 (91)
-                </p>
-                <p class="product-card__price">168,000원</p>
-              </div>
-            </article>
-            <article class="product-card">
-              <a
-                href="product-detail.html"
-                class="product-card__image"
-                aria-label="LINDBERG AIR 상품 상세"
-              >
-                <span class="badge badge--new">NEW</span></a
-              >
-              <div class="product-card__body">
-                <p class="product-card__brand">LINDBERG</p>
-                <h3><a href="product-detail.html">AIR TITANIUM</a></h3>
-                <p class="product-card__rating">
-                  <span class="material-icons" aria-hidden="true">star</span>
-                  4.9 (128)
-                </p>
-                <p class="product-card__price">420,000원</p>
-              </div>
-            </article>
-            <article class="product-card">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--soft"
-                aria-label="MYKITA LITE 상품 상세"
-                ><span class="badge badge--new">NEW</span></a
-              >
-              <div class="product-card__body">
-                <p class="product-card__brand">MYKITA</p>
-                <h3><a href="product-detail.html">LITE ACETATE</a></h3>
-                <p class="product-card__rating">
-                  <span class="material-icons" aria-hidden="true">star</span>
-                  4.7 (78)
-                </p>
-                <p class="product-card__price">315,000원</p>
-              </div>
-            </article>
-            <article class="product-card">
-              <a
-                href="product-detail.html"
-                class="product-card__image product-card__image--clean"
-                aria-label="GENTLE MONSTER BOLD 상품 상세"
-                ><span class="badge badge--new">NEW</span></a
-              >
-              <div class="product-card__body">
-                <p class="product-card__brand">GENTLE MONSTER</p>
-                <h3><a href="product-detail.html">BOLD 02</a></h3>
-                <p class="product-card__rating">
-                  <span class="material-icons" aria-hidden="true">star</span>
-                  4.8 (204)
-                </p>
-                <p class="product-card__price">330,000원</p>
-              </div>
-            </article>
+          <div class="swiper new-product-swiper">
+            <div class="swiper-wrapper" data-render="new-products"></div>
+            <button type="button" class="new-prev-btn" aria-label="이전 신상품">
+              <span class="material-icons" aria-hidden="true">chevron_left</span>
+            </button>
+            <button type="button" class="new-next-btn" aria-label="다음 신상품">
+              <span class="material-icons" aria-hidden="true">chevron_right</span>
+            </button>
           </div>
         </div>
       </section>
@@ -438,7 +305,7 @@
       </a>
       <a href="cart.html">
         <span class="material-icons" aria-hidden="true">local_mall</span>
-        <span class="cart-badge" aria-label="장바구니에 추가된 상품 수">2</span>
+        <span class="cart-badge" aria-label="장바구니에 추가된 상품 수" data-render="cart-count">2</span>
         장바구니
       </a>
       <a href="login.html">
