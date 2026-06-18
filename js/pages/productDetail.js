@@ -27,35 +27,6 @@ import { renderChatting, openChattingModal, closeChattingModal } from "../module
 const fixedBtn = document.querySelector(".fixed-chat-button");
 
 // 비슷한 상품 : 슬라이드
-const reviews = [
-  {
-    author: "김*연",
-    date: "2026-01-15",
-    rating: 5,
-    content:
-      "가벼워서 하루종일 써도 불편하지 않아요. 티타늄 소재라 그런지 정말 가볍고 코 위에 자국도 덜 남아요.",
-  },
-  {
-    author: "이*준",
-    date: "2026-01-10",
-    rating: 5,
-    content: "디자인이 예상보다 훨씬 깔끔하고 고급스럽습니다. 색상은 실제로 보면 더 멋있어요.",
-  },
-  {
-    author: "박*희",
-    date: "2025-12-28",
-    rating: 4.5,
-    content:
-      "AI 가상피팅으로 미리 착용해보고 구매했는데 실제로 받아보니 딱 제가 생각한 스타일이었어요.",
-  },
-  {
-    author: "최*수",
-    date: "2025-12-20",
-    rating: 5,
-    content:
-      "파트너 안경원에서 렌즈까지 맞춰서 쓰고 있는데 너무 만족스러워요. 배송도 빠르고 포장도 고급스러웠습니다.",
-  },
-];
 const reviewList = document.querySelector('[data-render="product-review-list"]');
 const reviewCountText = document.querySelector('[data-render="review-count"]');
 const productTabs = document.querySelector(".product-detail-tabs");
@@ -183,27 +154,29 @@ function renderProductRating(product) {
   productReviewCount.textContent = `(${reviewCount})`;
   productRating.setAttribute("aria-label", `평점 ${rating.toFixed(1)}점, 리뷰 ${reviewCount}개`);
 }
-function renderProductReviews(product) {
+function renderProductReviews(product, reviews) {
   if (!reviewList) {
     return;
   }
 
-  const reviewCount = Number(product.reviewCount) || 0;
+  const productReviews = Array.isArray(reviews)
+    ? reviews.filter((review) => {
+        return String(review.productId) === String(product.id);
+      })
+    : [];
 
   if (reviewCountText) {
-    reviewCountText.textContent = `(${reviewCount})`;
+    reviewCountText.textContent = `(${productReviews.length})`;
   }
 
-  if (reviewCount === 0) {
+  if (productReviews.length === 0) {
     reviewList.innerHTML = `
       <p class="review-empty">아직 작성된 후기가 없습니다.</p>
     `;
     return;
   }
 
-  const visibleReviewCount = Math.min(reviewCount, reviews.length);
-
-  renderTestimonials(reviews, reviewList, visibleReviewCount);
+  renderTestimonials(productReviews, reviewList, productReviews.length);
 }
 
 function renderProductSummary(product) {
@@ -405,8 +378,22 @@ function initShareButton() {
 
 async function initProductDetail() {
   try {
-    const data = await fetchData("/data/products.json");
-    const products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : [];
+    const [productData, reviewData] = await Promise.all([
+      fetchData("/data/products.json"),
+      fetchData("/data/reviews.json"),
+    ]);
+
+    const products = Array.isArray(productData)
+      ? productData
+      : Array.isArray(productData.products)
+        ? productData.products
+        : [];
+
+    const reviews = Array.isArray(reviewData)
+      ? reviewData
+      : Array.isArray(reviewData?.reviews)
+        ? reviewData.reviews
+        : [];
 
     const productId = getProductIdFromUrl();
 
@@ -424,7 +411,7 @@ async function initProductDetail() {
 
     renderProductSummary(product);
     renderProductGallery(product);
-    renderProductReviews(product);
+    renderProductReviews(product, reviews);
     renderRelatedProducts(product, products);
     initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
   } catch (error) {
