@@ -312,9 +312,16 @@
       </a>
     </nav>
 
-    <a class="fixed-chat-button" href="#search-modal" aria-label="AI 상담 시작">
-      <span class="sr-only">AI 상담</span>
-    </a>
+    <button
+      class="fixed-chat-button"
+      aria-label="AI 상담 시작"
+      type="button"
+      data-action="open-inquiry"
+    >
+      <span class="material-icons" aria-hidden="true">chat</span>
+    </button>
+
+    <dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title"></dialog>
 
     <dialog class="modal" id="search-modal" aria-labelledby="search-modal-title">
       <form method="dialog" class="modal-content">

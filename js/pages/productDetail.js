@@ -2,6 +2,7 @@
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
 import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
+import { renderChatting, openChattingModal } from "../modules/fixedBtn.js";
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
@@ -62,6 +63,8 @@ const productRating = document.querySelector(".product-summary-rating");
 const productRatingStars = document.querySelector(".product-summary-stars");
 const productRatingScore = document.querySelector(".product-summary-rating-score");
 const productReviewCount = document.querySelector(".product-summary-review-count");
+//공유
+const productShareButton = document.querySelector(".product-share-button");
 const productDescriptions = document.querySelectorAll('[data-render="product-description"]');
 const productColorOption = document.querySelector(".product-color-option");
 const productGalleryMainWrapper = document.querySelector(
@@ -378,6 +381,24 @@ function initAddCartButton() {
   });
 }
 
+function initShareButton() {
+  if (!productShareButton) {
+    return;
+  }
+
+  productShareButton.addEventListener("click", async () => {
+    const productUrl = window.location.href;
+
+    try {
+      await navigator.clipboard.writeText(productUrl);
+      showToast("상품 링크가 복사되었습니다.");
+    } catch (error) {
+      console.error("상품 링크 복사 실패", error);
+      showToast("링크 복사에 실패했습니다.");
+    }
+  });
+}
+
 async function initProductDetail() {
   try {
     const data = await fetchData("/data/products.json");
@@ -425,6 +446,15 @@ renderCartBadge();
 initProductDetail();
 initProductQuantity();
 initAddCartButton();
+initShareButton();
+
+const fixedBtn = document.querySelector(".fixed-chat-button");
+
+renderChatting();
+
+if (fixedBtn) {
+  openChattingModal(fixedBtn);
+}
 
 if (productTabs) {
   initTabs(productTabs);
