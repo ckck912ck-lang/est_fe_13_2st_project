@@ -1028,6 +1028,8 @@
   }
 
   .product-detail-content-inner {
+    max-width: 1040px;
+    margin: 0 auto;
     padding-block: 0 160px;
   }
   .product-summary-description-mobile {
@@ -1038,7 +1040,8 @@
   // }
 
   .review-section {
-    max-width: 880px;
+    width: 100%;
+    max-width: none;
     padding-top: 32px;
 
     .review-section-head {

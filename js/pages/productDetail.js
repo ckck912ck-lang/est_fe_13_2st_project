@@ -1,5 +1,7 @@
+// 조승아 작업
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
+import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
@@ -406,7 +408,18 @@ async function initProductDetail() {
   }
 }
 
-renderHeader("C");
+renderHeader("A");
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+
+if (hamburgerMenu) {
+  renderHamburger(hamburgerMenu);
+
+  const openHamburger = document.querySelector(".hamburger-btn-open");
+
+  if (openHamburger) {
+    openCloseHamburger(openHamburger);
+  }
+}
 renderFooter();
 renderCartBadge();
 initProductDetail();
