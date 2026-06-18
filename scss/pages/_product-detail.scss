@@ -1,7 +1,7 @@
 @use "../base/variables" as *;
 
 .product-detail-page {
-  background: #faf9f7;
+  background: $neutral-main-bg;
 }
 
 .product-detail-section {
@@ -28,9 +28,11 @@
 .product-gallery-main-swiper {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1.02;
+  height: 30dvh;
+  min-height: 220px;
+  max-height: 280px;
   overflow: hidden;
-  background: #f4efeb;
+  background: $color-warm;
 }
 
 .product-gallery-main {
@@ -39,14 +41,20 @@
   width: 100%;
   height: 100%;
   place-items: center;
+
+  overflow: hidden;
   background:
     radial-gradient(circle at 34% 36%, rgba($color-white, 0.72) 0 11%, transparent 12%),
-    linear-gradient(142deg, rgba($color-black, 0.04), rgba($color-black, 0.15)), #f4efeb;
+    linear-gradient(142deg, rgba($color-black, 0.04), rgba($color-black, 0.15)), $color-warm;
+
   img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
   }
   &::before,
   &::after {
@@ -108,7 +116,7 @@
   height: 34px;
   place-items: center;
   border-radius: 50%;
-  color: #8b8b84;
+  color: $neutral-text-sub;
   font-size: 1.75rem;
   line-height: 1;
   background: rgba($color-white, 0.78);
@@ -148,20 +156,20 @@
 
 .product-gallery-thumb-swiper {
   position: relative;
-  padding: 12px 16px 24px;
+  padding: 10px 16px 14px;
   overflow: hidden;
   background: $color-white;
 }
 
 .product-gallery-thumb {
   position: relative;
-  width: 62px;
-  height: 62px;
+  width: 52px;
+  height: 52px;
   padding: 0;
   overflow: hidden;
   border: 1px solid transparent;
   border-radius: 10px;
-  background: #f4f2ef;
+  background: $neutral-input-bg;
   img {
     display: block;
     width: 100%;
@@ -226,9 +234,9 @@
 .product-summary {
   position: relative;
   display: flex;
-  padding: 26px 16px 20px;
+  padding: 14px 16px 18px;
+  gap: 10px;
   flex-direction: column;
-  gap: 18px;
   background: $color-white;
 
   .product-summary-head {
@@ -267,11 +275,17 @@
   }
 
   h1 {
-    margin-top: -10px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: -6px;
     padding-right: 44px;
-    font-size: 1.875rem;
-    line-height: 1.16;
-    letter-spacing: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
   }
 
   .product-summary-rating {
@@ -294,10 +308,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0 14px;
+    gap: 0 8px;
 
     strong {
-      font-size: 1.625rem;
+      font-size: 1.45rem;
       line-height: 1.1;
     }
 
@@ -307,7 +321,7 @@
     }
 
     span {
-      color: #ff3045;
+      color: $brand-emphasis;
       font-weight: 800;
     }
   }
@@ -343,7 +357,7 @@
   width: 36px;
   height: 36px;
   place-items: center;
-  border: 1px solid #eeeeeb;
+  border: 1px solid $neutral-border;
   border-radius: 50%;
   color: #a09d96;
   background: $color-white;
@@ -474,13 +488,18 @@
 
 .product-purchase-actions {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
+  width: 100%;
+  min-width: 0;
   gap: 8px;
 
   .btn {
-    min-height: 64px;
-    gap: 12px;
-    border-radius: 16px;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    box-sizing: border-box;
+    gap: 8px;
+    border-radius: 14px;
     font-size: $mobile-caption;
     font-weight: 800;
   }
@@ -689,7 +708,140 @@
     border-radius: 10px;
   }
 }
+@media (max-width: 767px) {
+  .product-detail-page {
+    overflow-x: hidden;
+  }
 
+  .product-detail-section,
+  .product-detail-inner,
+  .product-detail-layout,
+  .product-gallery,
+  .product-summary {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .product-gallery-main-swiper {
+    height: 30dvh;
+    min-height: 220px;
+    max-height: 270px;
+  }
+
+  .product-gallery-main {
+    overflow: hidden;
+    background: $color-white;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
+
+  .product-gallery-arrow {
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+  }
+
+  .product-gallery-arrow-prev {
+    left: 12px;
+  }
+
+  .product-gallery-arrow-next {
+    right: 12px;
+  }
+
+  .product-gallery-thumb-swiper {
+    padding: 10px 16px 12px;
+  }
+
+  .product-gallery-thumb {
+    width: 50px;
+    height: 50px;
+  }
+
+  .product-summary {
+    width: 100%;
+    overflow: hidden;
+    padding: 14px 16px 18px;
+    gap: 10px;
+  }
+
+  .product-summary h1 {
+    display: block;
+    width: 100%;
+    max-width: calc(100% - 52px);
+    margin-top: -4px;
+    padding-right: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: normal;
+  }
+
+  .product-share-button {
+    top: 18px;
+    right: 16px;
+    z-index: 5;
+    flex-shrink: 0;
+  }
+
+  .product-summary-price {
+    gap: 0 8px;
+
+    strong {
+      font-size: 1.35rem;
+    }
+
+    del {
+      font-size: 0.8125rem;
+    }
+  }
+
+  .product-purchase-actions {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .product-purchase-actions .btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding-inline: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: $mobile-small;
+    white-space: nowrap;
+  }
+
+  .product-spec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 8px;
+
+    div {
+      min-width: 0;
+      min-height: 56px;
+      padding: 10px 14px;
+      box-sizing: border-box;
+    }
+  }
+}
 @media (min-width: 768px) {
   .product-detail-inner,
   .product-detail-content-inner {
@@ -704,6 +856,10 @@
   }
 
   .product-gallery {
+    .product-gallery-main-swiper {
+      height: auto;
+      aspect-ratio: 1 / 1.02;
+    }
     .product-gallery-main {
       border-radius: 20px;
     }
@@ -758,8 +914,11 @@
   }
 
   .product-gallery {
-    .product-gallery-main {
+    .product-gallery-main-swiper {
+      height: auto;
       aspect-ratio: 1 / 1;
+    }
+    .product-gallery-main {
       border-radius: 18px;
     }
 
@@ -847,9 +1006,9 @@
   .product-summary-description-mobile {
     display: none !important;
   }
-  .product-detail-tabs {
-    display: none;
-  }
+  // .product-detail-tabs {
+  //   display: none;
+  // }
 
   .review-section {
     max-width: 880px;
