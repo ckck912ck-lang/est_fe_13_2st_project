@@ -6,6 +6,8 @@ import { renderProductCard } from "../modules/renderProductCard.js";
 import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
+import { addCartItem } from "../utils/localStorage.js";
+import { showToast } from "../modules/toast.js";
 
 // 메인 페이지 기능
 renderHeader("");
@@ -159,6 +161,25 @@ async function initNoticeTab() {
     });
   });
 }
+
+const container = document.querySelector("body");
+// 장바구니에 추가하는 기능
+container.addEventListener("click", (e) => {
+  const cartButton = e.target.closest(".cart-add");
+  if (!cartButton) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  const productId = cartButton.dataset.productId;
+  if (!productId) return;
+
+  addCartItem(productId, 1, "기본");
+
+  console.log("장바구니 추가:", productId);
+  // 토스트
+  showToast(`상품이 장바구니에 추가되었습니다.`, 2000);
+});
 
 // 문의 모달 렌더링
 renderChatting();
