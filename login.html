@@ -91,7 +91,9 @@
               placeholder="hello@example.com"
               autocomplete="email"
               required
+              data-login-input="email"
             />
+            <span class="login-field__message" data-login-message="email"></span>
           </label>
 
           <label class="login-field" for="login-password">
@@ -104,9 +106,19 @@
                 placeholder="********"
                 autocomplete="current-password"
                 required
+                data-login-input="password"
               />
-              <span class="login-field__icon" aria-hidden="true"></span>
+              <button
+                type="button"
+                class="login-field__toggle"
+                aria-label="비밀번호 보기"
+                aria-pressed="false"
+                data-action="toggle-password"
+              >
+                <span class="material-icons" aria-hidden="true">visibility</span>
+              </button>
             </span>
+            <span class="login-field__message" data-login-message="password"></span>
           </label>
 
           <a class="login-form__help" href="#">비밀번호 찾기</a>

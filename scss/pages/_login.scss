@@ -135,28 +135,53 @@
 
     &:hover,
     &:focus-visible {
-      transform: translateY(-1px);
+      background: var(--login-color-bg);
     }
 
     &--kakao {
       color: var(--login-color-dark);
       background: var(--login-color-kakao);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-kakao);
+        color: var(--login-color-text);
+      }
     }
 
     &--naver {
       color: var(--login-color-bg);
       background: var(--login-color-naver);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-naver);
+        color: var(--login-color-text);
+      }
     }
 
     &--apple {
       color: var(--login-color-bg);
       background: var(--login-color-dark);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-dark);
+        color: var(--login-color-text);
+      }
     }
 
     &--google {
       color: #374151;
       border-color: var(--login-color-line);
       background: var(--login-color-bg);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-line);
+        background: var(--login-color-muted);
+        color: var(--login-color-text);
+      }
     }
   }
 }
@@ -277,6 +302,26 @@
       border-radius: 50%;
       background: currentColor;
     }
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 50%;
+    right: var(--login-space-4);
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    color: var(--login-color-muted);
+    background: transparent;
+    transform: translateY(-50%);
+  }
+
+  &__message {
+    min-height: 18px;
+    color: #d92d20;
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 }
 
