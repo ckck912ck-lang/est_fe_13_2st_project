@@ -22,8 +22,10 @@ function getHeaderTypeA() {
           </div>
           <div class="header-center">
             <h1 class="logo">
-              <a href="index.html" aria-label="ROUNZ 홈" class="visually-hidden">ROUNZ</a>
-              <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+              <a href="index.html" aria-label="ROUNZ 홈">
+                <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+                <span class="visually-hidden">ROUNZ</span>
+              </a>
             </h1>
           </div>
           <div class="header-right">
@@ -50,17 +52,19 @@ function getHeaderTypeB() {
       <div class="container header-B">
         <div class="header-top">
           <div class="header-left">
-            <button class="header-btn">
+            <a href="/index.html" class="header-btn">
               <span class="material-icons">chevron_left</span>
-            </button>
+            </a>
             <h2 class="category">상품</h2>
           </div>
           <div class="header-center">
             <h1 class="logo">
-              <a href="index.html" aria-label="ROUNZ 홈" class="visually-hidden">ROUNZ</a>
-              <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+              <a href="index.html" aria-label="ROUNZ 홈">
+                <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+                <span class="visually-hidden">ROUNZ</span>
+              </a>
             </h1>
-          </div>
+          </div>              
           <div class="header-right">
             <div class="site-header-btns">
               <button type="button" class="header-btn search" aria-label="검색 열기">
@@ -91,8 +95,10 @@ function getHeaderTypeC() {
           </div>
           <div class="header-center">
             <h1 class="logo">
-              <a href="index.html" aria-label="ROUNZ 홈" class="visually-hidden">ROUNZ</a>
-              <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+              <a href="index.html" aria-label="ROUNZ 홈">
+                <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+                <span class="visually-hidden">ROUNZ</span>
+              </a>
             </h1>
           </div>
           <div class="header-right">
@@ -133,8 +139,10 @@ function getHeaderPC() {
           </div>
           <div class="header-center">
             <h1 class="logo">
-              <a href="index.html" aria-label="ROUNZ 홈" class="visually-hidden">ROUNZ</a>
-              <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+              <a href="index.html" aria-label="ROUNZ 홈">
+                <img src="assets/images/common/logo.png" alt="ROUNZ logo" />
+                <span class="visually-hidden">ROUNZ</span>
+              </a>
             </h1>
           </div>
           <div class="header-right">

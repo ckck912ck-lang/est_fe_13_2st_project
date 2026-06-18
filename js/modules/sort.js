@@ -23,14 +23,19 @@ export function sortProducts(products, sortType) {
   const copiedProducts = [...products];
 
   switch (sortType) {
-    case "popular":
+    case "rating-high":
       return copiedProducts.sort((a, b) => {
         return (b.rating || 0) - (a.rating || 0);
       });
 
-    case "like":
+    case "like-high":
       return copiedProducts.sort((a, b) => {
         return (b.likeCount || 0) - (a.likeCount || 0);
+      });
+
+    case "discount-high":
+      return copiedProducts.sort((a, b) => {
+        return (b.discountRate || 0) - (a.discountRate || 0);
       });
 
     case "price-low":

@@ -1,3 +1,5 @@
+import { renderHeader } from "../modules/renderHeader.js";
+import { renderFooter } from "../modules/renderFooter.js";
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
@@ -6,6 +8,7 @@ import { addCartItem } from "../utils/localStorage.js";
 import { renderCartBadge } from "../modules/renderCartBadge.js";
 import { showToast } from "../modules/toast.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
+import { renderProductCard } from "../modules/renderProductCard.js";
 // 상품 상세 기능
 
 // 상품 이미지 : 현재 선택한 썸네일에 맞는 큰 이미지 띄우기, 슬라이드
@@ -51,6 +54,7 @@ const productSummary = document.querySelector('[data-render="product-summary"]')
 const productBrandLink = document.querySelector(".product-summary-brand a");
 const productTitle = document.querySelector("#product-title");
 const productPrice = document.querySelector(".product-summary-price");
+const productDescriptions = document.querySelectorAll('[data-render="product-description"]');
 const productColorOption = document.querySelector(".product-color-option");
 const productGalleryMainWrapper = document.querySelector(
   ".product-gallery-main-swiper .swiper-wrapper"
@@ -58,6 +62,7 @@ const productGalleryMainWrapper = document.querySelector(
 const productGalleryThumbWrapper = document.querySelector(
   ".product-gallery-thumb-swiper .swiper-wrapper"
 );
+const relatedProductsGrid = document.querySelector('[data-render="related-products"]');
 function getProductImages(product) {
   if (Array.isArray(product.images) && product.images.length > 0) {
     return product.images;
@@ -134,6 +139,23 @@ function formatPrice(price) {
 function createBrandUrl(brand) {
   return `product-list.html?brand=${encodeURIComponent(brand)}`;
 }
+// 상품 설명 문구 생성
+// 매개변수:
+// - product: 현재 상세페이지에 표시할 상품 객체
+// 반환값:
+// - 상품 상세 설명 문자열
+// 동작:
+// - products.json에 description 값이 있으면 해당 값을 사용함
+// - description 값이 없으면 상품 데이터 기반으로 기본 설명 문구를 생성함
+function getProductDescription(product) {
+  if (product.description) {
+    return product.description;
+  }
+
+  const frameShape = product.eyeWearShape || "안경";
+
+  return `${product.brand}의 ${product.title} 상품입니다. ${frameShape} 형태의 프레임으로 데일리 착용에 자연스럽게 어울리며, 다양한 스타일에 활용하기 좋습니다.`;
+}
 
 function renderProductSummary(product) {
   if (!productSummary) {
@@ -165,6 +187,10 @@ function renderProductSummary(product) {
       ${product.discountRate ? `<span>-${product.discountRate}%</span>` : ""}
     `;
   }
+  // 상품 상세 설명 렌더링
+  productDescriptions.forEach((description) => {
+    description.textContent = getProductDescription(product);
+  });
 
   if (productColorOption) {
     renderProductColors(product.colors);
@@ -198,6 +224,56 @@ function renderProductColors(colors) {
         .join("")}
     </div>
   `;
+}
+// 비슷한 상품 렌더링
+// 매개변수:
+// - currentProduct: 현재 상세페이지에 표시 중인 상품
+// - products: 전체 상품 배열
+// 동작:
+// - 현재 보고 있는 상품은 제외함
+// - 같은 category + 같은 eyeWearShape 상품을 우선 보여줌
+// - 부족하면 같은 category 상품으로 채움
+// - 그래도 부족하면 전체 상품 중 다른 상품으로 채움
+function renderRelatedProducts(currentProduct, products) {
+  if (!relatedProductsGrid) {
+    return;
+  }
+
+  const currentProductId = String(currentProduct.id);
+
+  const sameShapeProducts = products.filter((product) => {
+    return (
+      String(product.id) !== currentProductId &&
+      product.category === currentProduct.category &&
+      product.eyeWearShape === currentProduct.eyeWearShape
+    );
+  });
+
+  const sameCategoryProducts = products.filter((product) => {
+    return (
+      String(product.id) !== currentProductId &&
+      product.category === currentProduct.category &&
+      product.eyeWearShape !== currentProduct.eyeWearShape
+    );
+  });
+
+  const fallbackProducts = products.filter((product) => {
+    return String(product.id) !== currentProductId;
+  });
+
+  const relatedProducts = [...sameShapeProducts, ...sameCategoryProducts, ...fallbackProducts]
+    .filter((product, index, array) => {
+      return array.findIndex((item) => item.id === product.id) === index;
+    })
+    .slice(0, 2);
+
+  relatedProductsGrid.innerHTML = relatedProducts
+    .map((product) => {
+      return renderProductCard(product);
+    })
+    .join("");
+
+  initLazyLoadImages(relatedProductsGrid);
 }
 
 function updateQuantity(nextQuantity) {
@@ -261,7 +337,7 @@ function initAddCartButton() {
 
 async function initProductDetail() {
   try {
-    const data = await fetchData("./data/products.json");
+    const data = await fetchData("/data/products.json");
     const products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : [];
 
     const productId = getProductIdFromUrl();
@@ -280,6 +356,7 @@ async function initProductDetail() {
 
     renderProductSummary(product);
     renderProductGallery(product);
+    renderRelatedProducts(product, products);
     initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
   } catch (error) {
     console.error("상품 상세 정보를 불러오지 못했습니다.", error);
@@ -287,6 +364,8 @@ async function initProductDetail() {
   }
 }
 
+renderHeader("C");
+renderFooter();
 renderCartBadge();
 initProductDetail();
 initProductQuantity();
