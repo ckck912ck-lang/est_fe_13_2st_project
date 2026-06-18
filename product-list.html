@@ -18,6 +18,300 @@
     <!-- 메인 -->
     <main id="main" class="main product-list-page">
       <section class="product-list-top-section" aria-labelledby="product-list-title">
+        <!-- 필터 모달 -->
+        <!-- <dialog class="product-filter-dialog" data-dialog="product-filter" closedby="any"></dialog> -->
+        <dialog class="product-filter-dialog" data-dialog="product-filter" closedby="any">
+          <form class="filter-form" method="dialog">
+            <div class="filter-header">
+              <h2 class="filter-title">필터</h2>
+
+              <button type="button" class="filter-close-button" aria-label="필터 닫기">
+                <span class="material-icons" aria-hidden="true">close</span>
+              </button>
+            </div>
+
+            <div class="filter-body">
+              <section class="filter-group">
+                <h3 class="filter-group-title">추천 상품</h3>
+
+                <div class="filter-chip-list filter-chip-list-grid1">
+                  <label class="filter-chip">
+                    <input type="checkbox" name="best" hidden />
+                    <span>BEST</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="new" hidden />
+                    <span>NEW</span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="filter-group">
+                <h3 class="filter-group-title">카테고리</h3>
+
+                <div class="filter-chip-list filter-chip-list-grid1">
+                  <label class="filter-chip">
+                    <input type="checkbox" name="category" value="안경" />
+                    <span>안경</span>
+                  </label>
+                  <label class="filter-chip">
+                    <input type="checkbox" name="category" value="선글라스" />
+                    <span>선글라스</span>
+                  </label>
+                  <label class="filter-chip">
+                    <input type="checkbox" name="category" value="클립온" />
+                    <span>클립온</span>
+                  </label>
+                  <label class="filter-chip">
+                    <input type="checkbox" name="category" value="고글" />
+                    <span>고글</span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="filter-group">
+                <h3 class="filter-group-title">브랜드</h3>
+
+                <div class="filter-brand-scroll">
+                  <div class="filter-chip-list filter-chip-list-grid3">
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="Ray-Ban" /><span
+                        >RAY-BAN</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="PUBLIC BEACON" /><span
+                        >PUBLIC BEACON</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="MUSEUM BY BEACON" /><span
+                        >MUSEUM BY BEACON</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="FAKEME" /><span
+                        >FAKEME</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="CLICCLAC" /><span
+                        >CLICCLAC</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="RADIO EYES" /><span
+                        >RADIO EYES</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="ROUNZ BASIC" /><span
+                        >ROUNZ BASIC</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="LOCOMOTIVE" /><span
+                        >LOCOMOTIVE</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="PARANOID" /><span
+                        >PARANOID</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="BVH" /><span>BVH</span></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="STYLE:WORK" /><span
+                        >STYLE:WORK</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="TART OPTICAL" /><span
+                        >TART OPTICAL</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="STEPHANE CHRISTIAN" /><span
+                        >STEPHANE CHRISTIAN</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="NINE ACCORD" /><span
+                        >NINE ACCORD</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="CARVEN" /><span
+                        >CARVEN</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="BJ CLASSIC" /><span
+                        >BJ CLASSIC</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="FRANK CUSTOM" /><span
+                        >FRANK CUSTOM</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="ROUNZ ABSOLUTE" /><span
+                        >ROUNZ ABSOLUTE</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="ROUNZ STANDARD" /><span
+                        >ROUNZ STANDARD</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="1.618" /><span>1.618</span></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="BLIZ" /><span>BLIZ</span></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="RUDY PROJECT" /><span
+                        >RUDY PROJECT</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="OAKLEY" /><span
+                        >OAKLEY</span
+                      ></label
+                    >
+                    <label class="filter-chip"
+                      ><input type="checkbox" name="brand" value="PRADA" /><span>PRADA</span></label
+                    >
+                  </div>
+                </div>
+              </section>
+
+              <section class="filter-group">
+                <h3 class="filter-group-title">프레임 모양</h3>
+
+                <div class="filter-chip-list filter-chip-list-grid2">
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Aviator" />
+                    <span>에비에이터</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Cat-eye" />
+                    <span>캣아이</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Others" />
+                    <span>기타</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Rimless" />
+                    <span>무테</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Round" />
+                    <span>라운드</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Browline" />
+                    <span>브로우라인</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Mixed" />
+                    <span>믹스</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Panto" />
+                    <span>판토</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Oval" />
+                    <span>오벌</span>
+                  </label>
+
+                  <label class="filter-chip">
+                    <input type="checkbox" name="eyeWearShape" value="Goggle" />
+                    <span>고글</span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="filter-group">
+                <h3 class="filter-group-title">가격대</h3>
+
+                <div class="filter-price-button-list">
+                  <label class="filter-price-button">
+                    <input type="radio" name="priceRange" value="0-100000" />
+                    <span>10만원 이하</span>
+                  </label>
+                  <label class="filter-price-button">
+                    <input type="radio" name="priceRange" value="100000-200000" />
+                    <span>10~20만원</span>
+                  </label>
+                  <label class="filter-price-button">
+                    <input type="radio" name="priceRange" value="200000-300000" />
+                    <span>20~30만원</span>
+                  </label>
+                  <label class="filter-price-button">
+                    <input type="radio" name="priceRange" value="300000-" />
+                    <span>30만원 이상</span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="filter-group">
+                <h3 class="filter-group-title">가격 직접 설정</h3>
+
+                <div class="filter-range-slider">
+                  <input
+                    type="range"
+                    name="minPrice"
+                    min="0"
+                    max="1000000"
+                    step="10000"
+                    value="100000"
+                    aria-label="최소 가격"
+                  />
+                  <input
+                    type="range"
+                    name="maxPrice"
+                    min="0"
+                    max="1000000"
+                    step="10000"
+                    value="500000"
+                    aria-label="최대 가격"
+                  />
+                </div>
+
+                <div class="filter-price-value">
+                  <output>0원</output>
+                  <output>1,000,000원</output>
+                </div>
+              </section>
+            </div>
+
+            <div class="filter-actions">
+              <button type="reset" class="filter-reset-button">
+                <span class="material-icons" aria-hidden="true">refresh</span>
+                초기화
+              </button>
+
+              <button type="submit" class="filter-submit-button">적용 (20개)</button>
+            </div>
+          </form>
+        </dialog>
+
         <div class="inner product-list-inner">
           <!-- 현재 리스트 제목 -->
           <div class="product-list-header">
@@ -46,19 +340,21 @@
               </button>
 
               <div class="filter-panel-content" id="product-filter-content">
-                <div class="filter-group">
+                <!-- 카테고리 필터 -->
+                <div class="filter-group category">
                   <button
                     type="button"
                     data-filter-type="category"
-                    data-filter-value="glasses"
+                    data-filter-value="안경"
                     class="filter-chip is-active"
+                    aria-pressed="true"
                   >
                     안경
                   </button>
                   <button
                     type="button"
                     data-filter-type="category"
-                    data-filter-value="sunglasses"
+                    data-filter-value="선글라스"
                     class="filter-chip"
                   >
                     선글라스
@@ -66,7 +362,7 @@
                   <button
                     type="button"
                     data-filter-type="category"
-                    data-filter-value="goggle"
+                    data-filter-value="고글"
                     class="filter-chip"
                   >
                     고글
@@ -74,18 +370,10 @@
                   <button
                     type="button"
                     data-filter-type="category"
-                    data-filter-value="clip-on"
+                    data-filter-value="클립온"
                     class="filter-chip"
                   >
                     클립온
-                  </button>
-                  <button
-                    type="button"
-                    data-filter-type="category"
-                    data-filter-value="smart-glasses"
-                    class="filter-chip"
-                  >
-                    스마트 안경
                   </button>
                 </div>
               </div>
@@ -118,13 +406,13 @@
 
         <!-- 페이지네이션 -->
         <nav class="pagination" aria-label="상품 목록 페이지네이션" data-render="pagination">
-          <a href="#" aria-label="이전 페이지">‹</a>
+          <a href="#" aria-label="이전 페이지" class="material-icons">chevron_left</a>
           <a href="#" aria-current="page">1</a>
           <a href="#">2</a>
           <a href="#">3</a>
           <a href="#">4</a>
           <a href="#">5</a>
-          <a href="#" aria-label="다음 페이지">›</a>
+          <a href="#" aria-label="다음 페이지" class="material-icons">chevron_right</a>
         </nav>
 
         <!-- 무한스크롤 시작 버튼 -->

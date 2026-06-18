@@ -1,5 +1,9 @@
 // renderFooter : 배정호 작업
 
+import { renderCartBadge } from "./renderCartBadge.js";
+
+renderCartBadge();
+
 const footer = document.querySelector("footer");
 
 function getFooter() {

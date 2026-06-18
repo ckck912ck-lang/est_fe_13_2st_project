@@ -1,5 +1,7 @@
 // renderHeader : 배정호 작업
 
+import { renderCartBadge } from "./renderCartBadge.js";
+
 const header = document.querySelector("header");
 
 // 헤더 1 : 메인, 회원가입 입력폼/약관동의, 장바구니 페이지
@@ -195,4 +197,5 @@ export function renderHeader(headerType) {
   }
 
   header.innerHTML = html;
+  renderCartBadge();
 }

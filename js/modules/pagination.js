@@ -27,7 +27,7 @@ export function renderPagination(totalCount, currentPage, countPerPage, containe
   let html = "";
 
   html += `
-    <a href="#" aria-label="이전 페이지" data-page="prev">‹</a>
+    <a href="#" aria-label="이전 페이지" data-page="prev" class="material-icons">chevron_left</a>
   `;
 
   for (let page = 1; page <= totalPage; page++) {
@@ -43,7 +43,7 @@ export function renderPagination(totalCount, currentPage, countPerPage, containe
   }
 
   html += `
-    <a href="#" aria-label="다음 페이지" data-page="next">›</a>
+    <a href="#" aria-label="다음 페이지" data-page="next" class="material-icons">chevron_right</a>
   `;
 
   container.innerHTML = html;
