@@ -3,7 +3,7 @@ import { renderFooter } from "../modules/renderFooter.js";
 import { initSearch } from "../modules/search.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
-import { initProductSlider } from "../modules/carousel.js";
+import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 
 // 메인 페이지 기능
@@ -13,7 +13,8 @@ initSearch();
 
 // 공통 헤더, A타입
 
-// 히어로 : 슬라이드
+// 히어로 슬라이더 초기화
+initHeroSlider(".hero-slider", ".hero-prev-btn", ".hero-next-btn", ".hero-pagination");
 
 // 얼굴형별 추천 : 슬라이드, 필터된 상품목록으로 이동
 

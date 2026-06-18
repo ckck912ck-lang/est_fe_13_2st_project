@@ -1,9 +1,18 @@
 // carousel.js : Swiper 라이브러리 모듈
 // Swiper는 각 페이지 HTML에서 CDN <script> 태그로 전역 로드됨
 
-// 히어로 슬라이더 : 좌우 슬라이더, 좌우버튼 직접 구현, 페이지네이션 O
-// selector : .swiper 컨테이너 선택자 (내부에 .swiper-button-prev, .swiper-button-next, .swiper-pagination 필요)
-export function initHeroSlider(selector) {
+// 히어로 슬라이더 : 좌우 슬라이더, 커스텀 이전/다음 버튼, 자동재생, 클릭 가능한 페이지네이션
+// @param {string} selector - .swiper 컨테이너 선택자
+// @param {string} [prevSelector=".swiper-button-prev"] - 이전 버튼 선택자
+// @param {string} [nextSelector=".swiper-button-next"] - 다음 버튼 선택자
+// @param {string} [paginationSelector=".swiper-pagination"] - 페이지네이션 컨테이너 선택자
+// @returns {Swiper|null} Swiper 인스턴스 또는 초기화 실패 시 null
+export function initHeroSlider(
+  selector,
+  prevSelector = ".swiper-button-prev",
+  nextSelector = ".swiper-button-next",
+  paginationSelector = ".swiper-pagination"
+) {
   const container = document.querySelector(selector);
   if (!container || !window.Swiper) return null;
 
@@ -14,12 +23,12 @@ export function initHeroSlider(selector) {
       disableOnInteraction: false,
     },
     pagination: {
-      el: container.querySelector(".swiper-pagination"),
+      el: container.querySelector(paginationSelector),
       clickable: true,
     },
     navigation: {
-      prevEl: container.querySelector(".swiper-button-prev"),
-      nextEl: container.querySelector(".swiper-button-next"),
+      prevEl: container.querySelector(prevSelector),
+      nextEl: container.querySelector(nextSelector),
     },
   });
 }

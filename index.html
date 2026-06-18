@@ -60,23 +60,46 @@
     </aside>
 
     <main id="main" class="main">
-      <section class="hero-slider" aria-labelledby="hero-title" data-component="hero-slider">
-        <div
-          class="hero-slider__media hero-media"
-          role="img"
-          aria-label="AI가 추천하는 나만의 안경"
-        ></div>
-        <div class="hero-slider__content hero-content">
-          <p class="section-kicker">AI FITTING</p>
-          <h2 id="hero-title" class="hero-title-text">AI가 추천하는 나만의 안경</h2>
-          <p class="hero-description">얼굴형 분석으로 완벽한 안경을 찾아보세요</p>
-          <a class="btn btn--primary" href="#ai-recommend">AI 추천 받기</a>
+      <section class="hero-slider swiper" aria-label="히어로 슬라이더" data-component="hero-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide hero-slide hero-slide--ai">
+            <div class="hero-slide__media" aria-hidden="true"></div>
+            <div class="hero-content">
+              <h2 class="hero-title-text">ai가 추천하는<br class="mobile-break"> 나만의 안경</h2>
+              <p class="hero-description">얼굴형 분석으로 완벽한 안경을 찾아보세요</p>
+              <a class="btn btn--primary" href="#ai-recommend"
+                >ai 추천 받기 <span class="material-icons" aria-hidden="true">east</span></a
+              >
+            </div>
+          </div>
+          <div class="swiper-slide hero-slide hero-slide--new">
+            <div class="hero-slide__media" aria-hidden="true"></div>
+            <div class="hero-content">
+              <h2 class="hero-title-text">2026 s/s<br class="mobile-break"> 신상품 출시</h2>
+              <p class="hero-description">carin, gentle monster 신컬렉션</p>
+              <a class="btn btn--primary" href="product-list.html?sort=new"
+                >지금 쇼핑하기 <span class="material-icons" aria-hidden="true">east</span></a
+              >
+            </div>
+          </div>
+          <div class="swiper-slide hero-slide hero-slide--store">
+            <div class="hero-slide__media" aria-hidden="true"></div>
+            <div class="hero-content">
+              <h2 class="hero-title-text">파트너 안경원에서<br class="mobile-break"> 직접 착용해보세요</h2>
+              <p class="hero-description">전국 1,200개 파트너 안경원 이용 가능</p>
+              <a class="btn btn--primary" href="#partner-store"
+                >안경원 찾기 <span class="material-icons" aria-hidden="true">east</span></a
+              >
+            </div>
+          </div>
         </div>
-        <div class="carousel-pagination" aria-label="히어로 슬라이드">
-          <button type="button" class="is-active" aria-label="1번 슬라이드"></button>
-          <button type="button" aria-label="2번 슬라이드"></button>
-          <button type="button" aria-label="3번 슬라이드"></button>
-        </div>
+        <button type="button" class="hero-prev-btn" aria-label="이전 슬라이드">
+          <span class="material-icons" aria-hidden="true">chevron_left</span>
+        </button>
+        <button type="button" class="hero-next-btn" aria-label="다음 슬라이드">
+          <span class="material-icons" aria-hidden="true">chevron_right</span>
+        </button>
+        <div class="swiper-pagination hero-pagination"></div>
       </section>
 
       <section class="face-ai-section section-block" aria-labelledby="ai-analyze-title">
