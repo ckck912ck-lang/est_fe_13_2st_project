@@ -3940,6 +3940,13 @@ body[data-cart-state=filled] .cart-page__state--empty {
   display: grid;
 }
 
+.review-empty {
+  padding: 48px 0;
+  color: rgb(136, 136, 128);
+  font-size: 14px;
+  text-align: center;
+}
+
 .review-item {
   display: grid;
   gap: 8px;
