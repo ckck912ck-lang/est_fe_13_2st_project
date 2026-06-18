@@ -13,51 +13,14 @@
 
     <header class="header"></header>
 
+    <!-- 햄버거(모듈) -->
     <aside
-      class="hamburger-nav"
-      id="hamburger-nav"
+      class="hamburger-menu"
+      id="hamburger-menu"
       aria-label="전체 메뉴"
-      data-component="hamburger-nav"
+      data-component="hamburger-menu"
       hidden
-    >
-      <div class="hamburger-nav__head">
-        <strong>ROUNZ</strong>
-        <button
-          type="button"
-          class="icon-button"
-          aria-label="전체 메뉴 닫기"
-          data-action="close-menu"
-        >
-          ×
-        </button>
-      </div>
-      <nav class="hamburger-nav__quick" aria-label="빠른 메뉴">
-        <a href="index.html">홈</a>
-        <a href="product-list.html" aria-current="page">상품</a>
-        <a href="cart.html">장바구니</a>
-        <a href="login.html">로그인</a>
-      </nav>
-      <nav class="hamburger-nav__section" aria-label="카테고리">
-        <h2>카테고리</h2>
-        <a href="product-list.html">전체 상품</a>
-        <a href="product-list.html?category=glasses">안경</a>
-        <a href="product-list.html?category=sunglasses">선글라스</a>
-        <a href="product-list.html?category=clip-on">클립온</a>
-        <a href="product-list.html?category=smart">스마트 안경</a>
-      </nav>
-      <nav class="hamburger-nav__section" aria-label="브랜드">
-        <h2>브랜드</h2>
-        <a href="product-list.html?brand=carin">CARIN</a>
-        <a href="product-list.html?brand=gentle-monster">GENTLE MONSTER</a>
-        <a href="product-list.html?brand=lindberg">LINDBERG</a>
-        <a href="product-list.html?brand=ray-ban">RAY-BAN</a>
-        <a href="product-list.html?brand=moscot">MOSCOT</a>
-      </nav>
-      <div class="hamburger-nav__service">
-        <a href="#partner-store">파트너 안경원 찾기</a>
-        <a href="tel:15880000">고객센터 1588-0000</a>
-      </div>
-    </aside>
+    ></aside>
 
     <main id="main" class="cart-page">
       <section class="cart-page__state cart-page__state--empty" aria-labelledby="cart-empty-title">
@@ -96,7 +59,9 @@
         <div class="cart-page__layout">
           <section class="cart-items" aria-labelledby="cart-filled-title">
             <div class="cart-section-heading">
-              <h2 id="cart-filled-title">장바구니 <span class="cart-count-text" data-render="cart-count">1</span></h2>
+              <h2 id="cart-filled-title">
+                장바구니 <span class="cart-count-text" data-render="cart-count">1</span>
+              </h2>
               <p data-render="cart-total-count">총 1개의 상품</p>
             </div>
 
@@ -109,10 +74,9 @@
             </div>
 
             <div class="cart-items__list" data-render="cart-items">
-            <!--
+              <!--
               JavaScript로 상품 목록 렌더
-            -->
-            </div>
+            --></div>
           </section>
 
           <aside class="cart-summary" aria-labelledby="cart-summary-title">
@@ -163,12 +127,23 @@
       </section>
     </main>
 
+    <!-- 고정버튼 -->
+    <button
+      class="fixed-chat-button"
+      aria-label="AI 상담 시작"
+      type="button"
+      data-action="open-inquiry"
+    >
+      <span class="material-icons">chat</span>
+    </button>
+
+    <!-- 문의 폼 (모듈)-->
+    <dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title"></dialog>
+
     <footer class="footer"></footer>
 
     <nav class="bottom-nav" aria-label="하단 네비게이션" data-component="bottom-nav">
-      <a href="index.html">
-        <span class="material-icons" aria-hidden="true">home</span> 홈
-      </a>
+      <a href="index.html"> <span class="material-icons" aria-hidden="true">home</span> 홈 </a>
       <a href="product-list.html">
         <span class="material-icons" aria-hidden="true">grid_on</span> 상품
       </a>
@@ -177,7 +152,9 @@
       </a>
       <a href="cart.html" aria-current="page">
         <span class="material-icons" aria-hidden="true">local_mall</span>
-        <span class="cart-badge" aria-label="장바구니에 추가된 상품 수" data-render="cart-count">2</span>
+        <span class="cart-badge" aria-label="장바구니에 추가된 상품 수" data-render="cart-count"
+          >2</span
+        >
         장바구니
       </a>
       <a href="login.html">
