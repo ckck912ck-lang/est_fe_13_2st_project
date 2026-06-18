@@ -57,6 +57,35 @@ async function renderAiProducts() {
 
 renderAiProducts();
 
+// 스타일 큐레이션 : 각 스타일 기준으로 대표 상품 이미지를 카드 배경에 적용
+async function renderCurationImages() {
+  const data = await fetchData("./data/products.json");
+  if (!data) return;
+
+  const products = data.products;
+
+  // 큐레이션 스타일별 상품 선별 기준 (미니멀&클래식, 스트리트&볼드, 빈티지&레트로, 심플&모던 순서에 대응)
+  const curationFilters = [
+    (p) => p.eyeWearShape === "Round", // 미니멀 & 클래식 : 라운드 메탈 프레임
+    (p) => p.eyeWearShape === "Browline", // 스트리트 & 볼드 : 브라우라인 볼드 프레임
+    (p) => p.eyeWearShape === "Cat-eye", // 빈티지 & 레트로 : 캣아이 레트로 프레임
+    (p) => p.eyeWearShape === "Rimless", // 심플 & 모던 : 무테 경량 프레임
+  ];
+
+  const curationCards = document.querySelectorAll(".curation-card");
+
+  // 카드마다 필터에 맞는 첫 번째 상품의 썸네일을 배경 이미지로 설정
+  curationCards.forEach((card, i) => {
+    const matched = products.find(curationFilters[i]);
+    if (!matched) return;
+
+    // ::before 의 CSS 커스텀 프로퍼티에 이미지 URL 전달 (hover 확대 애니메이션 대상)
+    card.style.setProperty("--curation-bg", `url('${matched.thumbnail}')`);
+  });
+}
+
+renderCurationImages();
+
 // 스타일 큐레이션 : 필터된 상품목록으로 이동
 
 // 베스트 상품 : 슬라이드, 전체 상품 필터해서 베스트 상품만 출력
