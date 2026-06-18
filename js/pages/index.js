@@ -5,7 +5,7 @@ import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
-import { renderChatting, openChattingModal } from "../modules/fixedBtn.js";
+import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 
 // 메인 페이지 기능
 renderHeader("");
@@ -15,6 +15,8 @@ renderFooter();
 renderChatting();
 const fixedBtn = document.querySelector(".fixed-chat-button");
 openChattingModal(fixedBtn);
+// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
+closeChattingModal();
 
 // 햄버거 렌더링
 const hamburgerMenu = document.querySelector(".hamburger-menu");
