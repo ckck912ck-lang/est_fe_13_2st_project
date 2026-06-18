@@ -15,6 +15,7 @@ import {
 } from "/js/modules/pagination.js";
 import { showSkeleton } from "/js/modules/renderSkeleton.js";
 import { initLazyLoadImages } from "/js/utils/lazyLoadImage.js";
+import { addCartItem } from "/js/utils/localStorage.js";
 
 // 변수
 const data = await fetchData("/data/products.json");
@@ -241,6 +242,22 @@ function resetFilters() {
     },
   };
 }
+
+// 장바구니에 추가
+container.addEventListener("click", (e) => {
+  const cartButton = e.target.closest(".cart-add");
+  if (!cartButton) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  const productId = cartButton.dataset.productId;
+  if (!productId) return;
+
+  addCartItem(productId, 1, "기본");
+
+  console.log("장바구니 추가:", productId);
+});
 
 // 무한 스크롤 : (후순위 추가기능) 누르면 페이지네이션 지우고 화면 감지로 펼치는 기능 활성화
 
