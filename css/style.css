@@ -1960,6 +1960,7 @@ body[data-cart-state=filled] .cart-page__state--empty {
   margin-top: var(--cart-space-5);
 }
 .cart-recommend-swiper {
+  position: relative;
   overflow: hidden;
 }
 .cart-recommend__list {
@@ -1971,6 +1972,26 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 .cart-recommend .product-card {
   height: 100%;
+}
+.cart-recommend-prev, .cart-recommend-next {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--cart-color-line);
+  border-radius: 50%;
+  background: var(--cart-color-surface);
+  color: var(--cart-color-text);
+  transform: translateY(-50%);
+}
+.cart-recommend-prev {
+  left: 8px;
+}
+.cart-recommend-next {
+  right: 8px;
 }
 
 .cart-product-card {

@@ -178,6 +178,7 @@ body[data-cart-state="filled"] {
   margin-top: var(--cart-space-5);
 
   &-swiper {
+    position: relative;
     overflow: hidden;
   }
   &__list {
@@ -191,6 +192,30 @@ body[data-cart-state="filled"] {
 
   .product-card {
     height: 100%;
+  }
+
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid var(--cart-color-line);
+    border-radius: 50%;
+    background: var(--cart-color-surface);
+    color: var(--cart-color-text);
+    transform: translateY(-50%);
+  }
+
+  &-prev {
+    left: 8px;
+  }
+
+  &-next {
+    right: 8px;
   }
 }
 
