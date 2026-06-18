@@ -51,6 +51,7 @@ const productSummary = document.querySelector('[data-render="product-summary"]')
 const productBrandLink = document.querySelector(".product-summary-brand a");
 const productTitle = document.querySelector("#product-title");
 const productPrice = document.querySelector(".product-summary-price");
+const productDescription = document.querySelector('[data-render="product-description"]');
 const productColorOption = document.querySelector(".product-color-option");
 const productGalleryMainWrapper = document.querySelector(
   ".product-gallery-main-swiper .swiper-wrapper"
@@ -134,6 +135,23 @@ function formatPrice(price) {
 function createBrandUrl(brand) {
   return `product-list.html?brand=${encodeURIComponent(brand)}`;
 }
+// 상품 설명 문구 생성
+// 매개변수:
+// - product: 현재 상세페이지에 표시할 상품 객체
+// 반환값:
+// - 상품 상세 설명 문자열
+// 동작:
+// - products.json에 description 값이 있으면 해당 값을 사용함
+// - description 값이 없으면 상품 데이터 기반으로 기본 설명 문구를 생성함
+function getProductDescription(product) {
+  if (product.description) {
+    return product.description;
+  }
+
+  const frameShape = product["eye-wear-shape"] || "안경";
+
+  return `${product.brand}의 ${product.title} 상품입니다. ${frameShape} 형태의 프레임으로 데일리 착용에 자연스럽게 어울리며, 다양한 스타일에 활용하기 좋습니다.`;
+}
 
 function renderProductSummary(product) {
   if (!productSummary) {
@@ -164,6 +182,10 @@ function renderProductSummary(product) {
       }
       ${product.discountRate ? `<span>-${product.discountRate}%</span>` : ""}
     `;
+  }
+  // 상품 상세 설명 렌더링
+  if (productDescription) {
+    productDescription.textContent = getProductDescription(product);
   }
 
   if (productColorOption) {
@@ -261,7 +283,7 @@ function initAddCartButton() {
 
 async function initProductDetail() {
   try {
-    const data = await fetchData("./data/products.json");
+    const data = await fetchData("/data/products.json");
     const products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : [];
 
     const productId = getProductIdFromUrl();
