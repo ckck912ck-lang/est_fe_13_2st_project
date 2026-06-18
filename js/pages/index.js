@@ -1,6 +1,5 @@
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
-import { initSearch } from "../modules/search.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
@@ -9,7 +8,6 @@ import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 // 메인 페이지 기능
 renderHeader("");
 renderFooter();
-initSearch();
 
 // 공통 헤더, A타입
 
