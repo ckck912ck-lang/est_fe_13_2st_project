@@ -180,7 +180,8 @@
                   </a>
                 </p>
                 <button type="button" class="product-share-button" aria-label="상품 공유">
-                  <span aria-hidden="true"></span>
+                  <span class="material-icons" aria-hidden="true">share</span>
+                  <!-- <span aria-hidden="true"></span> -->
                 </button>
               </div>
 
@@ -255,6 +256,10 @@
                   +
                 </button>
               </div>
+              <p
+                class="product-summary-description product-summary-description-pc"
+                data-render="product-description"
+              ></p>
             </section>
           </div>
         </div>
@@ -310,7 +315,10 @@
               aria-labelledby="detail-tab"
               data-tab="detail"
             >
-              <p data-render="product-description"></p>
+              <p
+                class="product-summary-description product-summary-description-mobile"
+                data-render="product-description"
+              ></p>
             </div>
             <div
               class="tab-panel"
