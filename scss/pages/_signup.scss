@@ -93,7 +93,7 @@
 
   .signup-legend {
     margin-bottom: -16px;
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 700;
     clip: auto;
     width: auto;
@@ -125,7 +125,8 @@
     color: $neutral-text-sub;
   }
 
-  input {
+  .signup-field input,
+  .password-field input {
     width: 100%;
     height: 44px;
     border: 1px solid $neutral-border;
@@ -222,10 +223,50 @@
   }
 
   .signup-check {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
     min-height: 56px;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    a {
+      font-size: 12px;
+    }
+  }
+
+  .signup-check {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 56px;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    input:checked + .check-box {
+      border-color: $neutral-black;
+      background: $neutral-black;
+    }
+
+    input:checked + .check-box::after {
+      content: "check";
+      font-family: "Material Icons";
+      color: $neutral-white;
+      font-size: 18px;
+      line-height: 1;
+    }
   }
 
   .all-check {
@@ -249,13 +290,13 @@
     gap: 4px;
 
     strong {
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 500;
     }
 
     small {
       color: $neutral-text-sub;
-      font-size: 14px;
+      font-size: 10px;
     }
   }
 
@@ -263,11 +304,17 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+
+  .signup-step[hidden] {
+    display: none;
   }
 
   @media (min-width: 768px) {
     .signup-section {
-      max-width: 640px;
+      max-width: 660px;
     }
 
     .signup-head {
@@ -281,7 +328,18 @@
 
   @media (min-width: 1280px) {
     .signup-section {
-      max-width: 720px;
+      max-width: 840px;
+    }
+    .signup-legend {
+      font-size: 40px;
+    }
+    .check-text {
+      strong {
+        font-size: 20px;
+      }
+      small {
+        font-size: 16px;
+      }
     }
   }
 }

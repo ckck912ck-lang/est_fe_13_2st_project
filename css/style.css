@@ -4703,7 +4703,7 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 .signup-page .signup-legend {
   margin-bottom: -16px;
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 700;
   clip: auto;
   width: auto;
@@ -4732,7 +4732,8 @@ body[data-cart-state=filled] .cart-page__state--empty {
   font-weight: 400;
   color: rgb(136, 136, 128);
 }
-.signup-page input {
+.signup-page .signup-field input,
+.signup-page .password-field input {
   width: 100%;
   height: 44px;
   border: 1px solid rgb(232, 230, 225);
@@ -4741,10 +4742,11 @@ body[data-cart-state=filled] .cart-page__state--empty {
   padding: 0 16px;
   font-size: 16px;
 }
-.signup-page input::-moz-placeholder {
+.signup-page .signup-field input::-moz-placeholder, .signup-page .password-field input::-moz-placeholder {
   color: rgb(136, 136, 128);
 }
-.signup-page input::placeholder {
+.signup-page .signup-field input::placeholder,
+.signup-page .password-field input::placeholder {
   color: rgb(136, 136, 128);
 }
 .signup-page .password-field {
@@ -4812,10 +4814,44 @@ body[data-cart-state=filled] .cart-page__state--empty {
   color: rgb(0, 0, 0);
 }
 .signup-page .signup-check {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
   min-height: 56px;
+  cursor: pointer;
+}
+.signup-page .signup-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.signup-page .signup-check a {
+  font-size: 12px;
+}
+.signup-page .signup-check {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  cursor: pointer;
+}
+.signup-page .signup-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.signup-page .signup-check input:checked + .check-box {
+  border-color: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+}
+.signup-page .signup-check input:checked + .check-box::after {
+  content: "check";
+  font-family: "Material Icons";
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  line-height: 1;
 }
 .signup-page .all-check {
   padding: 0 16px;
@@ -4836,21 +4872,26 @@ body[data-cart-state=filled] .cart-page__state--empty {
   gap: 4px;
 }
 .signup-page .check-text strong {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
 }
 .signup-page .check-text small {
   color: rgb(136, 136, 128);
-  font-size: 14px;
+  font-size: 10px;
 }
 .signup-page .signup-terms {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+}
+.signup-page .signup-step[hidden] {
+  display: none;
 }
 @media (min-width: 768px) {
   .signup-page .signup-section {
-    max-width: 640px;
+    max-width: 660px;
   }
   .signup-page .signup-head {
     padding: 24px 32px 24px;
@@ -4861,6 +4902,15 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 @media (min-width: 1280px) {
   .signup-page .signup-section {
-    max-width: 720px;
+    max-width: 840px;
+  }
+  .signup-page .signup-legend {
+    font-size: 40px;
+  }
+  .signup-page .check-text strong {
+    font-size: 20px;
+  }
+  .signup-page .check-text small {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=style.css.map */
