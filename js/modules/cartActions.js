@@ -121,7 +121,7 @@ function createCartItemTemplate(cartProduct) {
         data-action="cart-remove"
         aria-label="${title} 삭제"
       >
-        <span>삭제</span>
+        <span class="material-icons">delete</span>
       </button>
     </article>
   `
