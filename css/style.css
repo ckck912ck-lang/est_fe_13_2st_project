@@ -1847,30 +1847,49 @@ body[data-cart-state=filled] .cart-page__state--empty {
   align-items: center;
   justify-content: space-between;
   gap: var(--cart-space-3);
+  min-width: 0;
   margin-top: var(--cart-space-3);
 }
 .cart-item__price {
-  margin-top: var(--cart-space-2);
+  min-width: 0;
+  margin-top: 0;
   font-weight: 700;
+  text-align: right;
 }
 .cart-item__actions {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(3, 32px);
   align-items: center;
-  margin-top: var(--cart-space-3);
+  flex: 0 0 auto;
+  overflow: hidden;
+  margin-top: 0;
   border: 1px solid var(--cart-color-line);
   border-radius: var(--cart-radius-pill);
   background: var(--cart-color-bg);
+  box-sizing: content-box;
 }
 .cart-item__actions button,
 .cart-item__actions span {
   display: grid;
-  min-width: 34px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   min-height: 32px;
   place-items: center;
+  padding: 0;
+  border: 0;
+  font: inherit;
   font-weight: 700;
+  line-height: 1;
+  box-sizing: border-box;
 }
 .cart-item__actions button {
   color: var(--cart-color-text);
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .cart-summary {
