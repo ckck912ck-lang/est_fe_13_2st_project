@@ -19,7 +19,7 @@ import { addCartItem } from "../utils/localStorage.js";
 import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
 
 // 변수
-const data = await fetchData("data/products.json");
+const data = await fetchData("./data/products.json");
 const products = data.products;
 const container = document.querySelector(".product-list .product-list-grid");
 const productCount = document.querySelector("[data-render='product-count']");
