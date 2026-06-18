@@ -753,13 +753,18 @@ footer .footer-bottom .footer-copyright {
   position: absolute;
   top: 3px;
   left: 50%;
-  min-width: 22px;
-  height: 22px;
-  padding-inline: 6px;
+  display: inline-flex;
+  min-width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 5px;
+  border-radius: 999px;
   color: #111111;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 800;
-  background: #d4b987;
+  line-height: 1;
+  background: rgb(196, 169, 125);
   transform: translateX(8px);
 }
 
@@ -1079,6 +1084,7 @@ footer .footer-bottom .footer-copyright {
   border: 1px solid rgb(232, 230, 225);
 }
 .product-card .product-image-link .cart-add .material-icons {
+  font-size: 28px;
   color: rgb(136, 136, 128);
 }
 .product-card .product-info {
@@ -1160,7 +1166,6 @@ footer .footer-bottom .footer-copyright {
   }
   .product-card .product-image-link .cart-add .material-icons {
     color: transparent;
-    font-size: 28px;
   }
   .product-card:hover .cart-add {
     opacity: 1;

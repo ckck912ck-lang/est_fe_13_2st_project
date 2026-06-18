@@ -87,6 +87,7 @@
       border: 1px solid $neutral-border;
 
       .material-icons {
+        font-size: 28px;
         color: $neutral-text-sub;
       }
     }
@@ -189,7 +190,6 @@
 
         .material-icons {
           color: transparent;
-          font-size: 28px;
         }
       }
     }
