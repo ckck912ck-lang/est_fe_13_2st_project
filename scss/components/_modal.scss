@@ -46,7 +46,7 @@
   }
 }
 
-.search-modal__form {
+.search-modal-form {
   background: $neutral-main-bg;
 
   // .inner 안 행 — flex 레이아웃과 border-bottom을 여기에 달아서
@@ -59,12 +59,12 @@
     border-bottom: 2px solid $neutral-text-main;
   }
 
-  &__icon {
+  &-icon {
     flex-shrink: 0;
     color: $neutral-text-sub;
   }
 
-  &__close {
+  &-close {
     color: $neutral-text-sub;
 
     &:hover {
@@ -72,7 +72,7 @@
     }
   }
 
-  &__input {
+  &-input {
     flex: 1;
     border: 0;
     outline: none;
@@ -95,14 +95,14 @@
 .popular-keywords {
   padding-top: 32px;
 
-  &__title {
+  &-title {
     margin-bottom: 16px;
     font-size: $mobile-caption;
     font-weight: 400;
     color: $neutral-text-sub;
   }
 
-  &__list {
+  &-list {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;

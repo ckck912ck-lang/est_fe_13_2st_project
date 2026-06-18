@@ -1472,27 +1472,27 @@ footer .footer-bottom .footer-copyright {
   }
 }
 
-.search-modal__form {
+.search-modal-form {
   background: rgb(249, 248, 246);
 }
-.search-modal__form-row {
+.search-modal-form-row {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 48px 0 12px;
   border-bottom: 2px solid rgb(14, 14, 12);
 }
-.search-modal__form__icon {
+.search-modal-form-icon {
   flex-shrink: 0;
   color: rgb(136, 136, 128);
 }
-.search-modal__form__close {
+.search-modal-form-close {
   color: rgb(136, 136, 128);
 }
-.search-modal__form__close:hover {
+.search-modal-form-close:hover {
   color: rgb(14, 14, 12);
 }
-.search-modal__form__input {
+.search-modal-form-input {
   flex: 1;
   border: 0;
   outline: none;
@@ -1501,26 +1501,26 @@ footer .footer-bottom .footer-copyright {
   background: transparent;
   color: rgb(14, 14, 12);
 }
-.search-modal__form__input::-moz-placeholder {
+.search-modal-form-input::-moz-placeholder {
   color: rgb(136, 136, 128);
 }
-.search-modal__form__input::placeholder {
+.search-modal-form-input::placeholder {
   color: rgb(136, 136, 128);
 }
-.search-modal__form__input::-webkit-search-cancel-button {
+.search-modal-form-input::-webkit-search-cancel-button {
   display: none;
 }
 
 .popular-keywords {
   padding-top: 32px;
 }
-.popular-keywords__title {
+.popular-keywords-title {
   margin-bottom: 16px;
   font-size: 14px;
   font-weight: 400;
   color: rgb(136, 136, 128);
 }
-.popular-keywords__list {
+.popular-keywords-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -2562,13 +2562,13 @@ body[data-cart-state=filled] .cart-page__state--empty {
   background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0));
 }
 .index-page .hero-slider .hero-slide--ai .hero-slide__media {
-  background: url("/assets/images/hero/hero-slide-01.png") center/cover;
+  background: url("../../assets/images/hero/hero-slide-01.png") center/cover;
 }
 .index-page .hero-slider .hero-slide--new .hero-slide__media {
-  background: url("/assets/images/hero/hero-slide-02.png") center/cover;
+  background: url("../../assets/images/hero/hero-slide-02.png") center/cover;
 }
 .index-page .hero-slider .hero-slide--store .hero-slide__media {
-  background: url("/assets/images/hero/hero-slide-03.png") center/cover;
+  background: url("../../assets/images/hero/hero-slide-03.png") center/cover;
 }
 .index-page .hero-slider .hero-content {
   position: relative;

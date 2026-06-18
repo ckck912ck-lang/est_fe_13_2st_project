@@ -22,8 +22,6 @@ import { renderStars } from "../modules/renderStars.js";
 
 // 후기 : 데이터 렌더링
 
-const fixedBtn = document.querySelector(".fixed-chat-button");
-
 // 비슷한 상품 : 슬라이드
 const reviewList = document.querySelector('[data-render="product-review-list"]');
 const reviewCountText = document.querySelector('[data-render="review-count"]');
@@ -462,18 +460,17 @@ async function initProductDetail() {
   }
 }
 
-renderHeader("A");
+renderHeader("C");
 
+// 햄버거 렌더링
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 
 if (hamburgerMenu) {
   renderHamburger(hamburgerMenu);
 
+  // 햄버거 열기
   const openHamburger = document.querySelector(".hamburger-btn-open");
-
-  if (openHamburger) {
-    openCloseHamburger(openHamburger);
-  }
+  if (openHamburger) openCloseHamburger(openHamburger);
 }
 
 renderFooter();
