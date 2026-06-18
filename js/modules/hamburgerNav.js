@@ -1,3 +1,5 @@
+// hamburgerNav.js : 배정호 작업
+
 // 클래스 토글 is-open 추가/제거
 
 // 매개변수 :
