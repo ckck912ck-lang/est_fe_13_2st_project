@@ -198,28 +198,46 @@
 
   .ai-analyze-card {
     display: grid;
-    min-height: 134px;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-content: center;
-    gap: 4px;
-    padding: 24px;
-    color: $color-white;
-    background:
-      linear-gradient(135deg, rgba($color-black, 0.82), rgba($color-black, 0.5)),
-      linear-gradient(120deg, #7a8796, #d8d0c7);
+    row-gap: 4px;
+    column-gap: 16px;
+    padding: 32px 24px;
+    border-radius: 24px;
+    background: $neutral-gradiant;
+
+    .section-kicker {
+      grid-column: 1 / -1;
+      color: $brand-primary;
+      font-size: $mobile-label;
+      font-weight: 400;
+    }
 
     .ai-analyze-title {
-      font-size: 1.25rem;
+      grid-column: 1;
+      color: $neutral-main-bg;
+      font-size: $mobile-h3;
+      font-weight: 700;
     }
 
     .ai-analyze-description {
-      color: rgba($color-white, 0.78);
+      grid-column: 1;
+      color: $neutral-main-bg;
+      font-size: $mobile-caption;
+      font-weight: 400;
     }
 
     .btn {
-      justify-self: start;
-      margin-top: 12px;
-      color: $color-black;
-      background: $color-white;
+      grid-column: 2;
+      grid-row: 2 / span 2;
+      align-self: center;
+      width: 88px;
+      height: 40px;
+      border-radius: 999px;
+      color: $neutral-text-main;
+      background: $brand-primary;
+      font-size: $mobile-body;
+      font-weight: 400;
     }
   }
 
@@ -555,7 +573,7 @@
       .face-ai-inner {
         grid-template-columns: minmax(0, 1fr) 360px;
         gap: 32px;
-        align-items: center;
+        align-items: stretch;
       }
     }
 
@@ -565,7 +583,25 @@
 
     .ai-analyze-card {
       order: 2;
-      height: 154px;
+      align-self: end;
+      height: 149px;
+      padding: 20px;
+
+      .section-kicker {
+        font-size: $tablet-label;
+      }
+
+      .ai-analyze-title {
+        font-size: $tablet-h3;
+      }
+
+      .ai-analyze-description {
+        font-size: $tablet-caption;
+      }
+
+      .btn {
+        font-size: $tablet-body;
+      }
     }
 
     .face-type-list {
@@ -645,7 +681,7 @@
       .face-ai-inner {
         grid-template-columns: 1072px minmax(0, 1fr);
         gap: 32px;
-        align-items: end;
+        align-items: stretch;
       }
     }
 
@@ -676,25 +712,24 @@
 
     .ai-analyze-card {
       order: 2;
-      min-height: 184px;
-      align-content: center;
-      grid-template-columns: minmax(0, 1fr) auto;
-      column-gap: 16px;
-
-      .ai-analyze-title,
-      .ai-analyze-description {
-        grid-column: 1;
-      }
+      align-self: end;
+      height: 186px;
+      padding: 20px;
 
       .section-kicker {
-        grid-column: 1 / -1;
+        font-size: $pc-label;
+      }
+
+      .ai-analyze-title {
+        font-size: $pc-h4;
+      }
+
+      .ai-analyze-description {
+        font-size: $pc-caption;
       }
 
       .btn {
-        grid-column: 2;
-        grid-row: 2 / span 2;
-        align-self: center;
-        margin-top: 0;
+        font-size: $pc-body-m;
       }
     }
 

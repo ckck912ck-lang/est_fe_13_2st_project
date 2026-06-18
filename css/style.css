@@ -2695,24 +2695,44 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 .index-page .ai-analyze-card {
   display: grid;
-  min-height: 134px;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-content: center;
-  gap: 4px;
-  padding: 24px;
-  color: #ffffff;
-  background: linear-gradient(135deg, rgba(17, 17, 17, 0.82), rgba(17, 17, 17, 0.5)), linear-gradient(120deg, #7a8796, #d8d0c7);
+  row-gap: 4px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  padding: 32px 24px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #0e0e0c 0%, #2a2a28 100%);
+}
+.index-page .ai-analyze-card .section-kicker {
+  grid-column: 1/-1;
+  color: rgb(196, 169, 125);
+  font-size: 16px;
+  font-weight: 400;
 }
 .index-page .ai-analyze-card .ai-analyze-title {
-  font-size: 1.25rem;
+  grid-column: 1;
+  color: rgb(249, 248, 246);
+  font-size: 28px;
+  font-weight: 700;
 }
 .index-page .ai-analyze-card .ai-analyze-description {
-  color: rgba(255, 255, 255, 0.78);
+  grid-column: 1;
+  color: rgb(249, 248, 246);
+  font-size: 14px;
+  font-weight: 400;
 }
 .index-page .ai-analyze-card .btn {
-  justify-self: start;
-  margin-top: 12px;
-  color: #111111;
-  background: #ffffff;
+  grid-column: 2;
+  grid-row: 2/span 2;
+  align-self: center;
+  width: 88px;
+  height: 40px;
+  border-radius: 999px;
+  color: rgb(14, 14, 12);
+  background: rgb(196, 169, 125);
+  font-size: 16px;
+  font-weight: 400;
 }
 .index-page .section-controls {
   display: none;
@@ -2991,14 +3011,28 @@ body[data-cart-state=filled] .cart-page__state--empty {
   .index-page .face-ai-section .face-ai-inner {
     grid-template-columns: minmax(0, 1fr) 360px;
     gap: 32px;
-    align-items: center;
+    align-items: stretch;
   }
   .index-page .face-recommend {
     order: 1;
   }
   .index-page .ai-analyze-card {
     order: 2;
-    height: 154px;
+    align-self: end;
+    height: 149px;
+    padding: 20px;
+  }
+  .index-page .ai-analyze-card .section-kicker {
+    font-size: 16px;
+  }
+  .index-page .ai-analyze-card .ai-analyze-title {
+    font-size: 32px;
+  }
+  .index-page .ai-analyze-card .ai-analyze-description {
+    font-size: 14px;
+  }
+  .index-page .ai-analyze-card .btn {
+    font-size: 16px;
   }
   .index-page .face-type-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3058,7 +3092,7 @@ body[data-cart-state=filled] .cart-page__state--empty {
   .index-page .face-ai-section .face-ai-inner {
     grid-template-columns: 1072px minmax(0, 1fr);
     gap: 32px;
-    align-items: end;
+    align-items: stretch;
   }
   .index-page .face-recommend {
     display: flex;
@@ -3082,24 +3116,21 @@ body[data-cart-state=filled] .cart-page__state--empty {
   }
   .index-page .ai-analyze-card {
     order: 2;
-    min-height: 184px;
-    align-content: center;
-    grid-template-columns: minmax(0, 1fr) auto;
-    -moz-column-gap: 16px;
-         column-gap: 16px;
-  }
-  .index-page .ai-analyze-card .ai-analyze-title,
-  .index-page .ai-analyze-card .ai-analyze-description {
-    grid-column: 1;
+    align-self: end;
+    height: 186px;
+    padding: 20px;
   }
   .index-page .ai-analyze-card .section-kicker {
-    grid-column: 1/-1;
+    font-size: 16px;
+  }
+  .index-page .ai-analyze-card .ai-analyze-title {
+    font-size: 32px;
+  }
+  .index-page .ai-analyze-card .ai-analyze-description {
+    font-size: 14px;
   }
   .index-page .ai-analyze-card .btn {
-    grid-column: 2;
-    grid-row: 2/span 2;
-    align-self: center;
-    margin-top: 0;
+    font-size: 16px;
   }
   .index-page .section-controls {
     position: absolute;
