@@ -21,6 +21,7 @@ import { renderStars } from "../modules/renderStars.js";
 // 상품정보 : 데이터 렌더링, 별점에 따라 별 개수 조정, 장바구니 담기
 
 // 후기 : 데이터 렌더링
+const fixedBtn = document.querySelector(".fixed-chat-button");
 
 // 비슷한 상품 : 슬라이드
 const reviewList = document.querySelector('[data-render="product-review-list"]');
@@ -481,12 +482,12 @@ initAddCartButton();
 initShareButton();
 
 renderChatting();
-
-if (fixedBtn) {
-  openChattingModal(fixedBtn);
-  closeChattingModal();
-}
-
 if (productTabs) {
   initTabs(productTabs);
+}
+
+if (fixedBtn) {
+  renderChatting();
+  openChattingModal(fixedBtn);
+  closeChattingModal();
 }
