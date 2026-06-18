@@ -104,9 +104,11 @@ function getHeaderTypeC() {
           </div>
           <div class="header-right">
             <div class="site-header-btns">
-              <button type="button" class="header-btn home" aria-label="처음으로 돌아가기">
-                <span class="material-icons">home</span>
-              </button>
+              <a href="index.html" aria-label="ROUNZ 홈">
+                <button type="button" class="header-btn home" aria-label="처음으로 돌아가기">
+                  <span class="material-icons">home</span>
+                </button>
+              </a>
               <button type="button" class="header-btn search" aria-label="검색 열기">
                 <span class="material-icons">search</span>
               </button>
