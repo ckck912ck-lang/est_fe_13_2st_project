@@ -654,6 +654,23 @@
 .related-products {
   padding-top: 38px;
 
+  .product-price {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+
+    strong {
+      font-size: 0.9375rem;
+      white-space: nowrap;
+    }
+
+    del,
+    .product-sale {
+      display: none;
+    }
+  }
+
   h2 {
     margin-bottom: 18px;
     font-size: 1.625rem;
