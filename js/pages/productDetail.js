@@ -1,5 +1,8 @@
+// 조승아 작업
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
+import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
+import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
@@ -10,8 +13,6 @@ import { showToast } from "../modules/toast.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { renderStars } from "../modules/renderStars.js";
-import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
-import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 // 상품 상세 기능
 
 // 상품 이미지 : 현재 선택한 썸네일에 맞는 큰 이미지 띄우기, 슬라이드
@@ -20,39 +21,9 @@ import { renderChatting, openChattingModal, closeChattingModal } from "../module
 // 상품정보 : 데이터 렌더링, 별점에 따라 별 개수 조정, 장바구니 담기
 
 // 후기 : 데이터 렌더링
-
 const fixedBtn = document.querySelector(".fixed-chat-button");
 
 // 비슷한 상품 : 슬라이드
-const reviews = [
-  {
-    author: "김*연",
-    date: "2026-01-15",
-    rating: 5,
-    content:
-      "가벼워서 하루종일 써도 불편하지 않아요. 티타늄 소재라 그런지 정말 가볍고 코 위에 자국도 덜 남아요.",
-  },
-  {
-    author: "이*준",
-    date: "2026-01-10",
-    rating: 5,
-    content: "디자인이 예상보다 훨씬 깔끔하고 고급스럽습니다. 색상은 실제로 보면 더 멋있어요.",
-  },
-  {
-    author: "박*희",
-    date: "2025-12-28",
-    rating: 4.5,
-    content:
-      "AI 가상피팅으로 미리 착용해보고 구매했는데 실제로 받아보니 딱 제가 생각한 스타일이었어요.",
-  },
-  {
-    author: "최*수",
-    date: "2025-12-20",
-    rating: 5,
-    content:
-      "파트너 안경원에서 렌즈까지 맞춰서 쓰고 있는데 너무 만족스러워요. 배송도 빠르고 포장도 고급스러웠습니다.",
-  },
-];
 const reviewList = document.querySelector('[data-render="product-review-list"]');
 const reviewCountText = document.querySelector('[data-render="review-count"]');
 const productTabs = document.querySelector(".product-detail-tabs");
@@ -64,6 +35,8 @@ const productRating = document.querySelector(".product-summary-rating");
 const productRatingStars = document.querySelector(".product-summary-stars");
 const productRatingScore = document.querySelector(".product-summary-rating-score");
 const productReviewCount = document.querySelector(".product-summary-review-count");
+//공유
+const productShareButton = document.querySelector(".product-share-button");
 const productDescriptions = document.querySelectorAll('[data-render="product-description"]');
 const productColorOption = document.querySelector(".product-color-option");
 const productGalleryMainWrapper = document.querySelector(
@@ -178,27 +151,73 @@ function renderProductRating(product) {
   productReviewCount.textContent = `(${reviewCount})`;
   productRating.setAttribute("aria-label", `평점 ${rating.toFixed(1)}점, 리뷰 ${reviewCount}개`);
 }
-function renderProductReviews(product) {
+
+function createFallbackReviews(product, count) {
+  const authors = [
+    "김*연",
+    "이*준",
+    "박*희",
+    "최*수",
+    "정*아",
+    "한*우",
+    "오*민",
+    "서*영",
+    "윤*호",
+    "문*지",
+  ];
+
+  const contents = [
+    "착용감이 편하고 디자인이 깔끔해서 만족합니다.",
+    "사진으로 봤을 때보다 실물이 더 예쁘고 마감도 좋아요.",
+    "가볍게 착용하기 좋아서 데일리 안경으로 잘 쓰고 있습니다.",
+    "프레임이 튼튼하고 얼굴에 자연스럽게 잘 어울립니다.",
+    "가격대비 퀄리티가 좋아서 만족스러운 구매였습니다.",
+    "색상이 부담스럽지 않고 다양한 스타일에 잘 어울려요.",
+    "오래 착용해도 불편함이 적어서 만족합니다.",
+    "배송도 빠르고 포장도 깔끔해서 좋았습니다.",
+    "기본 디자인이라 유행을 타지 않고 오래 쓸 수 있을 것 같아요.",
+    "가상피팅으로 확인하고 구매했는데 실제 착용감도 마음에 듭니다.",
+  ];
+
+  return Array.from({ length: count }, (_, index) => {
+    return {
+      productId: product.id,
+      author: authors[index % authors.length],
+      date: `2026-01-${String(20 - (index % 20)).padStart(2, "0")}`,
+      rating: Number(product.rating) || 5,
+      content: contents[index % contents.length],
+    };
+  });
+}
+
+function renderProductReviews(product, reviews) {
   if (!reviewList) {
     return;
   }
 
   const reviewCount = Number(product.reviewCount) || 0;
 
+  const productReviews = Array.isArray(reviews)
+    ? reviews.filter((review) => {
+        return String(review.productId) === String(product.id);
+      })
+    : [];
+
+  const displayReviews =
+    productReviews.length > 0 ? productReviews : createFallbackReviews(product, reviewCount);
+
   if (reviewCountText) {
-    reviewCountText.textContent = `(${reviewCount})`;
+    reviewCountText.textContent = `(${displayReviews.length})`;
   }
 
-  if (reviewCount === 0) {
+  if (displayReviews.length === 0) {
     reviewList.innerHTML = `
       <p class="review-empty">아직 작성된 후기가 없습니다.</p>
     `;
     return;
   }
 
-  const visibleReviewCount = Math.min(reviewCount, reviews.length);
-
-  renderTestimonials(reviews, reviewList, visibleReviewCount);
+  renderTestimonials(displayReviews, reviewList, displayReviews.length);
 }
 
 function renderProductSummary(product) {
@@ -380,10 +399,42 @@ function initAddCartButton() {
   });
 }
 
+function initShareButton() {
+  if (!productShareButton) {
+    return;
+  }
+
+  productShareButton.addEventListener("click", async () => {
+    const productUrl = window.location.href;
+
+    try {
+      await navigator.clipboard.writeText(productUrl);
+      showToast("상품 링크가 복사되었습니다.");
+    } catch (error) {
+      console.error("상품 링크 복사 실패", error);
+      showToast("링크 복사에 실패했습니다.");
+    }
+  });
+}
+
 async function initProductDetail() {
   try {
-    const data = await fetchData("/data/products.json");
-    const products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : [];
+    const [productData, reviewData] = await Promise.all([
+      fetchData("/data/products.json"),
+      fetchData("/data/reviews.json"),
+    ]);
+
+    const products = Array.isArray(productData)
+      ? productData
+      : Array.isArray(productData.products)
+        ? productData.products
+        : [];
+
+    const reviews = Array.isArray(reviewData)
+      ? reviewData
+      : Array.isArray(reviewData?.reviews)
+        ? reviewData.reviews
+        : [];
 
     const productId = getProductIdFromUrl();
 
@@ -401,7 +452,7 @@ async function initProductDetail() {
 
     renderProductSummary(product);
     renderProductGallery(product);
-    renderProductReviews(product);
+    renderProductReviews(product, reviews);
     renderRelatedProducts(product, products);
     initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
   } catch (error) {
@@ -411,29 +462,32 @@ async function initProductDetail() {
 }
 
 renderHeader("C");
+
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+
+if (hamburgerMenu) {
+  renderHamburger(hamburgerMenu);
+
+  // 햄버거 열기
+  const openHamburger = document.querySelector(".hamburger-btn-open");
+  if (openHamburger) openCloseHamburger(openHamburger);
+}
+
 renderFooter();
 renderCartBadge();
 initProductDetail();
 initProductQuantity();
 initAddCartButton();
+initShareButton();
 
+renderChatting();
 if (productTabs) {
   initTabs(productTabs);
 }
 
-// 문의 모달 렌더링
-renderChatting();
-
-// 문의 고정버튼을 누르면 문의 모달창을 여는 함수
-openChattingModal(fixedBtn);
-
-// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
-closeChattingModal();
-
-// 햄버거 렌더링
-const hamburgerMenu = document.querySelector(".hamburger-menu");
-renderHamburger(hamburgerMenu);
-
-// 햄버거 열기
-const openHamburger = document.querySelector(".hamburger-btn-open");
-openCloseHamburger(openHamburger);
+if (fixedBtn) {
+  renderChatting();
+  openChattingModal(fixedBtn);
+  closeChattingModal();
+}

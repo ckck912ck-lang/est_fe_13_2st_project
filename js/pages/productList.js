@@ -20,6 +20,7 @@ import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js"
 import { showToast } from "../modules/toast.js";
 import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 
+// 변수
 const container = document.querySelector(".product-list .product-list-grid");
 
 // 변수
@@ -29,7 +30,7 @@ const filterGroup = document.querySelector(".filter-panel .filter-group");
 const countPerPage = 12;
 const fixedBtn = document.querySelector(".fixed-chat-button");
 
-// 스켈레톤 UI
+// 스켈레톤 UI — 데이터 받기 전에 먼저 표시
 showSkeleton(container, countPerPage);
 
 const data = await fetchData("./data/products.json");
@@ -157,7 +158,7 @@ renderHamburger(hamburgerMenu);
 
 // 햄버거 열기
 const openHamburger = document.querySelector(".hamburger-btn-open");
-openCloseHamburger(openHamburger);
+if (openHamburger) openCloseHamburger(openHamburger);
 
 // 필터 모달 띄우기
 const openModalBtn = document.querySelector(".filter-toggle-button");

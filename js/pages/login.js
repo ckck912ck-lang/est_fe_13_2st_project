@@ -10,10 +10,85 @@ renderHeader("C");
 renderFooter();
 
 // 로그인 기능
+const loginForm = document.querySelector(".login-form");
+const emailInput = document.querySelector('[data-login-input="email"]');
+const passwordInput = document.querySelector('[data-login-input="password"]');
+const emailMessage = document.querySelector('[data-login-message="email"]');
+const passwordMessage = document.querySelector('[data-login-message="password"]');
+const passwordToggleButton = document.querySelector('[data-action="toggle-password"]');
+
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+// 이메일 형식 피드백
+function validateEmail() {
+  const value = emailInput.value.trim();
+
+  if (!value) {
+    emailMessage.textContent = "이메일을 입력해 주세요.";
+    return false;
+  }
+
+  if (!isValidEmail(value)) {
+    emailMessage.textContent = "이메일 형식을 확인해 주세요.";
+    return false;
+  }
+
+  emailMessage.textContent = "";
+  return true;
+}
+
+// 비밀번호 형식 피드백
+function validatePassword() {
+  const value = passwordInput.value;
+
+  if (!value) {
+    passwordMessage.textContent = "비밀번호를 입력해 주세요.";
+    return false;
+  }
+
+  if (value.length < 8) {
+    passwordMessage.textContent = "비밀번호는 8자 이상 입력해 주세요.";
+    return false;
+  }
+
+  passwordMessage.textContent = "";
+  return true;
+}
 
 // 비밀번호 보기/점으로 표시
+function togglePasswordVisibility() {
+  const isPassword = passwordInput.type === "password";
 
-// 실시간으로 이메일/비밀번호 형식 피드백
+  passwordInput.type = isPassword ? "text" : "password";
+  passwordToggleButton.setAttribute("aria-pressed", String(isPassword));
+  passwordToggleButton.setAttribute(
+    "aria-label",
+    isPassword ? "비밀번호 숨기기" : "비밀번호 보기"
+  );
+
+  const icon = passwordToggleButton.querySelector(".material-icons");
+  if (icon) {
+    icon.textContent = isPassword ? "visibility_off" : "visibility";
+  }
+}
+
+emailInput.addEventListener("input", validateEmail);
+passwordInput.addEventListener("input", validatePassword);
+passwordToggleButton.addEventListener("click", togglePasswordVisibility);
+
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const isEmailValid = validateEmail();
+  const isPasswordValid = validatePassword();
+
+  if (!isEmailValid || !isPasswordValid) return;
+
+  // 백엔드 연동 전 임시 처리
+  alert("로그인 API 연동이 필요합니다.");
+});
 
 // 문의 모달 렌더링
 renderChatting();
