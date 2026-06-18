@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>ROUNZ | 장바구니</title>
   </head>
@@ -69,8 +70,12 @@
             <span aria-hidden="true">→</span>
           </a>
         </div>
-
         <section class="cart-recommend" aria-labelledby="cart-empty-recommend-title">
+          <div class="cart-recommend-swiper swiper">
+            <div class="cart-recommend__list swiper-wrapper" data-render="cart-recommend-products"></div>
+          </div>
+        <!--
+        
           <div class="cart-section-heading">
             <h2 id="cart-empty-recommend-title">추천 상품</h2>
             <a href="product-list.html?sort=best">전체보기</a>
@@ -144,6 +149,7 @@
               </div>
             </article>
           </div>
+        -->
         </section>
       </section>
 
@@ -202,6 +208,10 @@
           </aside>
         </div>
         <section class="cart-recommend" aria-labelledby="cart-empty-recommend-title">
+          <div class="cart-recommend-swiper swiper">
+            <div class="cart-recommend__list swiper-wrapper" data-render="cart-recommend-products"></div>
+          </div>
+        <!--
           <div class="cart-section-heading">
             <h2 id="cart-empty-recommend-title">추천 상품</h2>
           </div>
@@ -274,6 +284,7 @@
               </div>
             </article>
           </div>
+        -->
         </section>
       </section>
     </main>
@@ -302,6 +313,7 @@
 
     <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./js/pages/cart.js"></script>
   </body>
 </html>
