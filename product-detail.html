@@ -13,6 +13,7 @@
 
     <header class="header"></header>
 
+    <!-- 햄버거(모듈) -->
     <aside
       class="hamburger-menu"
       id="hamburger-menu"
@@ -215,6 +216,7 @@
               >
                 상세정보
               </button>
+
               <button
                 type="button"
                 class="tab-button"
@@ -226,6 +228,7 @@
               >
                 리뷰
               </button>
+
               <button
                 type="button"
                 class="tab-button"
@@ -240,7 +243,7 @@
             </div>
 
             <div
-              class="tab-panel"
+              class="tab-panel active"
               id="detail-panel"
               role="tabpanel"
               aria-labelledby="detail-tab"
@@ -251,6 +254,7 @@
                 data-render="product-description"
               ></p>
             </div>
+
             <div
               class="tab-panel"
               id="review-panel"
@@ -258,7 +262,19 @@
               aria-labelledby="review-tab"
               data-tab="review"
               hidden
-            ></div>
+            >
+              <section class="review-section" id="product-reviews" aria-labelledby="review-title">
+                <div class="review-section-head">
+                  <h2 id="review-title">구매 후기 <span data-render="review-count">(0)</span></h2>
+                  <button type="button" class="review-write-button">후기 작성</button>
+                </div>
+
+                <div class="review-list" data-render="product-review-list">
+                  <p class="review-empty">상품 후기를 불러오는 중입니다.</p>
+                </div>
+              </section>
+            </div>
+
             <div
               class="tab-panel"
               id="qna-panel"
@@ -266,23 +282,13 @@
               aria-labelledby="qna-tab"
               data-tab="qna"
               hidden
-            ></div>
+            >
+              <section class="product-qna-section" aria-labelledby="qna-title">
+                <h2 id="qna-title" class="sr-only">상품 문의</h2>
+                <div data-render="product-qna-list"></div>
+              </section>
+            </div>
           </div>
-
-          <section class="review-section" id="product-reviews" aria-labelledby="review-title">
-            <div class="review-section-head">
-              <h2 id="review-title">구매 후기 <span data-render="review-count">(0)</span></h2>
-              <button type="button" class="review-write-button">후기 작성</button>
-            </div>
-            <div class="review-list" data-render="product-review-list">
-              <p class="review-empty">상품 후기를 불러오는 중입니다.</p>
-            </div>
-          </section>
-
-          <section class="product-qna-section" aria-labelledby="qna-title">
-            <h2 id="qna-title" class="sr-only">상품 문의</h2>
-            <div data-render="product-qna-list"></div>
-          </section>
 
           <section class="related-products" aria-labelledby="related-title">
             <h2 id="related-title">비슷한 상품</h2>
@@ -321,15 +327,6 @@
     >
       <span class="material-icons">chat</span>
     </button>
-
-    <!-- 햄버거(모듈) -->
-    <aside
-      class="hamburger-menu"
-      id="hamburger-menu"
-      aria-label="전체 메뉴"
-      data-component="hamburger-menu"
-      hidden
-    ></aside>
 
     <!-- 문의 폼 (모듈)-->
     <dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title"></dialog>
