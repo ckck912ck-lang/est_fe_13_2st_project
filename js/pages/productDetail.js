@@ -1,3 +1,5 @@
+import { renderHeader } from "../modules/renderHeader.js";
+import { renderFooter } from "../modules/renderFooter.js";
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
@@ -309,6 +311,8 @@ async function initProductDetail() {
   }
 }
 
+renderHeader("C");
+renderFooter();
 renderCartBadge();
 initProductDetail();
 initProductQuantity();
