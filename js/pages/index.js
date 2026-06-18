@@ -1,5 +1,6 @@
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
+import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
@@ -8,6 +9,14 @@ import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 // 메인 페이지 기능
 renderHeader("");
 renderFooter();
+
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+renderHamburger(hamburgerMenu);
+
+// 햄버거 열기
+const openHamburger = document.querySelector(".hamburger-btn-open");
+openCloseHamburger(openHamburger);
 
 // 공통 헤더, A타입
 
