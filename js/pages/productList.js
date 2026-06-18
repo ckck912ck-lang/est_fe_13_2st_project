@@ -20,6 +20,9 @@ import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js"
 import { showToast } from "../modules/toast.js";
 import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 
+// 스켈레톤 UI
+showSkeleton(container, countPerPage);
+
 // 변수
 const data = await fetchData("./data/products.json");
 const products = data.products;
@@ -30,9 +33,6 @@ const sortArea = document.querySelector(".sort-area");
 const filterGroup = document.querySelector(".filter-panel .filter-group");
 const countPerPage = 12;
 const fixedBtn = document.querySelector(".fixed-chat-button");
-
-// 스켈레톤 UI
-showSkeleton(container, countPerPage);
 
 // 필터링 조건 객체
 const selectedFilters = {
