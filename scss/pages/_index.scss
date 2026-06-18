@@ -3,58 +3,131 @@
 .index-page {
   .hero-slider {
     position: relative;
-    display: grid;
-    min-height: 400px;
     overflow: hidden;
-    color: $color-white;
-    background: $color-black;
+    height: 320px;
+    color: $neutral-white;
 
-    .hero-media {
+    // 각 슬라이드 레이아웃 (height: 100%로 컨테이너 높이에 맞춤)
+    .hero-slide {
+      position: relative;
+      display: grid;
+      height: 100%;
+      align-items: end;
+      justify-items: center;
+    }
+
+    // 슬라이드 배경 미디어
+    .hero-slide__media {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 72% 22%, rgba($color-white, 0.28), transparent 22%),
-        linear-gradient(135deg, rgba($color-black, 0.18), rgba($color-black, 0.72)),
-        linear-gradient(120deg, #c7d7e7 0%, #e7ded4 44%, #22242a 100%);
 
       &::after {
         content: "";
         position: absolute;
-        right: 8%;
-        bottom: 18%;
-        width: min(70vw, 520px);
-        aspect-ratio: 2.6 / 1;
-        border: clamp(8px, 2vw, 18px) solid rgba($color-black, 0.62);
-        border-radius: 999px;
-        filter: drop-shadow(0 26px 38px rgba($color-black, 0.28));
+        inset: 0;
+        background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0));
       }
     }
 
+    // 1번 슬라이드 : AI 추천
+    .hero-slide--ai .hero-slide__media {
+      background: url("/assets/images/hero/hero-slide-01.png") center / cover;
+    }
+
+    // 2번 슬라이드 : S/S 신상품
+    .hero-slide--new .hero-slide__media {
+      background: url("/assets/images/hero/hero-slide-02.png") center / cover;
+    }
+
+    // 3번 슬라이드 : 파트너 안경원
+    .hero-slide--store .hero-slide__media {
+      background: url("/assets/images/hero/hero-slide-03.png") center / cover;
+    }
+
+    // 슬라이드 텍스트 콘텐츠
     .hero-content {
       position: relative;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: min(100%, 512px);
-      align-self: end;
-      padding: 0 16px 76px;
+      padding: 0 16px 48px;
+      text-align: center;
 
       .hero-title-text {
-        max-width: 11ch;
-        font-size: 2rem;
-        line-height: 1.12;
+        font-size: $mobile-h2;
+        text-transform: uppercase;
       }
 
       .hero-description {
-        margin-top: 10px;
-        margin-bottom: 22px;
-        color: rgba($color-white, 0.82);
+        margin-bottom: 12px;
+        font-size: $mobile-caption;
+        color: $neutral-white-a8;
+        text-transform: uppercase;
+      }
+
+      // 슬라이드 CTA 버튼
+      .btn {
+        gap: 8px;
+        color: $neutral-black;
+        background: $neutral-white;
+        text-transform: uppercase;
+
+        .material-icons {
+          font-size: $mobile-caption;
+        }
       }
     }
 
-    .carousel-pagination {
+    // 이전/다음 버튼 (AI 추천 상품 슬라이더 버튼과 동일 스타일)
+    .hero-prev-btn,
+    .hero-next-btn {
       position: absolute;
-      right: 0;
-      bottom: 28px;
-      left: 0;
+      top: 50%;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: $neutral-white-a5;
+      color: $neutral-title-black;
+      transform: translateY(-50%);
+
+      .material-icons {
+        font-size: 20px;
+      }
+    }
+
+    .hero-prev-btn {
+      left: 16px;
+    }
+
+    .hero-next-btn {
+      right: 16px;
+    }
+
+    // 페이지네이션 불릿 커스텀 (비활성=작은 원, 활성=가로 pill)
+    .hero-pagination {
+      bottom: 12px;
+
+      .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: $neutral-white-a5;
+        opacity: 1;
+        transition: width 0.3s ease;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 20px;
+        height: 6px;
+        background: $neutral-white;
+      }
     }
   }
 
@@ -399,10 +472,27 @@
 
   @media (min-width: 768px) {
     .hero-slider {
-      min-height: 400px;
+      height: 400px;
 
       .hero-content {
+        width: min(100%, 720px);
         padding-inline: 32px;
+
+        .mobile-break {
+          display: none;
+        }
+
+        .hero-title-text {
+          font-size: $tablet-h2;
+        }
+
+        .hero-description {
+          font-size: $tablet-label;
+        }
+
+        .btn {
+          font-size: $tablet-label;
+        }
       }
     }
 
@@ -448,20 +538,27 @@
 
   @media (min-width: 1280px) {
     .hero-slider {
-      min-height: 720px;
+      height: 720px;
 
       .hero-content {
-        width: 1440px;
-        align-self: end;
-        margin-inline: auto;
+        width: min(100%, 960px);
         padding: 0 48px 150px;
 
         .hero-title-text {
           max-width: none;
+          font-size: $pc-h2;
+        }
+
+        .hero-description {
+          font-size: $pc-label;
+        }
+
+        .btn {
+          font-size: $pc-label;
         }
       }
 
-      .carousel-pagination {
+      .hero-pagination {
         bottom: 46px;
       }
     }
