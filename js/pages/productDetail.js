@@ -51,7 +51,7 @@ const productSummary = document.querySelector('[data-render="product-summary"]')
 const productBrandLink = document.querySelector(".product-summary-brand a");
 const productTitle = document.querySelector("#product-title");
 const productPrice = document.querySelector(".product-summary-price");
-const productDescription = document.querySelector('[data-render="product-description"]');
+const productDescriptions = document.querySelectorAll('[data-render="product-description"]');
 const productColorOption = document.querySelector(".product-color-option");
 const productGalleryMainWrapper = document.querySelector(
   ".product-gallery-main-swiper .swiper-wrapper"
@@ -184,9 +184,9 @@ function renderProductSummary(product) {
     `;
   }
   // 상품 상세 설명 렌더링
-  if (productDescription) {
-    productDescription.textContent = getProductDescription(product);
-  }
+  productDescriptions.forEach((description) => {
+    description.textContent = getProductDescription(product);
+  });
 
   if (productColorOption) {
     renderProductColors(product.colors);
