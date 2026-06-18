@@ -3,21 +3,35 @@ import { renderFooter } from "../modules/renderFooter.js";
 import { initSearch } from "../modules/search.js";
 import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
 import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
+import { compareInputValue, passwordVisibility } from "../modules/formValidation.js";
 
 const fixedBtn = document.querySelector(".fixed-chat-button");
+
+// ===========================
+// 회원가입 기능
+// ===========================
+
+// 비밀번호 보기/점으로 표시
+const toggleButtons = document.querySelectorAll(".password-toggle-button");
+passwordVisibility(toggleButtons);
+
+// ===========================
+// 실시간 피드백
+// ===========================
+
+// 비밀번호랑 비밀번호 확인이 다르면 피드백
+// 인수로 비밀번호/비밀번호 확인의 value를 넣어서 함수 실행
+const signupForm = document.querySelector(".signup-form");
+compareInputValue(signupForm);
+
+// ===========================
+// 공통 기능
+// ===========================
 
 // 공용 모듈 불러오기
 renderHeader("");
 renderFooter();
 initSearch();
-
-// 회원가입 기능
-
-// 비밀번호 보기/점으로 표시
-
-// 실시간으로 이메일/비밀번호 형식 피드백
-
-// 비밀번호랑 비밀번호 확인이 다르면 피드백
 
 // 문의 모달 렌더링
 renderChatting();

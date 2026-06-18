@@ -20,19 +20,21 @@ import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js"
 import { showToast } from "../modules/toast.js";
 import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 
-// 스켈레톤 UI
-showSkeleton(container, countPerPage);
+const container = document.querySelector(".product-list .product-list-grid");
 
 // 변수
-const data = await fetchData("./data/products.json");
-const products = data.products;
-const container = document.querySelector(".product-list .product-list-grid");
-const productCount = document.querySelector("[data-render='product-count']");
 const pagination = document.querySelector("[data-render='pagination']");
 const sortArea = document.querySelector(".sort-area");
 const filterGroup = document.querySelector(".filter-panel .filter-group");
 const countPerPage = 12;
 const fixedBtn = document.querySelector(".fixed-chat-button");
+
+// 스켈레톤 UI
+showSkeleton(container, countPerPage);
+
+const data = await fetchData("./data/products.json");
+const products = data.products;
+const productCount = document.querySelector("[data-render='product-count']");
 
 // 필터링 조건 객체
 const selectedFilters = {
