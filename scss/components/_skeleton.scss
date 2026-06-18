@@ -1,9 +1,83 @@
-// 빈 카드 ui
+@use "../base/variables" as *;
 
 // shimmer 애니메이션
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// 빈 카드 ui
 .skeleton {
-  min-height: 120px;
   border-radius: 8px;
-  background: linear-gradient(90deg, #f1f1f3, #fafafa, #f1f1f3);
+  background: linear-gradient(
+    90deg,
+    $neutral-input-bg 25%,
+    $neutral-border 50%,
+    $neutral-input-bg 75%
+  );
   background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+// 스켈레톤 상품 카드
+.skeleton-card {
+  overflow: hidden;
+  border: 1px solid $neutral-border;
+  border-radius: 16px;
+  pointer-events: none;
+
+  .skeleton-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+  }
+
+  .product-info {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .skeleton-brand {
+      height: 12px;
+      width: 40%;
+    }
+
+    .skeleton-title {
+      height: 14px;
+      width: 75%;
+    }
+
+    .skeleton-rating {
+      height: 12px;
+      width: 50%;
+    }
+
+    .skeleton-price {
+      height: 14px;
+      width: 60%;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .skeleton-card {
+    .product-info {
+      padding: 12px 20px;
+
+      .skeleton-brand,
+      .skeleton-rating {
+        height: 14px;
+      }
+
+      .skeleton-title,
+      .skeleton-price {
+        height: 18px;
+      }
+    }
+  }
 }

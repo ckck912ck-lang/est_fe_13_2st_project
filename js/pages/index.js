@@ -4,6 +4,7 @@ import { initSearch } from "../modules/search.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { initProductSlider } from "../modules/carousel.js";
+import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 
 // 메인 페이지 기능
 renderHeader("");
@@ -17,6 +18,28 @@ initSearch();
 // 얼굴형별 추천 : 슬라이드, 필터된 상품목록으로 이동
 
 // AI 추천 상품 : 슬라이드, 전체 상품 필터해서 AI 추천 상품만 출력 (현재 구현 불가 : 랜덤 상품으로 대체)
+async function renderAiProducts() {
+  const data = await fetchData("./data/products.json");
+  if (!data) return;
+
+  // 랜덤으로 상품 섞어서 8개 선택 (AI 추천 로직 대체)
+  const shuffled = [...data.products].sort(() => Math.random() - 0.5);
+  const aiProducts = shuffled.slice(0, 8);
+
+  const wrapper = document.querySelector('[data-render="recommended-products"]');
+  if (!wrapper) return;
+
+  wrapper.innerHTML = aiProducts
+    .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
+    .join("");
+
+  // AI 추천 상품 이미지 지연 로딩 적용
+  initLazyLoadImages(wrapper);
+
+  initProductSlider(".ai-product-swiper", ".ai-prev-btn", ".ai-next-btn");
+}
+
+renderAiProducts();
 
 // 스타일 큐레이션 : 필터된 상품목록으로 이동
 
@@ -33,6 +56,9 @@ async function renderBestProducts() {
   wrapper.innerHTML = bestProducts
     .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
     .join("");
+
+  // 베스트 상품 이미지 지연 로딩 적용
+  initLazyLoadImages(wrapper);
 
   initProductSlider(".best-product-swiper", ".best-prev-btn", ".best-next-btn");
 }
@@ -52,6 +78,9 @@ async function renderNewProducts() {
   wrapper.innerHTML = newProducts
     .map((product) => `<div class="swiper-slide">${renderProductCard(product)}</div>`)
     .join("");
+
+  // 신상품 이미지 지연 로딩 적용
+  initLazyLoadImages(wrapper);
 
   initProductSlider(".new-product-swiper", ".new-prev-btn", ".new-next-btn");
 }

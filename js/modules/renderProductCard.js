@@ -18,7 +18,6 @@ export function renderProductCard(product) {
                   src="${product.thumbnail}"
                   alt="${product.brand}${product.title}"
                   class="product-image"
-                  loading="lazy"
                 />
 
                 <div class="badge-box">

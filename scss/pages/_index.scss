@@ -248,6 +248,43 @@
     }
   }
 
+  .ai-product-swiper {
+    overflow: hidden;
+
+    // Swiper 예약 클래스 충돌 방지를 위해 커스텀 클래스 사용
+    .ai-prev-btn,
+    .ai-next-btn {
+      position: absolute;
+      top: 116px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: $neutral-white-a5;
+      color: $neutral-title-black;
+
+      .material-icons {
+        font-size: 20px;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 1;
+      }
+    }
+
+    .ai-prev-btn {
+      left: 8px;
+    }
+
+    .ai-next-btn {
+      right: 8px;
+    }
+  }
+
   .brand-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
