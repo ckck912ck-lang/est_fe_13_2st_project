@@ -1,4 +1,14 @@
 @use "../base/variables" as *;
+.fixed-chat-button {
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  .material-icons {
+    font-size: 28px;
+  }
+}
 
 .product-detail-page {
   background: $neutral-main-bg;

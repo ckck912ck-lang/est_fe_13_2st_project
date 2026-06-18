@@ -3401,6 +3401,13 @@ body[data-cart-state=filled] .cart-page__state--empty {
     display: none;
   }
 }
+.fixed-chat-button::before, .fixed-chat-button::after {
+  display: none;
+}
+.fixed-chat-button .material-icons {
+  font-size: 28px;
+}
+
 .product-detail-page {
   background: rgb(249, 248, 246);
 }
