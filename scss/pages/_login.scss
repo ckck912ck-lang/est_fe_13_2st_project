@@ -278,6 +278,26 @@
       background: currentColor;
     }
   }
+
+  &__toggle {
+    position: absolute;
+    top: 50%;
+    right: var(--login-space-4);
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    color: var(--login-color-muted);
+    background: transparent;
+    transform: translateY(-50%);
+  }
+
+  &__message {
+    min-height: 18px;
+    color: #d92d20;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
 }
 
 .login-button {

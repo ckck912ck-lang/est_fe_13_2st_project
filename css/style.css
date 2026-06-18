@@ -3324,6 +3324,24 @@ body[data-cart-state=filled] .cart-page__state--empty {
   border-radius: 50%;
   background: currentColor;
 }
+.login-field__toggle {
+  position: absolute;
+  top: 50%;
+  right: var(--login-space-4);
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: var(--login-color-muted);
+  background: transparent;
+  transform: translateY(-50%);
+}
+.login-field__message {
+  min-height: 18px;
+  color: #d92d20;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
 
 .login-button {
   display: inline-flex;
