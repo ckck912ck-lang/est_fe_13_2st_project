@@ -17,6 +17,7 @@ import { showSkeleton } from "../modules/renderSkeleton.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 import { addCartItem } from "../utils/localStorage.js";
 import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
+import { showToast } from "../modules/toast.js";
 
 // 변수
 const data = await fetchData("./data/products.json");
@@ -266,6 +267,8 @@ container.addEventListener("click", (e) => {
   addCartItem(productId, 1, "기본");
 
   console.log("장바구니 추가:", productId);
+  // 토스트
+  showToast(`상품이 장바구니에 추가되었습니다.`, 2000);
 });
 
 // 무한 스크롤 : (후순위 추가기능) 누르면 페이지네이션 지우고 화면 감지로 펼치는 기능 활성화
