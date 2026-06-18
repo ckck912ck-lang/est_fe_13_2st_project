@@ -10,8 +10,7 @@
   <body data-signup-step="basic">
     <a class="skip-link" href="#main">본문 바로가기</a>
 
-    <header class="site-header" data-component="header">
-    </header>
+    <header class="site-header" data-component="header"></header>
     <aside
       class="hamburger-nav"
       id="hamburger-nav"
@@ -212,8 +211,7 @@
       </section>
     </main>
 
-    <footer class="site-footer" data-component="footer">
-    </footer>
+    <footer class="site-footer" data-component="footer"></footer>
     <nav class="bottom-nav" aria-label="하단 내비게이션" data-component="bottom-nav">
       <a href="index.html"> <span class="material-icons" aria-hidden="true">home</span> 홈 </a>
 
@@ -236,9 +234,27 @@
       </a>
     </nav>
 
-    <a class="fixed-chat-button" href="#search-modal" aria-label="AI 상담 시작">
-      <span class="sr-only">AI 상담</span>
-    </a>
+    <!-- 고정버튼 -->
+    <button
+      class="fixed-chat-button"
+      aria-label="AI 상담 시작"
+      type="button"
+      data-action="open-inquiry"
+    >
+      <span class="material-icons">chat</span>
+    </button>
+
+    <!-- 햄버거(모듈) -->
+    <aside
+      class="hamburger-menu"
+      id="hamburger-menu"
+      aria-label="전체 메뉴"
+      data-component="hamburger-menu"
+      hidden
+    ></aside>
+
+    <!-- 문의 폼 (모듈)-->
+    <dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title"></dialog>
 
     <dialog class="modal" id="search-modal" aria-labelledby="search-modal-title">
       <form method="dialog" class="modal__content">
