@@ -3197,24 +3197,41 @@ body[data-cart-state=filled] .cart-page__state--empty {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .login-social__button:hover, .login-social__button:focus-visible {
-  transform: translateY(-1px);
+  background: var(--login-color-bg);
 }
 .login-social__button--kakao {
   color: var(--login-color-dark);
   background: var(--login-color-kakao);
 }
+.login-social__button--kakao:hover, .login-social__button--kakao:focus-visible {
+  border-color: var(--login-color-kakao);
+  color: var(--login-color-text);
+}
 .login-social__button--naver {
   color: var(--login-color-bg);
   background: var(--login-color-naver);
+}
+.login-social__button--naver:hover, .login-social__button--naver:focus-visible {
+  border-color: var(--login-color-naver);
+  color: var(--login-color-text);
 }
 .login-social__button--apple {
   color: var(--login-color-bg);
   background: var(--login-color-dark);
 }
+.login-social__button--apple:hover, .login-social__button--apple:focus-visible {
+  border-color: var(--login-color-dark);
+  color: var(--login-color-text);
+}
 .login-social__button--google {
   color: #374151;
   border-color: var(--login-color-line);
   background: var(--login-color-bg);
+}
+.login-social__button--google:hover, .login-social__button--google:focus-visible {
+  border-color: var(--login-color-line);
+  background: var(--login-color-muted);
+  color: var(--login-color-text);
 }
 
 .login-divider {

@@ -135,28 +135,53 @@
 
     &:hover,
     &:focus-visible {
-      transform: translateY(-1px);
+      background: var(--login-color-bg);
     }
 
     &--kakao {
       color: var(--login-color-dark);
       background: var(--login-color-kakao);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-kakao);
+        color: var(--login-color-text);
+      }
     }
 
     &--naver {
       color: var(--login-color-bg);
       background: var(--login-color-naver);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-naver);
+        color: var(--login-color-text);
+      }
     }
 
     &--apple {
       color: var(--login-color-bg);
       background: var(--login-color-dark);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-dark);
+        color: var(--login-color-text);
+      }
     }
 
     &--google {
       color: #374151;
       border-color: var(--login-color-line);
       background: var(--login-color-bg);
+
+      &:hover,
+      &:focus-visible {
+        border-color: var(--login-color-line);
+        background: var(--login-color-muted);
+        color: var(--login-color-text);
+      }
     }
   }
 }
