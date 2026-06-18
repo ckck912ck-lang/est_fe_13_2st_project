@@ -1,6 +1,6 @@
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
-import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
+import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
@@ -25,6 +25,8 @@ renderHamburger(hamburgerMenu);
 // 햄버거 열기
 const openHamburger = document.querySelector(".hamburger-btn-open");
 openCloseHamburger(openHamburger);
+
+const fixedBtn = document.querySelector(".fixed-chat-button");
 
 // 공통 헤더, A타입
 
@@ -164,3 +166,12 @@ async function initNoticeTab() {
     });
   });
 }
+
+// 문의 모달 렌더링
+renderChatting();
+
+// 문의 고정버튼을 누르면 문의 모달창을 여는 함수
+openChattingModal(fixedBtn);
+
+// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
+closeChattingModal();

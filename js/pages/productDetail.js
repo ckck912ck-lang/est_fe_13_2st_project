@@ -12,6 +12,8 @@ import { showToast } from "../modules/toast.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { renderStars } from "../modules/renderStars.js";
+import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
+import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 // 상품 상세 기능
 
 // 상품 이미지 : 현재 선택한 썸네일에 맞는 큰 이미지 띄우기, 슬라이드
@@ -20,6 +22,8 @@ import { renderStars } from "../modules/renderStars.js";
 // 상품정보 : 데이터 렌더링, 별점에 따라 별 개수 조정, 장바구니 담기
 
 // 후기 : 데이터 렌더링
+
+const fixedBtn = document.querySelector(".fixed-chat-button");
 
 // 비슷한 상품 : 슬라이드
 const reviews = [
@@ -430,3 +434,20 @@ initAddCartButton();
 if (productTabs) {
   initTabs(productTabs);
 }
+
+// 문의 모달 렌더링
+renderChatting();
+
+// 문의 고정버튼을 누르면 문의 모달창을 여는 함수
+openChattingModal(fixedBtn);
+
+// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
+closeChattingModal();
+
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+renderHamburger(hamburgerMenu);
+
+// 햄버거 열기
+const openHamburger = document.querySelector(".hamburger-btn-open");
+openCloseHamburger(openHamburger);

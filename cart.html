@@ -59,7 +59,9 @@
         <div class="cart-page__layout">
           <section class="cart-items" aria-labelledby="cart-filled-title">
             <div class="cart-section-heading">
-              <h2 id="cart-filled-title">장바구니 <span class="cart-count-text" data-render="cart-count">1</span></h2>
+              <h2 id="cart-filled-title">
+                장바구니 <span class="cart-count-text" data-render="cart-count">1</span>
+              </h2>
               <p data-render="cart-total-count">총 1개의 상품</p>
             </div>
 
@@ -72,10 +74,9 @@
             </div>
 
             <div class="cart-items__list" data-render="cart-items">
-            <!--
+              <!--
               JavaScript로 상품 목록 렌더
-            -->
-            </div>
+            --></div>
           </section>
 
           <aside class="cart-summary" aria-labelledby="cart-summary-title">
@@ -126,12 +127,23 @@
       </section>
     </main>
 
+    <!-- 고정버튼 -->
+    <button
+      class="fixed-chat-button"
+      aria-label="AI 상담 시작"
+      type="button"
+      data-action="open-inquiry"
+    >
+      <span class="material-icons">chat</span>
+    </button>
+
+    <!-- 문의 폼 (모듈)-->
+    <dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title"></dialog>
+
     <footer class="footer"></footer>
 
     <nav class="bottom-nav" aria-label="하단 네비게이션" data-component="bottom-nav">
-      <a href="index.html">
-        <span class="material-icons" aria-hidden="true">home</span> 홈
-      </a>
+      <a href="index.html"> <span class="material-icons" aria-hidden="true">home</span> 홈 </a>
       <a href="product-list.html">
         <span class="material-icons" aria-hidden="true">grid_on</span> 상품
       </a>
@@ -140,7 +152,9 @@
       </a>
       <a href="cart.html" aria-current="page">
         <span class="material-icons" aria-hidden="true">local_mall</span>
-        <span class="cart-badge" aria-label="장바구니에 추가된 상품 수" data-render="cart-count">2</span>
+        <span class="cart-badge" aria-label="장바구니에 추가된 상품 수" data-render="cart-count"
+          >2</span
+        >
         장바구니
       </a>
       <a href="login.html">
