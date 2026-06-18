@@ -149,7 +149,7 @@ header {
 
         .header-left {
           .hamburger-btn-open {
-            padding: 12px;
+            padding: 12px 36px 12px 12px;
 
             .material-icons {
               font-size: 32px;
@@ -168,6 +168,8 @@ header {
 
         .header-right {
           .site-header-btns {
+            gap: 24px;
+
             .header-btn {
               .material-icons {
                 font-size: 32px;

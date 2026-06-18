@@ -1,22 +1,22 @@
 // productList.js : 배정호 작성
 
 // 들여오기
-import { fetchData } from "/js/utils/fetchData.js";
-import { renderProducts } from "/js/modules/renderProducts.js";
-import { renderHeader } from "/js/modules/renderHeader.js";
-import { renderFooter } from "/js/modules/renderFooter.js";
-import { sortProducts } from "/js/modules/sort.js";
-import { filterProducts } from "/js/modules/filter.js";
+import { fetchData } from "../utils/fetchData.js";
+import { renderProducts } from "../modules/renderProducts.js";
+import { renderHeader } from "../modules/renderHeader.js";
+import { renderFooter } from "../modules/renderFooter.js";
+import { sortProducts } from "../modules/sort.js";
+import { filterProducts } from "../modules/filter.js";
 import {
   getPagedProducts,
   renderPagination,
   getNextPage,
   getTotalPage,
-} from "/js/modules/pagination.js";
-import { showSkeleton } from "/js/modules/renderSkeleton.js";
-import { initLazyLoadImages } from "/js/utils/lazyLoadImage.js";
-import { addCartItem } from "/js/utils/localStorage.js";
-import { openCloseHamburger, renderHamburger } from "/js/modules/hamburgerNav.js";
+} from "../modules/pagination.js";
+import { showSkeleton } from "../modules/renderSkeleton.js";
+import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
+import { addCartItem } from "../utils/localStorage.js";
+import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
 
 // 변수
 const data = await fetchData("/data/products.json");
