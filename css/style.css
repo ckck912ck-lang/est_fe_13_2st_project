@@ -3100,10 +3100,25 @@ body[data-cart-state=filled] .cart-page__state--empty {
   --login-shadow-floating: 0 10px 15px rgba(0, 0, 0, 0.16);
 }
 
+.login-body main header.login-panel__brand {
+  position: static;
+  top: auto;
+  z-index: auto;
+  width: auto;
+  padding: 0;
+  display: grid;
+  justify-content: stretch;
+  background: transparent;
+  box-shadow: none;
+}
+
+.login-title-bar {
+  display: none;
+}
+
 .login-page {
-  position: relative;
-  min-height: calc(100vh - 48px);
-  padding: var(--login-space-3) var(--login-space-5) 128px;
+  min-height: auto;
+  padding: 72px 22px 96px;
   color: var(--login-color-text);
   background: var(--login-color-bg);
   font-family: var(--login-font-base);
@@ -3126,26 +3141,25 @@ body[data-cart-state=filled] .cart-page__state--empty {
 
 .login-panel {
   display: grid;
-  gap: var(--login-space-6);
-  width: min(100%, 342px);
-  margin: 52px auto 0;
+  gap: var(--login-space-5);
+  width: min(100%, 328px);
+  margin: 0 auto;
 }
 .login-panel__brand {
   display: grid;
-  gap: var(--login-space-2);
+  gap: var(--login-space-3);
+  margin-bottom: var(--login-space-4);
   text-align: center;
 }
 .login-panel__brand h2 {
   font-family: var(--login-font-brand);
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
   line-height: 1.1;
 }
 .login-panel__brand p:not(.login-panel__eyebrow) {
   color: var(--login-color-muted);
   font-size: 0.875rem;
-  line-height: 1.45;
 }
 .login-panel__eyebrow {
   display: none;
@@ -3340,51 +3354,51 @@ body[data-cart-state=filled] .cart-page__state--empty {
 
 @media (min-width: 768px) {
   .login-page {
-    min-height: calc(100vh - 64px);
-    padding: var(--login-space-5) var(--login-space-6) 112px;
+    padding: 72px 0 120px;
   }
   .login-panel {
-    width: min(100%, 430px);
-    margin-top: var(--login-space-7);
-    padding: var(--login-space-6);
-    border: 1px solid var(--login-color-line);
-    border-radius: 20px;
-    background: var(--login-color-surface);
-    box-shadow: var(--login-shadow-card);
+    width: 360px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 @media (min-width: 1440px) {
-  .login-page {
-    display: grid;
-    min-height: calc(100vh - 80px);
+  .login-title-bar {
+    display: flex;
+    height: 64px;
     align-items: center;
-    grid-template-columns: minmax(0, 0.9fr) minmax(430px, 0.55fr);
-    gap: var(--login-space-7);
-    width: min(100%, 1180px);
-    margin-inline: auto;
-    padding: 80px 0;
+    gap: 18px;
+    padding-inline: max(24px, (100vw - 1280px) / 2);
+    border-top: 1px solid var(--login-color-line);
+    border-bottom: 1px solid var(--login-color-line);
+  }
+  .login-title-bar a {
+    display: grid;
+    place-items: center;
+    color: #8a8a84;
+  }
+  .login-title-bar strong {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+  .login-page {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    padding: 54px 0 160px;
   }
   .login-page::before {
-    content: "AI 가상피팅과 얼굴형 분석으로 나에게 꼭 맞는 안경을 찾아보세요.";
-    display: block;
-    width: min(100%, 520px);
-    color: var(--login-color-muted);
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.6;
-  }
-  .login-page__back {
-    position: absolute;
-    top: var(--login-space-6);
-    left: 0;
+    content: none;
   }
   .login-panel {
-    width: 100%;
-    margin: 0;
-    padding: var(--login-space-7);
+    width: 360px;
+    margin: 0 auto;
+    padding: 0;
   }
   .login-panel__eyebrow {
-    display: block;
+    display: none;
   }
 }
 .product-detail-page {
