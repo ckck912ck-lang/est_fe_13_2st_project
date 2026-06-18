@@ -422,10 +422,18 @@
       display: grid;
       min-height: 57px;
       place-items: center;
-      border: 1px solid $color-line;
-      color: $color-text;
-      font-weight: 800;
-      background: $color-white;
+      border-radius: 16px;
+      border: 1px solid $neutral-border;
+      color: $neutral-text-main;
+      font-size: $mobile-caption-upper;
+      font-weight: 400;
+      background: $neutral-white;
+      text-align: center;
+
+      &:hover {
+        border-color: $neutral-text-main;
+        background: $neutral-hover-bg;
+      }
     }
   }
 
@@ -439,57 +447,92 @@
   .app-cta,
   .partner-cta {
     display: grid;
-    gap: 12px;
-    padding: 28px 16px;
-    text-align: center;
+    align-content: start;
+    gap: 0;
+    padding: 24px 16px;
+    border-radius: 16px;
+    text-align: left;
   }
 
   .app-cta {
-    color: $color-black;
-    border: 1px solid $color-line;
-    background: $color-white;
+    border: 1px solid $neutral-border;
+    background: $neutral-white;
 
-    .section-kicker,
-    .app-cta-description {
-      color: $color-black;
+    .section-kicker {
+      font-size: $mobile-label;
     }
 
     .app-cta-title {
-      color: $color-black;
-      font-size: clamp(1.5rem, 1.15rem + 1.2vw, 2.375rem);
-      line-height: 1.18;
+      color: $neutral-text-main;
+      font-size: $mobile-h4;
+      font-weight: 700;
+    }
+
+    .app-cta-description {
+      margin-top: 24px;
+      color: $neutral-text-sub;
+      font-size: $mobile-body;
+      font-weight: 400;
     }
 
     .app-cta-buttons {
       display: flex;
-      justify-content: center;
       gap: 8px;
-      margin-top: 4px;
+      margin-top: 16px;
 
       .btn {
-        min-width: 0;
-        flex: 1 1 0;
-        color: $color-white;
-        border-color: $color-black;
-        background: $color-black;
+        width: 135px;
+        height: 44px;
+        flex: 0 0 135px;
+        border: none;
+        border-radius: 12px;
+        color: $neutral-main-bg;
+        background: $neutral-text-main;
+        text-transform: capitalize;
+        font-size: $mobile-caption;
+        font-weight: 400;
       }
     }
   }
 
   .partner-cta {
-    border: 0;
-    background: $color-light;
+    border: 1px solid $neutral-border;
+    background: $neutral-main-bg;
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: $mobile-label;
+
+      .material-icons {
+        font-size: $mobile-label;
+      }
+    }
 
     .partner-cta-title {
-      font-size: clamp(1.5rem, 1.15rem + 1.2vw, 2.375rem);
-      line-height: 1.18;
+      color: $neutral-text-main;
+      font-size: $mobile-h4;
+      font-weight: 700;
     }
 
     .partner-cta-description {
-      color: $color-muted;
+      margin-top: 24px;
+      color: $neutral-text-main;
+      font-size: $mobile-body;
+      font-weight: 400;
     }
 
     .btn {
+      width: 296px;
+      height: 56px;
+      margin-top: 16px;
+      border: none;
+      border-radius: 8px;
+      color: $neutral-main-bg;
+      background: $neutral-text-main;
+      font-size: $mobile-caption;
+      font-weight: 400;
       justify-self: stretch;
     }
   }
@@ -600,16 +643,74 @@
 
     .brand-grid {
       gap: 16px;
+
+      .brand-link {
+        font-size: $tablet-body;
+
+        .mobile-break {
+          display: none;
+        }
+      }
+    }
+
+    .cta-section {
+      .cta-inner {
+        gap: 48px;
+      }
     }
 
     .app-cta,
     .partner-cta {
       padding: 32px;
+      text-align: center;
     }
 
     .app-cta {
+      min-height: 256px;
+
+      .app-cta-title {
+        font-size: $tablet-h4;
+
+        .mobile-break {
+          display: none;
+        }
+      }
+
+      .app-cta-description {
+        margin-top: 16px;
+      }
+
       .app-cta-buttons {
         gap: 16px;
+        justify-content: center;
+
+        .btn {
+          width: 232px;
+          flex: 0 0 232px;
+        }
+      }
+    }
+
+    .partner-cta {
+      padding: 20px;
+
+      .section-kicker {
+        justify-content: center;
+      }
+
+      .partner-cta-title {
+        margin-top: 0;
+        font-size: $tablet-h4;
+      }
+
+      .partner-cta-description {
+        margin-top: 16px;
+      }
+
+      .btn {
+        width: 480px;
+        margin-top: 16px;
+        justify-self: center;
       }
     }
   }
@@ -733,24 +834,37 @@
 
       .brand-link {
         min-height: 68px;
-      }
-    }
-
-    .cta-section {
-      .cta-inner {
-        grid-template-columns: 1.18fr 0.82fr;
+        font-size: $pc-body-m;
       }
     }
 
     .app-cta,
     .partner-cta {
-      min-height: 256px;
+      min-height: 285px;
       padding: 40px;
     }
 
+    .app-cta {
+      .app-cta-title {
+        font-size: $pc-h4;
+      }
+
+      .app-cta-description {
+        font-size: $pc-body-l;
+      }
+    }
+
     .partner-cta {
+      .partner-cta-title {
+        font-size: $pc-h4;
+      }
+
+      .partner-cta-description {
+        font-size: $pc-body-l;
+      }
+
       .btn {
-        min-width: 480px;
+        width: 480px;
         justify-self: center;
       }
     }
