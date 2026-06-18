@@ -52,25 +52,25 @@ p {
 
 @font-face {
   font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-Light.woff2") format("woff2");
+  src: url("../../assets/fonts/Pretendard-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-Regular.woff2") format("woff2");
+  src: url("../../assets/fonts/Pretendard-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-Medium.woff2") format("woff2");
+  src: url("../../assets/fonts/Pretendard-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-Bold.woff2") format("woff2");
+  src: url("../../assets/fonts/Pretendard-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -359,7 +359,7 @@ header .container .header-top .header-right .site-header-btns .cart-badge {
     padding: 8px 0 0;
   }
   .header .container .header-top .header-left .hamburger-btn-open {
-    padding: 12px;
+    padding: 12px 36px 12px 12px;
   }
   .header .container .header-top .header-left .hamburger-btn-open .material-icons {
     font-size: 32px;
@@ -369,6 +369,9 @@ header .container .header-top .header-right .site-header-btns .cart-badge {
     cursor: pointer;
     width: 150px;
     padding: 12px 0;
+  }
+  .header .container .header-top .header-right .site-header-btns {
+    gap: 24px;
   }
   .header .container .header-top .header-right .site-header-btns .header-btn .material-icons {
     font-size: 32px;
@@ -669,7 +672,7 @@ footer .footer-bottom .footer-copyright {
   cursor: pointer;
 }
 .hamburger-menu-close-button .material-icons {
-  font-size: 32px;
+  font-size: 48px;
 }
 .hamburger-menu-quick {
   display: grid;
