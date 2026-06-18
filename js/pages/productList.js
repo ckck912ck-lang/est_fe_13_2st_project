@@ -155,7 +155,7 @@ renderHamburger(hamburgerMenu);
 
 // 햄버거 열기
 const openHamburger = document.querySelector(".hamburger-btn-open");
-openCloseHamburger(openHamburger);
+if (openHamburger) openCloseHamburger(openHamburger);
 
 // 필터 모달 띄우기
 const openModalBtn = document.querySelector(".filter-toggle-button");

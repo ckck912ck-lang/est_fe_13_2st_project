@@ -11,6 +11,13 @@ import { renderChatting, openChattingModal, closeChattingModal } from "../module
 renderHeader("");
 renderFooter();
 
+// 문의 모달 렌더링
+renderChatting();
+const fixedBtn = document.querySelector(".fixed-chat-button");
+openChattingModal(fixedBtn);
+// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
+closeChattingModal();
+
 // 햄버거 렌더링
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 renderHamburger(hamburgerMenu);
@@ -18,8 +25,6 @@ renderHamburger(hamburgerMenu);
 // 햄버거 열기
 const openHamburger = document.querySelector(".hamburger-btn-open");
 openCloseHamburger(openHamburger);
-
-const fixedBtn = document.querySelector(".fixed-chat-button");
 
 // 공통 헤더, A타입
 
@@ -160,11 +165,3 @@ async function initNoticeTab() {
   });
 }
 
-// 문의 모달 렌더링
-renderChatting();
-
-// 문의 고정버튼을 누르면 문의 모달창을 여는 함수
-openChattingModal(fixedBtn);
-
-// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
-closeChattingModal();
