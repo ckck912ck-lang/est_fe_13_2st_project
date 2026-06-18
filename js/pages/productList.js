@@ -18,7 +18,7 @@ import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 import { addCartItem } from "../utils/localStorage.js";
 import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
 import { showToast } from "../modules/toast.js";
-import { renderChatting, openChattingModal } from "../modules/fixedBtn.js";
+import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 
 // 변수
 const data = await fetchData("./data/products.json");
@@ -260,6 +260,9 @@ renderChatting();
 
 // 문의 고정버튼을 누르면 문의 모달창을 여는 함수
 openChattingModal(fixedBtn);
+
+// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
+closeChattingModal();
 
 // 장바구니에 추가하는 기능
 container.addEventListener("click", (e) => {
