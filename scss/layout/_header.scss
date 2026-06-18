@@ -18,7 +18,9 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-
+    .header-nav {
+      display: none;
+    }
     .header-top {
       display: flex;
       justify-content: space-between;
