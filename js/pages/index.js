@@ -5,10 +5,16 @@ import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
 import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
+// import { renderChatting, openChattingModal } from "../modules/fixedBtn.js";
 
 // 메인 페이지 기능
 renderHeader("");
 renderFooter();
+
+// 문의 모달 렌더링 (fixedBtn.js 완성 후 주석 해제)
+// renderChatting();
+// const fixedBtn = document.querySelector(".fixed-chat-button");
+// openChattingModal(fixedBtn);
 
 // 햄버거 렌더링
 const hamburgerMenu = document.querySelector(".hamburger-menu");

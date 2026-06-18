@@ -1,5 +1,6 @@
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
+import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
@@ -383,6 +384,15 @@ async function initProductDetail() {
 }
 
 renderHeader("C");
+
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+renderHamburger(hamburgerMenu);
+
+// 햄버거 열기
+const openHamburger = document.querySelector(".hamburger-btn-open");
+openCloseHamburger(openHamburger);
+
 renderFooter();
 renderCartBadge();
 initProductDetail();

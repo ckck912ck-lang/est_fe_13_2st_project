@@ -2428,13 +2428,13 @@ body[data-cart-state=filled] .cart-page__state--empty {
   background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0));
 }
 .index-page .hero-slider .hero-slide--ai .hero-slide__media {
-  background: url("/assets/images/hero/hero-slide-01.png") center/cover;
+  background: url("../../assets/images/hero/hero-slide-01.png") center/cover;
 }
 .index-page .hero-slider .hero-slide--new .hero-slide__media {
-  background: url("/assets/images/hero/hero-slide-02.png") center/cover;
+  background: url("../../assets/images/hero/hero-slide-02.png") center/cover;
 }
 .index-page .hero-slider .hero-slide--store .hero-slide__media {
-  background: url("/assets/images/hero/hero-slide-03.png") center/cover;
+  background: url("../../assets/images/hero/hero-slide-03.png") center/cover;
 }
 .index-page .hero-slider .hero-content {
   position: relative;

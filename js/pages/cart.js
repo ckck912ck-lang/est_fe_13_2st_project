@@ -3,6 +3,7 @@ import { fetchData } from "../utils/fetchData.js";
 import { initCartPage } from "../modules/cartActions.js";
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
+import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
 import { initSearch } from "../modules/search.js";
 import { renderCartBadge } from "../modules/renderCartBadge.js";
 import { showToast } from "../modules/toast.js";
@@ -56,6 +57,15 @@ function renderCartRecommendProducts(products) {
 }
 
 renderHeader("");
+
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+renderHamburger(hamburgerMenu);
+
+// 햄버거 열기
+const openHamburger = document.querySelector(".hamburger-btn-open");
+openCloseHamburger(openHamburger);
+
 initCart();
 renderFooter();
 initSearch();
