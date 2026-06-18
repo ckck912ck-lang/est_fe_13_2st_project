@@ -21,8 +21,6 @@ import { showToast } from "../modules/toast.js";
 import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 
 // 변수
-const data = await fetchData("./data/products.json");
-const products = data.products;
 const container = document.querySelector(".product-list .product-list-grid");
 const productCount = document.querySelector("[data-render='product-count']");
 const pagination = document.querySelector("[data-render='pagination']");
@@ -31,8 +29,11 @@ const filterGroup = document.querySelector(".filter-panel .filter-group");
 const countPerPage = 12;
 const fixedBtn = document.querySelector(".fixed-chat-button");
 
-// 스켈레톤 UI
+// 스켈레톤 UI — 데이터 받기 전에 먼저 표시
 showSkeleton(container, countPerPage);
+
+const data = await fetchData("./data/products.json");
+const products = data.products;
 
 // 필터링 조건 객체
 const selectedFilters = {
