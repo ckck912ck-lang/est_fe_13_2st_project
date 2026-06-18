@@ -4,12 +4,12 @@
 function getSearchModalHTML() {
   return `
     <dialog class="modal search-modal" id="search-modal" aria-label="검색">
-      <form class="search-modal__form" role="search" aria-label="상품 검색">
+      <form class="search-modal-form" role="search" aria-label="상품 검색">
         <div class="inner">
-          <div class="search-modal__form-row">
-            <span class="material-icons search-modal__form__icon" aria-hidden="true">search</span>
+          <div class="search-modal-form-row">
+            <span class="material-icons search-modal-form-icon" aria-hidden="true">search</span>
             <input
-              class="search-modal__form__input"
+              class="search-modal-form-input"
               type="search"
               name="keyword"
               placeholder="브랜드, 상품명 검색..."
@@ -18,7 +18,7 @@ function getSearchModalHTML() {
             />
             <button
               type="button"
-              class="icon-button search-modal__form__close"
+              class="icon-button search-modal-form-close"
               aria-label="검색 닫기"
               data-action="close-search"
             >
@@ -29,8 +29,8 @@ function getSearchModalHTML() {
       </form>
       <section class="popular-keywords" aria-labelledby="popular-keywords-title">
         <div class="inner">
-          <h2 id="popular-keywords-title" class="popular-keywords__title">인기 검색어</h2>
-          <ul class="popular-keywords__list" aria-label="인기 검색어 목록">
+          <h2 id="popular-keywords-title" class="popular-keywords-title">인기 검색어</h2>
+          <ul class="popular-keywords-list" aria-label="인기 검색어 목록">
             <li><button type="button" class="keyword-pill" data-keyword="CARIN">CARIN</button></li>
             <li><button type="button" class="keyword-pill" data-keyword="GENTLE MONSTER">GENTLE MONSTER</button></li>
             <li><button type="button" class="keyword-pill" data-keyword="라운드">라운드</button></li>
@@ -52,8 +52,8 @@ export function initSearch() {
   document.body.insertAdjacentHTML("beforeend", getSearchModalHTML());
 
   const dialog = document.getElementById("search-modal");
-  const form = dialog.querySelector(".search-modal__form");
-  const input = dialog.querySelector(".search-modal__form__input");
+  const form = dialog.querySelector(".search-modal-form");
+  const input = dialog.querySelector(".search-modal-form-input");
 
   function navigateToSearch(keyword) {
     if (!keyword.trim()) return;

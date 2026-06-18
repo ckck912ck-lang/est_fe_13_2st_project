@@ -5,6 +5,20 @@ import { initSearch } from "./search.js";
 
 const header = document.querySelector("header");
 
+// 뒤로가기 버튼 함수
+function initBackButton() {
+  const backButton = document.querySelector('[data-action="go-back"]');
+
+  backButton?.addEventListener("click", function () {
+    if (window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+    // 주소를 직접 입력해서 들어왔기 때문에, 뒤로가기를 눌러도 갈 페이지가 없을 경우 메인으로 이동
+    window.location.href = "index.html";
+  });
+}
+
 // 헤더 1 : 메인, 회원가입 입력폼/약관동의, 장바구니 페이지
 
 function getHeaderTypeA() {
@@ -90,8 +104,8 @@ function getHeaderTypeC() {
       <div class="container header-C">
         <div class="header-top">
           <div class="header-left">
-            <button class="header-btn">
-              <span class="material-icons">chevron_left</span>
+            <button type="button" class="header-btn" data-action="go-back" aria-label="뒤로가기">
+              <span class="material-icons" aria-hidden="true">chevron_left</span>
             </button>
           </div>
           <div class="header-center">
@@ -104,9 +118,9 @@ function getHeaderTypeC() {
           </div>
           <div class="header-right">
             <div class="site-header-btns">
-              <button type="button" class="header-btn home" aria-label="처음으로 돌아가기">
-                <span class="material-icons">home</span>
-              </button>
+              <a href="index.html" class="header-btn home" aria-label="처음으로 돌아가기">
+                <span class="material-icons" aria-hidden="true">home</span>
+              </a>
               <button type="button" class="header-btn search" aria-label="검색 열기">
                 <span class="material-icons">search</span>
               </button>
@@ -207,5 +221,6 @@ export function renderHeader(headerType) {
 
   header.innerHTML = html;
   renderCartBadge();
+  initBackButton();
   initSearch();
 }
