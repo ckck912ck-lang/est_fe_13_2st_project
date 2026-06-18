@@ -22,7 +22,8 @@ import { renderChatting, openChattingModal, closeChattingModal } from "../module
 
 // 변수
 const container = document.querySelector(".product-list .product-list-grid");
-const productCount = document.querySelector("[data-render='product-count']");
+
+// 변수
 const pagination = document.querySelector("[data-render='pagination']");
 const sortArea = document.querySelector(".sort-area");
 const filterGroup = document.querySelector(".filter-panel .filter-group");
@@ -34,6 +35,7 @@ showSkeleton(container, countPerPage);
 
 const data = await fetchData("./data/products.json");
 const products = data.products;
+const productCount = document.querySelector("[data-render='product-count']");
 
 // 필터링 조건 객체
 const selectedFilters = {

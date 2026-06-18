@@ -3,7 +3,7 @@
 @use "../base/variables" as *;
 
 // 헤더 공통
-header {
+.header {
   position: sticky;
   top: 0;
   z-index: 100;
