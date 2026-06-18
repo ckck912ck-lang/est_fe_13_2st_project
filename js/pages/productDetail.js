@@ -491,3 +491,22 @@ if (fixedBtn) {
   openChattingModal(fixedBtn);
   closeChattingModal();
 }
+
+const container = document.querySelector("body");
+// 장바구니에 추가하는 기능
+container.addEventListener("click", (e) => {
+  const cartButton = e.target.closest(".cart-add");
+  if (!cartButton) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  const productId = cartButton.dataset.productId;
+  if (!productId) return;
+
+  addCartItem(productId, 1, "기본");
+
+  console.log("장바구니 추가:", productId);
+  // 토스트
+  showToast(`상품이 장바구니에 추가되었습니다.`, 2000);
+});
