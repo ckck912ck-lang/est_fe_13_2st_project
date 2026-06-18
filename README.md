@@ -45,6 +45,7 @@
 | `.github/pull_request_template.md` | PR 작성 시 컨벤션 준수 여부 확인                   |
 
 ## 1. 프로젝트 개요
+
 ROUNZ는 온라인 아이웨어 상품 탐색과 앱 기반 가상피팅, 오프라인 안경원 서비스를 연결하는 아이웨어 커머스 플랫폼이다.
 
 ### 1.1 목표
@@ -56,13 +57,13 @@ ROUNZ는 온라인 아이웨어 상품 탐색과 앱 기반 가상피팅, 오프
 
 ### 1.2 👥 팀원
 
-| 이름   | 역할   | 주요 담당 | GitHub                                 | 연락               |
-| ------ | ------ | --------- | -------------------------------------- | ------------------ |
-| 김찬희 | 팀장   |            | [@ckck912ck-lang](https://github.com/ckck912ck-lang) |ckck912ck@gmail.com |
-| 배정호 | 팀원   | 깃허브 배포, 개발 컨벤션 작성| [@raspbsb](https://github.com/raspbsb) | unionbjh@naver.com |
-| 조승아 | 팀원   | 회의록 작성| [@eodrn7021-cell](https://github.com/eodrn7021-cell) | eodrn7021@gmail.com |
-| 박은수 | 팀원   |QA 작성| [@jond0803](https://github.com/jond0803)|                    |
-| 주성문 | 팀원   |             | [@KimShueBang](https://github.com/KimShueBang) | enforhssh@gmail.com |
+| 이름   | 역할 | 주요 담당                     | GitHub                                               | 연락                |
+| ------ | ---- | ----------------------------- | ---------------------------------------------------- | ------------------- |
+| 김찬희 | 팀장 |                               | [@ckck912ck-lang](https://github.com/ckck912ck-lang) | ckck912ck@gmail.com |
+| 배정호 | 팀원 | 깃허브 배포, 개발 컨벤션 작성 | [@raspbsb](https://github.com/raspbsb)               | unionbjh@naver.com  |
+| 조승아 | 팀원 | 회의록 작성                   | [@eodrn7021-cell](https://github.com/eodrn7021-cell) | eodrn7021@gmail.com |
+| 박은수 | 팀원 | QA 작성                       | [@jond0803](https://github.com/jond0803)             |                     |
+| 주성문 | 팀원 |                               | [@KimShueBang](https://github.com/KimShueBang)       | enforhssh@gmail.com |
 
 ### 1.3 🗓️ 마일스톤
 

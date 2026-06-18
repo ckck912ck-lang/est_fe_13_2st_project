@@ -420,8 +420,8 @@ function initShareButton() {
 async function initProductDetail() {
   try {
     const [productData, reviewData] = await Promise.all([
-      fetchData("/data/products.json"),
-      fetchData("/data/reviews.json"),
+      fetchData("./data/products.json"),
+      fetchData("./data/reviews.json"),
     ]);
 
     const products = Array.isArray(productData)
