@@ -50,9 +50,9 @@ function getHeaderTypeB() {
       <div class="container header-B">
         <div class="header-top">
           <div class="header-left">
-            <button class="header-btn">
+            <a href="/index.html" class="header-btn">
               <span class="material-icons">chevron_left</span>
-            </button>
+            </a>
             <h2 class="category">상품</h2>
           </div>
           <div class="header-center">
