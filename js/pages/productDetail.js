@@ -50,6 +50,7 @@ const reviews = [
   },
 ];
 const reviewList = document.querySelector('[data-render="product-review-list"]');
+const reviewCountText = document.querySelector('[data-render="review-count"]');
 const productTabs = document.querySelector(".product-detail-tabs");
 const productSummary = document.querySelector('[data-render="product-summary"]');
 const productBrandLink = document.querySelector(".product-summary-brand a");
@@ -172,6 +173,28 @@ function renderProductRating(product) {
   productRatingScore.textContent = rating.toFixed(1);
   productReviewCount.textContent = `(${reviewCount})`;
   productRating.setAttribute("aria-label", `평점 ${rating.toFixed(1)}점, 리뷰 ${reviewCount}개`);
+}
+function renderProductReviews(product) {
+  if (!reviewList) {
+    return;
+  }
+
+  const reviewCount = Number(product.reviewCount) || 0;
+
+  if (reviewCountText) {
+    reviewCountText.textContent = `(${reviewCount})`;
+  }
+
+  if (reviewCount === 0) {
+    reviewList.innerHTML = `
+      <p class="review-empty">아직 작성된 후기가 없습니다.</p>
+    `;
+    return;
+  }
+
+  const visibleReviewCount = Math.min(reviewCount, reviews.length);
+
+  renderTestimonials(reviews, reviewList, visibleReviewCount);
 }
 
 function renderProductSummary(product) {
@@ -374,6 +397,7 @@ async function initProductDetail() {
 
     renderProductSummary(product);
     renderProductGallery(product);
+    renderProductReviews(product);
     renderRelatedProducts(product, products);
     initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
   } catch (error) {
@@ -388,10 +412,6 @@ renderCartBadge();
 initProductDetail();
 initProductQuantity();
 initAddCartButton();
-
-if (reviewList) {
-  renderTestimonials(reviews, reviewList, 4);
-}
 
 if (productTabs) {
   initTabs(productTabs);
