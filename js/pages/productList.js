@@ -16,6 +16,7 @@ import {
 import { showSkeleton } from "/js/modules/renderSkeleton.js";
 import { initLazyLoadImages } from "/js/utils/lazyLoadImage.js";
 import { addCartItem } from "/js/utils/localStorage.js";
+import { openCloseHamburger, renderHamburger } from "/js/modules/hamburgerNav.js";
 
 // 변수
 const data = await fetchData("/data/products.json");
@@ -144,6 +145,14 @@ if (pagination) {
 
 // 헤더 렌더링
 renderHeader("B");
+
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+renderHamburger(hamburgerMenu);
+
+// 햄버거 열기
+const openHamburger = document.querySelector(".hamburger-btn-open");
+openCloseHamburger(openHamburger);
 
 // 필터 모달 띄우기
 const openModalBtn = document.querySelector(".filter-toggle-button");

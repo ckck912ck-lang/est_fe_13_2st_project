@@ -15,11 +15,19 @@
     <!-- 헤더(모듈) -->
     <header class="header"></header>
 
+    <!-- 햄버거(모듈) -->
+    <aside
+      class="hamburger-menu"
+      id="hamburger-menu"
+      aria-label="전체 메뉴"
+      data-component="hamburger-menu"
+      hidden
+    ></aside>
+
     <!-- 메인 -->
     <main id="main" class="main product-list-page">
       <section class="product-list-top-section" aria-labelledby="product-list-title">
         <!-- 필터 모달 -->
-        <!-- <dialog class="product-filter-dialog" data-dialog="product-filter" closedby="any"></dialog> -->
         <dialog class="product-filter-dialog" data-dialog="product-filter" closedby="any">
           <form class="filter-form" method="dialog">
             <div class="filter-header">
@@ -405,15 +413,7 @@
         <div class="product-grid product-list-grid" data-render="product-list"></div>
 
         <!-- 페이지네이션 -->
-        <nav class="pagination" aria-label="상품 목록 페이지네이션" data-render="pagination">
-          <a href="#" aria-label="이전 페이지" class="material-icons">chevron_left</a>
-          <a href="#" aria-current="page">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#" aria-label="다음 페이지" class="material-icons">chevron_right</a>
-        </nav>
+        <nav class="pagination" aria-label="상품 목록 페이지네이션" data-render="pagination"></nav>
 
         <!-- 무한스크롤 시작 버튼 -->
         <button type="button" class="product-more-button" data-action="load-more">
@@ -450,6 +450,7 @@
       <span class="sr-only">AI 상담</span>
     </a>
 
+    <!-- 검색(모듈) -->
     <dialog class="modal" id="search-modal" aria-labelledby="search-modal-title">
       <form method="dialog" class="modal-content">
         <div class="modal-head">
@@ -465,6 +466,7 @@
       </form>
     </dialog>
 
+    <!-- 토스트 -->
     <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
     <script type="module" src="js/pages/productList.js"></script>
   </body>
