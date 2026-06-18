@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>ROUNZ | 장바구니</title>
   </head>
@@ -69,80 +70,21 @@
             <span aria-hidden="true">→</span>
           </a>
         </div>
-
         <section class="cart-recommend" aria-labelledby="cart-empty-recommend-title">
           <div class="cart-section-heading">
-            <h2 id="cart-empty-recommend-title">추천 상품</h2>
+            <h2 id="cart-recommend-title">추천 상품</h2>
             <a href="product-list.html?sort=best">전체보기</a>
           </div>
-          <div class="cart-recommend__list">
-            <article class="cart-product-card">
-              <a
-                class="cart-product-card__media"
-                href="product-detail.html"
-                aria-label="CARIN OSLO 01 상품 상세 보기"
-              >
-                <span class="cart-product-card__badge">BEST</span>
-                <span class="cart-product-card__badge cart-product-card__badge--dark">NEW</span>
-                <span class="cart-product-card__sale">20%</span>
-              </a>
-              <div class="cart-product-card__body">
-                <p class="cart-product-card__brand">CARIN</p>
-                <h3 class="cart-product-card__name">
-                  <a href="product-detail.html">OSLO 01</a>
-                </h3>
-                <p class="cart-product-card__rating">
-                  <span aria-hidden="true">★</span>
-                  4.8 (342)
-                </p>
-                <p class="cart-product-card__price">
-                  198,000원
-                  <del>248,000</del>
-                  <span>-20%</span>
-                </p>
-              </div>
-            </article>
-
-            <article class="cart-product-card">
-              <a
-                class="cart-product-card__media cart-product-card__media--soft"
-                href="product-detail.html"
-                aria-label="GENTLE MONSTER MAGO SPACE 상품 상세 보기"
-              >
-                <span class="cart-product-card__badge cart-product-card__badge--dark">NEW</span>
-                <span class="cart-product-card__badge">BEST</span>
-              </a>
-              <div class="cart-product-card__body">
-                <p class="cart-product-card__brand">GENTLE MONSTER</p>
-                <h3 class="cart-product-card__name">
-                  <a href="product-detail.html">MAGO SPACE</a>
-                </h3>
-                <p class="cart-product-card__rating">
-                  <span aria-hidden="true">★</span>
-                  4.9 (512)
-                </p>
-                <p class="cart-product-card__price">345,000원</p>
-              </div>
-            </article>
-
-            <article class="cart-product-card">
-              <a
-                class="cart-product-card__media cart-product-card__media--clear"
-                href="product-detail.html"
-                aria-label="LINDBERG CLOUD C1 상품 상세 보기"
-              ></a>
-              <div class="cart-product-card__body">
-                <p class="cart-product-card__brand">LINDBERG</p>
-                <h3 class="cart-product-card__name">
-                  <a href="product-detail.html">CLOUD C1</a>
-                </h3>
-                <p class="cart-product-card__rating">
-                  <span aria-hidden="true">★</span>
-                  4.7 (186)
-                </p>
-                <p class="cart-product-card__price">580,000원</p>
-              </div>
-            </article>
+          <div class="cart-recommend-swiper swiper">
+            <button type="button" class="cart-recommend-prev" aria-label="이전 추천 상품">
+              <span class="material-icons" aria-hidden="true">chevron_left</span>
+            </button>
+            <div class="cart-recommend__list swiper-wrapper" data-render="cart-recommend-products">
+              <!-- js로 추천 상품 슬라이드 랜더 -->
+            </div>
+            <button type="button" class="cart-recommend-next" aria-label="다음 추천 상품">
+              <span class="material-icons" aria-hidden="true">chevron_right</span>
+            </button>
           </div>
         </section>
       </section>
@@ -203,76 +145,19 @@
         </div>
         <section class="cart-recommend" aria-labelledby="cart-empty-recommend-title">
           <div class="cart-section-heading">
-            <h2 id="cart-empty-recommend-title">추천 상품</h2>
+            <h2 id="cart-recommend-title">추천 상품</h2>
+            <a href="product-list.html?sort=best">전체보기</a>
           </div>
-          <div class="cart-recommend__list">
-            <article class="cart-product-card">
-              <a
-                class="cart-product-card__media"
-                href="product-detail.html"
-                aria-label="CARIN OSLO 01 상품 상세 보기"
-              >
-                <span class="cart-product-card__badge">BEST</span>
-                <span class="cart-product-card__badge cart-product-card__badge--dark">NEW</span>
-                <span class="cart-product-card__sale">20%</span>
-              </a>
-              <div class="cart-product-card__body">
-                <p class="cart-product-card__brand">CARIN</p>
-                <h3 class="cart-product-card__name">
-                  <a href="product-detail.html">OSLO 01</a>
-                </h3>
-                <p class="cart-product-card__rating">
-                  <span aria-hidden="true">★</span>
-                  4.8 (342)
-                </p>
-                <p class="cart-product-card__price">
-                  198,000원
-                  <del>248,000</del>
-                  <span>-20%</span>
-                </p>
-              </div>
-            </article>
-
-            <article class="cart-product-card">
-              <a
-                class="cart-product-card__media cart-product-card__media--soft"
-                href="product-detail.html"
-                aria-label="GENTLE MONSTER MAGO SPACE 상품 상세 보기"
-              >
-                <span class="cart-product-card__badge cart-product-card__badge--dark">NEW</span>
-                <span class="cart-product-card__badge">BEST</span>
-              </a>
-              <div class="cart-product-card__body">
-                <p class="cart-product-card__brand">GENTLE MONSTER</p>
-                <h3 class="cart-product-card__name">
-                  <a href="product-detail.html">MAGO SPACE</a>
-                </h3>
-                <p class="cart-product-card__rating">
-                  <span aria-hidden="true">★</span>
-                  4.9 (512)
-                </p>
-                <p class="cart-product-card__price">345,000원</p>
-              </div>
-            </article>
-
-            <article class="cart-product-card">
-              <a
-                class="cart-product-card__media cart-product-card__media--clear"
-                href="product-detail.html"
-                aria-label="LINDBERG CLOUD C1 상품 상세 보기"
-              ></a>
-              <div class="cart-product-card__body">
-                <p class="cart-product-card__brand">LINDBERG</p>
-                <h3 class="cart-product-card__name">
-                  <a href="product-detail.html">CLOUD C1</a>
-                </h3>
-                <p class="cart-product-card__rating">
-                  <span aria-hidden="true">★</span>
-                  4.7 (186)
-                </p>
-                <p class="cart-product-card__price">580,000원</p>
-              </div>
-            </article>
+          <div class="cart-recommend-swiper swiper">
+            <button type="button" class="cart-recommend-prev" aria-label="이전 추천 상품">
+              <span class="material-icons" aria-hidden="true">chevron_left</span>
+            </button>
+            <div class="cart-recommend__list swiper-wrapper" data-render="cart-recommend-products">
+              <!-- js로 추천 상품 슬라이드 랜더 -->
+            </div>
+            <button type="button" class="cart-recommend-next" aria-label="다음 추천 상품">
+              <span class="material-icons" aria-hidden="true">chevron_right</span>
+            </button>
           </div>
         </section>
       </section>
@@ -302,6 +187,7 @@
 
     <div class="toast" role="status" aria-live="polite" data-component="toast"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./js/pages/cart.js"></script>
   </body>
 </html>
