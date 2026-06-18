@@ -689,6 +689,10 @@
       }
     }
 
+    .video-placeholder {
+      min-height: 360px;
+    }
+
     .cta-section {
       .cta-inner {
         gap: 48px;
@@ -887,6 +891,10 @@
       .app-cta-description {
         font-size: $pc-body-l;
       }
+    }
+
+    .video-placeholder {
+      min-height: 600px;
     }
 
     .partner-cta {
