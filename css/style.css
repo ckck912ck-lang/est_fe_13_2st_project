@@ -1081,6 +1081,7 @@ footer .footer-bottom .footer-copyright {
   border: 1px solid rgb(232, 230, 225);
 }
 .product-card .product-image-link .cart-add .material-icons {
+  font-size: 28px;
   color: rgb(136, 136, 128);
 }
 .product-card .product-info {
@@ -1162,7 +1163,6 @@ footer .footer-bottom .footer-copyright {
   }
   .product-card .product-image-link .cart-add .material-icons {
     color: transparent;
-    font-size: 28px;
   }
   .product-card:hover .cart-add {
     opacity: 1;
