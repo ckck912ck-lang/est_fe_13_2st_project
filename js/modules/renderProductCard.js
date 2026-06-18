@@ -15,7 +15,7 @@ export function renderProductCard(product) {
                 aria-label="${product.brand}${product.title} 상품 상세 보기"
               >
                 <img
-                  data-src="${product.thumbnail}"
+                  src="${product.thumbnail}"
                   alt="${product.brand}${product.title}"
                   class="product-image"
                 />
