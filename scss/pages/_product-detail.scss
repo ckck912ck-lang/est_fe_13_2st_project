@@ -1,5 +1,23 @@
 @use "../base/variables" as *;
-
+.product-detail-body {
+  .header-nav {
+    display: none;
+  }
+  .bottom-nav {
+    .cart-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 999px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+}
 .product-detail-page {
   background: #faf9f7;
 }
@@ -932,6 +950,11 @@
     .product-card-rating,
     .product-card-price {
       font-size: 0.875rem;
+    }
+  }
+  .product-detail-body {
+    .header-nav {
+      display: flex;
     }
   }
 }
