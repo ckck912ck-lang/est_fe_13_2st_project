@@ -26,8 +26,6 @@ renderHamburger(hamburgerMenu);
 const openHamburger = document.querySelector(".hamburger-btn-open");
 openCloseHamburger(openHamburger);
 
-const fixedBtn = document.querySelector(".fixed-chat-button");
-
 // 공통 헤더, A타입
 
 // 히어로 슬라이더 초기화
@@ -167,11 +165,3 @@ async function initNoticeTab() {
   });
 }
 
-// 문의 모달 렌더링
-renderChatting();
-
-// 문의 고정버튼을 누르면 문의 모달창을 여는 함수
-openChattingModal(fixedBtn);
-
-// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
-closeChattingModal();
