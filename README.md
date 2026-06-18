@@ -177,13 +177,12 @@ gantt
 
 ### 2.3 📚 개발 컨벤션 가이드
 
-프로젝트에서 사용하는 HTML, CSS, JavaScript 작성 규칙은 아래 문서를 참고하세요.
+프로젝트에서 사용하는 개발 규칙은 아래 문서를 참고하세요.
 
-- [HTML 컨벤션](<[--](--)>)
-- [CSS 컨벤션](<[--](--)>)
-- [javascript 컨벤션](<[--](--)>)
-- [version control 컨벤션](<[--](--)>)
-- [기타 개발 관련 규칙](<[--](--)>)
+- [개발 컨벤션](docs/convention.md)
+- [QA 체크리스트](docs/qa-checklist.md)
+- [작업 요청 템플릿](docs/task-template.md)
+- [5팀 개발 컨벤션](https://app.notion.com/p/oreumi/5-36febaa8982b8066875ec4d2162785e0?source=copy_link)
 
 ---
 
