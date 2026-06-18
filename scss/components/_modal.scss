@@ -127,3 +127,299 @@
     border-color: $neutral-text-main;
   }
 }
+
+// 상품 목록 필터 모달
+.product-filter-dialog {
+  width: 100%;
+  max-width: 720px;
+  max-height: 80dvh;
+  margin: auto;
+  border: 0;
+  border-radius: 12px;
+  background: $neutral-white;
+  overflow: hidden;
+  padding-bottom: 4px;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::backdrop {
+    background: rgb(0 0 0 / 70%);
+  }
+
+  .filter-form {
+    display: flex;
+    flex-direction: column;
+    max-height: 80dvh;
+    user-select: none;
+
+    .filter-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: 0 20px;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+
+      .filter-title {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .filter-close-button {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        border-radius: 50%;
+        background: transparent;
+        color: $neutral-text-sub;
+        cursor: pointer;
+
+        .material-icons {
+          font-size: 32px;
+        }
+      }
+    }
+
+    .filter-body {
+      padding: 18px 20px 80px;
+      max-height: 80dvh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      span {
+        display: flex;
+        padding: 0 12px;
+        height: 100%;
+        border-radius: 999px;
+        background: transparent;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .filter-group-title {
+          font-size: 16px;
+          font-weight: 500;
+          color: $neutral-text-main;
+        }
+
+        .filter-brand-scroll {
+          width: 100%;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding-bottom: 4px;
+        }
+
+        .filter-chip-list {
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: repeat(1, auto);
+          gap: 8px 6px;
+          width: 100%;
+          align-items: center;
+
+          .filter-chip {
+            flex: 0 0 auto;
+            min-width: 80px;
+            display: flex;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            padding: 0 8px;
+
+            &:focus {
+              border: #111;
+            }
+
+            &:has(input:checked) {
+              background: $neutral-title-black;
+
+              span {
+                color: #fff;
+              }
+            }
+
+            input {
+              position: absolute;
+              opacity: 0;
+              pointer-events: none;
+            }
+          }
+        }
+
+        .filter-chip-list-grid1 {
+          grid-template-rows: repeat(1, auto);
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .filter-chip-list-grid2 {
+          grid-template-rows: repeat(2, auto);
+        }
+
+        .filter-chip-list-grid3 {
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-rows: repeat(3, 1fr);
+          grid-auto-columns: max-content;
+          gap: 8px;
+          width: max-content;
+        }
+
+        .filter-price-button-list {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
+
+          .filter-price-button {
+            display: block;
+
+            input {
+              position: absolute;
+              opacity: 0;
+              pointer-events: none;
+
+              &:checked + span {
+                background: #444;
+                color: #fff;
+
+                /* 선택되어도 크기 안 바뀌게 */
+                border-color: #444;
+                box-shadow: inset 0 0 0 2px #fff;
+              }
+            }
+
+            span {
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              /* 선택 전후 고정 */
+              width: 100%;
+              height: 28px;
+              padding: 0 12px;
+              border: 1px solid #e5e5e5;
+              border-radius: 999px;
+
+              font-size: 14px;
+              line-height: 1;
+              color: #666;
+              white-space: nowrap;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .filter-range-slider {
+          position: relative;
+          height: 30px;
+          margin-top: 4px;
+
+          input[type="range"] {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 100%;
+            height: 4px;
+            margin: 0;
+            appearance: none;
+            pointer-events: none;
+
+            &::-webkit-slider-runnable-track {
+              height: 3px;
+              border-radius: 999px;
+              background: $neutral-text-sub;
+            }
+
+            &::-webkit-slider-thumb {
+              width: 20px;
+              height: 20px;
+              margin-top: -8.5px;
+              appearance: none;
+              border-radius: 50%;
+              background: $color-white;
+              box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+              pointer-events: auto;
+              cursor: pointer;
+            }
+          }
+        }
+        .filter-price-value {
+          display: flex;
+          justify-content: space-between;
+
+          output {
+            font-size: 12px;
+            font-weight: 600;
+            color: #111;
+          }
+        }
+      }
+    }
+
+    .filter-actions {
+      position: sticky;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 14px 20px 18px;
+      border-top: 1px solid #f1f1f1;
+      background: #fff;
+    }
+
+    .filter-reset-button,
+    .filter-submit-button {
+      height: 48px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .filter-reset-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      border: 1px solid $neutral-border-gray;
+      background: #fff;
+      font-size: 16px;
+      color: $neutral-title-black;
+
+      .material-icons {
+        font-size: 20px;
+      }
+    }
+
+    .filter-submit-button {
+      border: 0;
+      background: $neutral-text-main;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    @media (min-width: 768px) {
+    }
+
+    @media (min-width: 1280px) {
+    }
+  }
+}

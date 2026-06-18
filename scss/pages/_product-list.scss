@@ -30,11 +30,21 @@
     gap: 8px;
     overflow-x: auto;
     white-space: nowrap;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .filter-panel-content {
+    width: 100%;
     display: flex;
     gap: 8px;
+    justify-content: space-between;
   }
 
   .filter-group,
@@ -83,6 +93,14 @@
   .product-list-toolbar {
     overflow-x: auto;
     white-space: nowrap;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .sort-area {
       width: max-content;
