@@ -1,6 +1,7 @@
 // renderHeader : 배정호 작업
 
 import { renderCartBadge } from "./renderCartBadge.js";
+import { initSearch } from "./search.js";
 
 const header = document.querySelector("header");
 
@@ -206,4 +207,5 @@ export function renderHeader(headerType) {
 
   header.innerHTML = html;
   renderCartBadge();
+  initSearch();
 }

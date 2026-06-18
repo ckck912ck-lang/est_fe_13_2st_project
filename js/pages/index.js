@@ -1,19 +1,27 @@
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
-import { initSearch } from "../modules/search.js";
+import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
-import { initProductSlider } from "../modules/carousel.js";
+import { initHeroSlider, initProductSlider } from "../modules/carousel.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 
 // 메인 페이지 기능
 renderHeader("");
 renderFooter();
-initSearch();
+
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+renderHamburger(hamburgerMenu);
+
+// 햄버거 열기
+const openHamburger = document.querySelector(".hamburger-btn-open");
+openCloseHamburger(openHamburger);
 
 // 공통 헤더, A타입
 
-// 히어로 : 슬라이드
+// 히어로 슬라이더 초기화
+initHeroSlider(".hero-slider", ".hero-prev-btn", ".hero-next-btn", ".hero-pagination");
 
 // 얼굴형별 추천 : 슬라이드, 필터된 상품목록으로 이동
 

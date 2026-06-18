@@ -1,24 +1,27 @@
 // productList.js : 배정호 작성
 
 // 들여오기
-import { fetchData } from "/js/utils/fetchData.js";
-import { renderProducts } from "/js/modules/renderProducts.js";
-import { renderHeader } from "/js/modules/renderHeader.js";
-import { renderFooter } from "/js/modules/renderFooter.js";
-import { sortProducts } from "/js/modules/sort.js";
-import { filterProducts } from "/js/modules/filter.js";
+import { fetchData } from "../utils/fetchData.js";
+import { renderProducts } from "../modules/renderProducts.js";
+import { renderHeader } from "../modules/renderHeader.js";
+import { renderFooter } from "../modules/renderFooter.js";
+import { sortProducts } from "../modules/sort.js";
+import { filterProducts } from "../modules/filter.js";
 import {
   getPagedProducts,
   renderPagination,
   getNextPage,
   getTotalPage,
-} from "/js/modules/pagination.js";
-import { showSkeleton } from "/js/modules/renderSkeleton.js";
-import { initLazyLoadImages } from "/js/utils/lazyLoadImage.js";
-import { addCartItem } from "/js/utils/localStorage.js";
+} from "../modules/pagination.js";
+import { showSkeleton } from "../modules/renderSkeleton.js";
+import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
+import { addCartItem } from "../utils/localStorage.js";
+import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
+import { showToast } from "../modules/toast.js";
+import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
 
 // 변수
-const data = await fetchData("/data/products.json");
+const data = await fetchData("./data/products.json");
 const products = data.products;
 const container = document.querySelector(".product-list .product-list-grid");
 const productCount = document.querySelector("[data-render='product-count']");
@@ -26,6 +29,7 @@ const pagination = document.querySelector("[data-render='pagination']");
 const sortArea = document.querySelector(".sort-area");
 const filterGroup = document.querySelector(".filter-panel .filter-group");
 const countPerPage = 12;
+const fixedBtn = document.querySelector(".fixed-chat-button");
 
 // 스켈레톤 UI
 showSkeleton(container, countPerPage);
@@ -145,6 +149,14 @@ if (pagination) {
 // 헤더 렌더링
 renderHeader("B");
 
+// 햄버거 렌더링
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+renderHamburger(hamburgerMenu);
+
+// 햄버거 열기
+const openHamburger = document.querySelector(".hamburger-btn-open");
+openCloseHamburger(openHamburger);
+
 // 필터 모달 띄우기
 const openModalBtn = document.querySelector(".filter-toggle-button");
 const filterModal = document.querySelector(".product-filter-dialog");
@@ -243,7 +255,16 @@ function resetFilters() {
   };
 }
 
-// 장바구니에 추가
+// 문의 모달 렌더링
+renderChatting();
+
+// 문의 고정버튼을 누르면 문의 모달창을 여는 함수
+openChattingModal(fixedBtn);
+
+// 문의 모달창의 닫기 버튼을 누르면 문의 모달창을 닫는 함수
+closeChattingModal();
+
+// 장바구니에 추가하는 기능
 container.addEventListener("click", (e) => {
   const cartButton = e.target.closest(".cart-add");
   if (!cartButton) return;
@@ -257,6 +278,8 @@ container.addEventListener("click", (e) => {
   addCartItem(productId, 1, "기본");
 
   console.log("장바구니 추가:", productId);
+  // 토스트
+  showToast(`상품이 장바구니에 추가되었습니다.`, 2000);
 });
 
 // 무한 스크롤 : (후순위 추가기능) 누르면 페이지네이션 지우고 화면 감지로 펼치는 기능 활성화

@@ -1,5 +1,7 @@
+// 조승아 작업
 import { renderHeader } from "../modules/renderHeader.js";
 import { renderFooter } from "../modules/renderFooter.js";
+import { renderHamburger, openCloseHamburger } from "../modules/hamburgerNav.js";
 import { renderTestimonials } from "../modules/testimonial.js";
 import { initTabs } from "../modules/tabs.js";
 import { initProductDetailCarousel } from "../modules/carousel.js";
@@ -9,6 +11,7 @@ import { renderCartBadge } from "../modules/renderCartBadge.js";
 import { showToast } from "../modules/toast.js";
 import { initLazyLoadImages } from "../utils/lazyLoadImage.js";
 import { renderProductCard } from "../modules/renderProductCard.js";
+import { renderStars } from "../modules/renderStars.js";
 // 상품 상세 기능
 
 // 상품 이미지 : 현재 선택한 썸네일에 맞는 큰 이미지 띄우기, 슬라이드
@@ -49,11 +52,16 @@ const reviews = [
   },
 ];
 const reviewList = document.querySelector('[data-render="product-review-list"]');
+const reviewCountText = document.querySelector('[data-render="review-count"]');
 const productTabs = document.querySelector(".product-detail-tabs");
 const productSummary = document.querySelector('[data-render="product-summary"]');
 const productBrandLink = document.querySelector(".product-summary-brand a");
 const productTitle = document.querySelector("#product-title");
 const productPrice = document.querySelector(".product-summary-price");
+const productRating = document.querySelector(".product-summary-rating");
+const productRatingStars = document.querySelector(".product-summary-stars");
+const productRatingScore = document.querySelector(".product-summary-rating-score");
+const productReviewCount = document.querySelector(".product-summary-review-count");
 const productDescriptions = document.querySelectorAll('[data-render="product-description"]');
 const productColorOption = document.querySelector(".product-color-option");
 const productGalleryMainWrapper = document.querySelector(
@@ -64,15 +72,12 @@ const productGalleryThumbWrapper = document.querySelector(
 );
 const relatedProductsGrid = document.querySelector('[data-render="related-products"]');
 function getProductImages(product) {
-  if (Array.isArray(product.images) && product.images.length > 0) {
-    return product.images;
-  }
+  const images = Array.isArray(product.images) ? product.images : [];
+  const productImages = [product.thumbnail, ...images].filter(Boolean);
 
-  if (product.thumbnail) {
-    return [product.thumbnail];
-  }
-
-  return [];
+  return productImages.filter((image, index, array) => {
+    return array.indexOf(image) === index;
+  });
 }
 
 function renderProductGallery(product) {
@@ -93,6 +98,7 @@ function renderProductGallery(product) {
           <img
             data-src="${image}"
             alt="${product.brand} ${product.title} ${index + 1}번째 이미지"
+            onerror="this.onerror=null; this.src='${product.thumbnail}'"
           />
         </div>
       `;
@@ -111,6 +117,7 @@ function renderProductGallery(product) {
             data-src="${image}"
             alt=""
             aria-hidden="true"
+            onerror="this.onerror=null; this.src='${product.thumbnail}'"
           />
         </button>
       `;
@@ -156,6 +163,41 @@ function getProductDescription(product) {
 
   return `${product.brand}의 ${product.title} 상품입니다. ${frameShape} 형태의 프레임으로 데일리 착용에 자연스럽게 어울리며, 다양한 스타일에 활용하기 좋습니다.`;
 }
+function renderProductRating(product) {
+  if (!productRating || !productRatingStars || !productRatingScore || !productReviewCount) {
+    return;
+  }
+
+  const rating = Number(product.rating) || 0;
+  const reviewCount = Number(product.reviewCount) || 0;
+
+  productRatingStars.innerHTML = renderStars(rating);
+  productRatingScore.textContent = rating.toFixed(1);
+  productReviewCount.textContent = `(${reviewCount})`;
+  productRating.setAttribute("aria-label", `평점 ${rating.toFixed(1)}점, 리뷰 ${reviewCount}개`);
+}
+function renderProductReviews(product) {
+  if (!reviewList) {
+    return;
+  }
+
+  const reviewCount = Number(product.reviewCount) || 0;
+
+  if (reviewCountText) {
+    reviewCountText.textContent = `(${reviewCount})`;
+  }
+
+  if (reviewCount === 0) {
+    reviewList.innerHTML = `
+      <p class="review-empty">아직 작성된 후기가 없습니다.</p>
+    `;
+    return;
+  }
+
+  const visibleReviewCount = Math.min(reviewCount, reviews.length);
+
+  renderTestimonials(reviews, reviewList, visibleReviewCount);
+}
 
 function renderProductSummary(product) {
   if (!productSummary) {
@@ -187,6 +229,7 @@ function renderProductSummary(product) {
       ${product.discountRate ? `<span>-${product.discountRate}%</span>` : ""}
     `;
   }
+  renderProductRating(product);
   // 상품 상세 설명 렌더링
   productDescriptions.forEach((description) => {
     description.textContent = getProductDescription(product);
@@ -356,6 +399,7 @@ async function initProductDetail() {
 
     renderProductSummary(product);
     renderProductGallery(product);
+    renderProductReviews(product);
     renderRelatedProducts(product, products);
     initProductDetailCarousel(".product-gallery-main-swiper", ".product-gallery-thumb-swiper");
   } catch (error) {
@@ -364,16 +408,23 @@ async function initProductDetail() {
   }
 }
 
-renderHeader("C");
+renderHeader("A");
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+
+if (hamburgerMenu) {
+  renderHamburger(hamburgerMenu);
+
+  const openHamburger = document.querySelector(".hamburger-btn-open");
+
+  if (openHamburger) {
+    openCloseHamburger(openHamburger);
+  }
+}
 renderFooter();
 renderCartBadge();
 initProductDetail();
 initProductQuantity();
 initAddCartButton();
-
-if (reviewList) {
-  renderTestimonials(reviews, reviewList, 4);
-}
 
 if (productTabs) {
   initTabs(productTabs);
