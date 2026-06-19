@@ -62,7 +62,7 @@ ROUNZ는 온라인 아이웨어 상품 탐색과 앱 기반 가상피팅, 오프
 | 김찬희 | 팀장 |                               | [@ckck912ck-lang](https://github.com/ckck912ck-lang) | ckck912ck@gmail.com |
 | 배정호 | 팀원 | 깃허브 배포, 개발 컨벤션 작성 | [@raspbsb](https://github.com/raspbsb)               | unionbjh@naver.com  |
 | 조승아 | 팀원 | 회의록 작성                   | [@eodrn7021-cell](https://github.com/eodrn7021-cell) | eodrn7021@gmail.com |
-| 박은수 | 팀원 | QA 작성                       | [@jond0803](https://github.com/jond0803)             |                     |
+| 박은수 | 팀원 | QA 작성                       | [@jond0803](https://github.com/jond0803)             | jond0803@naver.com|
 | 주성문 | 팀원 |                               | [@KimShueBang](https://github.com/KimShueBang)       | enforhssh@gmail.com |
 
 ### 1.3 🗓️ 마일스톤
@@ -278,22 +278,23 @@ est_fe_13_2st_project/
 
 ## 4. 향후 개선 사항
 
-- ㅇ
-- ㅇ
-- ㅇ
-- ㅇ
-- ㅇ
+- 이미지 Lazy Loading 에러 수정
+- 상품 목록 무한스크롤 구현
+- URL 파라미터 기반 필터링 기능 추가
+- 지도맵 페이지 구현 후 링크 연
+- 상품, 리뷰 데이터 관리 방식 개선
+- 반복 스타일 재사용성 개선
 
 ## 5. 제작 후기
 
-ㅇ
+* 기획, 디자인, 개발 전 과정에서 팀 협업을 통해 웹사이트 리뉴얼 프로젝트 수행
 
 ## 6. 기획/디자인 문서
 
 - **기획서(피그마 슬라이드)**: 사용자 흐름 설계, 리뉴얼 방향성, 스타일 가이드, 개발 기준 및 주요 구현 내용
-  링크: ㅇ
+  링크: (https://www.figma.com/slides/Cque3NKgbTLuAqYvYKMKR6)
 - **디자인 원본(피그마)**: 컴포넌트, 컬러/타이포 스케일, 반응형 레이아웃, 아이콘
-  링크: ㅇ
+  링크: (https://www.figma.com/design/pNBSJZmEODOvHsdtmVyMWr/rounz-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4-%EB%B6%84%EC%84%9D?node-id=0-1&t=AfMkIjIqXaIfRtYo-1)
 
 ### 7. 미리보기
 
