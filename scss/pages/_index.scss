@@ -555,34 +555,51 @@
     }
   }
 
-  .video-placeholder {
+  .video-wrapper {
     position: relative;
-    display: grid;
-    min-height: 184px;
-    place-items: center;
+    width: 100%;
+    height: 194.63px;
     overflow: hidden;
-    border-radius: 8px;
-    background:
-      linear-gradient(135deg, rgba($color-black, 0.2), rgba($color-black, 0.68)),
-      linear-gradient(120deg, #b7c0c8, #5b6671);
+    border-radius: 16px;
 
-    .video-play-icon {
+    .brand-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: rgba($neutral-black, 0.4);
+    }
+
+    .video-play-btn {
       display: grid;
-      width: 44px;
-      height: 44px;
       place-items: center;
+      width: 64px;
+      height: 64px;
+      border: 1px solid $brand-primary;
       border-radius: 50%;
-      background: rgba($color-white, 0.92);
+      background: $neutral-white-a2;
+      cursor: pointer;
 
-      &::before {
-        content: "";
-        display: block;
-        width: 0;
-        height: 0;
-        margin-left: 3px;
-        border-block: 9px solid transparent;
-        border-left: 14px solid $color-black;
+      .video-btn-icon {
+        color: $brand-primary;
+        font-size: 32px;
       }
+    }
+
+    .video-caption {
+      color: $brand-primary;
+      font-size: $mobile-caption;
+      text-transform: uppercase;
     }
   }
 
@@ -689,8 +706,12 @@
       }
     }
 
-    .video-placeholder {
-      min-height: 360px;
+    .video-wrapper {
+      height: 480px;
+
+      .video-caption {
+        font-size: $tablet-body;
+      }
     }
 
     .cta-section {
@@ -893,8 +914,12 @@
       }
     }
 
-    .video-placeholder {
-      min-height: 600px;
+    .video-wrapper {
+      height: 960px;
+
+      .video-caption {
+        font-size: $pc-body-l;
+      }
     }
 
     .partner-cta {

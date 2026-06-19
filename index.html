@@ -256,8 +256,19 @@
       <section class="video-section section-block" aria-labelledby="video-title">
         <div class="inner">
           <h2 id="video-title" class="sr-only">ROUNZ 브랜드 영상</h2>
-          <div class="video-placeholder" role="img" aria-label="ROUNZ 브랜드 영상 영역">
-            <span class="video-play-icon" aria-hidden="true"></span>
+          <div class="video-wrapper">
+            <video
+              class="brand-video"
+              src="assets/Video/fakeme_sp.mp4"
+              preload="metadata"
+              playsinline
+            ></video>
+            <div class="video-overlay">
+              <button class="video-play-btn" aria-label="영상 재생">
+                <span class="material-icons video-btn-icon" aria-hidden="true">play_arrow</span>
+              </button>
+              <p class="video-caption">rounz 브랜드 스토리</p>
+            </div>
           </div>
         </div>
       </section>

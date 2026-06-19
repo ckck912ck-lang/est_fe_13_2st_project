@@ -136,6 +136,34 @@ renderNewProducts();
 
 // 인기 브랜드 : 필터된 상품목록으로 이동
 
+// 브랜드 비디오 재생/정지 토글
+function initBrandVideo() {
+  const video = document.querySelector(".brand-video");
+  const playBtn = document.querySelector(".video-play-btn");
+  const icon = document.querySelector(".video-btn-icon");
+
+  if (!video || !playBtn || !icon) return;
+
+  playBtn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      icon.textContent = "stop";
+      playBtn.setAttribute("aria-label", "영상 정지");
+    } else {
+      video.pause();
+      icon.textContent = "play_arrow";
+      playBtn.setAttribute("aria-label", "영상 재생");
+    }
+  });
+
+  video.addEventListener("ended", () => {
+    icon.textContent = "play_arrow";
+    playBtn.setAttribute("aria-label", "영상 재생");
+  });
+}
+
+initBrandVideo();
+
 // 안경원 찾기 : (후순위 추가기능) API활용
 
 // 공지사항 : 탭, notics.json, events.json 파일 데이터 렌더링
