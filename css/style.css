@@ -3005,31 +3005,48 @@ body[data-cart-state=filled] .cart-page__state--empty {
   font-weight: 400;
   justify-self: stretch;
 }
-.index-page .video-placeholder {
+.index-page .video-wrapper {
   position: relative;
-  display: grid;
-  min-height: 184px;
-  place-items: center;
+  width: 100%;
+  height: 194.63px;
   overflow: hidden;
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(17, 17, 17, 0.2), rgba(17, 17, 17, 0.68)), linear-gradient(120deg, #b7c0c8, #5b6671);
+  border-radius: 16px;
 }
-.index-page .video-placeholder .video-play-icon {
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-}
-.index-page .video-placeholder .video-play-icon::before {
-  content: "";
+.index-page .video-wrapper .brand-video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
-  width: 0;
-  height: 0;
-  margin-left: 3px;
-  border-block: 9px solid transparent;
-  border-left: 14px solid #111111;
+}
+.index-page .video-wrapper .video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.index-page .video-wrapper .video-play-btn {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgb(196, 169, 125);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+.index-page .video-wrapper .video-play-btn .video-btn-icon {
+  color: rgb(196, 169, 125);
+  font-size: 32px;
+}
+.index-page .video-wrapper .video-caption {
+  color: rgb(196, 169, 125);
+  font-size: 14px;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   .index-page .hero-slider {
@@ -3109,8 +3126,11 @@ body[data-cart-state=filled] .cart-page__state--empty {
   .index-page .brand-grid .brand-link .mobile-break {
     display: none;
   }
-  .index-page .video-placeholder {
-    min-height: 360px;
+  .index-page .video-wrapper {
+    height: 480px;
+  }
+  .index-page .video-wrapper .video-caption {
+    font-size: 16px;
   }
   .index-page .cta-section .cta-inner {
     gap: 48px;
@@ -3265,8 +3285,11 @@ body[data-cart-state=filled] .cart-page__state--empty {
   .index-page .app-cta .app-cta-description {
     font-size: 18px;
   }
-  .index-page .video-placeholder {
-    min-height: 600px;
+  .index-page .video-wrapper {
+    height: 960px;
+  }
+  .index-page .video-wrapper .video-caption {
+    font-size: 18px;
   }
   .index-page .partner-cta .partner-cta-title {
     font-size: 32px;
