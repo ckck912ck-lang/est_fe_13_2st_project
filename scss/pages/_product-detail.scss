@@ -683,7 +683,14 @@
 }
 
 .product-qna-section {
-  display: none;
+  padding-top: 32px;
+}
+
+.product-qna-empty {
+  padding: 48px 0;
+  color: $neutral-text-sub;
+  font-size: $mobile-caption;
+  text-align: center;
 }
 
 .related-products {
