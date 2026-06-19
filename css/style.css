@@ -4082,24 +4082,38 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 
 .product-quantity {
-  display: none;
-  width: 124px;
-  height: 40px;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  border: 1px solid #e5e2dd;
+  justify-content: center;
+  gap: 18px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgb(232, 230, 225);
   border-radius: 999px;
-  background: #ffffff;
+  background: rgb(255, 255, 255);
 }
 .product-quantity button {
-  width: 40px;
-  height: 38px;
-  color: #88857e;
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
   background: transparent;
+  color: rgb(136, 136, 128);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
 }
 .product-quantity span {
-  font-weight: 800;
+  min-width: 20px;
+  text-align: center;
+  color: rgb(68, 68, 68);
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .product-purchase-actions {
