@@ -19,6 +19,7 @@ import { addCartItem } from "../utils/localStorage.js";
 import { openCloseHamburger, renderHamburger } from "../modules/hamburgerNav.js";
 import { showToast } from "../modules/toast.js";
 import { renderChatting, openChattingModal, closeChattingModal } from "../modules/fixedBtn.js";
+import { getQueryParams } from "../utils/getQueryParam.js";
 
 // 변수
 const container = document.querySelector(".product-list .product-list-grid");
@@ -180,10 +181,10 @@ filterGroup.addEventListener("click", (e) => {
   if (!filterButton) return;
 
   // 필터 리셋
-  resetFilters();
+  resetSelectedFilters();
 
   // 필터 입력
-  selectedFilters.categories = filterButton.dataset.filterValue;
+  selectedFilters.categories = [filterButton.dataset.filterValue];
 
   // 렌더링할 상품 배열에 저장
   currentProducts = filterProducts(products, selectedFilters);
@@ -206,14 +207,11 @@ filterForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const selectedFilters = getSelectedFilters(filterForm);
-  const filteredProducts = filterProducts(products, selectedFilters);
 
   currentProducts = filterProducts(products, selectedFilters);
   currentPage = 1;
   filterModal.close();
   renderProductList();
-
-  console.log(selectedFilters);
 });
 
 // 객체를 수정하는 함수
@@ -222,40 +220,49 @@ function getSelectedFilters(filterCondition) {
     categories: [...filterCondition.querySelectorAll('[name="category"]:checked')].map(
       (el) => el.value
     ),
+
     brands: [...filterCondition.querySelectorAll('[name="brand"]:checked')].map((el) => el.value),
-    shapes: [...filterCondition.querySelectorAll('[name="shape"]:checked')].map((el) => el.value),
+
+    shapes: [...filterCondition.querySelectorAll('[name="eyeWearShape"]:checked')].map(
+      (el) => el.value
+    ),
 
     isBest: filterCondition.querySelector('[name="best"]')?.checked ?? false,
     isNew: filterCondition.querySelector('[name="new"]')?.checked ?? false,
 
-    priceRange: { min: null, max: null },
+    priceRange: getPriceRange(filterCondition.querySelector('[name="priceRange"]:checked')?.value),
+
     customPrice: {
-      min: Number(filterCondition.querySelector('[name="min-price"]')?.value) || null,
-      max: Number(filterCondition.querySelector('[name="max-price"]')?.value) || null,
+      min: null,
+      max: null,
     },
   };
 }
 
-// 객체를 초기화하는 함수
-function resetFilters() {
+function getPriceRange(value) {
+  if (!value) {
+    return { min: null, max: null };
+  }
+
+  const [min, max] = value.split("-");
+
   return {
-    categories: [],
-    brands: [],
-    shapes: [],
-
-    isBest: false,
-    isNew: false,
-
-    priceRange: {
-      min: null,
-      max: null,
-    },
-
-    customPrice: {
-      min: null,
-      max: null,
-    },
+    min: min ? Number(min) : null,
+    max: max ? Number(max) : null,
   };
+}
+
+// 객체를 초기화하는 함수
+function resetSelectedFilters() {
+  selectedFilters.categories = [];
+  selectedFilters.brands = [];
+  selectedFilters.shapes = [];
+
+  selectedFilters.isBest = false;
+  selectedFilters.isNew = false;
+
+  selectedFilters.priceRange = { min: null, max: null };
+  selectedFilters.customPrice = { min: null, max: null };
 }
 
 // 문의 모달 렌더링

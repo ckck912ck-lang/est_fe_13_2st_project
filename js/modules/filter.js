@@ -69,6 +69,8 @@ export function filterProducts(products, selectedFilters) {
     return matchCategory && matchBrand && matchShape && matchBest && matchNew && matchPrice;
   });
 
+  console.log(selectedFilters);
+
   // 최종적으로 100개 복합 필터링한 객체를 반환
   return filteredProducts;
 }
