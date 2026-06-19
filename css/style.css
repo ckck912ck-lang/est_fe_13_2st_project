@@ -1551,13 +1551,12 @@ footer .footer-bottom .footer-copyright {
 .product-filter-dialog {
   width: 100%;
   max-width: 720px;
-  max-height: 80dvh;
+  height: min(80dvh, 720px);
   margin: auto;
   border: 0;
   border-radius: 12px;
   background: rgb(255, 255, 255);
   overflow: hidden;
-  padding-bottom: 4px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -1568,24 +1567,12 @@ footer .footer-bottom .footer-copyright {
   background: rgba(0, 0, 0, 0.7);
 }
 .product-filter-dialog .filter-form {
-  display: flex;
-  flex-direction: column;
-  max-height: 80dvh;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 .product-filter-dialog .filter-form .filter-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 48px;
-  padding: 0 20px;
-  border-bottom: 1px solid #eee;
-  background: #fff;
+  position: static;
 }
 .product-filter-dialog .filter-form .filter-header .filter-title {
   font-size: 20px;
@@ -1606,12 +1593,9 @@ footer .footer-bottom .footer-copyright {
   font-size: 32px;
 }
 .product-filter-dialog .filter-form .filter-body {
-  padding: 18px 20px 80px;
-  max-height: 80dvh;
+  min-height: 0;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  padding: 18px 20px;
 }
 .product-filter-dialog .filter-form .filter-body span {
   display: flex;
@@ -1767,8 +1751,7 @@ footer .footer-bottom .footer-copyright {
   color: #111;
 }
 .product-filter-dialog .filter-form .filter-actions {
-  position: sticky;
-  bottom: 0;
+  position: static;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
@@ -4293,7 +4276,14 @@ body[data-cart-state=filled] .cart-page__state--empty {
 }
 
 .product-qna-section {
-  display: none;
+  padding-top: 32px;
+}
+
+.product-qna-empty {
+  padding: 48px 0;
+  color: rgb(136, 136, 128);
+  font-size: 14px;
+  text-align: center;
 }
 
 .related-products {
