@@ -59,9 +59,7 @@ let currentSortType = "basic";
 let currentPage = 1;
 let paginationCount = 0;
 
-// ===========================================
 // 상품 목록 기능 : 조승아 작성, 배정호 수정 및 주석
-// ===========================================
 
 // 상품 개수 갱신 함수
 function renderProductCount(totalCount, currentPage, countPerPage, currentCount) {

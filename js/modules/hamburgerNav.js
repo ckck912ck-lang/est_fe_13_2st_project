@@ -2,7 +2,7 @@
 
 // 클래스 토글 is-open 추가/제거
 
-// 매개변수 :
+// 매개변수 : 구현 대상 컨테이너
 export function openCloseHamburger(container) {
   const hamburgerMenu = document.querySelector(".hamburger-menu");
   const closeHamburgerBtn = document.querySelector(".hamburger-menu-close-button");
