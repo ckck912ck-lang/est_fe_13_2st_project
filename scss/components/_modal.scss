@@ -136,13 +136,12 @@
 .product-filter-dialog {
   width: 100%;
   max-width: 720px;
-  max-height: 80dvh;
+  height: min(80dvh, 720px);
   margin: auto;
   border: 0;
   border-radius: 12px;
   background: $neutral-white;
   overflow: hidden;
-  padding-bottom: 4px;
 
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -155,22 +154,12 @@
   }
 
   .filter-form {
-    display: flex;
-    flex-direction: column;
-    max-height: 80dvh;
-    user-select: none;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 
     .filter-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 48px;
-      padding: 0 20px;
-      border-bottom: 1px solid #eee;
-      background: #fff;
+      position: static;
 
       .filter-title {
         font-size: 20px;
@@ -195,12 +184,9 @@
     }
 
     .filter-body {
-      padding: 18px 20px 80px;
-      max-height: 80dvh;
+      min-height: 0;
       overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+      padding: 18px 20px;
 
       span {
         display: flex;
@@ -379,8 +365,7 @@
     }
 
     .filter-actions {
-      position: sticky;
-      bottom: 0;
+      position: static;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
